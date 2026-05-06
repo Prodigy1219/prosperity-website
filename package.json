@@ -1,0 +1,22 @@
+{
+  "name": "prosperity-website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/mdx": "^3.1.0",
+    "tailwindcss": "^3.4.13",
+    "autoprefixer": "^10.4.20"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-emerald: #0f8f4f;
+  --color-emerald-dark: #064d32;
+  --color-gold: #d9a833;
+  --color-gold-light: #f2d27a;
+  --color-charcoal: #101418;
+  --color-slate: #1d252c;
+  --color-cream: #f7f1dc;
+  --color-white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #101418;
+  color: #f7f1dc;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-family: 'Cinzel', Georgia, serif;
+  color: #f2d27a;
+}
+
+.prose p {
+  color: #e5ddc8;
+}
+
+.prose a {
+  color: #0f8f4f;
+  text-decoration: underline;
+}
+
+.prose ul li::marker {
+  color: #d9a833;
+}
+
+.prose ol li::marker {
+  color: #d9a833;
+}
+
+.prose code {
+  background-color: #1d252c;
+  color: #f2d27a;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875em;
+}
+
+.prose pre {
+  background-color: #1d252c;
+  border: 1px solid #2e3942;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+}
+
+.prose blockquote {
+  border-left-color: #d9a833;
+  color: #e5ddc8;
+}

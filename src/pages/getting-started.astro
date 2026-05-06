@@ -1,0 +1,81 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+import InfoCallout from '../components/InfoCallout.astro';
+---
+
+<DocsLayout
+  title="Getting Started"
+  description="Your guide to the first 30 minutes on New Prosperity."
+>
+
+<p>Welcome to New Prosperity. Your first goal is simple: learn the town, earn your first money, and choose a direction.</p>
+
+<InfoCallout type="warning" title="Season 0 / Beta">
+  Economy values, job rewards, and progression requirements may change during testing.
+</InfoCallout>
+
+## First 30 Minutes
+
+1. **Read the rules at Town Hall.** Rules exist in-game as books. Read them before doing anything else.
+2. **Choose a starter job.** Talk to the job board or NPC at Town Hall. Pick something that matches how you want to play.
+3. **Visit the market.** Get a feel for prices, supply gaps, and what other players are selling.
+4. **Check the public contracts board.** Public contracts are the fastest way to earn your first money.
+5. **Gather resources in the resource world.** The resource world resets regularly. Mine and gather here, not the main world.
+6. **Earn your first money.** Complete a contract, sell resources, or provide a service.
+7. **Rent starter housing or save for a starter plot.** You need a base. Housing is available near spawn.
+8. **Pick your first profession path.** Once you have starter funds, commit to a direction.
+
+## Good First Goals
+
+- Earn your first **$1,000**
+- Buy or rent starter housing
+- Complete a basic public contract
+- Visit every major Town Hall office
+- Decide whether you want to become a **Miner, Farmer, Builder, Merchant, Industrialist**, or **Civil Service** worker
+
+## Your First Checklist
+
+<ul class="not-prose space-y-2 my-4">
+  {[
+    'Read the rules book',
+    'Visit Town Hall',
+    'Choose a starter job',
+    'Check the public contracts board',
+    'Visit the market',
+    'Use the resource world responsibly',
+    'Earn your first $1,000',
+    'Rent housing or buy a starter plot',
+    'Decide your first profession path',
+  ].map(item => (
+    <li class="flex items-center gap-3 text-cream/80 text-sm">
+      <span class="w-4 h-4 rounded border border-slate-600 flex-shrink-0"></span>
+      {item}
+    </li>
+  ))}
+</ul>
+
+## Profession Paths
+
+Once you have a starter job and some money, you'll want to commit to a skill tree. Each path unlocks unique abilities and licenses.
+
+| Profession | Focus |
+|---|---|
+| **Miner** | Resource extraction, underground exploration, fuel systems |
+| **Farmer** | Food production, biofuel, crop optimization |
+| **Builder** | Construction, roads, architectural licenses |
+| **Merchant** | Shops, trading, company formation |
+| **Industrialist** | Semi-automatic production, machinery, factories |
+| **Civil Service** | Government, law enforcement, public works |
+
+Read the full [Skill Trees guide](/skill-trees) for details on each path and their unlocks.
+
+## Important Rules to Know
+
+- **No AFK farms.** Fully automatic farms are banned. Meaningful player interaction is required.
+- **No griefing.** Other players' builds and land are protected.
+- **No exploits or duplication.** Report them. Using them results in a ban.
+- **In-game crimes are handled by the law system**, not staff. Staff handles real rule violations.
+
+Read the [full rules](/rules) before your first session.
+
+</DocsLayout>

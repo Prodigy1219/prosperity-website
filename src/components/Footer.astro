@@ -1,0 +1,41 @@
+---
+import { footerNav } from '../data/navigation';
+import { serverInfo } from '../data/serverInfo';
+---
+
+<footer class="bg-charcoal border-t border-slate-800 mt-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/logo.png" alt="New Prosperity" class="h-7 w-auto" />
+          <span class="font-heading text-gold font-semibold">New Prosperity</span>
+        </div>
+        <p class="text-cream/50 text-sm">A survival economy Minecraft server built around land, jobs, skill trees, and player-driven development.</p>
+      </div>
+      <div>
+        <h3 class="text-cream font-medium text-sm mb-3 uppercase tracking-wider">Navigation</h3>
+        <ul class="space-y-2">
+          {footerNav.map(link => (
+            <li>
+              <a href={link.href} class="text-cream/50 hover:text-gold text-sm transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-cream font-medium text-sm mb-3 uppercase tracking-wider">Server Info</h3>
+        <ul class="space-y-2 text-sm">
+          <li class="text-cream/50">Version: <span class="text-cream">{serverInfo.version}</span></li>
+          <li class="text-cream/50">Status: <span class="text-gold">{serverInfo.status}</span></li>
+          <li class="text-cream/50">Whitelist: <span class="text-cream">{serverInfo.whitelist}</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-slate-800 text-center text-cream/30 text-xs">
+      &copy; {new Date().getFullYear()} New Prosperity. All rights reserved.
+    </div>
+  </div>
+</footer>
