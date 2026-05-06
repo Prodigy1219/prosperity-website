@@ -1,14 +1,12 @@
 ---
-import DocsLayout from '../layouts/DocsLayout.astro';
-import InfoCallout from '../components/InfoCallout.astro';
+layout: ../layouts/DocsLayout.astro
+title: Getting Started
+description: Your guide to the first 30 minutes on New Prosperity.
 ---
 
-<DocsLayout
-  title="Getting Started"
-  description="Your guide to the first 30 minutes on New Prosperity."
->
+import InfoCallout from '../components/InfoCallout.astro';
 
-<p>Welcome to New Prosperity. Your first goal is simple: learn the town, earn your first money, and choose a direction.</p>
+Welcome to New Prosperity. Your first goal is simple: learn the town, earn your first money, and choose a direction.
 
 <InfoCallout type="warning" title="Season 0 / Beta">
   Economy values, job rewards, and progression requirements may change during testing.
@@ -33,30 +31,9 @@ import InfoCallout from '../components/InfoCallout.astro';
 - Visit every major Town Hall office
 - Decide whether you want to become a **Miner, Farmer, Builder, Merchant, Industrialist**, or **Civil Service** worker
 
-## Your First Checklist
-
-<ul class="not-prose space-y-2 my-4">
-  {[
-    'Read the rules book',
-    'Visit Town Hall',
-    'Choose a starter job',
-    'Check the public contracts board',
-    'Visit the market',
-    'Use the resource world responsibly',
-    'Earn your first $1,000',
-    'Rent housing or buy a starter plot',
-    'Decide your first profession path',
-  ].map(item => (
-    <li class="flex items-center gap-3 text-cream/80 text-sm">
-      <span class="w-4 h-4 rounded border border-slate-600 flex-shrink-0"></span>
-      {item}
-    </li>
-  ))}
-</ul>
-
 ## Profession Paths
 
-Once you have a starter job and some money, you'll want to commit to a skill tree. Each path unlocks unique abilities and licenses.
+Once you have a starter job and some money, commit to a skill tree. Each path unlocks unique abilities and licenses.
 
 | Profession | Focus |
 |---|---|
@@ -67,7 +44,7 @@ Once you have a starter job and some money, you'll want to commit to a skill tre
 | **Industrialist** | Semi-automatic production, machinery, factories |
 | **Civil Service** | Government, law enforcement, public works |
 
-Read the full [Skill Trees guide](/skill-trees) for details on each path and their unlocks.
+Read the full [Skill Trees guide](/skill-trees) for details on each path.
 
 ## Important Rules to Know
 
@@ -77,5 +54,3 @@ Read the full [Skill Trees guide](/skill-trees) for details on each path and the
 - **In-game crimes are handled by the law system**, not staff. Staff handles real rule violations.
 
 Read the [full rules](/rules) before your first session.
-
-</DocsLayout>
