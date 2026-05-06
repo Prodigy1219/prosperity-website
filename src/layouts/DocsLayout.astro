@@ -1,0 +1,24 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <PageHeader title={title} description={description} />
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <div class="prose prose-invert max-w-none prose-headings:font-heading prose-headings:text-gold prose-a:text-emerald prose-li:text-cream/80 prose-p:text-cream/80">
+      <slot />
+    </div>
+    <div class="mt-12 pt-6 border-t border-slate-800 flex gap-4">
+      <a href="/" class="text-sm text-cream/40 hover:text-cream transition-colors">← Home</a>
+      <a href="/getting-started" class="text-sm text-cream/40 hover:text-cream transition-colors">Getting Started</a>
+    </div>
+  </div>
+</BaseLayout>
