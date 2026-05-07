@@ -1,51 +1,76 @@
 ---
 layout: ../layouts/DocsLayout.astro
-title: Skill Trees
-description: Profession paths, unlocks, and progression in New Prosperity.
+title: Skill Trees & Jobs
+description: Profession paths, job progression, unlocks, and titles in New Prosperity.
 ---
 
 import InfoCallout from '../components/InfoCallout.astro';
 
 ## Overview
 
-Skill trees give players a **profession identity**. Each path unlocks unique abilities, licenses, tools, and vehicles that define your role in the economy.
+New Prosperity has two connected progression systems: **Jobs** and **Skill Trees**.
 
-Skill trees combine **major unlocks** with **small utility buffs**:
-
-- **Major unlocks**: Licenses, vehicles, land access, custom enchants, company rights, machinery
-- **Small buffs**: Convenience perks that improve your identity without replacing the core economy
+- **Jobs** earn wages, have levels (1–50), and grant titles and profession unlocks as you level up. You join them via `/jobs join`. They consume a job slot.
+- **Skill Trees** are planned buff and unlock paths — additional layers on top of your job progression. Not yet implemented at launch.
 
 <InfoCallout type="warning" title="Under Construction">
-  Skill tree values, unlock costs, and specific buffs are subject to change before launch. These descriptions reflect the intended design direction.
+  Skill tree buff values and specific unlock costs are subject to change before launch. The job progression system is active — the skill tree buff layer is planned for after the economy stabilizes.
 </InfoCallout>
 
-## Citizen Core
+## Job Slots
 
-Every player starts at **Citizen** level. It unlocks:
+| Slot | Cost |
+|---|---|
+| Slot 1 | Free |
+| Slot 2 | Free |
+| Slot 3 | ~$500 early unlock |
+| Slot 4 | $10,000 career expansion permit |
+| Slot 5 | Prestige / late-season unlock |
 
-- Basic job access
-- Ability to rent housing
-- Access to the public market
-- The right to complete basic public contracts
+## Specialization vs Diversification
+
+Both paths are valid — the system is designed so neither feels wrong.
+
+| Path | What You Get |
+|---|---|
+| **Specialize** (go deep in one job) | Stronger wage scaling, better titles, better contracts, better tool access, late-game unlocks |
+| **Diversify** (level multiple jobs) | More business models, more income sources, more flexibility |
+
+A level 50 Miner is the best miner on the server. A player with Miner + Builder + Woodcutter has more options. Pick based on how you want to play.
+
+---
+
+## The 6 Jobs
+
+Each job has 50 levels, takes ~50 hours to max, and grants a +1% income bonus per level (max +50% at level 50 applied to job wage). Every 10 levels unlocks a new chat title. Every 5 levels gives a real perk or access unlock.
 
 ---
 
 ## Miner
 
-**Focus**: Resource extraction, underground operations, fuel systems
+**Focus**: Resource extraction, underground operations, tools
 
-### Major Unlocks
-- Mining vehicle license (ore cart / drill)
-- Access to deep mining districts
-- Ore processing equipment
-- Industrial fuel contracts
+| Level | Title |
+|---|---|
+| 1–9 | Stonehand |
+| 10–19 | Cavehand |
+| 20–29 | Chartered Miner |
+| 30–39 | Deepworks Operator |
+| 40–49 | Master Prospector |
+| 50 | Titan of the Deep |
 
-### Skill Buffs
-- **Headlamp I** — Permanent light source when underground
-- **Ore Sorter** — Automatic sorting of ore drops into inventory categories
-- **Portable Smelting I** — Smelt a limited number of ores per session in the field
-- **Drill Maintenance** — Reduced vehicle wear rate
-- **Fuel Discipline** — Reduced fuel consumption on mining vehicles
+### Key Unlocks
+| Level | Unlock |
+|---|---|
+| 7 | Basic Mining Contracts |
+| 15 | Mining License access |
+| 21 | D1 Drill rental access |
+| 35 | Efficiency VII crafting path |
+| 45 | Fortune IV access path |
+| 50 | Prestige — Fortune V research, D3 drill eligibility |
+
+### Related Licenses
+Mining License → D1 Drill Permit → Industrial Forge Access → Efficiency VII Permit → Fortune IV Permit → Fortune V (prestige)
 
 ---
 
@@ -53,103 +78,148 @@ Every player starts at **Citizen** level. It unlocks:
 
 **Focus**: Food production, crop optimization, biofuel supply
 
-### Major Unlocks
-- Agricultural vehicle license (tractor)
-- Biofuel production rights
-- Large agricultural plot access
-- Food supply contracts
+| Level | Title |
+|---|---|
+| 1–9 | Fieldhand |
+| 10–19 | Homesteader |
+| 20–29 | Licensed Farmer |
+| 30–39 | Cropmaster |
+| 40–49 | Agriculturalist |
+| 50 | Harvest Baron |
 
-### Skill Buffs
-- **Green Thumb** — Increased crop yield rate
-- **Compost Sense** — Composting produces more bonemeal per cycle
-- **Seed Saver** — Chance to retain seeds after harvest
-- **Tractor Handling** — Improved tractor speed and fuel efficiency
-- **Biofuel Basics** — Unlock basic biofuel crafting recipes
+### Key Unlocks
+| Level | Unlock |
+|---|---|
+| 7 | Basic Crop Contracts |
+| 15 | Farming License access |
+| 25 | Tractor rental access |
+| 40 | Biofuel production |
+| 50 | Premium crop contracts, large farm permits |
+
+### Related Licenses
+Farming License → Greenhouse Permit → Tractor Operation License → Biofuel Processing Permit → Agricultural Export Permit
 
 ---
 
 ## Builder
 
-**Focus**: Construction, infrastructure, architectural licensing
+**Focus**: Construction, public works, architectural licensing
 
-### Major Unlocks
-- Architect license (required for public construction contracts)
-- Road crew rights
-- Scaffold system access
-- Large commercial construction contracts
+| Level | Title |
+|---|---|
+| 1–9 | Laborer |
+| 10–19 | Mason |
+| 20–29 | Contractor |
+| 30–39 | Architect |
+| 40–49 | Master Builder |
+| 50 | City Architect |
 
-### Skill Buffs
-- **Steady Hand** — Reduced item consumption on decorative block placement
-- **Scaffold Expert** — Extended scaffold reach
-- **Material Planner** — See estimated resource cost of a planned structure
-- **Road Crew** — Increased speed on public road contracts
-- **Architect License** — Required to bid on major public buildings
+### Key Unlocks
+| Level | Unlock |
+|---|---|
+| 7 | Basic Civic Build Contracts |
+| 20 | Architect License access |
+| 25 | Public works contract eligibility |
+| 35 | Commercial Construction License |
+| 50 | Major landmark contracts, naming rights |
 
----
-
-## Industrialist
-
-**Focus**: Semi-automatic production, machinery, factory operations
-
-### Major Unlocks
-- Industrial machinery license
-- Factory plot access
-- Semi-automatic production rights
-- Heavy equipment operator license
-
-### Skill Buffs
-- **Process Efficiency** — Increased output per material cycle
-- **Machine Calibration** — Reduced machine maintenance costs
-- **Circuit Understanding** — Unlock basic redstone automation schematics
-- **Shift Planner** — Track production rates per session
-- **Fuel Routing** — Optimized fuel routing between machines
+### Related Licenses
+Architect License → Public Works Permit → Commercial Construction License → City Development Permit
 
 ---
 
-## Merchant
+## Woodcutter
 
-**Focus**: Trade, shops, companies, and the market
+**Focus**: Lumber supply, forestry, sawmill operations
 
-### Major Unlocks
-- Merchant license (required to open a shop)
-- Company formation rights
-- Auction house access (seller)
-- Trade route contracts
+| Level | Title |
+|---|---|
+| 1–9 | Sapling Hand |
+| 10–19 | Lumberjack |
+| 20–29 | Timber Contractor |
+| 30–39 | Forest Warden |
+| 40–49 | Master Sawyer |
+| 50 | Timber Baron |
 
-### Skill Buffs
-- **Market Read** — See basic price trend indicators
-- **Bulk Discount** — Reduced cost on large admin shop purchases
-- **Display Case** — Enhanced shop display for featured items
-- **Trade Network** — Access to inter-player trade board
-- **Company Registry** — Ability to register a company and hire staff
+### Key Unlocks
+| Level | Unlock |
+|---|---|
+| 7 | Basic Lumber Contracts |
+| 15 | Timber License access |
+| 25 | Sawmill License access |
+| 30 | Reforestation Contracts |
+| 40 | Treated Lumber (required for high-tier Builder contracts) |
+| 50 | Forestry estate contracts, rare wood permits |
 
----
-
-## Civil Service
-
-**Focus**: Government, law enforcement, public works, city administration
-
-### Major Unlocks
-- Law enforcement badge (with election/appointment)
-- City council candidacy rights
-- Public contract administration
-- Court system participation rights
-
-### Skill Buffs
-- **Due Process** — Extended time window on legal procedures
-- **Record Access** — View city records and property ownership logs
-- **Budget Planner** — Access to city treasury reports
-- **Public Speaker** — Reduced cooldown on council motions
-- **Civic Trust** — Reputation bonus with city NPCs
+### Related Licenses
+Timber License → Sawmill License → Lumber Export Permit → Industrial Lumber Permit
 
 ---
 
-## Prestige and Development Influence
+## Hunter
 
-When you max out your primary skill tree:
+**Focus**: Combat, mob drops, bounties, contracts
 
-- You earn **Prestige** status in your profession
-- You gain access to **development influence** — the ability to propose and vote on city expansion projects
-- Prestige players drive world border expansions and major construction
+| Level | Title |
+|---|---|
+| 1–9 | Tracker |
+| 10–19 | Bowhand |
+| 20–29 | Licensed Hunter |
+| 30–39 | Beast Stalker |
+| 40–49 | Apex Hunter |
+| 50 | Warden of the Wilds |
+
+### Key Unlocks
+| Level | Unlock |
+|---|---|
+| 7 | Basic Hunting Contracts |
+| 10 | Hunting License access |
+| 25 | Monster Trophy System |
+| 30 | Elite Mob Contracts |
+| 40 | Boss Hunt Permits |
+| 50 | Legendary Hunt Contracts, prestige rewards |
+
+### Related Licenses
+Hunting License → Bounty Permit → Wilderness Trapping Permit → Monster Slaying Contract Access
+
+---
+
+## Fisher
+
+**Focus**: Food supply, rare catches, ocean contracts
+
+| Level | Title |
+|---|---|
+| 1–9 | Deckhand |
+| 10–19 | Angler |
+| 20–29 | Licensed Fisher |
+| 30–39 | Harpooner |
+| 40–49 | Master Angler |
+| 50 | Leviathan Tamer |
+
+### Key Unlocks
+| Level | Unlock |
+|---|---|
+| 7 | Basic Fishing Contracts |
+| 10 | Fishing License access |
+| 25 | Bait System — improves rare catch chance |
+| 30 | Ocean Salvage Contracts |
+| 40 | Rare Catch / Treasure table access |
+| 50 | Legendary Fishing Events, prestige catches |
+
+### Related Licenses
+Fishing License → Ocean Fishing Permit → Commercial Fishing Permit → Rare Fish Export License
+
+---
+
+## Prestige
+
+When you reach level 50 in a job:
+
+- You earn **Prestige** status in that profession
+- You receive a unique permanent chat title
+- You gain access to late-game systems exclusive to prestige players
+- You get a named contribution plaque in your profession's district
+- You become eligible for the highest-tier contracts on the server
 
 Reaching Prestige takes real in-game time and investment. It is the late-game.

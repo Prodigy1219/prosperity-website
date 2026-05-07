@@ -8,54 +8,114 @@ import InfoCallout from '../components/InfoCallout.astro';
 
 ## Philosophy
 
-The economy is designed around **player trade**. The admin shop exists as a fallback, not as the main market. High-end items come from players, exploration, crafting, quests, contracts, or auctions.
+The economy is designed around **player trade**. The admin shop exists as a fallback, not as the main market. High-end items come from players — elytras, high-tier tools, rare materials, enchanted gear.
 
-If you want an elytra, you buy it from a player. If you want high-tier tools, shulker boxes, or rare materials — you find a player who has them.
+If you want an elytra, you buy it from a player. If you want a Fortune IV pickaxe, you find someone who built the progression to make one.
 
 <InfoCallout type="info" title="Economy Balance Notice">
-  New Prosperity is under construction. Economy values, prices, rewards, and sink rates may be adjusted before and after launch based on observed inflation, deflation, and player feedback.
+  New Prosperity is under construction. Economy values, prices, and rewards may be adjusted before and after launch based on observed inflation and player feedback.
 </InfoCallout>
+
+## How Income Actually Works
+
+Your hourly income is not just your job wage — it's the sum of four sources:
+
+| Source | Description |
+|---|---|
+| **Job wage** | Direct cash from Jobs Reborn when you take an action (mine a block, harvest a crop, kill a mob) |
+| **Admin item floor** | Value of your drops sold to the admin shop — the safe fallback, not the real market |
+| **Player market upside** | Extra value from selling to other players — this is the real economy |
+| **Contracts** | Controlled bonus payouts from public contracts, civic commissions, and events |
+
+The job wage is a labor subsidy — it's intentionally modest. The real income comes from what you do with the resources you collect.
+
+**Target effective income by stage:**
+
+| Stage | Target $/hr |
+|---|---|
+| New player (level 1) | $125–$175 |
+| Mid-level (around level 25) | $175–$225 |
+| Level 50 maxed job | $225–$275 |
+| Established multi-job player | $300–$600 |
+| Late-game (drills, Eff VII, contracts) | $600–$1,500+ |
+
+## The Three-Price Rule
+
+Every important item has three prices:
+
+```
+Admin buy price  <  Player market price  <  Admin sell price
+```
+
+- **Admin buy** — The server buys at 40–60% of player market value. It's a floor, not the real price.
+- **Player market** — The true economy value, set by supply and demand.
+- **Admin sell** — If the server sells it at all, it's at 150–300% of player market. A convenience tax, not the standard price.
+
+If admin buy prices are too close to player market prices, players stop trading with each other and just dump everything to the server. The spread is intentional.
 
 ## Money Faucets
 
 Money enters the economy through controlled channels:
 
-- **Jobs** — Regular payment for work done in your profession
-- **Public contracts** — Completing development contracts for the city
-- **Quests** — One-time or repeatable task quests
-- **Admin shop sales** — Selling basic resources at controlled rates
-- **Auctions** — Bidding on rare server-distributed items
+- **Jobs** — Regular wage paid per manual action in your profession
+- **Public contracts** — The city posts contracts for needed resources and construction
+- **Starter quests** — One-time intro rewards for new players
+- **Admin shop sales** — Selling basic raw materials at floor prices
 
 ## Money Sinks
 
 Money leaves the economy through:
 
-- **Plot and land purchases** — Buying land from the city
-- **Licenses** — Required for advanced activities (vehicles, companies, industrial operations)
-- **Upkeep costs** — Machinery and vehicles cost money to maintain
-- **Fines** — In-game law violations result in fines paid to the city or victims
-- **Taxes** — Plot taxes paid periodically
+- **Plot and land purchases** — Buying plots from the city
+- **Plot rental** — Regular weekly fees for rented land and stalls
+- **Licenses and permits** — Required before accessing advanced tools and operations
+- **Fines** — Law violations result in fines paid to the city or victims
+- **Company registration** — Fee to form a registered company
+- **Development project buy-in** — Fund city expansion and infrastructure
 
-## Admin Shop Limits
+## Jobs vs Licenses
 
-The admin shop is deliberately limited:
+These are two separate systems.
 
-- **Does not sell**: Elytras, shulker boxes, totems of undying, high-tier tools, vehicles, or rare enchantment books
-- **Does sell**: Basic materials at capped daily quantities to prevent abuse
-- **Buying**: Purchases basic resources at controlled rates with daily limits
+| System | Job Slot? | Has Levels? | Obtained By |
+|---|---|---|---|
+| **Job** | Yes | Yes | `/jobs join` |
+| **License** | No | No | Purchase after meeting level + cost requirement |
+| **Permit** | No | No | Higher-tier unlock via money, level, or contracts |
 
-The admin shop is a pressure valve, not a market.
+Every job has a set of licenses and permits it qualifies for. Reaching the required level opens the door — the license still has to be purchased separately.
+
+**Example license costs:**
+
+| License | Requirement | Cost |
+|---|---|---|
+| Mining License | Miner level 15 | $1,500 |
+| Farming License | Farmer level 15 | $1,200 |
+| Architect License | Builder level 20 | $2,000 |
+| Timber License | Woodcutter level 15 | $1,200 |
+| Hunting License | Hunter level 10 | $800 |
+| Fishing License | Fisher level 10 | $600 |
+
+## Admin Shop Rules
+
+The admin shop is a **price floor**, not a store. It exists so players always have a guaranteed fallback buyer.
+
+**The server buys:** Basic raw materials — stone, logs, basic crops, raw ores, coal, wool — at floor prices.
+
+**The server sells (fallback only, expensive):** Basic tools, food, torches, seeds.
+
+**The server never sells:** Diamonds, netherite, enchanted items, rare ores, elytra, rare drops. Let the player market set those prices.
 
 ## Player Shops
 
 Player shops are the real economy:
 
-- Any player with a **Merchant license** can open a shop
+- Any player with the appropriate license can open a shop
 - Shops are located in commercial plots in the market district
 - Shops set their own prices — supply and demand drive the market
 - Player shops should consistently beat admin shop prices on common goods
 
-## Land as Wealth Progression
+## Land as Wealth
 
 Land is one of the most important assets on the server:
 
@@ -63,24 +123,10 @@ Land is one of the most important assets on the server:
 |---|---|
 | **Starter plots** | Small residential plots near spawn, affordable for new players |
 | **Commercial plots** | Market district shops, used for selling goods |
-| **Industrial land** | Factories, farms, and production systems |
+| **Industrial land** | Farms, production systems, machinery |
 | **Development plots** | Unlocked through community funding over time |
 
-Owning land is a milestone — it is not just a home, it is a store of value.
-
-## Licenses
-
-Licenses are required for advanced activities:
-
-| License | Required For |
-|---|---|
-| Merchant | Opening a player shop |
-| Industrialist | Operating machinery and semi-auto production |
-| Vehicle Operator | Driving wheeled or aerial vehicles |
-| Builder | Taking on large public construction contracts |
-| Company Formation | Starting a company with employees |
-
-Licenses cost money and may require skill tree progress to unlock.
+Owning land is a milestone. It is not just a home — it is a store of value and a business foundation.
 
 ## Public Contracts
 
@@ -88,14 +134,12 @@ Public contracts bridge player productivity and world development:
 
 - The city posts contracts for needed resources: timber, stone, food, materials
 - Players complete contracts and are paid by the city treasury
-- Resources are consumed and used to build public infrastructure
-- This is the primary intended money faucet for active players
+- Resources are consumed to build public infrastructure
+- This is the primary intended money faucet for active, organized players
 
 ## Inflation Control
 
-The server uses several mechanisms to control inflation:
-
-- Daily limits on admin shop buying prices
-- Periodic balance reviews — staff review median player wealth monthly
-- Sink rate adjustments — license prices and taxes may rise if inflation is detected
-- Limited money faucets — contracts and jobs are gated by time or quantity
+- Jobs wages are tested monthly and adjusted if combined income is too high or too low
+- Admin shop buy prices stay well below player market prices
+- License and plot prices scale as a sink for accumulated wealth
+- Late-game sinks (development projects, company registration, Efficiency VII path) absorb large amounts of money
