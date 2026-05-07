@@ -1,0 +1,173 @@
+---
+layout: ../layouts/DocsLayout.astro
+title: Quests & Contracts
+description: New player quests and public contracts on New Prosperity.
+---
+
+import InfoCallout from '../components/InfoCallout.astro';
+
+<InfoCallout type="info" title="Two Systems, One Page">
+  **Starter Quests** are a one-time onboarding chain for new players — city-funded rewards to help you find your footing. **Public Contracts** are ongoing jobs posted by the Town Council that any player can complete for money.
+</InfoCallout>
+
+## Starter Quests — "First Week in New Prosperity"
+
+Every new player has access to a six-quest onboarding chain. Quests are posted on the bulletin board at Town Hall. Complete them in order, at your own pace.
+
+### Quest 1 — Welcome Aboard
+
+**Objective:** Visit Town Hall and pick up your Welcome Packet from the chest near the entrance.
+
+**Reward:** Iron pickaxe, iron axe, 8× bread, $10 city stipend
+
+The iron tools get you past wooden gear immediately. The Welcome Packet chest is restocked by staff — if it's empty, message an admin.
+
+---
+
+### Quest 2 — Pick a Trade
+
+**Objective:** Join a job using `/jobs join <jobname>`.
+
+Use `/jobs browse` to see all six options: Miner, Farmer, Builder, Woodcutter, Hunter, Fisher.
+
+**Reward:** $25 city stipend + a job starter kit
+
+| Job | Starter Kit |
+|---|---|
+| Miner | 64× torches, 1× bucket |
+| Farmer | 1× hoe, 64× wheat seeds, 16× bone meal |
+| Builder | 32× stone, 32× oak planks, 1× shovel |
+| Woodcutter | 1× extra iron axe, 4× oak saplings |
+| Hunter | 1× iron sword, 16× arrows, 1× bow |
+| Fisher | 1× fishing rod |
+
+---
+
+### Quest 3 — First Shift
+
+**Objective:** Earn $50 in job wages — the direct cash from your job, not item sales.
+
+**Reward:** $50 city stipend, 1× City Work Permit (collectible)
+
+This takes 15–30 minutes depending on your job. The Work Permit is a cosmetic collectible — it has no mechanical function, but it's yours.
+
+---
+
+### Quest 4 — Sell Something
+
+**Objective:** Make any sale — to the admin shop or to another player.
+
+**Reward:** $35 city stipend
+
+The admin shop is the **price floor**, not the target. Selling to other players earns more. This quest introduces both options.
+
+---
+
+### Quest 5 — Take a Contract
+
+**Objective:** Complete one public contract from the Town Hall bulletin board.
+
+**Reward:** The stated contract payout + $25 city completion bonus + 1× City Commendation
+
+The Commendation is a cosmetic collectible at launch. Future updates may use commendation count as a gate for higher-tier contracts.
+
+---
+
+### Quest 6 — Stake Your Claim
+
+**Objective:** Rent a residential plot or a market stall.
+
+**Reward:** First week's rent waived (city covers it as a settlement bonus) + welcome sign kit
+
+A plot is a reason to log back in.
+
+---
+
+### Quest Reward Summary
+
+| Quest | Cash | Items |
+|---|---|---|
+| 1 — Welcome Aboard | $10 | Iron pickaxe, axe, 8× bread |
+| 2 — Pick a Trade | $25 | Job starter kit |
+| 3 — First Shift | $50 | City Work Permit |
+| 4 — Sell Something | $35 | — |
+| 5 — Take a Contract | Contract payout + $25 | City Commendation |
+| 6 — Stake Your Claim | First week rent waived | Welcome sign kit |
+| **Total stipends** | **~$145–$200** | (Contract payout varies) |
+
+By the end of the chain you should have $300–$500+, a job, iron tools, and a home base.
+
+---
+
+## Public Contracts
+
+Public contracts are city-issued jobs posted at Town Hall. Complete them for money on top of your regular job income. The board is refreshed weekly — fulfilled contracts are reposted within 24–48 hours.
+
+<InfoCallout type="info" title="Contracts are bonus income">
+  Contracts pay slightly above the admin shop buy price — better than selling to the floor, but the real economy is the player market. Contracts give you goals and remove resources from the economy.
+</InfoCallout>
+
+### Launch Board — Season 0 Opening Contracts
+
+The following contracts are live from Day 1. At least 8–10 are active at all times, covering at least four of the six jobs.
+
+#### Resource Contracts
+
+| ID | Contract | Required | Payout | Max Fills |
+|---|---|---|---|---|
+| C-01 | Stone Supply Drive | 512× cobblestone or smooth stone | $80 | 3/week |
+| C-02 | Iron Ore Procurement | 64× iron ingots | $160 | 2/week |
+| C-03 | Lumber Order: Oak | 128× oak logs | $90 | 3/week |
+| C-04 | Lumber Order: Spruce | 64× spruce logs | $50 | 2/week |
+
+#### Food Contracts
+
+| ID | Contract | Required | Payout | Max Fills |
+|---|---|---|---|---|
+| C-05 | Bread for the District | 128× bread | $70 | 2/week |
+| C-06 | Carrot and Potato Supply | 64× carrots + 64× potatoes | $90 | 2/week |
+| C-07 | Fish Market Opening Stock | 32× raw cod or salmon | $65 | 2/week |
+
+#### Construction Contracts
+
+| ID | Contract | Required | Payout | Max Fills |
+|---|---|---|---|---|
+| C-08 | Path Paving: Market District | ~200 blocks, staff-directed | $200 | 1 (specific build) |
+| C-09 | Agricultural District Fencing | ~300 fence blocks, materials provided | $175 | 1 (specific build) |
+| C-10 | Town Signage | 8 signs at staff-marked posts, signs provided | $80 | 1 (specific build) |
+
+#### Hunting Contracts
+
+| ID | Contract | Required | Payout | Max Fills |
+|---|---|---|---|---|
+| C-11 | Hostile Mob Clearance: Mines | 20 hostile mobs near mine entrance | $100 | 3/week |
+| C-12 | Leather Supply | 32× leather | $80 | 2/week |
+| C-13 | Gunpowder Collection | 16× gunpowder (creeper drops) | $110 | 2/week |
+
+---
+
+### Contract Tiers
+
+| Tier | Time Investment | Payout Range |
+|---|---|---|
+| Beginner | ~30 min | $50–$200 |
+| Standard | 1–2 hours | $200–$600 |
+| Large | 2–4 hours | $600–$1,500 |
+| Infrastructure | Multiple sessions | $1,500–$5,000 + title/naming rights |
+
+Tier 2 contracts — requiring licenses and paying 3–5× more — unlock once players reach job levels 20–30.
+
+---
+
+### How to Claim a Contract
+
+1. Visit the **Town Hall bulletin board** in-game
+2. Read the contract book for the requirements
+3. Complete the task (deliver items to the labeled chest, or build on-site)
+4. **Message an admin** to verify completion and receive your payout via `/pay`
+
+Construction contracts (C-08, C-09, C-10) require staff inspection before payout. All other contracts are verified by chest delivery.
+
+<InfoCallout type="warning" title="C-11 Mob Clearance">
+  The Mine Clearance contract requires staff to be present or nearby for verification — kills must happen near the mine entrance, not in a distant mob farm.
+</InfoCallout>
