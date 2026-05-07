@@ -12,19 +12,38 @@ import InfoCallout from '../components/InfoCallout.astro';
 
 ## Pre-Launch
 
-### 2026-05-06 — Initial Setup
+### 2026-05-07 — Economy System, Laws, Quests & Enchants
 
-- **Added**: Core server infrastructure and plugin configuration
-- **Added**: Town Hall layout and initial NPC placements
-- **Added**: Starter job system (Miner, Farmer, Builder, Merchant, Industrialist, Civil Service)
-- **Added**: Public contracts board (v0.1) with basic material contracts
-- **Added**: Market district plot layout and initial shop assignments
-- **Added**: Resource world (resets weekly)
-- **Added**: Skill tree framework (passive buffs active, major unlocks in progress)
-- **Added**: Land claim system with starter and commercial zones
-- **Added**: Basic law system (fines, jail time)
-- **Balance**: Starter job pay rates subject to adjustment before launch
-- **Notes**: Server IP and whitelist to be announced.
+**Economy & Jobs**
+- **Updated**: Jobs Reborn leveling equation flattened to linear progression across all 6 jobs — early levels easier, curve consistent
+- **Updated**: Miner XP rates increased ×1.4 — mining now levels at the intended pace
+- **Updated**: Miner level-up rewards wired — titles and profession access unlock automatically at key levels (L10, L15, L20, L21, L30, L35, L40, L45, L50)
+- **Added**: Hunter kill payouts reduced ~60%, Fisher payouts reduced ~40% — both now on target with income model
+
+**Enchants & Items**
+- **Added**: Soulbound enchantment — admin-only, applied to event rewards, prestige gear, and special tools. Items with Soulbound are kept on death.
+- **Added**: Mending blocked server-wide — repair progression is intentional, Mending shortcuts it
+
+**Content**
+- **Added**: Starter quest chain — 6 quests covering all four income sources, rewards iron tools, job kit, city stipends, and first week's rent
+- **Added**: Public contracts board — 13 launch contracts across all 6 jobs with stated payouts and deadlines
+
+**Website**
+- **Added**: Laws page — full fine schedule, restitution system, jail, license suspension, appeal process
+- **Updated**: Economy page — 4-source income model, Three-Price Rule, Jobs vs Licenses breakdown
+- **Updated**: Skill Trees page — all 6 jobs with correct titles, level-by-level unlocks, and license chains
+- **Updated**: Getting Started page — correct job list, `/jobs` commands, income model overview
+- **Fixed**: Jobs previously listed as Merchant / Industrialist / Civil Service — corrected to the actual six: Miner, Farmer, Builder, Woodcutter, Hunter, Fisher
+
+---
+
+### 2026-05-06 — Core Plugin Setup
+
+- **Added**: Server infrastructure — Paper 1.21.8, LuckPerms, EssentialsX, Vault, CoreProtect, WorldGuard
+- **Added**: Economy plugins — ChestShop, EconomyShopGUI, Jobs Reborn (6 jobs configured)
+- **Added**: Starting balance set to $50, max active jobs set to 3
+- **Added**: WorldGuard global safety flags configured
+- **Notes**: Server is in development. World not yet built. No players.
 
 ---
 
