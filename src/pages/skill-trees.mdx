@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/DocsLayout.astro
 title: Skill Trees & Jobs
-description: Profession paths, job progression, unlocks, and titles in New Prosperity.
+description: Profession paths, job progression, and skill unlocks in New Prosperity.
 ---
 
 import InfoCallout from '../components/InfoCallout.astro';
@@ -10,20 +10,16 @@ import InfoCallout from '../components/InfoCallout.astro';
 
 New Prosperity has two connected progression systems: **Jobs** and **Skill Trees**.
 
-- **Jobs** earn wages, have levels (1–50), and grant titles and profession unlocks as you level up. You join them via `/jobs join`. They consume a job slot.
-- **Skill Trees** are planned buff and unlock paths — additional layers on top of your job progression. Not yet implemented at launch.
+- **Jobs** earn wages, have levels (1–50), and grant titles as you level up. Join via `/jobs join`.
+- **Skill Trees** are a live perk system tied to your job level. Open the GUI with `/skills` to see and unlock nodes. Every job has 10 nodes; there are also 10 Global nodes available to anyone.
 
-<InfoCallout type="warning" title="Under Construction">
-  Skill tree buff values and specific unlock costs are subject to change before launch. The job progression system is active — the skill tree buff layer is planned for after the economy stabilizes.
-</InfoCallout>
+You do not need to buy anything to unlock skill nodes — they cost skill points earned by leveling your job.
 
 ## Job Slots
 
 | Slot | Cost |
 |---|---|
-| Slot 1 | Free |
-| Slot 2 | Free |
-| Slot 3 | ~$500 early unlock |
+| Slots 1–3 | Free |
 | Slot 4 | $10,000 career expansion permit |
 | Slot 5 | Prestige / late-season unlock |
 
@@ -33,22 +29,32 @@ Both paths are valid — the system is designed so neither feels wrong.
 
 | Path | What You Get |
 |---|---|
-| **Specialize** (go deep in one job) | Stronger wage scaling, better titles, better contracts, better tool access, late-game unlocks |
+| **Specialize** (go deep in one job) | Stronger wage scaling, better titles, better contracts, stronger skill perks |
 | **Diversify** (level multiple jobs) | More business models, more income sources, more flexibility |
 
 A level 50 Miner is the best miner on the server. A player with Miner + Builder + Woodcutter has more options. Pick based on how you want to play.
 
 ---
 
+## Global Skills
+
+Global skills are available to all players regardless of job. They unlock based on your highest job level.
+
+| Level | Skill | Effect |
+|---|---|---|
+| 20 | **Sure Footing** | -10% fall damage. Stacks with Steady Hand (Builder). |
+
+---
+
 ## The 6 Jobs
 
-Each job has 50 levels, takes ~50 hours to max, and grants a +1% income bonus per level (max +50% at level 50 applied to job wage). Every 10 levels unlocks a new chat title. Every 5 levels gives a real perk or access unlock.
+Each job has 50 levels, takes ~50 hours to max, and grants a +1% income bonus per level (max +50% at level 50, applied to job wage). Every 10 levels unlocks a new chat title.
 
 ---
 
 ## Miner
 
-**Focus**: Resource extraction, underground operations, tools
+**Focus**: Resource extraction, underground operations, high-tier tools
 
 | Level | Title |
 |---|---|
@@ -59,24 +65,26 @@ Each job has 50 levels, takes ~50 hours to max, and grants a +1% income bonus pe
 | 40–49 | Grand Master Miner |
 | 50 | Legendary Miner |
 
-### Key Unlocks
-| Level | Unlock |
-|---|---|
-| 7 | Basic Mining Contracts |
-| 15 | Mining License access |
-| 21 | D1 Drill rental access |
-| 35 | Efficiency VII crafting path |
-| 45 | Fortune IV access path |
-| 50 | Prestige — Fortune V research, D3 drill eligibility |
+### Skill Nodes
+| Level | Skill | Effect |
+|---|---|---|
+| 5 | **Headlamp I** | Night vision while underground below Y 40 |
+| 10 | **Portable Smelting** | 15% chance to auto-smelt iron, gold, or copper ore on break |
+| 15 | **Headlamp II** | Extends night vision to Y 60 |
+| 21+ | **Drill Readiness I / II / III** | Unlocks purchase eligibility for D1, D2, and D3 drills |
+| 25 | **Ore Sorter** | Place a named blast furnace. Right-click it holding ingots, ores, or gems to bulk-compress all into storage blocks at once. |
+| 35+ | **Efficiency VII Path** | Access to the Efficiency VII crafting progression |
+| 45+ | **Fortune IV / V Access** | Access path to Fortune IV and V tools |
 
-### Related Licenses
-Mining License → D1 Drill Permit → Industrial Forge Access → Efficiency VII Permit → Fortune IV Permit → Fortune V (prestige)
+<InfoCallout type="info" title="Drills">
+  Drills are purchased with in-game money — no separate license needed. Use `/drillShop` to buy one. D1 costs $1,200, D2 costs $2,500, D3 costs $5,000. Drills are only permitted in the resource world.
+</InfoCallout>
 
 ---
 
 ## Farmer
 
-**Focus**: Food production, crop optimization, biofuel supply
+**Focus**: Food production, crop optimization, bulk harvest
 
 | Level | Title |
 |---|---|
@@ -87,23 +95,23 @@ Mining License → D1 Drill Permit → Industrial Forge Access → Efficiency VI
 | 40–49 | Grand Master Farmer |
 | 50 | Legendary Farmer |
 
-### Key Unlocks
-| Level | Unlock |
-|---|---|
-| 7 | Basic Crop Contracts |
-| 15 | Farming License access |
-| 25 | Tractor rental access |
-| 40 | Biofuel production |
-| 50 | Premium crop contracts, large farm permits |
+### Skill Nodes
+| Level | Skill | Effect |
+|---|---|---|
+| 5 | **Green Thumb** | 20% extra seed drop on crop harvest (wheat, carrots, potatoes, beetroot) |
+| 15+ | **Tractor Ready** | Unlocks tractor purchase eligibility |
+| 25 | **Crop Packer** | Place a named smoker. Right-click it holding crops to bulk-compress all into storage blocks at once. |
+| 40+ | **Biofuel Basics** | Biofuel production access (future phase) |
 
-### Related Licenses
-Farming License → Greenhouse Permit → Tractor Operation License → Biofuel Processing Permit → Agricultural Export Permit
+<InfoCallout type="info" title="Tractors">
+  Tractors are purchased with in-game money. Use `/tractorShop` to buy one. Yellow Tractor $800 · Red Tractor $1,800 · Green Tractor $3,200. Tractors are only permitted on approved agricultural plots.
+</InfoCallout>
 
 ---
 
 ## Builder
 
-**Focus**: Construction, public works, architectural licensing
+**Focus**: Construction, public works, architectural projects
 
 | Level | Title |
 |---|---|
@@ -114,23 +122,19 @@ Farming License → Greenhouse Permit → Tractor Operation License → Biofuel 
 | 40–49 | Grand Master Builder |
 | 50 | Legendary Builder |
 
-### Key Unlocks
-| Level | Unlock |
-|---|---|
-| 7 | Basic Civic Build Contracts |
-| 20 | Architect License access |
-| 25 | Public works contract eligibility |
-| 35 | Commercial Construction License |
-| 50 | Major landmark contracts, naming rights |
-
-### Related Licenses
-Architect License → Public Works Permit → Commercial Construction License → City Development Permit
+### Skill Nodes
+| Level | Skill | Effect |
+|---|---|---|
+| 5 | **Steady Hand** | -15% fall damage. Stacks with Sure Footing. |
+| 10 | **Block Recovery** | 20% chance for fragile blocks (glass, sea lanterns, flower pots) to drop themselves instead of breaking |
+| 20 | **Restoration Expert** | Upgrades Block Recovery to 30% chance |
+| 30 | **Builder Cane** | Equip a named end rod in your offhand to gain +2 block interaction reach. Admin gives via `/buildercane`. |
 
 ---
 
 ## Woodcutter
 
-**Focus**: Lumber supply, forestry, sawmill operations
+**Focus**: Lumber supply, forestry, tree operations
 
 | Level | Title |
 |---|---|
@@ -141,24 +145,18 @@ Architect License → Public Works Permit → Commercial Construction License �
 | 40–49 | Grand Master Woodcutter |
 | 50 | Legendary Woodcutter |
 
-### Key Unlocks
-| Level | Unlock |
-|---|---|
-| 7 | Basic Lumber Contracts |
-| 15 | Timber License access |
-| 25 | Sawmill License access |
-| 30 | Reforestation Contracts |
-| 40 | Treated Lumber (required for high-tier Builder contracts) |
-| 50 | Forestry estate contracts, rare wood permits |
-
-### Related Licenses
-Timber License → Sawmill License → Lumber Export Permit → Industrial Lumber Permit
+### Skill Nodes
+| Level | Skill | Effect |
+|---|---|---|
+| 10 | **Replanter** | 10% extra sapling drop when breaking leaf blocks |
+| 20 | **Tree Feller** | Breaking a log automatically fells the entire trunk above it (up to 20 logs straight up) |
+| 35 | **Axe Care** | 30% chance to cancel durability loss on any axe hit |
 
 ---
 
 ## Hunter
 
-**Focus**: Combat, mob drops, bounties, contracts
+**Focus**: Combat, mob drops, bounties, elite contracts
 
 | Level | Title |
 |---|---|
@@ -169,18 +167,14 @@ Timber License → Sawmill License → Lumber Export Permit → Industrial Lumbe
 | 40–49 | Grand Master Hunter |
 | 50 | Legendary Hunter |
 
-### Key Unlocks
-| Level | Unlock |
-|---|---|
-| 7 | Basic Hunting Contracts |
-| 10 | Hunting License access |
-| 25 | Monster Trophy System |
-| 30 | Elite Mob Contracts |
-| 40 | Boss Hunt Permits |
-| 50 | Legendary Hunt Contracts, prestige rewards |
-
-### Related Licenses
-Hunting License → Bounty Permit → Wilderness Trapping Permit → Monster Slaying Contract Access
+### Skill Nodes
+| Level | Skill | Effect |
+|---|---|---|
+| 5 | **Tracker's Eye** | 20% bonus drop from zombies (rotten flesh), skeletons (bone), and creepers (gunpowder) |
+| 10 | **Field Dressing** | Bonus leather from cows, horses, and pigs; bonus bone from skeletons; bonus string from spiders |
+| 15 | **Trail Rations** | 25% chance for a free cooked meat drop when killing chickens, cows, or pigs |
+| 20 | **Arrow Recovery** | 20% chance to recover an arrow after killing a mob with a bow |
+| 40 | **Beast Lore** | -15% damage taken from zombies, skeletons, spiders, creepers, and cave spiders |
 
 ---
 
@@ -197,18 +191,11 @@ Hunting License → Bounty Permit → Wilderness Trapping Permit → Monster Sla
 | 40–49 | Grand Master Fisher |
 | 50 | Legendary Fisher |
 
-### Key Unlocks
-| Level | Unlock |
-|---|---|
-| 7 | Basic Fishing Contracts |
-| 10 | Fishing License access |
-| 25 | Bait System — improves rare catch chance |
-| 30 | Ocean Salvage Contracts |
-| 40 | Rare Catch / Treasure table access |
-| 50 | Legendary Fishing Events, prestige catches |
-
-### Related Licenses
-Fishing License → Ocean Fishing Permit → Commercial Fishing Permit → Rare Fish Export License
+### Skill Nodes
+| Level | Skill | Effect |
+|---|---|---|
+| 10 | **Sea Legs** | -40% drowning damage |
+| 20 | **Rod Care** | 30% chance to cancel durability loss on a fishing rod cast |
 
 ---
 
@@ -217,9 +204,9 @@ Fishing License → Ocean Fishing Permit → Commercial Fishing Permit → Rare 
 When you reach level 50 in a job:
 
 - You earn **Prestige** status in that profession
-- You receive a unique permanent chat title
-- You gain access to late-game systems exclusive to prestige players
+- You receive the Legendary title for that job
+- You gain access to late-game systems and the highest-tier contracts
 - You get a named contribution plaque in your profession's district
-- You become eligible for the highest-tier contracts on the server
+- You are eligible to fund server development projects
 
 Reaching Prestige takes real in-game time and investment. It is the late-game.
