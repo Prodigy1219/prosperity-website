@@ -12,6 +12,32 @@ import InfoCallout from '../components/InfoCallout.astro';
 
 ## Pre-Launch
 
+### 2026-05-12 — EvenMoreFish, RoseStacker, Fisher skill expansion
+
+**Fishing**
+- **Added**: EvenMoreFish plugin — custom fish with rarity tiers (Common / Rare / Epic / Legendary), biome-specific catches, and direct Vault payouts
+- **Custom fish are resource-world only.** Main world fishing returns normal vanilla fish (a designated `fishing_pier` region will open later in the main world for variety)
+- **Database** enabled for fish stats and `/emf top` leaderboards
+- **Competitions** disabled at launch — will be enabled once player count justifies them
+- **Jobs Reborn** Fisher wages still paid on every catch (EMF and Jobs both fire on the same event)
+
+**Fisher Skill Tree expanded with EMF integration**
+- **L5 Steady Cast** — +5% Fisher Jobs wage on every catch (new)
+- **L35 Dockhand** — +10% Fisher Jobs wage on every catch (stacks with Steady Cast) (new)
+- **L40 Deepwater Gear** — 15% chance to upgrade a Common catch to Rare in ocean biomes (new)
+- **L45 Treasure Rights** — 10% chance to upgrade a Common/Rare catch to Epic (new)
+- **L50 Legendary Angler** — 5% chance to upgrade any catch to Legendary (new)
+- L10/L25/L30 (Fish Packer / Bait Saver / Cooler Box) remain placeholders for future systems
+
+**Performance**
+- **Added**: RoseStacker — dropped items now merge automatically to reduce entity load. Configured items-only (no mob or block stacking). Jobs Reborn payouts unaffected.
+
+**Other**
+- Saddle removed from the admin shop's material buyback list (was prone to villager-rolling exploits). Players can still trade saddles via player ChestShops.
+- Architecture document published internally — full plugin stack + interaction map.
+
+---
+
 ### 2026-05-08 — Skill Trees Live, Vehicles, World System & Site Cleanup
 
 **Skill Trees**
