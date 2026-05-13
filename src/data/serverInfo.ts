@@ -6,5 +6,5 @@ export const serverInfo = {
   status: 'Under Construction',
   whitelist: 'Invite Only — Under Construction',
   discord: 'https://discord.gg/wuKsJ7m6Fm',
-  siteUrl: 'https://new-prosperity.vercel.app',
+  siteUrl: 'https://prosperitysmp.vercel.app',
 };
