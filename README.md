@@ -1,6 +1,6 @@
-# New Prosperity — Website
+# ProsperitySMP — Website
 
-Public website for the New Prosperity Minecraft economy server.
+Public website for the ProsperitySMP Minecraft economy server.
 
 Built with Astro + Tailwind CSS. Deployed to Vercel.
 
