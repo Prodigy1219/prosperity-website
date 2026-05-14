@@ -12,6 +12,14 @@ import InfoCallout from '../components/InfoCallout.astro';
 
 ## Pre-Launch
 
+### 2026-05-14 — Plot Plugin Swap: AreaShop → AdvancedRegionMarket
+
+The plot purchase/rent system was migrated from AreaShop 2.6.0 (last released 2019) to **AdvancedRegionMarket (ARM)**, an actively-maintained alternative. AreaShop's age was causing a `BlockPhysicsEvent` NullPointerException on Paper 1.21.8 that was interfering with ChestShop sign placement. ARM uses modern Paper event handlers and integrates the same way (WorldGuard region-backed signs, automatic membership transfer on purchase).
+
+No player-visible change — same buy/rent flow, same per-plot ownership model. Sign tags are slightly different (`[buy]` / `[rent]` instead of `[asbuy]` / `[asrent]`).
+
+---
+
 ### 2026-05-13 — Drill and Tractor World Rules Updated
 
 **Drills** are now permitted in the **resource world, nether, and end**. Still not allowed in the main world.
