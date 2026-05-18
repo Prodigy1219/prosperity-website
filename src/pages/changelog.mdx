@@ -12,6 +12,34 @@ import InfoCallout from '../components/InfoCallout.astro';
 
 ## Pre-Launch
 
+### 2026-05-18 — Economy v2 Rebalance + Prestige System + Job Stipends
+
+Major economy overhaul ahead of launch. The full design lives in the internal economy-v2 doc; player-facing highlights:
+
+**Anchor price rebalance.** Old prices implied diamond ≈ $100. With drills landing on the server, that math broke. v2 anchors are now:
+- Diamond: $20 admin floor (was $35–50 in v1)
+- Iron ingot: $0.40 admin floor (was $0.63)
+- Gold ingot: $1.00 (was inverted below iron — fixed)
+- Emerald: $10 (was wrongly above diamond)
+- Ancient debris: $200 (was $25)
+- Netherite ingot: $1,000
+
+All admin-shop sell prices updated to match. The server still **never sells** diamonds, emeralds, netherite, ancient debris, or enchanted items — those stay player-market only.
+
+**Prestige system locked in.** When you hit L50 in a job, you can choose to Prestige — level resets to 0, you gain permanent +5%/+10%/+15%/+20%/+25% income bonuses across tiers P1-P5, and you earn a unique Master Item per tier (Master Drill, Master Harvester, etc.). Master Items are Soulbound (don't drop on death) but tradeable; they retain the original owner's name forever as engraved provenance. Each job can be prestiged independently.
+
+**Job stipends added.** Random bonus drops while doing your career's work — 5% chance of gunpowder per block mined as Miner, 7% bone meal per crop harvested as Farmer, 10% arrows per monster kill as Hunter, etc. Helps supply chains (gunpowder for TNT/fireworks/beacons, bone meal for farms) and boosts new-player income by 10-15%.
+
+**Drill + Tractor migration plan.** The Vehicles plugin is being replaced pre-launch with a custom Skript-based system. Same 3 tiers (T1/T2/T3), same 3x3 AOE mining and farming, but the new tools are pickaxes and hoes rather than rideable vehicles. Reasons: Bedrock compatibility (Geyser players couldn't see the vehicle models), performance (Vehicles plugin had documented TPS overhead on Tractor schedulers), and elimination of a chest-rename exploit. Tools are repairable via anvil + matching ingot. Tier prices: T1 $1,500 / T2 $4,000 / T3 $8,000 for drills; $1,000 / $2,500 / $5,000 for harvesters.
+
+**Contract Board rewards re-audited.** All 12 automated `/deliver` contracts had their payouts recalibrated to v2 anchors. Stone supply dropped from $80→$50, iron from $250→$200, diamond from $400→$200. See [Quests & Contracts](/contracts) for the full updated board.
+
+**Double XP & double payout weekends.** Periodic events where Jobs Reborn wages and/or XP are doubled. Announced in Discord. Roughly one of each per month, alternating weekends.
+
+**Income expectations updated.** New-player hand-mining income now targets $300–$400/hr (was implied $125–$175 in v1). L50+T3 drill targets $1,200–$1,400/hr. L50 P5 (maxed prestige) targets $1,800–$2,000/hr. See [Economy Guide](/economy) for the full table.
+
+---
+
 ### 2026-05-14 — Plot Plugin Swap: AreaShop → AdvancedRegionMarket
 
 The plot purchase/rent system was migrated from AreaShop 2.6.0 (last released 2019) to **AdvancedRegionMarket (ARM)**, an actively-maintained alternative. AreaShop's age was causing a `BlockPhysicsEvent` NullPointerException on Paper 1.21.8 that was interfering with ChestShop sign placement. ARM uses modern Paper event handlers and integrates the same way (WorldGuard region-backed signs, automatic membership transfer on purchase).
