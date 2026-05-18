@@ -12,6 +12,16 @@ Welcome to ProsperitySMP. Your first goal is simple: learn the town, earn your f
   ProsperitySMP opens on **May 22, 2026**. Economy values, job rewards, and progression requirements may still change before launch.
 </InfoCallout>
 
+## How to Connect
+
+Server addresses are **announced on launch day (May 22, 2026)** in our Discord. We're keeping the IP private during pre-launch QA to coordinate a clean public reveal.
+
+**Cross-platform play is supported** via Geyser + Floodgate — Java (1.21.8) and Bedrock (mobile / Win10 / Switch / Xbox) players share the same world, economy, and chat.
+
+<InfoCallout type="info" title="Bedrock players — heads up">
+  A few interfaces work differently on Bedrock. Use `/jobs join Miner` instead of `/jobs browse`, and shop with `/buy` / `/sell` text commands instead of the `/shop` GUI. See the [full Bedrock compatibility notes](#bedrock-specific-notes) below.
+</InfoCallout>
+
 ## First 30 Minutes
 
 1. **Read the rules.** Visit Town Hall or read the [full rules](/rules) before doing anything else.
@@ -137,4 +147,31 @@ If you invite a friend who sticks around, the city pays you both. It's a thank-y
 - Launch bonus applies if the **invitee joins between May 22 and June 21, 2026**, even if their 2-hour playtime completes after June 21
 - Rewards are processed manually at launch — there may be a short delay (usually under a day) while staff verifies. We're building an automated version for post-launch.
 
-Connect with a vanilla Java 1.21.x client. The server handles the rest.
+## Bedrock-Specific Notes
+
+ProsperitySMP supports Bedrock players via Geyser. Most features work identically, but a handful of GUI-heavy interfaces translate poorly through the protocol bridge. Here's what to expect:
+
+| Feature | Java | Bedrock |
+|---|---|---|
+| Address | Announced May 22 in Discord | Announced May 22 in Discord (port `19132`) |
+| `/shop` GUI | ✅ Browsable inventory | ⚠️ Doesn't render — use `/buy <item> [amount]` and `/sell <item> [amount]` instead |
+| `/jobs browse` GUI | ✅ Browsable | ⚠️ Steve-head icons block clicking — use `/jobs join Miner` directly |
+| Side scoreboard | ✅ Clean | ⚠️ Shows red numbers next to each line (Bedrock protocol limitation, ignore them) |
+| Proximity voice chat | ✅ Works | ❌ Java-only plugin, Bedrock cannot use SVC |
+| `[item]` hover tags in chat | ✅ Works | ⚠️ Hover preview may not render |
+| Tab/player list | ✅ Tab key | ℹ️ Open via pause menu |
+
+**Bedrock text-shop commands:**
+- `/buy <item> [amount]` — purchase from admin shop
+- `/sell <item> [amount]` — sell to admin shop (defaults to all if no amount)
+- `/sellhand [amount]` — sell what's in your hand
+- `/buylist` — see everything the admin shop sells
+- `/sellprices [search]` — search prices, e.g. `/sellprices log`
+
+These work for Java too — Bedrock players just rely on them more.
+
+**Cross-platform account linking:** if you have both a Java and Bedrock account, link them at https://link.geysermc.org. After linking, joining from Bedrock treats you as your Java identity (same balance, same job levels, same plots).
+
+---
+
+Connect, claim your starter kit, find a job — see you in town.
