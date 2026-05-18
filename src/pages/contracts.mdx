@@ -7,7 +7,7 @@ description: New player quests and public contracts on ProsperitySMP.
 import InfoCallout from '../components/InfoCallout.astro';
 
 <InfoCallout type="info" title="Two Systems, One Page">
-  **Starter Quests** are a one-time onboarding chain for new players — city-funded rewards to help you find your footing. **Public Contracts** are ongoing jobs posted by the Town Council that any player can complete for money.
+  **Starter Quests** are a one-time onboarding chain for new players — city-funded rewards to help you find your footing. **Public Contracts** are ongoing jobs posted by the Town Council that any player can complete for money, on demand, all the time.
 </InfoCallout>
 
 ## Starter Quests — "First Week in ProsperitySMP"
@@ -65,7 +65,7 @@ The admin shop is the **price floor**, not the target. Selling to other players 
 
 ### Quest 5 — Take a Contract
 
-**Objective:** Complete one public contract from the Town Hall bulletin board.
+**Objective:** Complete one public contract using the `/deliver` command (see the next section).
 
 **Reward:** The stated contract payout + $25 city completion bonus + 1× City Commendation
 
@@ -99,42 +99,68 @@ By the end of the chain you should have $300–$500+, a job, iron tools, and a h
 
 ---
 
-## Public Contracts
+## Public Contracts — The Contract Board
 
-Public contracts are city-issued jobs posted at Town Hall. Complete them for money on top of your regular job income. The board is refreshed weekly — fulfilled contracts are reposted within 24–48 hours.
+The Town Hall **Contract Board** has 12 standing contracts you can fulfill any time. Bring the requested items, run `/deliver <id>`, and the city pays you on the spot. No admin verification needed — it's all automated.
 
-<InfoCallout type="info" title="Contracts are bonus income">
-  Contracts pay slightly above the admin shop buy price — better than selling to the floor, but the real economy is the player market. Contracts give you goals and remove resources from the economy.
+<InfoCallout type="info" title="Contracts are bonus income, not your main income">
+  Contracts pay above the admin floor — better than dumping to the server — but below player market peaks. They give you steady supplementary income with daily caps to prevent farming. Use them between bigger projects, or chain them while leveling.
 </InfoCallout>
 
-### Launch Board — Season 0 Opening Contracts
+### Live Contract Board — Season 0 Launch
 
-The following contracts are live from Day 1. At least 8–10 are active at all times, covering at least four of the six jobs.
-
-#### Resource Contracts
-
-| ID | Contract | Required | Payout | Max Fills |
+| ID | Hand-in | Reward | Cooldown | Daily Cap |
 |---|---|---|---|---|
-| C-01 | Stone Supply Drive | 512× cobblestone or smooth stone | $80 | 3/week |
-| C-02 | Iron Ore Procurement | 64× iron ingots | $160 | 2/week |
-| C-03 | Lumber Order: Oak | 128× oak logs | $90 | 3/week |
-| C-04 | Lumber Order: Spruce | 64× spruce logs | $50 | 2/week |
+| `stone64` | 64× stone | $50 | 30 min | 10/day |
+| `cobble128` | 128× cobblestone | $80 | 30 min | 10/day |
+| `oak_log64` | 64× oak logs | $100 | 30 min | 6/day |
+| `coal64` | 64× coal | $120 | 30 min | 8/day |
+| `wheat64` | 64× wheat | $80 | 30 min | 8/day |
+| `white_wool64` | 64× white wool | $100 | 30 min | 6/day |
+| `torch64` | 64× torches | $60 | 30 min | 10/day |
+| `bread32` | 32× bread | $100 | 60 min | 5/day |
+| `cod16` | 16× cooked cod | $80 | 60 min | 5/day |
+| `salmon16` | 16× cooked salmon | $100 | 60 min | 5/day |
+| `iron32` | 32× iron ingots | $200 | 60 min | 4/day |
+| `diamond4` | 4× diamonds | $200 | 120 min | 3/day |
 
-#### Food Contracts
+### How to Use the Contract Board
 
-| ID | Contract | Required | Payout | Max Fills |
-|---|---|---|---|---|
-| C-05 | Bread for the District | 128× bread | $70 | 2/week |
-| C-06 | Carrot and Potato Supply | 64× carrots + 64× potatoes | $90 | 2/week |
-| C-07 | Fish Market Opening Stock | 32× raw cod or salmon | $65 | 2/week |
+1. Visit the **Contract Board** outside Town Hall
+2. Read the sign for the contract you want
+3. Make sure the items are in your inventory
+4. Run `/deliver <id>` — for example, `/deliver coal64`
+5. The city takes the items and pays you instantly
 
-#### Construction Contracts
+Other useful commands:
+- `/contracts` — list all contracts available
+- `/contractinfo <id>` — show full details for one contract (including your cooldown and daily count)
 
-| ID | Contract | Required | Payout | Max Fills |
-|---|---|---|---|---|
-| C-08 | Path Paving: Market District | ~200 blocks, staff-directed | $200 | 1 (specific build) |
-| C-09 | Agricultural District Fencing | ~300 fence blocks, materials provided | $175 | 1 (specific build) |
-| C-10 | Town Signage | 8 signs at staff-marked posts, signs provided | $80 | 1 (specific build) |
+### Maximum Daily Income from the Board
+
+If you fully clear every contract every day, the daily cap totals:
+
+| Tier | Total contracts available | Theoretical max payout |
+|---|---|---|
+| Cobble/Stone (high cap) | 20 fills | $1,300 |
+| Wood/Coal/Wool/Torch | 30 fills | $2,800 |
+| Food | 15 fills | $1,400 |
+| Iron/Diamond (high value) | 7 fills | $1,400 |
+| **Total daily cap** | **~72 fills** | **~$6,900/day** |
+
+This is a hard ceiling. The board is for steady income, not unlimited grinding.
+
+---
+
+## Construction Contracts — Staff-Verified
+
+Bigger physical builds — paths, fences, signage — are posted separately and verified by staff after completion.
+
+| ID | Contract | Required | Payout |
+|---|---|---|---|
+| C-08 | Path Paving: Market District | ~200 blocks, staff-directed | $200 |
+| C-09 | Agricultural District Fencing | ~300 fence blocks, materials provided | $175 |
+| C-10 | Town Signage | 8 signs at staff-marked posts, signs provided | $80 |
 
 <InfoCallout type="info" title="For Skilled Builders: Government Commissions">
   The contracts above are the **entry tier** for the Builder career. Players who consistently deliver quality work on these smaller commissions are invited to bid on **government commissions** — major civic landmarks, expansion districts, and the planned **dungeon zone on the mountain**. These are negotiated directly with the server owner. Pay is per-project and scales with scope — $10,000+ is realistic for high-skill builds.
@@ -142,39 +168,17 @@ The following contracts are live from Day 1. At least 8–10 are active at all t
   **City contracts include materials** — you're paid for labor and design. Private builds (for other players, on their plots) are a separate market and materials are between you and the client.
 </InfoCallout>
 
-#### Hunting Contracts
-
-| ID | Contract | Required | Payout | Max Fills |
-|---|---|---|---|---|
-| C-11 | Hostile Mob Clearance: Mines | 20 hostile mobs near mine entrance | $100 | 3/week |
-| C-12 | Leather Supply | 32× leather | $80 | 2/week |
-| C-13 | Gunpowder Collection | 16× gunpowder (creeper drops) | $110 | 2/week |
-
 ---
 
-### Contract Tiers
+## Contract Tiers
 
 | Tier | Time Investment | Payout Range |
 |---|---|---|
-| Beginner | ~30 min | $50–$200 |
-| Standard | 1–2 hours | $200–$600 |
-| Large | 2–4 hours | $600–$1,500 |
+| Contract Board (automated) | A few minutes per `/deliver` | $50–$200 per fill |
+| Beginner Construction | ~30 min | $80–$200 |
+| Standard Construction | 1–2 hours | $200–$600 |
+| Large Construction | 2–4 hours | $600–$1,500 |
 | Infrastructure | Multiple sessions | $1,500–$5,000 + title/naming rights |
 | **Government Commission** *(Builder, invite-only)* | Multi-session, owner-directed | **$10,000+ negotiated** |
 
-Tier 2 contracts — paying 3–5× more — unlock once players reach job levels 20–30. Government commissions are a Builder-specific track — the server owner invites high-quality builders directly for projects like the dungeon zone, major civic landmarks, and city district expansions.
-
----
-
-### How to Claim a Contract
-
-1. Visit the **Town Hall bulletin board** in-game
-2. Read the contract book for the requirements
-3. Complete the task (deliver items to the labeled chest, or build on-site)
-4. **Message an admin** to verify completion and receive your payout via `/pay`
-
-Construction contracts (C-08, C-09, C-10) require staff inspection before payout. All other contracts are verified by chest delivery.
-
-<InfoCallout type="warning" title="C-11 Mob Clearance">
-  The Mine Clearance contract requires staff to be present or nearby for verification — kills must happen near the mine entrance, not in a distant mob farm.
-</InfoCallout>
+Tier 2+ contracts will be added over time as the board matures. Government commissions are a Builder-specific track — the server owner invites high-quality builders directly.

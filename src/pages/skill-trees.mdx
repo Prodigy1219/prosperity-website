@@ -77,7 +77,15 @@ Each job has 50 levels, takes ~50 hours to max, and grants a +1% income bonus pe
 | 45+ | **Fortune IV / V Access** | Access path to Fortune IV and V tools |
 
 <InfoCallout type="info" title="Drills">
-  Drills are purchased with in-game money — no separate license needed. Use `/drillShop` to buy one. D1 costs $1,200, D2 costs $2,500, D3 costs $5,000. Drills are permitted in the resource world, nether, and end. Not allowed in the main world.
+  Drills are 3x3 AOE-mining pickaxes purchased with in-game money. Three tiers gated by Miner level:
+
+  | Tier | Tool | Price | Level Gate |
+  |---|---|---|---|
+  | T1 Compact Drill | Iron pickaxe, Eff III, Unbreaking III, Soulbound | $1,500 | L15 |
+  | T2 Industrial Drill | Diamond pickaxe + Fortune I | $4,000 | L30 |
+  | T3 Apex Drill | Netherite + Fortune II + Telekinesis | $8,000 | L45 |
+
+  Drills mine a 3×3 face at vanilla speed (scaled by Efficiency level) and are repairable via anvil + matching ingot. Use `/buydrill <tier>`. Permitted in the resource world, nether, and end. Not allowed in the main world.
 </InfoCallout>
 
 ---
@@ -99,12 +107,12 @@ Each job has 50 levels, takes ~50 hours to max, and grants a +1% income bonus pe
 | Level | Skill | Effect |
 |---|---|---|
 | 5 | **Green Thumb** | 20% extra seed drop on crop harvest (wheat, carrots, potatoes, beetroot) |
-| 15+ | **Tractor Ready** | Unlocks tractor purchase eligibility |
+| 15+ | **Harvester Ready** | Unlocks T1 Compact Harvester purchase (T2 at L30, T3 at L45) |
 | 25 | **Crop Packer** | Place a named smoker. Right-click it holding crops to bulk-compress all into storage blocks at once. |
 | 40+ | **Biofuel Basics** | Biofuel production access (future phase) |
 
-<InfoCallout type="info" title="Tractors">
-  Tractors are purchased with in-game money. Use `/tractorShop` to buy one. Yellow Tractor $800 · Red Tractor $1,800 · Green Tractor $3,200. Tractors work in any world. In the main world they only function on land you own (a plot you've bought or rented).
+<InfoCallout type="info" title="Harvesters">
+  Harvesters are 3x3 AOE-farming hoes with auto-replant. Three tiers gated by Farmer level: T1 Compact Harvester (iron hoe + Replenish) $1,000 at L15 · T2 Industrial Harvester (diamond hoe + Replenish) $2,500 at L30 · T3 Apex Harvester (netherite + Replenish + Telekinesis) $5,000 at L45. Use `/buyharvester <tier>`. Harvesters work in any world. In the main world they only function on land you own.
 </InfoCallout>
 
 ---
@@ -246,12 +254,53 @@ A skilled builder who can deliver consistent quality usually ends up with **both
 
 ## Prestige
 
-When you reach level 50 in a job:
+When you reach level 50 in a job, you can **Prestige** — your level resets to 0 in exchange for permanent passive bonuses and a unique **Master Item** for that career.
 
-- You earn **Prestige** status in that profession
-- You receive the Legendary title for that job
-- You gain access to late-game systems and the highest-tier contracts
-- You get a named contribution plaque in your profession's district
-- You are eligible to fund server development projects
+Prestige is the largest single money sink in the game. Each tier costs significantly more than the last, and you can prestige independently in every job.
 
-Reaching Prestige takes real in-game time and investment. It is the late-game.
+### Prestige Costs
+
+| Tier | Cost (per tier, per job) | Reward |
+|---|---|---|
+| **P1** | $25,000 + 10 diamond blocks + 64 emeralds | +5% income, +10% XP, Master Item I |
+| **P2** | $75,000 + 30 diamond blocks + 1 netherite block | +10% income (cumulative), +20% XP, Master Item II |
+| **P3** | $200,000 + 80 diamond blocks + 3 netherite blocks | +15% income, +30% XP, Master Item III |
+| **P4** | $500,000 + 200 diamond blocks + 8 netherite blocks | +20% income, +40% XP, Master Item IV |
+| **P5** | $1,000,000 + 500 diamond blocks + 20 netherite blocks + 1 dragon egg | +25% income, +50% XP, Master Item V |
+
+### Cumulative Bonuses
+
+| Prestige Level | Total Income Bonus | Total XP Rate |
+|---|---|---|
+| Just L50 (P0) | +50% | +0% |
+| P1 | +55% | +10% |
+| P2 | +60% | +20% |
+| P3 | +65% | +30% |
+| P4 | +70% | +40% |
+| P5 | +75% | +50% |
+
+A P5 maxed Miner has +75% income on every block they break, on top of all their tool effects.
+
+### Master Items
+
+Each prestige tier grants a unique **Master Item** specific to that job — a permanent, Soulbound, named tool with the original owner's name engraved forever.
+
+| Job | P1 Item | What It Does (P1 baseline) |
+|---|---|---|
+| **Miner** | Master Drill | Netherite pickaxe, Eff V, Fortune III, Telekinesis, Unbreaking V, 3x3 AOE |
+| **Farmer** | Master Harvester | Netherite hoe, Eff V, Replenish, Telekinesis, 5x5 harvest |
+| **Builder** | Master Trowel | Place pattern in one shift-click; saved templates |
+| **Woodcutter** | Master Lumberjack | Chop whole tree + auto-replant in one swing |
+| **Hunter** | Master Bow | Homing arrow at low-tier; multi-shot at higher tiers |
+| **Fisher** | Master Rod | Auto-recast + treasure boost |
+
+Higher tiers (P2-P5) add more abilities to the Master Item — autosmelt, larger AOE, vein detection, auto-deposit to a linked chest, etc.
+
+**Master Items are Soulbound but tradeable.** You won't drop them on death. You can sell or gift them to other players, but the original owner's name stays engraved as provenance. Expect Master Items to sell for $100,000+ on the player market once Prestige players exist.
+
+### Why Prestige Matters
+
+- **Long-term progression** — even after you max a job, there's a next mountain to climb
+- **Biggest sink in the economy** — total cost of P5 in one job is ~$1.8M plus massive material requirements
+- **Prestige is forever** — Master Items persist across the season, and any cumulative bonuses earned are kept indefinitely
+- **Each job is independent** — you can be P3 Miner with no prestige in other jobs, or P1 in five jobs at once

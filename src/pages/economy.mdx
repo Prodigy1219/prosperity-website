@@ -1,64 +1,92 @@
 ---
 layout: ../layouts/DocsLayout.astro
 title: Economy Guide
-description: How money works on ProsperitySMP. Faucets, sinks, shops, and the market.
+description: How money works on ProsperitySMP. Faucets, sinks, shops, prices, prestige, and the market.
 ---
 
 import InfoCallout from '../components/InfoCallout.astro';
 
 ## Philosophy
 
-The economy is designed around **player trade**. The admin shop exists as a fallback, not as the main market. High-end items come from players — elytras, high-tier tools, rare materials, enchanted gear.
+The economy is built around **player trade**. The admin shop is a fallback floor, not the main market. High-end items come from players — elytras, enchanted tools, drills, beacons, rare materials.
 
-If you want an elytra, you buy it from a player. If you want a Fortune IV pickaxe, you find someone who built the progression to make one.
+If you want a diamond pickaxe, you buy it from a player or craft it yourself. If you want a Fortune III tool, you find someone who built the progression to make one.
 
 <InfoCallout type="info" title="Launching May 22, 2026">
   Economy values, prices, and rewards may still be adjusted before launch on **May 22, 2026** — and may continue to be tuned after launch based on observed inflation and player feedback.
 </InfoCallout>
 
-## How Income Actually Works
+## How Income Works
 
-Your hourly income is not just your job wage — it's the sum of four sources:
+Your hourly income is the sum of five sources:
 
 | Source | Description |
 |---|---|
 | **Job wage** | Direct cash from Jobs Reborn when you take an action (mine a block, harvest a crop, kill a mob) |
-| **Admin item floor** | Value of your drops sold to the admin shop — the safe fallback, not the real market |
-| **Player market upside** | Extra value from selling to other players — this is the real economy |
+| **Admin floor** | Value of your drops sold to the admin shop — the safe fallback, not the real market |
+| **Player market** | Extra value from selling to other players — this is the real economy |
+| **Job stipends** | Small random bonus drops while doing your career's work (gunpowder for Miners, bone meal for Farmers, etc.) |
 | **Contracts** | Controlled bonus payouts from public contracts, civic commissions, and events |
 
-The job wage is a labor subsidy — it's intentionally modest. The real income comes from what you do with the resources you collect.
+The job wage is intentionally modest. Real income comes from selling what you collect to other players at better prices than the admin floor.
 
 **Target effective income by stage:**
 
 | Stage | Target $/hr |
 |---|---|
-| New player (level 1) | $125–$175 |
-| Mid-level (around level 25) | $175–$225 |
-| Level 50 maxed job | $225–$275 |
-| Established multi-job player | $300–$600 |
-| Late-game (drills, Eff VII, contracts) | $600–$1,500+ |
+| New player, hand-mining (level 1) | $300–$400 |
+| Mid-level (around level 25) | $400–$600 |
+| Level 50 maxed job, hand work | $550–$800 |
+| Level 50 + T2/T3 drill or harvester | $800–$1,400 |
+| Prestige 5 + Master Item | $1,400–$2,000 |
 
 ## The Three-Price Rule
 
 Every important item has three prices:
 
 ```
-Admin buy price  <  Player market price  <  Admin sell price
+Admin buy  <  Player market  <  Admin sell
 ```
 
-- **Admin buy** — The server buys at 40–60% of player market value. It's a floor, not the real price.
+- **Admin buy** — The server buys at 30–50% of player market value. It's a floor, not the real price.
 - **Player market** — The true economy value, set by supply and demand.
 - **Admin sell** — If the server sells it at all, it's at 150–300% of player market. A convenience tax, not the standard price.
 
 If admin buy prices are too close to player market prices, players stop trading with each other and just dump everything to the server. The spread is intentional.
 
+## Key Item Anchor Prices
+
+These are the calibration points. Player shops set their own prices, but the admin floor and the items the admin shop refuses to sell are fixed.
+
+| Item | Admin Buy | Player Market (est.) | Admin Sell |
+|---|---|---|---|
+| Cobblestone | $0.03 | $0.10 | $0.30 |
+| Oak / Birch / Spruce log | $0.15 | $0.40 | $1.50 |
+| Coal | $0.15 | $0.30 | $1.50 |
+| Iron ingot | $0.40 | $0.80–1.50 | — |
+| Gold ingot | $1.00 | $1.80–3.00 | — |
+| Copper ingot | $0.10 | $0.20 | $0.75 |
+| Lapis lazuli | $0.30 | $0.60 | — |
+| Redstone | $0.05 | $0.10 | $0.50 |
+| **Diamond** | **$20** | **$25–40** | — never |
+| **Emerald** | **$10** | **$15–40** | — never |
+| **Ancient debris** | **$200** | $300–500 | — never |
+| **Netherite ingot** | **$1,000** | $1,400–2,200 | — never |
+| Blaze rod | $1.50 | $3–5 | — never |
+| Ghast tear | $8 | $15–25 | $30 |
+| Wheat | $0.20 | $0.40 | $1.50 |
+| Bread | $0.50 | $1.00 | $3.00 |
+| White wool | $0.15 | $0.30 | $1.00 |
+
+**The server NEVER sells:** diamonds, emeralds, netherite, ancient debris, enchanted items, elytra, beacons, totems, dragon eggs, conduits. Player market only.
+
 ## Money Faucets
 
-Money enters the economy through controlled channels:
+Money enters the economy through:
 
 - **Jobs** — Regular wage paid per manual action in your profession
-- **Public contracts** — The city posts contracts for needed resources and construction
+- **Public contracts** — The Town Hall posts contracts for needed resources and construction
+- **Job stipends** — Random bonus drops while doing your career's work (e.g., 5% chance of gunpowder per block mined as a Miner)
 - **Starter quests** — One-time intro rewards for new players
 - **Admin shop sales** — Selling basic raw materials at floor prices
 
@@ -66,74 +94,130 @@ Money enters the economy through controlled channels:
 
 Money leaves the economy through:
 
-- **Plot and land purchases** — Buying plots from the city
-- **Plot rental** — Regular weekly fees for rented land and stalls
-- **Tools and vehicles** — Drills and tractors purchased with in-game money
+- **Plot rental** — Weekly fees for rented apartments, plots, market stalls
+- **Plot purchases** — Buying plots from the city
+- **Tools and equipment** — Drills, harvesters, enchanted gear (tools wear out and must be replaced)
+- **Repair costs** — Anvil repair with matching ingots; no Mending allowed
+- **Licenses + Permits** — Mining license, Architect license, Industrial Forge access, etc.
 - **Fines** — Law violations result in fines paid to the city or victims
 - **Company registration** — Fee to form a registered company
-- **Development project buy-in** — Fund city expansion and infrastructure
+- **Development projects** — Fund city expansion (Frontier I = $35,000)
+- **Prestige** — The biggest late-game sink — see below
 
 ## Jobs and Progression
 
-Jobs are the core progression system. Join up to 3 jobs, level each to 50, and unlock perks through the skill tree as you go.
+Jobs are the core progression system. Join up to 3 jobs (a 4th slot is available for $10,000), level each to 50, and unlock perks through milestones as you go.
 
 | Stat | Value |
 |---|---|
 | Max jobs at once | 3 (4th slot available for $10,000) |
 | Max level per job | 50 |
 | Income bonus | +1% per level, max +50% at level 50 |
+| Time to max | ~50 hours of active work |
 
-As you level up, your job title advances — Novice → Apprentice → Elite → Master → Grand Master → Legendary. Open the skill tree with `/skills` to spend level-up points on passive perks.
+As you level up, your job title advances — Novice → Apprentice → Elite → Master → Grand Master → Legendary. Job-specific milestones unlock real progression items at certain levels.
 
-**Late-game unlocks** (purchased with in-game money, no level gating beyond what's needed to reach them):
-- Mining drills (D1/D2/D3) — buy via `/drillShop`
-- Farming tractors (Yellow/Red/Green) — buy via `/tractorShop`
-- Job slot 4 — $10,000 career expansion permit
+**Miner unlock milestones:**
+
+| Level | Unlock |
+|---|---|
+| 7 | Basic mining contracts |
+| 15 | Mining License qualification + T1 Compact Drill access |
+| 30 | T2 Industrial Drill access + Industrial Forge |
+| 35 | Efficiency VII crafting path |
+| 45 | T3 Apex Drill access + Fortune III research |
+| 50 | Prestige eligibility |
+
+Other careers have parallel paths — Farmer unlocks harvesters, Builder unlocks public works contracts, Hunter unlocks bounty permits, etc.
+
+## Drills and Harvesters
+
+Tier-3 mining and farming tools. Bought with in-game money, gated by Miner/Farmer level.
+
+| Tier | Drill | Harvester | Price | Job Level |
+|---|---|---|---|---|
+| T1 | Compact Drill (iron pickaxe + 3x3 AOE) | Compact Harvester (iron hoe + auto-replant) | $1,500 / $1,000 | L15 |
+| T2 | Industrial Drill (diamond pickaxe + Fortune I + 3x3) | Industrial Harvester (diamond hoe) | $4,000 / $2,500 | L30 |
+| T3 | Apex Drill (netherite + Fortune II + Telekinesis) | Apex Harvester (netherite hoe + Telekinesis) | $8,000 / $5,000 | L45 |
+
+Drills and harvesters are repairable via anvil + matching ingot. Tools eventually become too expensive to repair and must be replaced — that's the long-term money sink.
+
+## Prestige System
+
+When you hit level 50 in a job, you can **Prestige** — reset your level back to 0 in exchange for permanent passive bonuses and a unique Master Item.
+
+| Prestige | Cost (per tier, per job) | Reward |
+|---|---|---|
+| P1 | $25,000 + 10 diamond blocks + 64 emeralds | +5% income, +10% XP, Master Item I |
+| P2 | $75,000 + 30 diamond blocks + 1 netherite block | +10% income (cumulative), +20% XP, Master Item II |
+| P3 | $200,000 + 80 diamond blocks + 3 netherite blocks | +15% income, +30% XP, Master Item III |
+| P4 | $500,000 + 200 diamond blocks + 8 netherite blocks | +20% income, +40% XP, Master Item IV |
+| P5 | $1,000,000 + 500 diamond blocks + 20 netherite blocks + 1 dragon egg | +25% income, +50% XP, Master Item V |
+
+Each prestige tier grants a unique **Master Item** specific to that job. For Miners, P1 gives the Master Drill — a permanent Soulbound netherite pickaxe with Fortune III, Telekinesis, and Unbreaking V. Master Items are tradeable but Soulbound (won't drop on death), and they keep the original owner's name engraved forever.
+
+Each job can be prestiged independently up to P5. A maxed-out player with P5 in one job will have +75% total income on that job (the L1-50 +50% bonus plus the +25% prestige passive on top).
 
 ## Admin Shop Rules
 
 The admin shop is a **price floor**, not a store. It exists so players always have a guaranteed fallback buyer.
 
-**The server buys:** Basic raw materials — stone, logs, basic crops, raw ores, coal, wool — at floor prices.
+**The server buys:** Basic raw materials — stone, logs, basic crops, raw ores, coal, wool — at floor prices that stay well below player market.
 
-**The server sells (fallback only, expensive):** Basic tools, food, torches, seeds.
+**The server sells (fallback only, expensive):** Basic tools (iron pickaxe at $80), food, torches, seeds. Priced 2–3× above player market so player shops always win.
 
-**The server never sells:** Diamonds, netherite, enchanted items, rare ores, elytra, rare drops. Let the player market set those prices.
+**The server never sells:** Diamonds, emeralds, netherite, ancient debris, enchanted items, elytra, beacons, totems, rare drops, music discs, mob heads, dragon eggs.
 
 ## Player Shops
 
-Player shops are the real economy:
+Player shops are the primary market:
 
-- Any player can open a shop in the market district
-- Shops are located in commercial plots in the market district
-- Shops set their own prices — supply and demand drive the market
-- Player shops should consistently beat admin shop prices on common goods
+- Any player can open a shop using a ChestShop sign in any plot or market stall they rent
+- Shop owners set their own prices — supply and demand drive the market
+- Use `/find <item>` to search active ChestShops on the server
+- Player shops typically beat admin shop floor prices on common goods
 
 ## Land as Wealth
 
 Land is one of the most important assets on the server:
 
-| Plot Type | Purpose |
-|---|---|
-| **Starter plots** | Small residential plots near spawn, affordable for new players |
-| **Commercial plots** | Market district shops, used for selling goods |
-| **Industrial land** | Farms, production systems, machinery |
-| **Development plots** | Unlocked through community funding over time |
+| Plot Type | Weekly Rent | Purchase |
+|---|---|---|
+| Starter apartment | $100 | — |
+| Starter residential | $250 | $1,500 |
+| Market stall (10 currently active) | $150 | — |
+| Mid-tier commercial | $500 | $4,000 |
+| Premium commercial | $1,500 | $12,000 |
+| Industrial plot | $2,000 | $20,000 |
+| Company HQ plot | $4,000 | $50,000 |
 
-Owning land is a milestone. It is not just a home — it is a store of value and a business foundation.
+Owning land is a milestone. It's a home, a store of value, and a business foundation.
 
 ## Public Contracts
 
 Public contracts bridge player productivity and world development:
 
 - The city posts contracts for needed resources: timber, stone, food, materials
-- Players complete contracts and are paid by the city treasury
-- Resources are consumed to build public infrastructure
-- This is the primary intended money faucet for active, organized players
+- Players complete contracts and are paid by the city treasury — see the [contracts page](/contracts) for the current board
+- Resources are consumed (sink), money is paid out (faucet) but always less than market value
+- This is a steady money faucet for active, organized players, capped by daily limits to prevent farming
 
 ## Inflation Control
 
-- Jobs wages are tested monthly and adjusted if combined income is too high or too low
-- Admin shop buy prices stay well below player market prices
-- Plot prices and the 4th-job-slot permit scale as sinks for accumulated wealth
-- Late-game sinks (development projects, company registration, Efficiency VII path) absorb large amounts of money
+The economy has built-in protections:
+
+- **Monthly review:** Jobs wages tested and adjusted if combined income is too high or too low
+- **Admin shop spread:** Buy prices stay well below player market prices
+- **Plot rental:** Continuous money sink for every active player
+- **Tool wear:** No Mending means tools must be repaired with materials or rebought; both are sinks
+- **Prestige cost:** The largest single sink in the game ($25k–$1M per tier)
+- **Development projects:** Frontier expansion, district unlocks, infrastructure all cost large sums plus materials
+
+## Double XP & Double Payout Weekends
+
+Periodically, the server runs **double XP** and **double payout** weekends — usually one of each per month, on alternating weekends. During these events:
+
+- Double XP weekend: all Jobs Reborn XP gains doubled. Level fast, hit milestones quicker.
+- Double payout weekend: all Jobs Reborn wages doubled. Earn more per action.
+
+These are announced in Discord and on the changelog. They're a great time to grind milestones, save up for a big purchase, or chase a prestige tier.
