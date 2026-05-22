@@ -1,0 +1,260 @@
+---
+layout: ../layouts/DocsLayout.astro
+title: Useful Commands
+description: The commands you'll actually use on ProsperitySMP — jobs, shops, contracts, real estate, communication, and more.
+---
+
+import InfoCallout from '../components/InfoCallout.astro';
+
+A cheat sheet for the commands you'll use most often. Bookmark this page — there's a lot here and you don't need to memorize it all at once.
+
+<InfoCallout type="info" title="How to read this page">
+  - Anything in `<angle brackets>` is a required argument you replace with a real value.
+  - Anything in `[square brackets]` is optional.
+  - All commands work on both Java and Bedrock unless noted otherwise.
+</InfoCallout>
+
+## Quick essentials
+
+The 10 commands you'll use every session:
+
+| Command | What it does |
+|---|---|
+| `/warp spawn` | Teleport to spawn (the city) |
+| `/rtp` | Random teleport into the resource world (mining area) |
+| `/sethome <name>` | Set a home you can teleport back to |
+| `/home <name>` | Teleport to one of your homes |
+| `/bal` | Check your money |
+| `/jobs stats` | See your job levels and XP |
+| `/shop` | Open the admin shop (fallback prices) |
+| `/find <item>` | Find player-run shops selling that item |
+| `/contracts` | See active public contracts |
+| `/tpa <player>` | Request to teleport to another player |
+
+---
+
+## Teleporting & homes
+
+| Command | What it does |
+|---|---|
+| `/warp spawn` | Go to the main city spawn |
+| `/warps` | List all public warps |
+| `/warp <name>` | Teleport to a public warp |
+| `/rtp` | Random teleport into the resource world |
+| `/sethome <name>` | Set a home at your current spot |
+| `/home <name>` | Teleport to a home you set |
+| `/delhome <name>` | Delete a home |
+| `/homes` | List your homes |
+| `/tpa <player>` | Ask another player to teleport to them |
+| `/tpahere <player>` | Ask another player to teleport to you |
+| `/tpaccept` | Accept an incoming teleport request |
+| `/tpdeny` | Deny an incoming teleport request |
+| `/back` | Return to your last location after teleporting or dying |
+
+<InfoCallout type="info" title="`/spawn` doesn't work">
+  EssentialsX disabled `/spawn` on this server. Use **`/warp spawn`** instead.
+</InfoCallout>
+
+---
+
+## Communication
+
+ProsperitySMP supports both **global** and **local** chat. Local chat is heard within 100 blocks; global chat reaches everyone.
+
+| Command | What it does |
+|---|---|
+| `/g <message>` | Send a one-off global message (one-shot) |
+| `/l <message>` | Send a one-off local-area message (one-shot) |
+| `/g` | Toggle to global chat (sticky) |
+| `/l` | Toggle to local chat (sticky) |
+| `/msg <player> <message>` | Private message a player |
+| `/r <message>` | Reply to last private message |
+| `/mail send <player> <message>` | Send mail (they get it when they log in) |
+| `/mail read` | Read your mail |
+| `/seen <player>` | When was a player last online |
+| `/list` | See who's online |
+
+### Voice chat
+Simple Voice Chat supports proximity audio (48-block range, 24-block whisper).
+
+| Command | What it does |
+|---|---|
+| `/voicechat group` | Create / join a voice group |
+| `/voicechat test` | Test your voice setup |
+
+---
+
+## Money & balance
+
+| Command | What it does |
+|---|---|
+| `/bal` or `/money` | Check your balance |
+| `/bal <player>` | Check another player's balance |
+| `/pay <player> <amount>` | Send money to another player |
+| `/baltop` | Top 10 richest players |
+
+---
+
+## Jobs
+
+You have **3 job slots**. Each job caps at level 50.
+
+| Command | What it does |
+|---|---|
+| `/jobs browse` | See all available jobs and what they pay |
+| `/jobs join <jobname>` | Join a job (case-sensitive: Miner, Farmer, Builder, Woodcutter, Hunter, Fisherman) |
+| `/jobs leave <jobname>` | Leave a job (you keep titles but lose the slot) |
+| `/jobs stats` | See your current jobs, levels, and XP |
+| `/jobs info <jobname>` | See payment rates for a specific job |
+| `/jobs top <jobname>` | Top 10 players in that job |
+| `/jobs reload` | Reload (admin only) |
+
+### Job titles
+Your current title shows in chat (e.g. `[Apprentice Miner]`). You can pin which one displays.
+
+| Command | What it does |
+|---|---|
+| `/title` | List the titles you've unlocked |
+| `/title <jobname>` | Pin that job's title to display |
+| `/title auto` | Auto-display your highest-tier title (default) |
+
+---
+
+## Skill trees
+
+Each job has a skill tree with passive perks unlocked at certain levels.
+
+| Command | What it does |
+|---|---|
+| `/skills` | Open the skill tree GUI (Java) |
+| `/skillnode <node>` | Bedrock-friendly text version |
+| `/headlamp` | Toggle the Miner headlamp perk on/off |
+| `/treefeller` | Toggle the Woodcutter treefeller perk on/off |
+
+---
+
+## Shops
+
+ProsperitySMP has **two shop systems**:
+
+- **Admin shop** — fallback fixed-price store for materials. Use `/shop`.
+- **Player shops** — chest shops set up by other players around the market district. Use `/find` to locate them.
+
+| Command | What it does |
+|---|---|
+| `/shop` | Open the admin shop GUI |
+| `/sellhand` | Sell whatever's in your main hand |
+| `/sell hand` | Same as above |
+| `/sell all <item>` | Sell all of one item type from your inventory |
+| `/find <item>` | Find the nearest player shop selling that item (distance-sorted) |
+| `/shopname <name>` | Claim a shop name (so players can find you by name) |
+
+<InfoCallout type="info" title="Bedrock players">
+  Bedrock players use **`/buy`** and **`/sell`** as text-based shop commands instead of the `/shop` GUI. Type `/buy` to see what's available.
+</InfoCallout>
+
+---
+
+## Public contracts
+
+The Contract Board at City Hall pays players to turn in raw materials. Contracts have a 32-block delivery range — stand near the board to turn one in.
+
+| Command | What it does |
+|---|---|
+| `/contracts` | List active contracts |
+| `/contract <id>` | See full details for one contract |
+| `/contractinfo <id>` | Same as above |
+| `/deliver <id>` | Turn in your inventory items for that contract (must be at the board) |
+
+---
+
+## Real estate (ARM)
+
+Apartments at spawn are rentals. Market stalls are rentals. Plots (when available) are sales.
+
+| Command | What it does |
+|---|---|
+| `/arm find` | List available regions for rent/sale |
+| `/arm info` | Region info for the area you're standing in |
+| `/arm extend <regionname>` | Renew your rental |
+| `/arm sellback <regionname>` | Sell a plot back to the system (75% refund) |
+| `/arm tp <regionname>` | Teleport to a region you own |
+| Right-click sign | Buy/rent the region listed on the sign |
+
+---
+
+## Crates
+
+Crates drop randomly while working your job, or at level milestones (every 5 levels). Right-click the crate item in your inventory to open it — no key needed.
+
+| Command | What it does |
+|---|---|
+| `/crates list` | See available crate types |
+| Right-click crate item | Open the crate (no key required) |
+
+---
+
+## Master Smith (advanced pickaxe enchants)
+
+The Master Smith sign at the Job Center sells Efficiency and Fortune enchants beyond vanilla. Higher tiers require prestige.
+
+| Command | What it does |
+|---|---|
+| `/smithy` | Open the Master Smith menu |
+| `/smithy upgrade efficiency` | Apply Eff VII to your held pickaxe (Tier 1) |
+| `/smithy upgrade fortune` | Apply Fortune V to your held pickaxe (Tier 1) |
+| `/smithy book efficiency [1-3]` | Buy an Efficiency book (Tier 1/2/3) |
+| `/smithy book fortune [1-3]` | Buy a Fortune book (Tier 1/2/3) |
+
+Tier 1 needs the skill tree unlock. Tier 2 needs **Miner P2 (Twice-Forged)**. Tier 3 needs **Miner P4 (Mythic)** — Efficiency IX instamines deepslate.
+
+---
+
+## Drills & Harvesters
+
+3×3 AOE tools that drill out 9 blocks per swing. Money pays for all 9; XP only counts the directly-swung block. Banned in main world (drills); harvesters work anywhere you have build permission.
+
+| Command | What it does |
+|---|---|
+| `/buydrill <1-3>` | Buy a drill — Tier 1 needs Miner L15, T2 L30, T3 L45 |
+| `/buyharvester <1-3>` | Buy a harvester — same level gates on Farmer |
+
+---
+
+## Prestige
+
+Once you hit max level (50) in a job, you can prestige to gain permanent perks and a new title tier.
+
+| Command | What it does |
+|---|---|
+| `/prestige` | Open the prestige menu |
+| `/prestige <jobname>` | Prestige a specific job (requires L50 + materials) |
+| `/prestige info <jobname>` | See cost and benefits for prestiging a job |
+
+Prestige tiers: Reborn → Twice-Forged → Thrice-Forged → Mythic → Eternal.
+
+---
+
+## Map
+
+| Command | What it does |
+|---|---|
+| BlueMap (web) | View the live map at the BlueMap link in Discord |
+
+---
+
+## Misc
+
+| Command | What it does |
+|---|---|
+| `/help` | In-game help menu |
+| `/rules` | Quick rules summary |
+| `/spawn` | ❌ Disabled — use `/warp spawn` |
+| `/afk` | Mark yourself as AFK |
+| `/discord` | Show the Discord invite |
+
+---
+
+<InfoCallout type="info" title="Don't see a command you need?">
+  Try `/help` in-game for a full searchable command list, or ask in the `#help` Discord channel. Many commands also have shorter aliases (e.g. `/m` for `/msg`, `/bal` for `/balance`).
+</InfoCallout>
