@@ -2,48 +2,27 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import FeatureCard from '../components/FeatureCard.astro';
-import InfoCallout from '../components/InfoCallout.astro';
 
 const features = [
   {
+    icon: '🌲',
+    title: 'Pick a Job, Earn Wages',
+    description: 'Miner, Farmer, Builder, Woodcutter, Hunter, or Fisher. Each one pays per action and unlocks a skill tree as you level.',
+  },
+  {
     icon: '🏪',
-    title: 'Player-Run Economy',
-    description: 'The admin shop is a fallback. Real goods — elytras, shulkers, high-tier tools — come from players.',
+    title: 'Real Player Market',
+    description: 'The admin shop is a fallback. Tools, gear, food, and rare materials come from chest shops in the market district.',
   },
   {
     icon: '🏡',
-    title: 'Scarce Land & Real Estate',
-    description: 'Buy, rent, or develop plots. Land is limited. Expansion requires community funding.',
-  },
-  {
-    icon: '🌲',
-    title: 'Jobs & Skill Trees',
-    description: 'Choose a profession — Miner, Farmer, Builder, Woodcutter, Hunter, or Fisher — and unlock perks as you level.',
-  },
-  {
-    icon: '🏭',
-    title: 'Player Shops',
-    description: 'Open chest shops, set your own prices, and trade with other players. The market is yours.',
-  },
-  {
-    icon: '⚖️',
-    title: 'Laws & Punishments',
-    description: 'In-game crimes get real consequences. Fines, jail time, plot eviction — handled by the law system.',
+    title: 'Land You Own',
+    description: 'Rent an apartment cheap, save up for a plot, and build a base. Land is finite — first come, first served.',
   },
   {
     icon: '📋',
-    title: 'Public Contracts',
-    description: 'Fund city development by completing public contracts. Resources leave the economy. Players get paid.',
-  },
-  {
-    icon: '🗺️',
-    title: 'Limited Borders',
-    description: 'The world starts small. Expansion projects unlock new land when goals are met.',
-  },
-  {
-    icon: '⚙️',
-    title: 'Semi-Auto Production',
-    description: 'Semi-automatic farms are allowed. AFK farms are not. Meaningful interaction is required.',
+    title: 'Daily Contracts',
+    description: 'The Contract Board at City Hall pays cash for raw materials. Easy money while you figure out your main grind.',
   },
 ];
 ---
@@ -54,12 +33,12 @@ const features = [
 >
   <Hero />
 
-  <!-- What makes it different -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-20">
-    <div class="text-center mb-12">
-      <h2 class="font-heading text-2xl sm:text-3xl text-gold font-bold mb-3">What makes it different?</h2>
+  <!-- What you do here -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+    <div class="text-center mb-10">
+      <h2 class="font-heading text-2xl sm:text-3xl text-gold font-bold mb-3">What you do here</h2>
       <p class="text-cream/60 max-w-xl mx-auto">
-        ProsperitySMP is built around scarcity, player agency, and genuine progression — not grinding the same loop forever.
+        A survival server built around player-driven economy — not grinding alone.
       </p>
     </div>
 
@@ -70,50 +49,70 @@ const features = [
     </div>
   </section>
 
-  <!-- How progression works -->
-  <section class="bg-slate-900 border-y border-slate-800 py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading text-2xl sm:text-3xl text-gold font-bold mb-6 text-center">How progression works</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-        <div>
-          <div class="text-3xl mb-3">👷</div>
-          <h3 class="font-heading text-cream font-semibold mb-2">Start as a Worker</h3>
-          <p class="text-cream/60 text-sm">Choose a starter job, earn your first money, and learn the market.</p>
-        </div>
-        <div>
-          <div class="text-3xl mb-3">📈</div>
-          <h3 class="font-heading text-cream font-semibold mb-2">Develop Your Profession</h3>
-          <p class="text-cream/60 text-sm">Unlock skill tree abilities, vehicles, and equipment as you level up.</p>
-        </div>
-        <div>
-          <div class="text-3xl mb-3">🌍</div>
-          <h3 class="font-heading text-cream font-semibold mb-2">Shape the World</h3>
-          <p class="text-cream/60 text-sm">Late-game players fund development projects that expand the server itself.</p>
-        </div>
+  <!-- First 10 minutes -->
+  <section class="bg-slate-900 border-y border-slate-800 py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading text-2xl sm:text-3xl text-gold font-bold mb-2 text-center">Your first 10 minutes</h2>
+      <p class="text-cream/60 text-center text-sm mb-10">After you connect, do these in order.</p>
+      <ol class="space-y-4">
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald/20 border border-emerald/40 text-emerald font-bold flex items-center justify-center text-sm">1</span>
+          <div>
+            <h3 class="font-heading text-cream font-semibold mb-1">Pick a job</h3>
+            <p class="text-cream/60 text-sm">Run <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/jobs browse</code>, then <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/jobs join &lt;name&gt;</code>. You get 3 free slots.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald/20 border border-emerald/40 text-emerald font-bold flex items-center justify-center text-sm">2</span>
+          <div>
+            <h3 class="font-heading text-cream font-semibold mb-1">Get to the resource world</h3>
+            <p class="text-cream/60 text-sm">Type <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/rtp</code> to teleport to a random spot in the mining area. Work your job there.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald/20 border border-emerald/40 text-emerald font-bold flex items-center justify-center text-sm">3</span>
+          <div>
+            <h3 class="font-heading text-cream font-semibold mb-1">Set a home</h3>
+            <p class="text-cream/60 text-sm">When you find a good spot, <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/sethome work</code>. Then <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/home work</code> brings you back any time.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald/20 border border-emerald/40 text-emerald font-bold flex items-center justify-center text-sm">4</span>
+          <div>
+            <h3 class="font-heading text-cream font-semibold mb-1">Sell, save, plan</h3>
+            <p class="text-cream/60 text-sm">Back at spawn, <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/shop</code> for the admin store or use the market district for player shops. Check <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/contracts</code> for daily cash.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="text-center mt-10">
+        <a href="/commands" class="inline-flex items-center gap-2 text-emerald hover:text-emerald/80 font-medium text-sm">
+          See all commands →
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Live banner + CTA -->
-  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-20">
-    <div class="bg-slate-900 border border-slate-800 rounded-lg p-8">
-      <InfoCallout type="success" title="🟢 Season 0 is LIVE">
-        Connect on Java at **play.prosperitysmp.com** or Bedrock at **15.204.249.228:19132**. Cross-platform — Java and Bedrock players share the same world, economy, and chat.
-      </InfoCallout>
-      <InfoCallout type="info" title="New to the server?">
-        Read the [Getting Started guide](/getting-started) first, then the [Useful Commands](/commands) cheat sheet. Required gameplay info is also available in-game through Town Hall, rules books, and signs.
-      </InfoCallout>
-
-      <div class="mt-8 text-center">
-        <h2 class="font-heading text-xl text-gold mb-3">Ready to join?</h2>
-        <p class="text-cream/60 mb-6 text-sm">Start with the Getting Started guide to learn the first 30 minutes.</p>
-        <a
-          href="/getting-started"
-          class="inline-flex items-center justify-center px-8 py-3 rounded bg-emerald hover:bg-emerald-700 text-white font-medium transition-colors"
-        >
-          Getting Started Guide
-        </a>
+  <!-- CTA -->
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-16 text-center">
+    <h2 class="font-heading text-2xl sm:text-3xl text-gold font-bold mb-3">Ready to join?</h2>
+    <p class="text-cream/60 mb-8 text-sm">Cross-platform — Java and Bedrock share the same world.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto mb-8">
+      <div class="bg-slate-900 border border-slate-800 rounded p-4 text-left">
+        <div class="text-cream/40 text-xs uppercase tracking-wider mb-1">Java IP</div>
+        <div class="text-gold font-mono text-sm break-all">play.prosperitysmp.com</div>
       </div>
+      <div class="bg-slate-900 border border-slate-800 rounded p-4 text-left">
+        <div class="text-cream/40 text-xs uppercase tracking-wider mb-1">Bedrock IP</div>
+        <div class="text-gold font-mono text-sm break-all">15.204.249.228:19132</div>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="/getting-started" class="inline-flex items-center justify-center px-6 py-3 rounded bg-emerald hover:bg-emerald-700 text-white font-medium transition-colors">
+        Getting Started
+      </a>
+      <a href="/commands" class="inline-flex items-center justify-center px-6 py-3 rounded bg-slate-800 hover:bg-slate-700 text-cream font-medium border border-slate-700 transition-colors">
+        Command Cheat Sheet
+      </a>
     </div>
   </section>
 </BaseLayout>
