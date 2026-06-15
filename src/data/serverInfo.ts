@@ -6,6 +6,6 @@ export const serverInfo = {
   version: 'Paper 1.21.8',
   status: 'Season 0 — LIVE',
   whitelist: 'Open to public',
-  discord: 'https://discord.gg/wuKsJ7m6Fm',
+  discord: 'https://discord.gg/gmXqBx7sfV',
   siteUrl: 'https://prosperitysmp.com',
 };
