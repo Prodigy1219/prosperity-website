@@ -1,0 +1,5 @@
+# ProsperitySMP — https://www.prosperitysmp.com
+User-agent: *
+Allow: /
+
+Sitemap: https://www.prosperitysmp.com/sitemap.xml

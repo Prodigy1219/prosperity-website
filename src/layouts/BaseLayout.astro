@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Analytics from '@vercel/analytics/astro';
+import { serverInfo } from '../data/serverInfo';
 import '../styles/global.css';
 
 interface Props {
@@ -12,12 +13,47 @@ interface Props {
 
 const {
   title,
-  description = 'A Minecraft survival economy server built around land, jobs, skill trees, public projects, and player-driven development.',
+  description = 'A cross-platform Minecraft survival economy server (Java + Bedrock) built around jobs, land ownership, skill trees, public projects, and a player-driven market.',
   ogImage = '/og-image.png',
 } = Astro.props;
 
-const siteTitle = title === 'ProsperitySMP' ? title : `${title} — ProsperitySMP`;
-const canonicalURL = new URL(Astro.url.pathname, 'https://prosperitysmp.vercel.app');
+// Home page gets a keyword-rich title; inner pages get "Page — ProsperitySMP".
+const siteTitle = title === 'ProsperitySMP'
+  ? 'ProsperitySMP — Minecraft Survival Economy Server (Java + Bedrock)'
+  : `${title} — ProsperitySMP`;
+
+// Canonical + social URLs resolve against the real domain (astro.config `site`),
+// not the vercel.app preview domain. Strip the trailing slash to match Vercel's
+// cleanUrls / trailingSlash:false (so the canonical equals the actually-served URL).
+const cleanPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
+const canonicalURL = new URL(cleanPath, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
+
+// Structured data so search engines understand the brand + site.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': new URL('#organization', Astro.site).href,
+      name: serverInfo.name,
+      url: new URL('/', Astro.site).href,
+      logo: new URL('/logo.png', Astro.site).href,
+      description:
+        'A cross-platform Minecraft survival economy server (Java + Bedrock) built around jobs, land ownership, skill trees, and a player-driven market.',
+      sameAs: [serverInfo.discord],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': new URL('#website', Astro.site).href,
+      url: new URL('/', Astro.site).href,
+      name: serverInfo.name,
+      description,
+      inLanguage: 'en',
+      publisher: { '@id': new URL('#organization', Astro.site).href },
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -27,20 +63,25 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://prosperitysmp.vercel.a
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#0f172a" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ProsperitySMP" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageURL} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
 
     <link rel="icon" type="image/png" href="/logo.png" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
     <title>{siteTitle}</title>
   </head>
   <body class="min-h-screen flex flex-col">
