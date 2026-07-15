@@ -3,11 +3,17 @@ import BaseLayout from './BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
+  frontmatter?: { title?: string; description?: string };
 }
 
-const { title, description } = Astro.props;
+// When used as an .mdx `layout:`, the page's frontmatter arrives under
+// Astro.props.frontmatter (not as top-level props). Support both call styles so
+// the docs pages get their real title/description instead of "undefined".
+const { frontmatter } = Astro.props;
+const title = Astro.props.title ?? frontmatter?.title;
+const description = Astro.props.description ?? frontmatter?.description;
 ---
 
 <BaseLayout title={title} description={description}>
