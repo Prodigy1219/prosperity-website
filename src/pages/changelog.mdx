@@ -7,10 +7,22 @@ description: Update history for ProsperitySMP.
 import InfoCallout from '../components/InfoCallout.astro';
 
 <InfoCallout type="info" title="Under Construction">
-  ProsperitySMP is under active construction. Updates are tracked here as they are released.
+  ProsperitySMP is under active development. Updates are tracked here as they are released.
 </InfoCallout>
 
 ## Season 0
+
+### 2026-07 — The Bank Opens, Casino Launch, Daily Rewards
+
+**The Central Bank is open.** Flexible savings, 7-day bonds, and stocks — the Prosperity Index — are all live, with a full trading desk at [economy.prosperitysmp.com/stocks.html](https://economy.prosperitysmp.com/stocks.html). Details on the [wiki's Banking page](https://wiki.prosperitysmp.com/Banking).
+
+**The casino is live.** Gambling returned as a proper casino — coinflip, crash, slots, and a daily lottery. See the [wiki's Casino page](https://wiki.prosperitysmp.com/Casino) for games and limits.
+
+**Daily rewards.** `/daily` login streaks and `/rewards` playtime chests pay you for showing up.
+
+**Hunter rework.** Hunter is now the dungeon-clearing career with ranks E–S — the first dungeon is open.
+
+**Woodcutter** now pays on all nine log types, including pale oak.
 
 ### 2026-06-10 — Job Pay +25%, Build Contracts, Bank Incoming
 
@@ -42,7 +54,7 @@ Season 0 launched on 2026-05-22. Highlights since:
 
 ### 2026-05-18 — Economy v2 Rebalance + Prestige System + Job Stipends
 
-Major economy overhaul ahead of launch. The full design lives in the internal economy-v2 doc; player-facing highlights:
+Major economy overhaul ahead of launch. Player-facing highlights:
 
 **Anchor price rebalance.** Old prices implied diamond ≈ $100. With drills landing on the server, that math broke. v2 anchors are now:
 - Diamond: $20 admin floor (was $35–50 in v1)
@@ -58,7 +70,7 @@ All admin-shop sell prices updated to match. The server still **never sells** di
 
 **Job stipends added.** Random bonus drops while doing your career's work — 5% chance of gunpowder per block mined as Miner, 7% bone meal per crop harvested as Farmer, 10% arrows per monster kill as Hunter, etc. Helps supply chains (gunpowder for TNT/fireworks/beacons, bone meal for farms) and boosts new-player income by 10-15%.
 
-**Drill + Tractor migration plan.** The Vehicles plugin is being replaced pre-launch with a custom Skript-based system. Same 3 tiers (T1/T2/T3), same 3x3 AOE mining and farming, but the new tools are pickaxes and hoes rather than rideable vehicles. Reasons: Bedrock compatibility (Geyser players couldn't see the vehicle models), performance (Vehicles plugin had documented TPS overhead on Tractor schedulers), and elimination of a chest-rename exploit. Tools are repairable via anvil + matching ingot. Tier prices: T1 $1,500 / T2 $4,000 / T3 $8,000 for drills; $1,000 / $2,500 / $5,000 for harvesters.
+**Drill + Tractor migration plan.** The Vehicles plugin is being replaced pre-launch with a custom in-house system. Same 3 tiers (T1/T2/T3), same 3x3 AOE mining and farming, but the new tools are pickaxes and hoes rather than rideable vehicles. Reasons: Bedrock compatibility (Geyser players couldn't see the vehicle models) and performance (the Vehicles plugin had documented TPS overhead). Tools are repairable via anvil + matching ingot. Tier prices: T1 $1,500 / T2 $4,000 / T3 $8,000 for drills; $1,000 / $2,500 / $5,000 for harvesters.
 
 **Contract Board rewards re-audited.** All 12 automated `/deliver` contracts had their payouts recalibrated to v2 anchors. Stone supply dropped from $80→$50, iron from $250→$200, diamond from $400→$200. See [Quests & Contracts](/contracts) for the full updated board.
 
@@ -70,7 +82,7 @@ All admin-shop sell prices updated to match. The server still **never sells** di
 
 ### 2026-05-14 — Plot Plugin Swap: AreaShop → AdvancedRegionMarket
 
-The plot purchase/rent system was migrated from AreaShop 2.6.0 (last released 2019) to **AdvancedRegionMarket (ARM)**, an actively-maintained alternative. AreaShop's age was causing a `BlockPhysicsEvent` NullPointerException on Paper 1.21.8 that was interfering with ChestShop sign placement. ARM uses modern Paper event handlers and integrates the same way (WorldGuard region-backed signs, automatic membership transfer on purchase).
+The plot purchase/rent system was migrated from AreaShop 2.6.0 (last released 2019) to **AdvancedRegionMarket (ARM)**, an actively-maintained alternative. AreaShop's age was causing a compatibility bug on Paper 1.21.8 that was interfering with ChestShop sign placement. ARM uses modern Paper event handlers and integrates the same way (WorldGuard region-backed signs, automatic membership transfer on purchase).
 
 No player-visible change — same buy/rent flow, same per-plot ownership model. Sign tags are slightly different (`[buy]` / `[rent]` instead of `[asbuy]` / `[asrent]`).
 
@@ -138,8 +150,7 @@ The biggest builds — dungeon zones in the mountains, civic landmarks, major di
 - **Added**: RoseStacker — dropped items now merge automatically to reduce entity load. Configured items-only (no mob or block stacking). Jobs Reborn payouts unaffected.
 
 **Other**
-- Saddle removed from the admin shop's material buyback list (was prone to villager-rolling exploits). Players can still trade saddles via player ChestShops.
-- Architecture document published internally — full plugin stack + interaction map.
+- Saddle removed from the admin shop's material buyback list. Players can still trade saddles via player ChestShops.
 
 ---
 
