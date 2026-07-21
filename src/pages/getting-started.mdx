@@ -25,21 +25,23 @@ Welcome to ProsperitySMP. Your first goal is simple: learn the town, earn your f
 
 ## First 30 Minutes
 
-1. **Read the rules.** Visit Town Hall or read the [full rules](/rules) before doing anything else.
+1. **Read the rules.** Read the [full rules](/rules) before doing anything else.
 2. **Pick a job.** Run `/jobs browse` to see all available jobs, then `/jobs join <jobname>` to join one. You start with 3 free job slots.
 3. **Get your starter kit.** You spawn with a wooden pickaxe, wooden axe, and 8 bread. Use them.
 4. **Go earn money.** Mine, chop, farm, fish, or hunt in the resource world — whatever matches your job. Your first iron pickaxe costs around $80–$120 and takes 10–20 minutes to earn.
 5. **Visit the market.** Get a feel for prices, supply gaps, and what other players are selling.
-6. **Check the public contracts board at Town Hall.** Contracts pay well and give you goals beyond raw grinding.
+6. **Check the public contract board at spawn.** Contracts pay well and give you goals beyond raw grinding.
 7. **Rent starter housing or save for a plot.** You need a base. Starter housing is available near spawn.
 
 ## Good First Goals
 
 - Earn your first **$1,000**
-- Buy or rent starter housing
+- Rent starter housing
 - Complete a basic public contract
 - Upgrade from wooden to iron tools
 - Decide which job to level to 50
+
+Also live once you're settled: `/daily` login rewards, `/rewards` playtime chests, the [Central Bank](https://wiki.prosperitysmp.com/Banking) (savings, bonds, stocks), the [Auction house](https://wiki.prosperitysmp.com/Auction_house), the [Casino](https://wiki.prosperitysmp.com/Casino), and [dungeons](https://wiki.prosperitysmp.com/Dungeons).
 
 ## Jobs — How They Work
 
@@ -62,7 +64,7 @@ Jobs are how you earn wages and build a profession identity. You join them via `
 | **Builder** | Place building materials and complete build contracts | Government commissions for major civic builds and dungeon zones — negotiated pay for the best builders |
 | **Woodcutter** | Fell trees manually | Treated lumber, forestry contracts, bulk supply deals |
 | **Hunter** | Kill hostile mobs | Bounty contracts, elite mob hunts, rare drop market |
-| **Fisher** | Fish manually with a rod | Rare catch contracts, ocean expedition commissions |
+| **Fisherman** | Fish manually with a rod | Rare catch contracts, ocean expedition commissions |
 
 You can hold up to 3 jobs at once. Specializing in one gives you better titles, contracts, and tools for that job. Holding multiple jobs gives you more income sources and business flexibility. Both are valid.
 
@@ -84,7 +86,7 @@ At level 1, expect roughly **$375–$500/hr** across all sources for active care
 - **No AFK farms.** Fully automatic farms are banned. You must be present and interacting.
 - **No griefing.** Other players' land and builds *in the city* are protected by WorldGuard. The resource world is unprotected — anything you build there can be broken or taken by anyone, so keep valuables on a city plot.
 - **No exploits or duplication.** Report them. Using them results in a ban.
-- **In-game crimes are handled by the law system**, not staff. Theft, assault, and fraud go through courts and fines, not bans.
+- **In-game crimes draw fines and restitution** under the [law system](/laws) — currently applied by staff, separately from rule enforcement.
 
 Read the [full rules](/rules) and [laws](/laws) before your first session.
 
@@ -113,7 +115,7 @@ No mods or client-side installs required. Everything runs server-side. Here's wh
 If you invite a friend who sticks around, the city pays you both. It's a thank-you for growing the community.
 
 **How it works:**
-1. Your friend joins the server (whitelist them via Discord first)
+1. Your friend joins the server (no whitelist — just connect)
 2. When they log in for the first time, they DM staff: *"\<your name\> invited me"*
 3. Once your friend hits **2 hours of playtime** and has **joined at least one job**, both of you get the reward
 
@@ -139,28 +141,9 @@ If you invite a friend who sticks around, the city pays you both. It's a thank-y
 
 ## Bedrock-Specific Notes
 
-ProsperitySMP supports Bedrock players via Geyser. Most features work identically, but a handful of GUI-heavy interfaces translate poorly through the protocol bridge. Here's what to expect:
+ProsperitySMP fully supports Bedrock via Geyser — connect to `15.204.249.228` port `19132`. Most features work identically; a few GUI-heavy menus render differently, and text commands (`/buy`, `/sell`) cover the admin shop. Voice chat is Java-only. Full details, workarounds, and console setup: the wiki's [Bedrock setup](https://wiki.prosperitysmp.com/Bedrock_setup) page.
 
-| Feature | Java | Bedrock |
-|---|---|---|
-| Address | `play.prosperitysmp.com` | `15.204.249.228` (port `19132`) |
-| `/shop` GUI | ✅ Browsable inventory | ⚠️ Doesn't render — use `/buy <item> [amount]` and `/sell <item> [amount]` instead |
-| `/jobs browse` GUI | ✅ Browsable | ⚠️ Steve-head icons block clicking — use `/jobs join Miner` directly |
-| Side scoreboard | ✅ Clean | ⚠️ Shows red numbers next to each line (Bedrock protocol limitation, ignore them) |
-| Proximity voice chat | ✅ Works | ❌ Java-only plugin, Bedrock cannot use SVC |
-| `[item]` hover tags in chat | ✅ Works | ⚠️ Hover preview may not render |
-| Tab/player list | ✅ Tab key | ℹ️ Open via pause menu |
-
-**Bedrock text-shop commands:**
-- `/buy <item> [amount]` — purchase from admin shop
-- `/sell <item> [amount]` — sell to admin shop (defaults to all if no amount)
-- `/sellhand [amount]` — sell what's in your hand
-- `/buylist` — see everything the admin shop sells
-- `/sellprices [search]` — search prices, e.g. `/sellprices log`
-
-These work for Java too — Bedrock players just rely on them more.
-
-**Cross-platform account linking:** if you have both a Java and Bedrock account, link them at https://link.geysermc.org. After linking, joining from Bedrock treats you as your Java identity (same balance, same job levels, same plots).
+**Cross-platform account linking:** if you have both a Java and Bedrock account, link them at https://link.geysermc.org — **before accumulating progress on the server**, so your balance, jobs, and plots stay on one profile.
 
 ---
 

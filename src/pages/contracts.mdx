@@ -1,184 +1,36 @@
 ---
 layout: ../layouts/DocsLayout.astro
-title: Quests & Contracts
-description: New player quests and public contracts on ProsperitySMP.
+title: Contracts
+description: Civic supply contracts and government build contracts on ProsperitySMP.
 ---
 
 import InfoCallout from '../components/InfoCallout.astro';
 
-<InfoCallout type="info" title="Two Systems, One Page">
-  **Starter Quests** are a one-time onboarding chain for new players — city-funded rewards to help you find your footing. **Public Contracts** are ongoing jobs posted by the Town Council that any player can complete for money, on demand, all the time.
-</InfoCallout>
+## Civic Supply Contracts
 
-## Starter Quests — "First Week in ProsperitySMP"
-
-Every new player has access to a six-quest onboarding chain. Quests are posted on the bulletin board at Town Hall. Complete them in order, at your own pace.
-
-### Quest 1 — Welcome Aboard
-
-**Objective:** Visit Town Hall and pick up your Welcome Packet from the chest near the entrance.
-
-**Reward:** Iron pickaxe, iron axe, 8× bread, $10 city stipend
-
-The iron tools get you past wooden gear immediately. The Welcome Packet chest is restocked by staff — if it's empty, message an admin.
-
----
-
-### Quest 2 — Pick a Trade
-
-**Objective:** Join a job using `/jobs join <jobname>`.
-
-Use `/jobs browse` to see all six options: Miner, Farmer, Builder, Woodcutter, Hunter, Fisherman.
-
-**Reward:** $25 city stipend + a job starter kit
-
-| Job | Starter Kit |
-|---|---|
-| Miner | 64× torches, 1× bucket |
-| Farmer | 1× hoe, 64× wheat seeds, 16× bone meal |
-| Builder | 32× stone, 32× oak planks, 1× shovel |
-| Woodcutter | 1× extra iron axe, 4× oak saplings |
-| Hunter | 1× iron sword, 16× arrows, 1× bow |
-| Fisherman | 1× fishing rod |
-
----
-
-### Quest 3 — First Shift
-
-**Objective:** Earn $50 in job wages — the direct cash from your job, not item sales.
-
-**Reward:** $50 city stipend, 1× City Work Permit (collectible)
-
-This takes 15–30 minutes depending on your job. The Work Permit is a cosmetic collectible — it has no mechanical function, but it's yours.
-
----
-
-### Quest 4 — Sell Something
-
-**Objective:** Make any sale — to the admin shop or to another player.
-
-**Reward:** $35 city stipend
-
-The admin shop is the **price floor**, not the target. Selling to other players earns more. This quest introduces both options.
-
----
-
-### Quest 5 — Take a Contract
-
-**Objective:** Complete one public contract using the `/deliver` command (see the next section).
-
-**Reward:** The stated contract payout + $25 city completion bonus + 1× City Commendation
-
-The Commendation is a cosmetic collectible at launch. Future updates may use commendation count as a gate for higher-tier contracts.
-
----
-
-### Quest 6 — Stake Your Claim
-
-**Objective:** Rent a residential plot or a market stall.
-
-**Reward:** First week's rent waived (city covers it as a settlement bonus) + welcome sign kit
-
-A plot is a reason to log back in.
-
----
-
-### Quest Reward Summary
-
-| Quest | Cash | Items |
-|---|---|---|
-| 1 — Welcome Aboard | $10 | Iron pickaxe, axe, 8× bread |
-| 2 — Pick a Trade | $25 | Job starter kit |
-| 3 — First Shift | $50 | City Work Permit |
-| 4 — Sell Something | $35 | — |
-| 5 — Take a Contract | Contract payout + $25 | City Commendation |
-| 6 — Stake Your Claim | First week rent waived | Welcome sign kit |
-| **Total stipends** | **~$145–$200** | (Contract payout varies) |
-
-By the end of the chain you should have $300–$500+, a job, iron tools, and a home base.
-
----
-
-## Public Contracts — The Contract Board
-
-The Town Hall **Contract Board** has 12 standing contracts you can fulfill any time. Bring the requested items, run `/deliver <id>`, and the city pays you on the spot. No admin verification needed — it's all automated.
+The city posts standing contracts for needed resources — timber, stone, food, materials. Bring the requested items, deliver them, and the city treasury pays you on the spot. Fully automated, no staff needed.
 
 <InfoCallout type="info" title="Contracts are bonus income, not your main income">
-  Contracts pay above the admin floor — better than dumping to the server — but below player market peaks. They give you steady supplementary income with daily caps to prevent farming. Use them between bigger projects, or chain them while leveling.
+  Contracts pay above the admin floor — better than dumping to the server — but below player market peaks. Cooldowns and daily caps keep them steady supplementary income rather than a grind loop. Use them between bigger projects, or chain them while leveling.
 </InfoCallout>
 
-### Live Contract Board — Season 0 Launch
+### How it works
 
-| ID | Hand-in | Reward | Cooldown | Daily Cap |
-|---|---|---|---|---|
-| `stone64` | 64× stone | $50 | 30 min | 10/day |
-| `cobble128` | 128× cobblestone | $80 | 30 min | 10/day |
-| `oak_log64` | 64× oak logs | $100 | 30 min | 6/day |
-| `coal64` | 64× coal | $120 | 30 min | 8/day |
-| `wheat64` | 64× wheat | $80 | 30 min | 8/day |
-| `white_wool64` | 64× white wool | $100 | 30 min | 6/day |
-| `torch64` | 64× torches | $60 | 30 min | 10/day |
-| `bread32` | 32× bread | $100 | 60 min | 5/day |
-| `cod16` | 16× cooked cod | $80 | 60 min | 5/day |
-| `salmon16` | 16× cooked salmon | $100 | 60 min | 5/day |
-| `iron32` | 32× iron ingots | $200 | 60 min | 4/day |
-| `diamond4` | 4× diamonds | $200 | 120 min | 3/day |
+1. Run `/contracts` to see the current board — contracts, rewards, cooldowns, and caps are tuned live, so the in-game board is always the source of truth
+2. Run `/contractinfo <id>` for full details on one contract (including your cooldown and daily count)
+3. Gather the requested items in your inventory
+4. Run `/deliver <id>` — the city takes the items and pays you instantly
 
-### How to Use the Contract Board
-
-1. Visit the **Contract Board** outside Town Hall
-2. Read the sign for the contract you want
-3. Make sure the items are in your inventory
-4. Run `/deliver <id>` — for example, `/deliver coal64`
-5. The city takes the items and pays you instantly
-
-Other useful commands:
-- `/contracts` — list all contracts available
-- `/contractinfo <id>` — show full details for one contract (including your cooldown and daily count)
-
-### Maximum Daily Income from the Board
-
-If you fully clear every contract every day, the daily cap totals:
-
-| Tier | Total contracts available | Theoretical max payout |
-|---|---|---|
-| Cobble/Stone (high cap) | 20 fills | $1,300 |
-| Wood/Coal/Wool/Torch | 30 fills | $2,800 |
-| Food | 15 fills | $1,400 |
-| Iron/Diamond (high value) | 7 fills | $1,400 |
-| **Total daily cap** | **~72 fills** | **~$6,900/day** |
-
-This is a hard ceiling. The board is for steady income, not unlimited grinding.
+Full mechanics on the wiki: [Contracts](https://wiki.prosperitysmp.com/Contracts).
 
 ---
 
-## Construction Contracts — Staff-Verified
+## Government Build Contracts
 
-Bigger physical builds — paths, fences, signage — are posted separately and verified by staff after completion.
+Bigger physical builds are a separate, staff-run track — and the core of the [Builder](/skill-trees#builder) career's income.
 
-| ID | Contract | Required | Payout |
-|---|---|---|---|
-| C-08 | Path Paving: Market District | ~200 blocks, staff-directed | $200 |
-| C-09 | Agricultural District Fencing | ~300 fence blocks, materials provided | $175 |
-| C-10 | Town Signage | 8 signs at staff-marked posts, signs provided | $80 |
+Staff open a build contract naming the builder and a protected build site. Inside the site, the builder gets flight and region-limited building tools, with **materials supplied by the city** — you're paid for skill and time, not resources. Quality work on smaller commissions leads to invitations for bigger ones, up to owner-awarded civic landmarks with negotiated pay.
 
-<InfoCallout type="info" title="For Skilled Builders: Government Commissions">
-  The contracts above are the **entry tier** for the Builder career. Players who consistently deliver quality work on these smaller commissions are invited to bid on **government commissions** — major civic landmarks, expansion districts, and the planned **dungeon zone on the mountain**. These are negotiated directly with the server owner. Pay is per-project and scales with scope — $10,000+ is realistic for high-skill builds.
+Want to build for the city? Ask in the [Discord](https://discord.gg/gmXqBx7sfV).
 
-  **City contracts include materials** — you're paid for labor and design. Private builds (for other players, on their plots) are a separate market and materials are between you and the client.
-</InfoCallout>
-
----
-
-## Contract Tiers
-
-| Tier | Time Investment | Payout Range |
-|---|---|---|
-| Contract Board (automated) | A few minutes per `/deliver` | $50–$200 per fill |
-| Beginner Construction | ~30 min | $80–$200 |
-| Standard Construction | 1–2 hours | $200–$600 |
-| Large Construction | 2–4 hours | $600–$1,500 |
-| Infrastructure | Multiple sessions | $1,500–$5,000 + title/naming rights |
-| **Government Commission** *(Builder, invite-only)* | Multi-session, owner-directed | **$10,000+ negotiated** |
-
-Tier 2+ contracts will be added over time as the board matures. Government commissions are a Builder-specific track — the server owner invites high-quality builders directly.
+Full details on the wiki: [Government build contracts](https://wiki.prosperitysmp.com/Government_build_contracts).

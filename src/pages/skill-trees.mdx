@@ -13,7 +13,7 @@ ProsperitySMP has two connected progression systems: **Jobs** and **Skill Trees*
 - **Jobs** earn wages, have levels (1–50), and grant titles as you level up. Join via `/jobs join`.
 - **Skill Trees** are a live perk system tied to your job level. Open the GUI with `/skills` to see and unlock your job's nodes.
 
-You do not need to buy anything to unlock skill nodes — they cost skill points earned by leveling your job.
+You do not need to buy anything to unlock skill nodes — they cost skill points earned by leveling your job. For the current node list and effects per job, see each job's page on the [wiki](https://wiki.prosperitysmp.com/Skill_trees).
 
 ## Job Slots
 
@@ -36,170 +36,44 @@ A level 50 Miner is the best miner on the server. A player with Miner + Builder 
 
 ---
 
-## Global Skills
-
-Global skills are available to all players regardless of job. They unlock based on your highest job level.
-
-| Level | Skill | Effect |
-|---|---|---|
-| 20 | **Sure Footing** | -10% fall damage. Stacks with Steady Hand (Builder). |
-
----
-
 ## The 6 Jobs
 
-Each job has 50 levels, takes ~50 hours to max, and grants a +1% income bonus per level (max +50% at level 50, applied to job wage). Every 10 levels unlocks a new chat title.
-
----
-
-## Miner
-
-**Focus**: Resource extraction, underground operations, high-tier tools
+Each job has 50 levels, takes ~50 hours to max, and grants a +1% income bonus per level (max +50% at level 50, applied to job wage). Five of the six jobs share the same title ladder:
 
 | Level | Title |
 |---|---|
-| 1–9 | Novice Miner |
-| 10–19 | Apprentice Miner |
-| 20–29 | Elite Miner |
-| 30–39 | Master Miner |
-| 40–49 | Grand Master Miner |
-| 50 | Legendary Miner |
+| 1–9 | Novice |
+| 10–19 | Apprentice |
+| 20–29 | Elite |
+| 30–39 | Master |
+| 40–49 | Grand Master |
+| 50 | Legendary |
 
-### Skill Nodes
-| Level | Skill | Effect |
-|---|---|---|
-| 5 | **Headlamp I** | Night vision while underground below Y 40 |
-| 10 | **Portable Smelting** | 15% chance to auto-smelt iron, gold, or copper ore on break |
-| 15 | **Headlamp II** | Extends night vision to Y 60 |
-| 15+ | **Drill Readiness I / II / III** | Unlocks purchase eligibility for D1, D2, and D3 drills |
-| 25 | **Ore Sorter** | Place a named blast furnace. Right-click it holding ingots, ores, or gems to bulk-compress all into storage blocks at once. |
-| 35+ | **Efficiency VII Path** | Access to the Efficiency VII crafting progression |
-| 45+ | **Fortune IV / V Access** | Access path to Fortune IV and V tools |
+**Hunter is the exception** — it uses combat ranks **E → S** instead (see below).
 
-<InfoCallout type="info" title="Drills">
-  Drills are 3x3 AOE-mining pickaxes purchased with in-game money. Three tiers gated by Miner level:
+### Miner
 
-  | Tier | Tool | Price | Level Gate |
-  |---|---|---|---|
-  | T1 Compact Drill | Iron pickaxe, Eff III, Unbreaking III, Soulbound | $1,000 | L15 |
-  | T2 Industrial Drill | Diamond pickaxe + Fortune I | $4,000 | L30 |
-  | T3 Apex Drill | Netherite + Fortune II + Telekinesis | $6,500 | L45 |
+Resource extraction, underground operations, high-tier tools. Signature perks include underground night vision, auto-smelting, and bulk ore compression — and Miner levels gate the **drills**: 3×3 AOE mining pickaxes bought with in-game money (`/buydrill`). Full node list and drill tiers: wiki [Miner](https://wiki.prosperitysmp.com/Miner) and [Drills and harvesters](https://wiki.prosperitysmp.com/Drills_and_harvesters).
 
-  Drills mine a 3×3 face at vanilla speed (scaled by Efficiency level) and are repairable via anvil + matching ingot. Use `/buydrill <tier>`. Permitted in the resource world, nether, and end. Not allowed in the main world.
-</InfoCallout>
+### Farmer
 
----
+Food production, ranching, and bulk harvest. Breed and tend animals for money, craft signature consumables at high level, and unlock the **harvesters**: 3×3 auto-replanting AOE hoes (`/buyharvester`). Full details: wiki [Farmer](https://wiki.prosperitysmp.com/Farmer) and [Drills and harvesters](https://wiki.prosperitysmp.com/Drills_and_harvesters).
 
-## Farmer
+### Builder
 
-**Focus**: Food production, crop optimization, bulk harvest
+Construction, public works, architectural projects — and the highest-paying commissions on the server for players with real building skill.
 
-| Level | Title |
-|---|---|
-| 1–9 | Novice Farmer |
-| 10–19 | Apprentice Farmer |
-| 20–29 | Elite Farmer |
-| 30–39 | Master Farmer |
-| 40–49 | Grand Master Farmer |
-| 50 | Legendary Farmer |
+If you love building, this is your job. The economy is structured so that **skilled builders are paid like specialists, not laborers** — routine block-placement wages are modest by design, and the real income comes from contracts. Builder isn't a grind-to-50 job; **it's an audition**: do quality work and bigger city commissions come to you, up to owner-awarded government builds with negotiated pay and materials supplied. Plenty of builders also take **private commissions** from other players — house builds, shop fronts, custom work — at rates the player market sets. See the wiki's [Builder](https://wiki.prosperitysmp.com/Builder) and [Government build contracts](https://wiki.prosperitysmp.com/Government_build_contracts) pages.
 
-### Skill Nodes
-| Level | Skill | Effect |
-|---|---|---|
-| 5 | **Green Thumb** | 20% extra seed drop on crop harvest (wheat, carrots, potatoes, beetroot) |
-| 15+ | **Harvester Ready** | Unlocks T1 Compact Harvester purchase (T2 at L30, T3 at L45) |
-| 25 | **Crop Packer** | Place a named smoker. Right-click it holding crops to bulk-compress all into storage blocks at once. |
-| 40+ | **Biofuel Basics** | Biofuel production access (future phase) |
+**Practical tip:** Builder pairs well as a second or third job — most successful builders carry it alongside Miner or Woodcutter for cheap material supply.
 
-<InfoCallout type="info" title="Harvesters">
-  Harvesters are 3x3 AOE-farming hoes with auto-replant. Three tiers gated by Farmer level: T1 Compact Harvester (iron hoe + Replenish) $1,000 at L15 · T2 Industrial Harvester (diamond hoe + Replenish) $2,500 at L30 · T3 Apex Harvester (netherite + Replenish + Telekinesis) $5,000 at L45. Use `/buyharvester <tier>`. Harvesters work in any world. In the main world they only function on land you own.
-</InfoCallout>
+### Woodcutter
 
----
+Lumber supply, forestry, tree operations. Signature perks include whole-trunk felling, paid log-stripping and charcoal work, and craftable reinforced shields at high level. Full details: wiki [Woodcutter](https://wiki.prosperitysmp.com/Woodcutter).
 
-## Builder
+### Hunter
 
-**Focus**: Construction, public works, architectural projects — and the highest-paying contracts on the server for players with real building skill.
-
-If you love building in Minecraft, this is your job. The economy is structured so that **skilled builders are paid like specialists, not laborers.** Routine block-placement wages are modest by design — the real income comes from contracts.
-
-| Level | Title |
-|---|---|
-| 1–9 | Novice Builder |
-| 10–19 | Apprentice Builder |
-| 20–29 | Elite Builder |
-| 30–39 | Master Builder |
-| 40–49 | Grand Master Builder |
-| 50 | Legendary Builder |
-
-### Skill Nodes
-| Level | Skill | Effect |
-|---|---|---|
-| 5 | **Steady Hand** | -15% fall damage. Stacks with Sure Footing. |
-| 10 | **Block Recovery** | 20% chance for fragile blocks (glass, sea lanterns, flower pots) to drop themselves instead of breaking |
-| 20 | **Restoration Expert** | Upgrades Block Recovery to 30% chance |
-| 30 | **Builder Cane** | Equip a named end rod in your offhand to gain +2 block interaction reach. |
-
-### Why Builder Pays Off
-
-Builder isn't a grind-to-50 job. **It's an audition.** As you level up and your work gets visible around the city, you get invited to bigger commissions:
-
-| Tier | Commission | Pay Range |
-|---|---|---|
-| **Small builds** | Path paving, fencing, signage | $50–$200 each |
-| **District commissions** | Build out a city block, market stalls, residential complexes | $600–$1,500 |
-| **Large infrastructure** | Civic landmarks, multi-session projects | $1,500–$5,000 + title naming rights |
-| **Government commissions** *(handpicked by the owner)* | Major builds the city actually needs — dungeon zones in the mountains, monuments, major districts | **Negotiated. Could be $10,000+ for the right builder.** |
-
-<InfoCallout type="info" title="City contracts include materials — you're paid for skill and time">
-  Every commission in the table above is a **city contract** — the city supplies the materials. Your fee is pure labor and design. The regular Builder per-block wage still applies on top of the commission fee (see the [wiki's Builder page](https://wiki.prosperitysmp.com/Builder) for rates).
-</InfoCallout>
-
-<InfoCallout type="info" title="Government Commissions">
-  The biggest builds — large city expansions and major civic landmarks — are awarded directly by the server owner to the best builders on the server. There's no formal application: do quality work on smaller contracts, and the offers come to you. Pay is negotiated per project and scales with the scope. Materials supplied.
-</InfoCallout>
-
-### Private Work — Building For Other Players
-
-City contracts are only one source of income. Plenty of builders make a living taking **private commissions** from other players: house builds on their plots, custom decorative work, shop fronts, statues. The city is not involved in these jobs:
-
-- **Materials:** Whatever you and the client agree to. Most common arrangements: client supplies all materials, you supply your own and charge a markup, or split costs.
-- **Price:** Set by you and the client directly. The player market sets the rate.
-- **Advertising:** Open a shop sign offering your services, post in chat, or build a portfolio plot people can tour. Word of mouth matters here.
-
-A skilled builder who can deliver consistent quality usually ends up with **both city contracts and a private client list** — that's where the real money is.
-
-**Practical tip:** Builder pairs well as a second or third job. The block-placement wage is modest, so most successful builders carry it alongside Miner (for cheap material supply on private jobs) or Woodcutter (for cheap lumber). Run `/jobs join builder` even if your main job is something else — you'll be ready when the commission boards open.
-
----
-
-## Woodcutter
-
-**Focus**: Lumber supply, forestry, tree operations
-
-| Level | Title |
-|---|---|
-| 1–9 | Novice Woodcutter |
-| 10–19 | Apprentice Woodcutter |
-| 20–29 | Elite Woodcutter |
-| 30–39 | Master Woodcutter |
-| 40–49 | Grand Master Woodcutter |
-| 50 | Legendary Woodcutter |
-
-### Skill Nodes
-| Level | Skill | Effect |
-|---|---|---|
-| 10 | **Replanter** | 10% extra sapling drop when breaking leaf blocks |
-| 20 | **Tree Feller** | Breaking a log automatically fells the entire trunk above it (up to 20 logs straight up) |
-| 35 | **Axe Care** | 30% chance to cancel durability loss on any axe hit |
-
----
-
-## Hunter
-
-**Focus**: Dungeon clearing, combat, mob drops, bounties
-
-Hunter uses combat **ranks** instead of the standard titles — clear instanced dungeons for cash bounties, loot crates, and rank XP. See the wiki's [Hunter](https://wiki.prosperitysmp.com/Hunter) and [Dungeons](https://wiki.prosperitysmp.com/Dungeons) pages.
+Dungeon clearing, combat, mob drops, bounties. Hunter uses combat **ranks** instead of titles — clear instanced dungeons for cash bounties, loot crates, and rank XP:
 
 | Rank | Hunter level |
 |---|---|
@@ -210,47 +84,11 @@ Hunter uses combat **ranks** instead of the standard titles — clear instanced 
 | A | 40 |
 | S | 50 |
 
-### Skill Nodes
-| Level | Skill | Effect |
-|---|---|---|
-| 5 | **Tracker's Eye** | 20% bonus drop from zombies (rotten flesh), skeletons (bone), and creepers (gunpowder) |
-| 10 | **Field Dressing** | Bonus leather from cows, horses, and pigs; bonus bone from skeletons; bonus string from spiders |
-| 15 | **Trail Rations** | 25% chance for a free cooked meat drop when killing chickens, cows, or pigs |
-| 20 | **Arrow Recovery** | 20% chance to recover an arrow after killing a mob with a bow |
-| 40 | **Beast Lore** | -15% damage taken from zombies, skeletons, spiders, creepers, and cave spiders |
+See the wiki's [Hunter](https://wiki.prosperitysmp.com/Hunter) and [Dungeons](https://wiki.prosperitysmp.com/Dungeons) pages.
 
----
+### Fisherman
 
-## Fisherman
-
-**Focus**: Food supply, rare catches, ocean contracts
-
-| Level | Title |
-|---|---|
-| 1–9 | Novice Fisherman |
-| 10–19 | Apprentice Fisherman |
-| 20–29 | Elite Fisherman |
-| 30–39 | Master Fisherman |
-| 40–49 | Grand Master Fisherman |
-| 50 | Legendary Fisherman |
-
-### Skill Nodes
-| Level | Skill | Effect |
-|---|---|---|
-| 5 | **Steady Cast** | +5% Fisher Jobs wage on every catch |
-| 10 | **Fish Packer** | Eligible for fish-only storage crates (future) |
-| 15 | **Sea Legs** | -40% drowning damage |
-| 20 | **Rod Care** | 30% chance to cancel durability loss on a fishing rod cast |
-| 25 | **Bait Saver** | Eligible for bait conservation (future) |
-| 30 | **Cooler Box** | Eligible for fish-only storage access (future) |
-| 35 | **Dockhand** | +10% Fisher Jobs wage on every catch (stacks with Steady Cast) |
-| 40 | **Deepwater Gear** | 15% chance to upgrade a Common catch to Rare in ocean biomes |
-| 45 | **Treasure Rights** | 10% chance to upgrade a Common/Rare catch to Epic |
-| 50 | **Legendary Angler** | 5% chance to upgrade any catch to Legendary |
-
-<InfoCallout type="info">
-**Powered by EvenMoreFish:** The rarity-upgrade skills (Deepwater Gear, Treasure Rights, Legendary Angler) work with the EvenMoreFish custom-catch system. Custom fish only spawn in the resource world.
-</InfoCallout>
+Food supply, rare catches, and the custom fish system. Perks improve wages, rod durability, and catch rarity — rare-catch upgrades work with the custom-fish system in the resource world. Full details: wiki [Fisherman](https://wiki.prosperitysmp.com/Fisherman).
 
 ---
 
@@ -262,13 +100,15 @@ Prestige is the largest single money sink in the game. Each tier costs significa
 
 ### Prestige Costs
 
-| Tier | Cost (per tier, per job) | Reward |
+| Tier | Cash cost (per tier, per job) | Reward |
 |---|---|---|
-| **P1** | $25,000 + 10 diamond blocks + 64 emeralds | +5% income, +10% XP, Master Item I |
-| **P2** | $75,000 + 30 diamond blocks + 1 netherite block | +10% income (cumulative), +20% XP, Master Item II |
-| **P3** | $200,000 + 80 diamond blocks + 3 netherite blocks | +15% income, +30% XP, Master Item III |
-| **P4** | $500,000 + 200 diamond blocks + 8 netherite blocks | +20% income, +40% XP, Master Item IV |
-| **P5** | $1,000,000 + 500 diamond blocks + 20 netherite blocks + 1 dragon egg | +25% income, +50% XP, Master Item V |
+| **P1** | $25,000 + materials | +5% income, +10% XP |
+| **P2** | $75,000 + materials | +10% income (cumulative), +20% XP |
+| **P3** | $200,000 + materials | +15% income, +30% XP |
+| **P4** | $500,000 + materials | +20% income, +40% XP |
+| **P5** | $1,000,000 + materials | +25% income, +50% XP |
+
+Material requirements per tier are listed on the wiki's [Prestige](https://wiki.prosperitysmp.com/Prestige) page.
 
 ### Cumulative Bonuses
 
@@ -283,26 +123,13 @@ Prestige is the largest single money sink in the game. Each tier costs significa
 
 A P5 maxed Miner has +75% income on every block they break, on top of all their tool effects.
 
-### Master Items
+### Prestige rewards
 
-Each prestige tier grants a unique **Master Item** specific to that job — a permanent, Soulbound, named tool with the original owner's name engraved forever.
-
-| Job | P1 Item | What It Does (P1 baseline) |
-|---|---|---|
-| **Miner** | Master Drill | Netherite pickaxe, Eff V, Fortune III, Telekinesis, Unbreaking V, 3x3 AOE |
-| **Farmer** | Master Harvester | Netherite hoe, Eff V, Replenish, Telekinesis, 5x5 harvest |
-| **Builder** | Master Trowel | Place pattern in one shift-click; saved templates |
-| **Woodcutter** | Master Lumberjack | Chop whole tree + auto-replant in one swing |
-| **Hunter** | Master Bow | Homing arrow at low-tier; multi-shot at higher tiers |
-| **Fisher** | Master Rod | Auto-recast + treasure boost |
-
-Higher tiers (P2-P5) add more abilities to the Master Item — autosmelt, larger AOE, vein detection, auto-deposit to a linked chest, etc.
-
-**Master Items are Soulbound but tradeable.** You won't drop them on death. You can sell or gift them to other players, but the original owner's name stays engraved as provenance. Expect Master Items to sell for $100,000+ on the player market once Prestige players exist.
+Each prestige grants a named **prestige tool** for that career, and prestige crates can roll rarer rewards — including the **Master Tools** (the only source of Mending on the server) and [vouchers](https://wiki.prosperitysmp.com/Vouchers). Full reward details: wiki [Prestige](https://wiki.prosperitysmp.com/Prestige) and [Crates](https://wiki.prosperitysmp.com/Crates).
 
 ### Why Prestige Matters
 
 - **Long-term progression** — even after you max a job, there's a next mountain to climb
-- **Biggest sink in the economy** — total cost of P5 in one job is ~$1.8M plus massive material requirements
-- **Prestige is forever** — Master Items persist across the season, and any cumulative bonuses earned are kept indefinitely
+- **Biggest sink in the economy** — the cash cost of P5 in one job is ~$1.8M, plus major material requirements
+- **Prestige is forever** — rewards persist across the season, and cumulative bonuses are kept indefinitely
 - **Each job is independent** — you can be P3 Miner with no prestige in other jobs, or P1 in five jobs at once

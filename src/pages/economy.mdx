@@ -13,7 +13,7 @@ The economy is built around **player trade**. The admin shop is a fallback floor
 If you want a diamond pickaxe, you buy it from a player or craft it yourself. If you want a Fortune III tool, you find someone who built the progression to make one.
 
 <InfoCallout type="info" title="Live tuning may occur">
-  Economy values, prices, and rewards may be adjusted post-launch based on observed inflation and player feedback. Patches are posted in the [changelog](/changelog).
+  Economy values, prices, and rewards may be adjusted post-launch based on observed inflation and player feedback. Patches are posted in the [changelog](/changelog). Current per-item figures always live on the [wiki](https://wiki.prosperitysmp.com) and the [economy dashboard](https://economy.prosperitysmp.com).
 </InfoCallout>
 
 ## How Income Works
@@ -38,7 +38,7 @@ The job wage is intentionally modest. Real income comes from selling what you co
 | Mid-level (around level 25) | $500–$750 |
 | Level 50 maxed job, hand work | $690–$1,000 |
 | Level 50 + T2/T3 drill or harvester | $1,000–$1,750 |
-| Prestige 5 + Master Item | $1,750–$2,500 |
+| Prestige 5 + Master Tool | $1,750–$2,500 |
 
 ## The Three-Price Rule
 
@@ -54,54 +54,43 @@ Admin buy  <  Player market  <  Admin sell
 
 If admin buy prices are too close to player market prices, players stop trading with each other and just dump everything to the server. The spread is intentional.
 
-## Key Item Anchor Prices
+## Checking Prices
 
-These are the calibration points. Player shops set their own prices, but the admin floor and the items the admin shop refuses to sell are fixed.
+Prices are living numbers — don't trust static tables:
 
-| Item | Admin Buy | Player Market (est.) | Admin Sell |
-|---|---|---|---|
-| Cobblestone | $0.03 | $0.10 | $0.30 |
-| Oak / Birch / Spruce log | $0.15 | $0.40 | $1.50 |
-| Coal | $0.15 | $0.30 | $1.50 |
-| Iron ingot | $0.25 | $0.80–1.50 | — |
-| Gold ingot | $0.20 | $1.80–3.00 | — |
-| Copper ingot | $0.15 | $0.20 | $0.75 |
-| Lapis lazuli | $0.30 | $0.60 | — |
-| Redstone | $0.05 | $0.10 | $0.50 |
-| **Diamond** | **$20** | **$25–40** | — never |
-| **Emerald** | **$5** | **$15–40** | — never |
-| **Ancient debris** | **$200** | $300–500 | — never |
-| **Netherite ingot** | **$1,000** | $1,400–2,200 | — never |
-| Blaze rod | $0.20 | $3–5 | — never |
-| Ghast tear | $3 | $15–25 | $30 |
-| Wheat | $0.22 | $0.40 | $1.50 |
-| Bread | $0.40 | $1.00 | $3.00 |
-| White wool | $0.23 | $0.30 | $1.00 |
-
-**The server NEVER sells:** diamonds, emeralds, netherite, ancient debris, enchanted items, elytra, beacons, totems, dragon eggs, conduits. Player market only.
+- **`/market <item>`** in game — median price from recent real player trades
+- The **[economy dashboard](https://economy.prosperitysmp.com)** — item worth estimates and market data
+- The wiki's [Item worth](https://wiki.prosperitysmp.com/Item_worth) and [Admin shop](https://wiki.prosperitysmp.com/Admin_shop) pages — how the pricing systems work
 
 ## Money Faucets
 
 Money enters the economy through:
 
 - **Jobs** — Regular wage paid per manual action in your profession
-- **Public contracts** — The Town Hall posts contracts for needed resources and construction
-- **Job stipends** — Random bonus drops while doing your career's work — gunpowder for Miners, bone meal for Farmers, arrows for Hunters (see the [wiki's Stipends page](https://wiki.prosperitysmp.com/Stipends) for current rates)
-- **Starter quests** — One-time intro rewards for new players
+- **Public contracts** — The contract board pays for needed resources
+- **Job stipends** — Random bonus drops while doing your career's work (see the [wiki's Stipends page](https://wiki.prosperitysmp.com/Stipends) for current rates)
 - **Admin shop sales** — Selling basic raw materials at floor prices
+- **Daily & playtime rewards** — `/daily` login streaks and `/rewards` playtime chests
 
 ## Money Sinks
 
 Money leaves the economy through:
 
 - **Plot rental** — Weekly fees for rented apartments, plots, market stalls
-- **Plot purchases** — Buying plots from the city
 - **Tools and equipment** — Drills, harvesters, enchanted gear (tools wear out and must be replaced)
-- **Repair costs** — Anvil repair with matching ingots; no Mending allowed
+- **Repair costs** — Anvil repair with matching ingots; no Mending in normal play
 - **Master Smith books** — high-tier enchant books ($10,000–$120,000 plus diamond blocks)
 - **Fines** — Law violations result in fines paid to the city or victims
-- **Development projects** — Fund city expansion (Frontier I = $35,000)
 - **Prestige** — The biggest late-game sink — see below
+
+## Banks & Markets
+
+Beyond shops, four live systems move money around:
+
+- **The Central Bank** is open — flexible savings, 7-day bonds, and **stocks** (the Prosperity Index), with a full trading desk at [economy.prosperitysmp.com/stocks.html](https://economy.prosperitysmp.com/stocks.html). See the wiki's [Banking](https://wiki.prosperitysmp.com/Banking) and [Stock market](https://wiki.prosperitysmp.com/Stock_market) pages.
+- **The Auction House** (`/ah`) — server-wide item marketplace with listing fees and a sale cut. Wiki: [Auction house](https://wiki.prosperitysmp.com/Auction_house).
+- **The Casino** — coinflip, crash, slots, and a daily lottery. Wiki: [Casino](https://wiki.prosperitysmp.com/Casino).
+- **The Bazaar** — the admin shop's decorative/catalog section. Wiki: [Bazaar](https://wiki.prosperitysmp.com/Bazaar).
 
 ## Jobs and Progression
 
@@ -114,48 +103,15 @@ Jobs are the core progression system. Join up to 3 jobs, level each to 50, and u
 | Income bonus | +1% per level, max +50% at level 50 |
 | Time to max | ~50 hours of active work |
 
-As you level up, your job title advances — Novice → Apprentice → Elite → Master → Grand Master → Legendary. Job-specific milestones unlock real progression items at certain levels.
-
-**Miner unlock milestones:**
-
-| Level | Unlock |
-|---|---|
-| 7 | Basic mining contracts |
-| 15 | T1 Compact Drill access |
-| 30 | T2 Industrial Drill access |
-| 35 | Efficiency VII crafting path |
-| 45 | T3 Apex Drill access + Fortune research path |
-| 50 | Prestige eligibility |
-
-Other careers have parallel paths — Farmer unlocks harvesters, Builder unlocks public works contracts, Hunter unlocks dungeons, etc.
+As you level up, your job title advances — Novice → Apprentice → Elite → Master → Grand Master → Legendary (Hunter uses combat ranks E→S instead). Job-specific milestones unlock real progression items at certain levels — see each job's page on the [wiki](https://wiki.prosperitysmp.com/Jobs).
 
 ## Drills and Harvesters
 
-Tier-3 mining and farming tools. Bought with in-game money, gated by Miner/Farmer level.
-
-| Tier | Drill | Harvester | Price | Job Level |
-|---|---|---|---|---|
-| T1 | Compact Drill (iron pickaxe + 3x3 AOE) | Compact Harvester (iron hoe + auto-replant) | $1,500 / $1,000 | L15 |
-| T2 | Industrial Drill (diamond pickaxe + Fortune I + 3x3) | Industrial Harvester (diamond hoe) | $4,000 / $2,500 | L30 |
-| T3 | Apex Drill (netherite + Fortune II + Telekinesis) | Apex Harvester (netherite hoe + Telekinesis) | $8,000 / $5,000 | L45 |
-
-Drills and harvesters are repairable via anvil + matching ingot. Tools eventually become too expensive to repair and must be replaced — that's the long-term money sink.
+3×3 AOE mining and farming tools, bought with in-game money (`/buydrill`, `/buyharvester`) and gated by Miner/Farmer level (tiers at L15/L30/L45). They're repairable via anvil + matching ingot, and eventually become too expensive to repair — that's the long-term sink. Current prices and specs: wiki [Drills and harvesters](https://wiki.prosperitysmp.com/Drills_and_harvesters).
 
 ## Prestige System
 
-When you hit level 50 in a job, you can **Prestige** — reset your level back to 1 in exchange for permanent passive bonuses and a shot at a unique Master Tool.
-
-| Prestige | Cost (per tier, per job) | Reward |
-|---|---|---|
-| P1 | $25,000 + 10 diamond blocks + 64 emeralds | +5% income, +10% XP, Master Item I |
-| P2 | $75,000 + 30 diamond blocks + 1 netherite block | +10% income (cumulative), +20% XP, Master Item II |
-| P3 | $200,000 + 80 diamond blocks + 3 netherite blocks | +15% income, +30% XP, Master Item III |
-| P4 | $500,000 + 200 diamond blocks + 8 netherite blocks | +20% income, +40% XP, Master Item IV |
-| P5 | $1,000,000 + 500 diamond blocks + 20 netherite blocks + 1 dragon egg | +25% income, +50% XP, Master Item V |
-
-Each prestige tier grants a unique **Master Item** specific to that job. For Miners, P1 gives the Master Drill — a permanent Soulbound netherite pickaxe with Fortune III, Telekinesis, and Unbreaking V. Master Items are tradeable but Soulbound (won't drop on death), and they keep the original owner's name engraved forever.
-
-Each job can be prestiged independently up to P5. A maxed-out player with P5 in one job will have +75% total income on that job (the L1-50 +50% bonus plus the +25% prestige passive on top).
+When you hit level 50 in a job, you can **Prestige** — reset your level back to 1 in exchange for permanent passive bonuses (+5% income / +10% XP per tier, stacking to +25% / +50% at P5) and a shot at a unique Master Tool. Cash costs run $25,000 (P1) to $1,000,000 (P5) per job, plus materials — the largest single sink in the game. Details: [Skill Trees & Jobs](/skill-trees#prestige) and the wiki's [Prestige](https://wiki.prosperitysmp.com/Prestige) page.
 
 ## Admin Shop Rules
 
@@ -163,7 +119,7 @@ The admin shop is a **price floor**, not a store. It exists so players always ha
 
 **The server buys:** Basic raw materials — stone, logs, basic crops, raw ores, coal, wool — at floor prices that stay well below player market.
 
-**The server sells (fallback only, expensive):** Basic tools (iron pickaxe at $80), food, torches, seeds. Priced 2–3× above player market so player shops always win.
+**The server sells (fallback only, expensive):** Basic tools, food, torches, seeds — priced well above player market so player shops always win.
 
 **The server never sells:** Diamonds, emeralds, netherite, ancient debris, enchanted items, elytra, beacons, totems, rare drops, music discs, mob heads, dragon eggs.
 
@@ -178,17 +134,7 @@ Player shops are the primary market:
 
 ## Land as Wealth
 
-Land is one of the most important assets on the server:
-
-| Plot Type | Weekly Rent | Purchase |
-|---|---|---|
-| Starter apartment | $100 | — |
-| Starter residential | $250 | $1,500 |
-| Market stall (10 currently active) | $150 | — |
-| Mid-tier commercial | $500 | $4,000 |
-| Premium commercial | $1,500 | $12,000 |
-| Industrial plot | $2,000 | $20,000 |
-| Company HQ plot | $4,000 | $50,000 |
+Land is one of the most important assets on the server. Plots come in three zones — Residential, Commercial, Industrial — plus apartments and market stalls. **Rentals are open** (apartments, stalls, shops); **commercial plot purchases are paused until the new map**. Renting and buying happen through the plot signs — see the wiki's [Real estate](https://wiki.prosperitysmp.com/Real_estate) and [Plot rental](https://wiki.prosperitysmp.com/Plot_rental) pages.
 
 Owning land is a milestone. It's a home, a store of value, and a business foundation.
 
@@ -197,7 +143,7 @@ Owning land is a milestone. It's a home, a store of value, and a business founda
 Public contracts bridge player productivity and world development:
 
 - The city posts contracts for needed resources: timber, stone, food, materials
-- Players complete contracts and are paid by the city treasury — see the [contracts page](/contracts) for the current board
+- Players complete contracts and are paid by the city treasury — see the [contracts page](/contracts)
 - Resources are consumed (sink), money is paid out (faucet) but always less than market value
 - This is a steady money faucet for active, organized players, capped by daily limits to prevent farming
 
@@ -208,9 +154,8 @@ The economy has built-in protections:
 - **Monthly review:** Jobs wages tested and adjusted if combined income is too high or too low
 - **Admin shop spread:** Buy prices stay well below player market prices
 - **Plot rental:** Continuous money sink for every active player
-- **Tool wear:** No Mending means tools must be repaired with materials or rebought; both are sinks
+- **Tool wear:** No Mending in normal play means tools must be repaired with materials or rebought; both are sinks
 - **Prestige cost:** The largest single sink in the game ($25k–$1M per tier)
-- **Development projects:** Frontier expansion, district unlocks, infrastructure all cost large sums plus materials
 
 ## Boosted Weekends
 
