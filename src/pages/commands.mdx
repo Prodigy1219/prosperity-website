@@ -20,6 +20,7 @@ The 10 commands you'll use every session:
 
 | Command | What it does |
 |---|---|
+| `/spawn` | Teleport to spawn |
 | `/warp spawn` | Teleport to spawn (the city) |
 | `/rtp` | Random teleport into the resource world (mining area) |
 | `/sethome <name>` | Set a home you can teleport back to |
@@ -50,10 +51,6 @@ The 10 commands you'll use every session:
 | `/tpaccept` | Accept an incoming teleport request |
 | `/tpdeny` | Deny an incoming teleport request |
 | `/back` | Return to your last location after teleporting or dying |
-
-<InfoCallout type="info" title="`/spawn` doesn't work">
-  EssentialsX disabled `/spawn` on this server. Use **`/warp spawn`** instead.
-</InfoCallout>
 
 ---
 
@@ -102,12 +99,11 @@ You have **3 job slots**. Each job caps at level 50.
 | Command | What it does |
 |---|---|
 | `/jobs browse` | See all available jobs and what they pay |
-| `/jobs join <jobname>` | Join a job (case-sensitive: Miner, Farmer, Builder, Woodcutter, Hunter, Fisherman) |
+| `/jobs join <jobname>` | Join a job (Miner, Farmer, Builder, Woodcutter, Hunter, Fisherman) |
 | `/jobs leave <jobname>` | Leave a job (you keep titles but lose the slot) |
 | `/jobs stats` | See your current jobs, levels, and XP |
 | `/jobs info <jobname>` | See payment rates for a specific job |
 | `/jobs top <jobname>` | Top 10 players in that job |
-| `/jobs reload` | Reload (admin only) |
 
 ### Job titles
 Your current title shows in chat (e.g. `[Apprentice Miner]`). You can pin which one displays.
@@ -212,7 +208,7 @@ Tier 1 needs the skill tree unlock. Tier 2 needs **Miner P2 (Twice-Forged)**. Ti
 
 ## Drills & Harvesters
 
-3×3 AOE tools that drill out 9 blocks per swing. Money pays for all 9; XP only counts the directly-swung block. Banned in main world (drills); harvesters work anywhere you have build permission.
+3×3 AOE tools that drill out 9 blocks per swing. Their real value is the 9× material yield — Jobs wages are reduced on the extra blocks, and only the centre block wears the tool. Drills work on plots you own or rent and in the resource world; harvesters work anywhere you have build permission.
 
 | Command | What it does |
 |---|---|
@@ -249,7 +245,6 @@ Prestige tiers: Reborn → Twice-Forged → Thrice-Forged → Mythic → Eternal
 |---|---|
 | `/help` | In-game help menu |
 | `/rules` | Quick rules summary |
-| `/spawn` | ❌ Disabled — use `/warp spawn` |
 | `/afk` | Mark yourself as AFK |
 | `/discord` | Show the Discord invite |
 
