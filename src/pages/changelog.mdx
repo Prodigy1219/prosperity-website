@@ -42,7 +42,7 @@ Season 0 launched on 2026-05-22. Highlights since:
 
 - **Crates v2** — 27 crates across job tiers, prestige tiers, and a welcome crate. Granted at every 5th job level.
 - **The simulated market** — an automated buyer keeps low-traffic player shops liquid. Sell through ChestShops even when no players are buying.
-- **Auction house** — `/ah` server-wide fixed-price listings ($10 + 1% listing fee, 3% sale cut).
+- **Auction house** — `/ah` server-wide fixed-price listings ($10 + 1% listing fee, 3% sale cut). *(Note 2026-08-05: listing works and the listing fee is charged as described. The buy path is still being fixed — no auction sale has completed yet, so the 3% sale cut has never actually been taken.)*
 - **`/market <item>`** — live median prices from real player trades.
 - **Dungeons** — instanced boss challenges for the Hunter path, solo or party.
 - **The law system** — in-game crimes (assault, theft, fraud) now draw real fines through `/fine`, with criminal records. PvP is consequence-free in the resource world, arenas, and duels; it's an offense in civil areas.
@@ -58,11 +58,15 @@ Major economy overhaul ahead of launch. Player-facing highlights:
 
 **Anchor price rebalance.** Old prices implied diamond ≈ $100. With drills landing on the server, that math broke. v2 anchors are now:
 - Diamond: $20 admin floor (was $35–50 in v1)
-- Iron ingot: $0.40 admin floor (was $0.63)
-- Gold ingot: $1.00 (was inverted below iron — fixed)
-- Emerald: $10 (was wrongly above diamond)
+- Iron ingot: $0.25 admin floor (was $0.63)
+- Gold ingot: $0.20
+- Emerald: $5 (was wrongly above diamond)
 - Ancient debris: $200 (was $25)
 - Netherite ingot: $1,000
+
+<InfoCallout type="info" title="Corrected 2026-08-05">
+  This entry previously listed iron at $0.40, gold at $1.00 and emerald at $10, and said the gold-below-iron inversion had been fixed. The live admin-shop values are $0.25, $0.20 and $5 — and gold does still sell below iron. The prices above now match the server.
+</InfoCallout>
 
 All admin-shop sell prices updated to match. The server still **never sells** diamonds, emeralds, netherite, ancient debris, or enchanted items — those stay player-market only.
 
@@ -70,7 +74,7 @@ All admin-shop sell prices updated to match. The server still **never sells** di
 
 **Job stipends added.** Random bonus drops while doing your career's work — 5% chance of gunpowder per block mined as Miner, 7% bone meal per crop harvested as Farmer, 10% arrows per monster kill as Hunter, etc. Helps supply chains (gunpowder for TNT/fireworks/beacons, bone meal for farms) and boosts new-player income by 10-15%.
 
-**Drill + Tractor migration plan.** The Vehicles plugin is being replaced pre-launch with a custom in-house system. Same 3 tiers (T1/T2/T3), same 3x3 AOE mining and farming, but the new tools are pickaxes and hoes rather than rideable vehicles. Reasons: Bedrock compatibility (Geyser players couldn't see the vehicle models) and performance (the Vehicles plugin had documented TPS overhead). Tools are repairable via anvil + matching ingot. Tier prices: T1 $1,500 / T2 $4,000 / T3 $8,000 for drills; $1,000 / $2,500 / $5,000 for harvesters.
+**Drill + Tractor migration plan.** The Vehicles plugin is being replaced pre-launch with a custom in-house system. Same 3 tiers (T1/T2/T3), same 3x3 AOE mining and farming, but the new tools are pickaxes and hoes rather than rideable vehicles. Reasons: Bedrock compatibility (Geyser players couldn't see the vehicle models) and performance (the Vehicles plugin had documented TPS overhead). Tools are repairable via anvil + matching ingot. Tier prices: T1 $3,000 / T2 $12,000 / T3 $19,500 for drills; $3,000 / $7,500 / $15,000 for harvesters. *(Corrected 2026-08-05 — this entry was written as a forward-looking migration plan and quoted pre-implementation prices of $1,500/$4,000/$8,000 and $1,000/$2,500/$5,000. The figures above are what the server actually charges.)*
 
 **Contract Board rewards re-audited.** All 12 automated `/deliver` contracts had their payouts recalibrated to v2 anchors. Stone supply dropped from $80→$50, iron from $250→$200, diamond from $400→$200. See [Quests & Contracts](/contracts) for the full updated board.
 
@@ -139,7 +143,7 @@ The biggest builds — dungeon zones in the mountains, civic landmarks, major di
 
 **Fishing**
 - **Added**: EvenMoreFish plugin — custom fish with rarity tiers (Common / Rare / Epic / Legendary), biome-specific catches, and direct Vault payouts
-- **Custom fish are resource-world only.** Main world fishing returns normal vanilla fish (a designated `fishing_pier` region will open later in the main world for variety)
+- **Custom fish are caught at the spawn pond and the frog pond, both in the main world.** Fishing anywhere else — including the resource world — returns normal vanilla fish. *(Corrected 2026-08-05: this entry originally said custom fish were resource-world only, which is backwards. The resource world has no fishing regions defined at all.)*
 - **Database** enabled for fish stats and `/emf top` leaderboards
 - **Competitions** disabled at launch — will be enabled once player count justifies them
 - **Jobs Reborn** Fisher wages still paid on every catch (EMF and Jobs both fire on the same event)
@@ -180,7 +184,7 @@ The biggest builds — dungeon zones in the mountains, civic landmarks, major di
 - **Finalized**: World borders — Main world 4,000 radius, Resource world 2,500 radius, Nether resource 1,250 radius
 - **Added**: Main world is government-owned and WorldGuard-protected. Players buy or rent plots through AreaShop signs. Build rights are scoped to your plot only.
 - **Added**: The End is locked at launch. Opens Week 2+ via server event.
-- **Added**: Resource world resets roughly every 6 weeks. Nether resource world every 8 weeks.
+- **Added**: Resource world and nether resource world. *(Corrected 2026-08-05: this entry originally promised resets "roughly every 6 weeks" and "every 8 weeks". No reset schedule was ever implemented and neither world has reset. Any future reset cadence will be announced before it starts, not backdated.)*
 
 **Website**
 - **Updated**: Skill Trees page — all 6 jobs now show actual live skill nodes instead of placeholder license chains
