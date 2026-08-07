@@ -2,15 +2,31 @@
 interface Props {
   title: string;
   description: string;
-  icon?: string;
-  href?: string;
+  icon?: 'pickaxe' | 'chest' | 'plot' | 'clipboard';
+  eyebrow?: string;
+  class?: string;
 }
-const { title, description, icon, href } = Astro.props;
+const { title, description, icon, eyebrow, class: className = '' } = Astro.props;
+
+// Pixel icons, 16x16 grid, axis-aligned rectangles only, rendered at 24px.
+const iconPaths: Record<NonNullable<Props['icon']>, string> = {
+  pickaxe: 'M2 3h2v2H2z M4 4h3v2H4z M7 5h2v2H7z M9 4h3v2H9z M12 3h2v2h-2z M7 7h2v7H7z',
+  chest: 'M2 4h12v3H2z M2 8h12v5H2z M7 6h2v3H7z',
+  plot: 'M7 2h2v2H7z M5 4h6v2H5z M3 6h10v2H3z M4 8h3v6H4z M9 8h3v6H9z',
+  clipboard: 'M6 1h4v3H6z M3 3h10v2H3z M3 5h2v9H3z M11 5h2v9h-2z M3 12h10v2H3z M6 6h5v2H6z M6 9h3v2H6z',
+};
 ---
 
-<div class={`group relative bg-slate-900 border border-slate-800 rounded-lg p-5 transition-all hover:border-emerald/30 hover:bg-slate-800/50 ${href ? 'cursor-pointer' : ''}`}>
-  {href && <a href={href} class="absolute inset-0" aria-label={title}></a>}
-  {icon && <div class="text-2xl mb-3">{icon}</div>}
-  <h3 class="font-heading text-gold text-sm font-semibold mb-2">{title}</h3>
-  <p class="text-cream/60 text-sm leading-relaxed">{description}</p>
+<div class={`bg-panel bevel rounded-none p-6 transition-colors hover:bg-control focus-within:bg-control ${className}`}>
+  {icon && iconPaths[icon] && (
+    <div class="mb-4 text-accent">
+      <svg viewBox="0 0 16 16" width="24" height="24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true">
+        <path d={iconPaths[icon]} />
+      </svg>
+    </div>
+  )}
+  {eyebrow && <p class="text-micro uppercase font-semibold text-ink-dim mb-2">{eyebrow}</p>}
+  <h3 class="text-body font-semibold text-ink tracking-tight mb-2">{title}</h3>
+  <p class="text-small text-ink-muted">{description}</p>
+  <slot />
 </div>

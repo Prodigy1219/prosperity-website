@@ -2,43 +2,54 @@
 layout: ../layouts/DocsLayout.astro
 title: Skill Trees & Jobs
 description: Profession paths, job progression, and skill unlocks in ProsperitySMP.
+schema:
+  - "@type": ItemList
+    name: The six jobs on ProsperitySMP
+    itemListOrder: https://schema.org/ItemListUnordered
+    numberOfItems: 6
+    itemListElement:
+      - { "@type": ListItem, position: 1, name: Miner }
+      - { "@type": ListItem, position: 2, name: Farmer }
+      - { "@type": ListItem, position: 3, name: Builder }
+      - { "@type": ListItem, position: 4, name: Woodcutter }
+      - { "@type": ListItem, position: 5, name: Hunter }
+      - { "@type": ListItem, position: 6, name: Fisherman }
 ---
 
 import InfoCallout from '../components/InfoCallout.astro';
 
-## Overview
+## How jobs and skill trees fit together
 
-ProsperitySMP has two connected progression systems: **Jobs** and **Skill Trees**.
+ProsperitySMP has two progression systems and one feeds the other. **Jobs** pay wages, run from level 1 to 50, and hand out titles as you climb; you join one with `/jobs join`. **Skill trees** are the perk layer sitting on top, and `/skills` opens the GUI where you spend into your job's nodes.
 
-- **Jobs** earn wages, have levels (1–50), and grant titles as you level up. Join via `/jobs join`.
-- **Skill Trees** are a live perk system tied to your job level. Open the GUI with `/skills` to see and unlock your job's nodes.
+Nodes cost skill points, and skill points come from job levels, so no money changes hands anywhere in the tree. Current node lists and effects, job by job, are on the [wiki](https://wiki.prosperitysmp.com/Skill_trees).
 
-You do not need to buy anything to unlock skill nodes — they cost skill points earned by leveling your job. For the current node list and effects per job, see each job's page on the [wiki](https://wiki.prosperitysmp.com/Skill_trees).
+## How many jobs can you have at once?
 
-## Job Slots
+Three, and all three slots are free.
 
 | Slot | Cost |
 |---|---|
 | Slots 1–3 | Free |
 
-Each player can hold **3 jobs at once** in Season 0. Additional slots may unlock in a future season.
+That is the Season 0 cap. More slots may open in a later season.
 
-## Specialization vs Diversification
+## Specialise or spread out?
 
-Both paths are valid — the system is designed so neither feels wrong.
+Nobody has proved which is better yet.
 
-| Path | What You Get |
+| Path | What you get |
 |---|---|
-| **Specialize** (go deep in one job) | Stronger wage scaling, better titles, better contracts, stronger skill perks |
+| **Specialise** (go deep in one job) | Stronger wage scaling, better titles, better contracts, stronger skill perks |
 | **Diversify** (level multiple jobs) | More business models, more income sources, more flexibility |
 
-A level 50 Miner is the best miner on the server. A player with Miner + Builder + Woodcutter has more options. Pick based on how you want to play.
+A level 50 Miner is the best miner on the server. Someone running Miner, Builder, and Woodcutter has more angles when prices move, and less depth in any one of them. Pick whichever you'll still be playing in a month.
 
 ---
 
-## The 6 Jobs
+## The six jobs
 
-Each job has 50 levels, takes ~50 hours to max, and grants a +1% income bonus per level above level 1 (max +49% at level 50, applied to job wage). Five of the six jobs share the same title ladder:
+Miner, Farmer, Builder, Woodcutter, Hunter, Fisherman. Every one runs to level 50, takes roughly 50 hours to max, and pays +1% more per level above the first, so a level 50 job earns +49% on its wage. Five of the six share one title ladder.
 
 | Level | Title |
 |---|---|
@@ -49,31 +60,31 @@ Each job has 50 levels, takes ~50 hours to max, and grants a +1% income bonus pe
 | 40–49 | Grand Master |
 | 50 | Legendary |
 
-**Hunter is the exception** — it uses combat ranks **E → S** instead (see below).
+**Hunter is the exception.** It runs combat ranks, E through S, listed below.
 
 ### Miner
 
-Resource extraction, underground operations, high-tier tools. Signature perks include underground night vision, auto-smelting, and bulk ore compression — and Miner levels gate the **drills**: 3×3 AOE mining pickaxes bought with in-game money (`/buydrill`). Full node list and drill tiers: wiki [Miner](https://wiki.prosperitysmp.com/Miner) and [Drills and harvesters](https://wiki.prosperitysmp.com/Drills_and_harvesters).
+Miner is for people who live underground, and the [node list](https://wiki.prosperitysmp.com/Miner) follows from that: underground night vision, auto-smelting, and bulk ore compression. Miner level also gates the [**drills**](https://wiki.prosperitysmp.com/Drills_and_harvesters), 3×3 AOE mining pickaxes bought with in-game money (`/buydrill`).
 
 ### Farmer
 
-Food production, ranching, and bulk harvest. Breed and tend animals for money, craft signature consumables at high level, and unlock the **harvesters**: 3×3 auto-replanting AOE hoes (`/buyharvester`). Full details: wiki [Farmer](https://wiki.prosperitysmp.com/Farmer) and [Drills and harvesters](https://wiki.prosperitysmp.com/Drills_and_harvesters).
+Farmer is the job that feeds the server. Breeding and tending animals pays directly, signature consumables unlock at high level, and Farmer level opens the **harvesters**: 3×3 auto-replanting AOE hoes (`/buyharvester`). Food production and bulk harvest carry the wage in between. The [Farmer](https://wiki.prosperitysmp.com/Farmer) and [Drills and harvesters](https://wiki.prosperitysmp.com/Drills_and_harvesters) wiki pages carry the node lists.
 
 ### Builder
 
-Construction, public works, architectural projects — and the highest-paying commissions on the server for players with real building skill.
+Builder earns very little from wages. The money is in contracts. A small commission done well is what gets you the next one, and the ladder runs up to owner-awarded government builds with pay negotiated and materials supplied. Skilled builders here are paid like specialists, not labourers.
 
-If you love building, this is your job. The economy is structured so that **skilled builders are paid like specialists, not laborers** — routine block-placement wages are modest by design, and the real income comes from contracts. Builder isn't a grind-to-50 job; **it's an audition**: do quality work and bigger city commissions come to you, up to owner-awarded government builds with negotiated pay and materials supplied. Plenty of builders also take **private commissions** from other players — house builds, shop fronts, custom work — at rates the player market sets. See the wiki's [Builder](https://wiki.prosperitysmp.com/Builder) and [Government build contracts](https://wiki.prosperitysmp.com/Government_build_contracts) pages.
+If you like building, this is the job — every commission you take is portfolio the owner can look at. Plenty of builders also take **private commissions** from other players: house builds, shop fronts, custom work, at whatever rate the player market sets. The wiki covers both tracks on its [Builder](https://wiki.prosperitysmp.com/Builder) and [Government build contracts](https://wiki.prosperitysmp.com/Government_build_contracts) pages.
 
-**Practical tip:** Builder pairs well as a second or third job — most successful builders carry it alongside Miner or Woodcutter for cheap material supply.
+**Practical tip:** Builder pairs well as a second or third job. Most working builders carry it alongside Miner or Woodcutter for cheap material supply.
 
 ### Woodcutter
 
-Lumber supply, forestry, tree operations. Signature perks include whole-trunk felling, paid log-stripping and charcoal work, and craftable reinforced shields at high level. Full details: wiki [Woodcutter](https://wiki.prosperitysmp.com/Woodcutter).
+Woodcutter is bulk timber work: whole-trunk felling, paid log-stripping and charcoal work, and reinforced shields you can craft at high level, all of it laid out on the [Woodcutter](https://wiki.prosperitysmp.com/Woodcutter) tree. Somebody has to keep the builders supplied.
 
 ### Hunter
 
-Dungeon clearing, combat, mob drops, bounties. Hunter uses combat **ranks** instead of titles — clear instanced dungeons for cash bounties, loot crates, and rank XP:
+A Hunter's real money is in the instanced dungeons. Clearing one pays a cash bounty, loot crates, and rank XP; mob drops and bounties fill the gaps between runs. Hunter is ranked E through S:
 
 | Rank | Hunter level |
 |---|---|
@@ -88,17 +99,17 @@ See the wiki's [Hunter](https://wiki.prosperitysmp.com/Hunter) and [Dungeons](ht
 
 ### Fisherman
 
-Food supply, rare catches, and the custom fish system. Perks improve wages, rod durability, and catch rarity — rare-catch upgrades work with the custom-fish system at the spawn pond and the frog pond, both in the main world. Full details: wiki [Fisherman](https://wiki.prosperitysmp.com/Fisherman).
+The custom-fish system runs at the spawn pond and the frog pond, both in the main world. [Fisherman](https://wiki.prosperitysmp.com/Fisherman) perks raise your wage, your rod durability, and your odds on a rare catch, and those rare-catch upgrades feed straight back into it. Fishing also keeps the food supply moving.
 
 ---
 
 ## Prestige
 
-When you reach level 50 in a job, you can **Prestige** — your level resets to 1 in exchange for permanent passive bonuses and a shot at a unique **Master Tool** for that career.
+Level 50 is where a job can be **prestiged**. Your level resets to 1, and you keep permanent passive bonuses plus a shot at a unique **Master Tool** for that career.
 
-Prestige is the largest single money sink in the game. Each tier costs significantly more than the last, and you can prestige independently in every job.
+It's the largest single money sink in the game. Each tier costs a multiple of the last, and every job prestiges independently.
 
-### Prestige Costs
+### Prestige costs
 
 | Tier | Cash cost (per tier, per job) | Reward |
 |---|---|---|
@@ -110,26 +121,28 @@ Prestige is the largest single money sink in the game. Each tier costs significa
 
 Material requirements per tier are listed on the wiki's [Prestige](https://wiki.prosperitysmp.com/Prestige) page.
 
-### Cumulative Bonuses
+### Cumulative bonuses
 
-| Prestige Level | Total Income Bonus | Total XP Rate |
+The prestige bonus **multiplies** your wage; it doesn't add to the level bonus. At level 50 your wage is already ×1.49, and each prestige tier multiplies that again by 1.05. So the totals, measured once you're back at level 50:
+
+| Prestige level | Total income bonus | Total XP rate |
 |---|---|---|
-| Just L50 (P0) | +50% | +0% |
-| P1 | +55% | +10% |
-| P2 | +60% | +20% |
-| P3 | +65% | +30% |
-| P4 | +70% | +40% |
-| P5 | +75% | +50% |
+| Just L50 (P0) | +49% | +0% |
+| P1 | +56.45% | +10% |
+| P2 | +63.9% | +20% |
+| P3 | +71.35% | +30% |
+| P4 | +78.8% | +40% |
+| P5 | +86.25% | +50% |
 
-A P5 maxed Miner has +75% income on every block they break, on top of all their tool effects.
+A P5 Miner back at level 50 has +86.25% income on every block they break (1.49 × 1.25), on top of all their tool effects. Straight after prestiging, while you're back at level 1, the prestige bonus alone applies: +25% at P5.
 
 ### Prestige rewards
 
-Each prestige grants a named **prestige tool** for that career, and prestige crates can roll rarer rewards — including the **Master Tools** (the only source of Mending on the server) and [vouchers](https://wiki.prosperitysmp.com/Vouchers). Full reward details: wiki [Prestige](https://wiki.prosperitysmp.com/Prestige) and [Crates](https://wiki.prosperitysmp.com/Crates).
+Each prestige grants a named **prestige tool** for that career, and prestige crates can roll rarer rewards, including the **Master Tools** (the only source of Mending on the server) and [vouchers](https://wiki.prosperitysmp.com/Vouchers). Full reward details on the wiki: [Prestige](https://wiki.prosperitysmp.com/Prestige) and [Crates](https://wiki.prosperitysmp.com/Crates).
 
-### Why Prestige Matters
+### What prestige is actually for
 
-- **Long-term progression** — even after you max a job, there's a next mountain to climb
-- **Biggest sink in the economy** — taking one job all the way to P5 costs $720,000 in cash, plus major material requirements
-- **Prestige is forever** — rewards persist across the season, and cumulative bonuses are kept indefinitely
-- **Each job is independent** — you can be P3 Miner with no prestige in other jobs, or P1 in five jobs at once
+- **Somewhere to go after 50.** The level cap stops being the end of the job.
+- **The biggest sink in the economy.** One job taken all the way to P5 costs $720,000 in cash, plus major material requirements.
+- It sticks: prestige bonuses last the rest of Season 0.
+- **Each job is independent.** You can be P3 Miner with nothing anywhere else, or P1 in five jobs at once.

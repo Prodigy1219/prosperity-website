@@ -1,21 +1,41 @@
 ---
 interface Props {
-  type?: 'warning' | 'info' | 'danger' | 'success';
+  type?: 'note' | 'info' | 'success' | 'warning' | 'danger';
   title?: string;
 }
-const { type = 'info', title } = Astro.props;
+const { type = 'note', title } = Astro.props;
 
-const styles = {
-  warning: 'border-gold bg-gold/5 text-gold',
-  info: 'border-emerald bg-emerald/5 text-emerald',
-  danger: 'border-red-500 bg-red-500/5 text-red-400',
-  success: 'border-emerald bg-emerald/5 text-emerald',
-};
+const resolved = (type === 'info' || type === 'success') ? 'note' : type;
+
+const rail = {
+  note:    'border-l-[3px] border-l-action-ink',
+  warning: 'border-l-[3px] border-l-accent',
+  danger:  'border-l-[3px] border-l-red-400',
+}[resolved];
+
+const iconColor = {
+  note:    'text-action-ink',
+  warning: 'text-accent',
+  danger:  'text-red-400',
+}[resolved];
+
+const iconPath = {
+  note:    'M6 1h4v3H6z M6 6h4v9H6z',
+  warning: 'M7 1h2v3H7z M6 4h4v2H6z M5 6h6v2H5z M4 8h8v2H4z M3 10h10v2H3z M2 12h12v2H2z',
+  danger:  'M5 1h6v2H5z M3 3h10v2H3z M1 5h14v6H1z M3 11h10v2H3z M5 13h6v2H5z',
+}[resolved];
 ---
 
-<div class={`border-l-4 rounded-r px-4 py-3 my-4 ${styles[type]}`}>
-  {title && <p class="font-semibold text-sm mb-1">{title}</p>}
-  <div class="text-cream/80 text-sm">
-    <slot />
+<div class={`not-prose bg-panel rounded-none pl-5 pr-5 py-4 my-6 flex gap-4 ${rail}`}>
+  <span class={`shrink-0 mt-0.5 ${iconColor}`} aria-hidden="true">
+    <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true">
+      <path d={iconPath} />
+    </svg>
+  </span>
+  <div class="min-w-0">
+    {title && <p class="text-body font-semibold text-ink mb-1">{title}</p>}
+    <div class="text-small text-ink-muted [&_p]:text-ink-muted [&_p:last-child]:mb-0">
+      <slot />
+    </div>
   </div>
 </div>

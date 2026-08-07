@@ -1,0 +1,49 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  label: string;
+  value: string;
+  class?: string;
+}
+const { label, value, class: className = '' } = Astro.props;
+---
+
+<div class={`flex items-center justify-between gap-3 bg-panel bevel rounded-none px-4 py-3 ${className}`}>
+  <div class="min-w-0">
+    <p class="text-micro uppercase font-semibold text-ink-dim mb-1">{label}</p>
+    <p class="font-mono text-body text-ink truncate" title={value}>{value}</p>
+  </div>
+
+  <button
+    type="button"
+    class="copy-btn inline-flex items-center gap-1.5 shrink-0 rounded-none whitespace-nowrap px-3 py-2 text-small font-semibold text-ink bg-transparent border-2 border-edge-control hover:bg-control hover:border-ink-dim transition-colors"
+    data-copy={value}
+    aria-label={`Copy ${label}`}
+  >
+    <Icon name="copy" size={14} />
+    <span data-copy-label>Copy</span>
+  </button>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const value = btn.getAttribute('data-copy');
+      const label = btn.querySelector('[data-copy-label]');
+      if (!value || !label) return;
+      try {
+        await navigator.clipboard.writeText(value);
+      } catch {
+        return;
+      }
+      const previous = label.textContent;
+      label.textContent = 'Copied';
+      btn.setAttribute('data-copied', 'true');
+      window.setTimeout(() => {
+        label.textContent = previous;
+        btn.removeAttribute('data-copied');
+      }, 1500);
+    });
+  });
+</script>

@@ -2,131 +2,161 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import FeatureCard from '../components/FeatureCard.astro';
+import IpField from '../components/IpField.astro';
+import { serverInfo } from '../data/serverInfo';
 
-const features = [
-  {
-    icon: '🌲',
-    title: 'Pick a Job, Earn Wages',
-    description: 'Miner, Farmer, Builder, Woodcutter, Hunter, or Fisherman. Each one pays per action and unlocks a skill tree as you level.',
-  },
-  {
-    icon: '🏪',
-    title: 'Real Player Market',
-    description: 'The admin shop is a fallback. Tools, gear, food, and rare materials come from chest shops in the market district.',
-  },
-  {
-    icon: '🏡',
-    title: 'Land You Own',
-    description: 'Rent an apartment cheap, save up for a plot, and build a base. Land is finite — first come, first served.',
-  },
-  {
-    icon: '📋',
-    title: 'Civic Contracts',
-    description: 'The contract board pays cash for bulk raw materials. Easy money while you figure out your main grind.',
-  },
-];
+const jobs = ['Miner', 'Farmer', 'Builder', 'Woodcutter', 'Hunter', 'Fisherman'];
+
+const BTN_PRIMARY =
+  'inline-flex items-center justify-center gap-2 rounded-none whitespace-nowrap px-8 py-4 text-body font-semibold text-white bg-action bevel hover:bg-action-hover active:bevel-inset transition-colors';
+const BTN_SECONDARY =
+  'inline-flex items-center justify-center gap-2 rounded-none whitespace-nowrap px-8 py-4 text-body font-semibold text-ink bg-transparent border-2 border-edge-control hover:bg-control hover:border-ink-dim transition-colors';
+const LINK_TERTIARY =
+  'text-small text-ink-muted underline underline-offset-4 decoration-edge-control hover:text-accent hover:decoration-accent transition-colors';
+
+const CODE = 'font-mono text-small text-accent-soft bg-control px-1.5 py-0.5';
+const STEP_NUM =
+  'shrink-0 w-8 h-8 rounded-none bg-control bevel-inset flex items-center justify-center font-mono text-small font-semibold text-accent';
+
+// Mirrors the four rendered steps below, in order. If the visible step
+// headings change, change these with them.
+const schema = [{
+  '@type': 'HowTo',
+  name: 'Do these four things first on ProsperitySMP',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Pick a job' },
+    { '@type': 'HowToStep', position: 2, name: 'Get to the resource world' },
+    { '@type': 'HowToStep', position: 3, name: 'Set a home' },
+    { '@type': 'HowToStep', position: 4, name: 'Sell, save, plan' },
+  ],
+}];
 ---
 
 <BaseLayout
   title="ProsperitySMP"
-  description="A Minecraft survival economy server built around land, jobs, skill trees, public projects, and player-driven development."
+  description="A cross-platform Minecraft survival economy server on Paper 1.21.8. Six jobs, player-run chest shops, land that runs out, weekly rent. Java and Bedrock, no whitelist."
+  extraSchema={schema}
 >
   <Hero />
 
-  <!-- What you do here -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-    <div class="text-center mb-10">
-      <h2 class="font-heading text-2xl sm:text-3xl text-gold font-bold mb-3">What you do here</h2>
-      <p class="text-cream/60 max-w-xl mx-auto">
-        A survival server built around player-driven economy — not grinding alone.
-      </p>
-    </div>
+  <!-- What you're signing up for -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-20 lg:py-24">
+    <h2 class="rule-gold font-heading font-bold text-h2 sm:text-d3 text-ink mb-3">What you're signing up for</h2>
+    <p class="text-body text-ink-muted max-w-2xl mb-10">
+      The market, the land, and the contract board all run on what other players dig up and sell.
+    </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {features.map(f => (
-        <FeatureCard title={f.title} description={f.description} icon={f.icon} />
-      ))}
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <FeatureCard
+        class="sm:col-span-3"
+        icon="pickaxe"
+        title="Six jobs, three slots"
+        description="All three slots are free. Each job pays you per action and opens a skill tree you level by working it."
+      >
+        <div class="mt-4 flex flex-wrap gap-2">
+          {jobs.map(job => (
+            <span class="inline-block bg-control bevel-inset rounded-none px-2.5 py-1 font-mono text-small text-ink">{job}</span>
+          ))}
+        </div>
+      </FeatureCard>
+
+      <FeatureCard
+        icon="chest"
+        title="Chest shops, not the admin shop"
+        description="The admin shop is the price floor you fall back on. Tools, enchanted gear, food, and bulk materials come out of chest shops in the market district."
+      />
+
+      <FeatureCard
+        icon="plot"
+        title="Land is finite"
+        description="Rentals are open: apartments, market stalls, and shop space. Commercial plot purchases are paused until the new map. Rent comes out weekly."
+      />
+
+      <FeatureCard
+        icon="clipboard"
+        title="The contract board"
+        description="The city posts standing orders for raw materials at a stated payout. The treasury pays on delivery, with no approval step in between. Daily caps stop it becoming your whole income."
+      />
     </div>
   </section>
 
-  <!-- First 10 minutes -->
-  <section class="bg-slate-900 border-y border-slate-800 py-16">
+  <!-- Do these four things first -->
+  <section class="bg-panel border-y border-edge py-24 lg:py-28">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading text-2xl sm:text-3xl text-gold font-bold mb-2 text-center">Your first 10 minutes</h2>
-      <p class="text-cream/60 text-center text-sm mb-10">After you connect, do these in order.</p>
-      <ol class="space-y-4">
+      <h2 class="rule-gold font-heading font-bold text-h2 sm:text-d3 text-ink mb-10">Do these four things first</h2>
+
+      <ol class="space-y-6">
         <li class="flex gap-4">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald/20 border border-emerald/40 text-emerald font-bold flex items-center justify-center text-sm">1</span>
-          <div>
-            <h3 class="font-heading text-cream font-semibold mb-1">Pick a job</h3>
-            <p class="text-cream/60 text-sm">Run <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/jobs browse</code>, then <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/jobs join &lt;name&gt;</code>. You get 3 free slots.</p>
+          <span class={STEP_NUM} aria-hidden="true">1</span>
+          <div class="min-w-0">
+            <h3 class="text-h3 font-semibold text-ink mb-1">Pick a job</h3>
+            <p class="text-small text-ink-muted">
+              Run <code class={CODE}>/jobs browse</code>, then <code class={CODE}>/jobs join &lt;name&gt;</code>.
+              Miner, Farmer, Builder, Woodcutter, Hunter, Fisherman: pick up to three.
+              On Bedrock, <code class={CODE}>/jobs join Miner</code> skips the GUI.
+            </p>
           </div>
         </li>
         <li class="flex gap-4">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald/20 border border-emerald/40 text-emerald font-bold flex items-center justify-center text-sm">2</span>
-          <div>
-            <h3 class="font-heading text-cream font-semibold mb-1">Get to the resource world</h3>
-            <p class="text-cream/60 text-sm">Type <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/rtp</code> to teleport to a random spot in the resource world. Work your job there — it's unprotected, and keep-inventory is off.</p>
+          <span class={STEP_NUM} aria-hidden="true">2</span>
+          <div class="min-w-0">
+            <h3 class="text-h3 font-semibold text-ink mb-1">Get to the resource world</h3>
+            <p class="text-small text-ink-muted">
+              <code class={CODE}>/rtp</code> drops you somewhere random out there. Work your job.
+              The resource world, the nether, and the end are unprotected, and keep-inventory is off in all three
+              (it stays on in the city), so carry what you can afford to lose.
+            </p>
           </div>
         </li>
         <li class="flex gap-4">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald/20 border border-emerald/40 text-emerald font-bold flex items-center justify-center text-sm">3</span>
-          <div>
-            <h3 class="font-heading text-cream font-semibold mb-1">Set a home</h3>
-            <p class="text-cream/60 text-sm">When you find a good spot, <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/sethome work</code>. Then <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/home work</code> brings you back any time.</p>
+          <span class={STEP_NUM} aria-hidden="true">3</span>
+          <div class="min-w-0">
+            <h3 class="text-h3 font-semibold text-ink mb-1">Set a home</h3>
+            <p class="text-small text-ink-muted">
+              <code class={CODE}>/sethome work</code> pins wherever you're standing, and <code class={CODE}>/home work</code> brings you back to it.
+              Do it before you go deep, not after.
+            </p>
           </div>
         </li>
         <li class="flex gap-4">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald/20 border border-emerald/40 text-emerald font-bold flex items-center justify-center text-sm">4</span>
-          <div>
-            <h3 class="font-heading text-cream font-semibold mb-1">Sell, save, plan</h3>
-            <p class="text-cream/60 text-sm">Back at spawn, <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/shop</code> for the admin store or use the market district for player shops. Check <code class="text-gold font-mono text-xs bg-charcoal px-1.5 py-0.5 rounded">/contracts</code> for daily cash.</p>
+          <span class={STEP_NUM} aria-hidden="true">4</span>
+          <div class="min-w-0">
+            <h3 class="text-h3 font-semibold text-ink mb-1">Sell, save, plan</h3>
+            <p class="text-small text-ink-muted">
+              Sell to the admin shop with <code class={CODE}>/shop</code>, or walk the market district and see what players are paying.
+              Check <code class={CODE}>/contracts</code> before you log off.
+            </p>
           </div>
         </li>
       </ol>
-      <div class="text-center mt-10">
-        <a href="/commands" class="inline-flex items-center gap-2 text-emerald hover:text-emerald/80 font-medium text-sm">
-          See all commands →
-        </a>
-      </div>
+
+      <p class="mt-10">
+        <a href="/commands" class={LINK_TERTIARY}>All commands →</a>
+        <span class="px-2 text-ink-dim" aria-hidden="true">·</span>
+        <a href="/faq" class={LINK_TERTIARY}>Common questions →</a>
+      </p>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-16 text-center">
-    <h2 class="font-heading text-2xl sm:text-3xl text-gold font-bold mb-3">Ready to join?</h2>
-    <p class="text-cream/60 mb-8 text-sm">Cross-platform — Java and Bedrock share the same world.</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto mb-8">
-      <div class="bg-slate-900 border border-slate-800 rounded p-4 text-left">
-        <div class="text-cream/40 text-xs uppercase tracking-wider mb-1">Java IP</div>
-        <div class="text-gold font-mono text-sm break-all">play.prosperitysmp.com</div>
-      </div>
-      <div class="bg-slate-900 border border-slate-800 rounded p-4 text-left">
-        <div class="text-cream/40 text-xs uppercase tracking-wider mb-1">Bedrock IP</div>
-        <div class="text-gold font-mono text-sm break-all">15.204.249.228:19132</div>
-      </div>
+  <!-- Two IPs, one world -->
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 pt-28 pb-24 lg:pt-32 lg:pb-28 text-center">
+    <h2 class="rule-gold [&::before]:mx-auto font-heading font-bold text-h2 sm:text-d3 text-ink mb-3">Two IPs, one world</h2>
+    <p class="text-body text-ink-muted mb-10">Pick the address for your platform. Either one puts you in the same city, trading in the same market.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10 text-left">
+      <IpField label="Java IP" value={serverInfo.ip} />
+      <IpField label="Bedrock IP" value={serverInfo.bedrockIp} />
     </div>
-    <div class="flex flex-col sm:flex-row gap-3 justify-center">
-      <a href="/getting-started" class="inline-flex items-center justify-center px-6 py-3 rounded bg-emerald hover:bg-emerald-700 text-white font-medium transition-colors">
-        Getting Started
-      </a>
-      <a href="/commands" class="inline-flex items-center justify-center px-6 py-3 rounded bg-slate-800 hover:bg-slate-700 text-cream font-medium border border-slate-700 transition-colors">
-        Command Cheat Sheet
-      </a>
-      <a href="https://wiki.prosperitysmp.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded bg-slate-800 hover:bg-slate-700 text-cream font-medium border border-slate-700 transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-        </svg>
-        Browse the Wiki
-      </a>
-      <a href="https://economy.prosperitysmp.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded bg-slate-800 hover:bg-slate-700 text-cream font-medium border border-slate-700 transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M22 7l-8.5 8.5-5-5L2 17"></path>
-          <path d="M16 7h6v6"></path>
-        </svg>
-        Economy Dashboard
-      </a>
+
+    <div class="flex flex-col sm:flex-row flex-wrap gap-3 justify-center mb-6">
+      <a href="/getting-started" class={BTN_PRIMARY}>Getting started</a>
+      <a href="/commands" class={BTN_SECONDARY}>Command cheat sheet</a>
     </div>
+
+    <p class="text-small text-ink-muted">
+      <a href={serverInfo.wiki} target="_blank" rel="noopener noreferrer" class={LINK_TERTIARY}>Wiki</a>
+      <span class="px-2 text-ink-dim" aria-hidden="true">·</span>
+      <a href={serverInfo.economy} target="_blank" rel="noopener noreferrer" class={LINK_TERTIARY}>Economy dashboard</a>
+    </p>
   </section>
 </BaseLayout>

@@ -1,25 +1,33 @@
 ---
 import { primaryNav } from '../data/navigation';
+
 const { pathname } = Astro.url;
+
+// One shared matcher for both navs — the desktop and mobile lists used to
+// disagree (bare equality vs a loose startsWith), so a child route highlighted
+// on one and not the other.
+const isActive = (href: string) =>
+  href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/');
 ---
 
-<header class="sticky top-0 z-50 bg-charcoal/95 backdrop-blur border-b border-slate-800">
+<header class="sticky top-0 z-50 bg-surface/95 backdrop-blur border-b border-edge">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="flex items-center justify-between h-16">
-      <a href="/" class="flex items-center gap-3">
-        <img src="/logo.png" alt="ProsperitySMP" class="h-8 w-auto" />
-        <span class="font-heading text-gold font-semibold text-lg hidden sm:block">ProsperitySMP</span>
+
+      <a href="/" aria-label="ProsperitySMP — home" class="flex items-center gap-3">
+        <img src="/logo.png" alt="" width="256" height="256" class="h-8 w-auto" />
+        <span class="font-heading text-accent font-bold text-h3 hidden sm:block">ProsperitySMP</span>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-1">
+      <nav aria-label="Main" class="hidden lg:flex items-center gap-1">
         {primaryNav.map((link) => (
           <a
             href={link.href}
-            class={`px-3 py-2 rounded text-sm font-medium transition-colors ${
-              pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))
-                ? 'text-gold bg-slate-800'
-                : 'text-cream/70 hover:text-cream hover:bg-slate-800/50'
+            aria-current={isActive(link.href) ? 'page' : undefined}
+            class={`px-3 py-2 rounded-none text-small font-medium transition-colors ${
+              isActive(link.href)
+                ? 'text-accent bg-control'
+                : 'text-ink-muted hover:text-ink hover:bg-control'
             }`}
           >
             {link.label}
@@ -27,28 +35,33 @@ const { pathname } = Astro.url;
         ))}
       </nav>
 
-      <!-- Mobile menu button -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden p-2 rounded text-cream/70 hover:text-cream hover:bg-slate-800"
+        type="button"
         aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="lg:hidden p-2 rounded-none text-ink-muted hover:text-ink hover:bg-control transition-colors"
       >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <svg data-icon-open class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg data-icon-close class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
         </svg>
       </button>
     </div>
 
-    <!-- Mobile Nav -->
-    <nav id="mobile-menu" class="hidden md:hidden pb-3 border-t border-slate-800 mt-1">
+    <nav id="mobile-menu" aria-label="Mobile" class="hidden lg:hidden pb-3 border-t border-edge mt-1">
       <div class="pt-2 flex flex-col gap-1">
         {primaryNav.map((link) => (
           <a
             href={link.href}
-            class={`px-3 py-2 rounded text-sm font-medium transition-colors ${
-              pathname === link.href
-                ? 'text-gold bg-slate-800'
-                : 'text-cream/70 hover:text-cream hover:bg-slate-800/50'
+            aria-current={isActive(link.href) ? 'page' : undefined}
+            class={`px-3 py-2 rounded-none text-small font-medium transition-colors ${
+              isActive(link.href)
+                ? 'text-accent bg-control'
+                : 'text-ink-muted hover:text-ink hover:bg-control'
             }`}
           >
             {link.label}
@@ -62,7 +75,28 @@ const { pathname } = Astro.url;
 <script>
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
-  btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
+  const iconOpen = btn?.querySelector('[data-icon-open]');
+  const iconClose = btn?.querySelector('[data-icon-close]');
+
+  const setOpen = (open: boolean) => {
+    menu?.classList.toggle('hidden', !open);
+    iconOpen?.classList.toggle('hidden', open);
+    iconClose?.classList.toggle('hidden', !open);
+    btn?.setAttribute('aria-expanded', String(open));
+    if (open) (menu?.querySelector('a') as HTMLElement | null)?.focus();
+  };
+
+  btn?.addEventListener('click', () => setOpen(menu?.classList.contains('hidden') ?? true));
+  menu?.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu?.classList.contains('hidden')) {
+      setOpen(false);
+      (btn as HTMLElement | null)?.focus();
+    }
+  });
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => {
+    if (e.matches) setOpen(false);
   });
 </script>
