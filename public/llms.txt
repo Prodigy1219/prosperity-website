@@ -2,7 +2,7 @@
 
 > ProsperitySMP · Java `play.prosperitysmp.com` · Bedrock `15.204.249.228:19132` · Paper 1.21.8 · Java + Bedrock crossplay via Geyser · Season 0, live · Open to public, no whitelist
 
-A Minecraft survival economy server. Six jobs (Miner, Farmer, Builder, Woodcutter, Hunter, Fisherman) with three free job slots, chest shops run by players, land that runs out, rent due weekly, and a public contract board. Java and Bedrock players share one world, one economy and one chat. The resource world is unprotected and keep-inventory is off there. The Central Bank is open: flexible savings (`/savings`), 7-day bonds (`/bond`) and the Prosperity Index (`/stocks`) are all live. The weekend boost is 1.5x. There is no referral programme.
+A Minecraft survival economy server. Six jobs (Miner, Farmer, Builder, Woodcutter, Hunter, Fisherman) with three free job slots, chest shops run by players, city land you can buy outright, and a public contract board. Residential and Commercial plots are sold at the plot signs and carry no rent once bought; apartments, market stalls and spawn shops are rented by the week instead. Plots and rentals of both kinds are unclaimed right now. Java and Bedrock players share one world, one economy and one chat. The resource world is unprotected and keep-inventory is off there; it stays on in the main world. The Central Bank is open: flexible savings (`/savings`), 7-day bonds (`/bond`) and the Prosperity Index (`/stocks`) are all live. The auction house (`/ah`) takes listings but its buy path is still in beta, and direct player-to-player `/trade` is disabled pending a fix for an item-loss bug. The weekend boost is 1.5x. There is no referral programme, and there is no planned map reset.
 
 ## Pages
 

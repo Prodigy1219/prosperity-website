@@ -1,7 +1,7 @@
 export const serverInfo = {
   name: 'ProsperitySMP',
   // Rendered as the hero lede in Hero.astro. Keep it to one idea.
-  tagline: 'A city economy where the land runs out.',
+  tagline: 'A city economy where you can own the land, not just rent it.',
   ip: 'play.prosperitysmp.com',
   bedrockIp: '15.204.249.228:19132',
   version: 'Paper 1.21.8',

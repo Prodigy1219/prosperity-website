@@ -78,7 +78,7 @@ All admin-shop sell prices were updated to match. The server still **never sells
 
 **Prestige system locked in.** Hit L50 in a job and you can choose to Prestige: your level resets to 1, and you keep a permanent income bonus across tiers P1–P5 of +5%/+10%/+15%/+20%/+25%. Each tier also hands you a unique Master Item, such as a Master Drill or a Master Harvester. Master Items are Soulbound, so they don't drop on death, but they're still tradeable and they carry the original owner's name as engraved provenance. Each job prestiges independently.
 
-**Job stipends added.** Random bonus drops while you work your career: 5% chance of gunpowder per block mined as Miner, 7% bone meal per crop harvested as Farmer, 10% arrows per monster kill as Hunter, and so on down the list. It feeds the supply chains (gunpowder for TNT, fireworks, and beacons; bone meal for farms) and lifts new-player income by 10–15%.
+**Job stipends added.** Random bonus drops while you work your career: 10% chance of gunpowder per block mined as Miner, 7% bone meal per crop harvested as Farmer, 10% arrows per monster kill as Hunter, and so on down the list. It feeds the supply chains (gunpowder for TNT, fireworks, and beacons; bone meal for farms) and lifts new-player income by 10–15%. *(Corrected 2026-08-07 — the Miner gunpowder rate was published here as 5%; the live rate is and was 10%, and the figure above now matches the server. The Farmer and Hunter rates are unchanged. Two things this entry never covered: stipends don't roll in the main world at all, and since 2026-07-24 each player is on a 2-second stipend cooldown, so a 3×3 drill swing gets one roll rather than nine.)*
 
 **Drill and tractor migration plan.** The Vehicles plugin is being replaced pre-launch with a custom in-house system. Same 3 tiers (T1/T2/T3), same 3×3 AOE mining and farming, but the new tools are pickaxes and hoes rather than rideable vehicles. Two reasons: Geyser players couldn't see the vehicle models, and the Vehicles plugin had documented TPS overhead. Tools repair on an anvil with a matching ingot. Tier prices: T1 $3,000 / T2 $12,000 / T3 $19,500 for drills; $3,000 / $7,500 / $15,000 for harvesters. *(Corrected 2026-08-05 — this entry was written as a forward-looking migration plan and quoted pre-implementation prices of $1,500/$4,000/$8,000 and $1,000/$2,500/$5,000. The figures above are what the server actually charges.)*
 
@@ -198,10 +198,16 @@ The biggest builds work differently: dungeon zones in the mountains, civic landm
 **World System**
 
 - A resource world and a resource nether, both separate worlds for mining and bulk extraction.
-- **World borders settled.** Main world 4,000 radius, resource world 2,500 radius, nether resource 1,250 radius.
+- **World borders settled.** Main world 2,048 radius, resource world 2,048 radius, nether 1,250 radius.
 - The main world is government-owned and WorldGuard-protected. Players buy or rent plots through AreaShop signs, and build rights are scoped to your plot only.
 - **The End is locked at launch.** It opens week 2 or later, via a server event.
 - Resource world and nether resource world. *(Corrected 2026-08-05: this entry originally promised resets "roughly every 6 weeks" and "every 8 weeks". No reset schedule was ever implemented and neither world has reset. Any future reset cadence will be announced before it starts, not backdated.)*
+
+<InfoCallout type="info" title="Corrected 2026-08-07">
+  The border line above gave the main world a 4,000 radius and the resource world 2,500 — those read like full spans reported as radii. The live ChunkyBorder values are 2,048 for the main world and 2,048 for the resource world, and the figures above have been corrected to match. The nether figure was right all along. The End, which this entry didn't mention, is 3,000. All four borders are square, not circular.
+
+  Two of the lines above also describe a resource nether as a world of its own. There is one nether today, shared, and no separate resource nether was ever built. Both lines stay as a record of what was planned in May.
+</InfoCallout>
 
 **Website**
 
