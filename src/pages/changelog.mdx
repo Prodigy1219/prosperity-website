@@ -6,57 +6,63 @@ description: Update history for ProsperitySMP.
 
 import InfoCallout from '../components/InfoCallout.astro';
 
-<InfoCallout type="info" title="Under Construction">
-  ProsperitySMP is under active development. Updates are tracked here as they are released.
+<InfoCallout type="info" title="Under construction">
+  ProsperitySMP is still being built. Entries land here as things ship. Where an entry turned out to be wrong, the correction is dated and left in place rather than quietly edited out.
 </InfoCallout>
 
 ## Season 0
 
-### 2026-07 — The Bank Opens, Casino Launch, Daily Rewards
+### 2026-07 — Casino launch, daily rewards, bank installed
 
-**The Central Bank is open.** Flexible savings, 7-day bonds, and stocks — the Prosperity Index — are all live, with a full trading desk at [economy.prosperitysmp.com/stocks.html](https://economy.prosperitysmp.com/stocks.html). Details on the [wiki's Banking page](https://wiki.prosperitysmp.com/Banking).
-
-**The casino is live.** Gambling returned as a proper casino — coinflip, crash, slots, and a daily lottery. See the [wiki's Casino page](https://wiki.prosperitysmp.com/Casino) for games and limits.
+**The casino is live.** Gambling came back as a proper casino: coinflip, crash, slots, and a daily lottery. Games and limits are on the [wiki's Casino page](https://wiki.prosperitysmp.com/Casino).
 
 **Daily rewards.** `/daily` login streaks and `/rewards` playtime chests pay you for showing up.
 
-**Hunter rework.** Hunter is now the dungeon-clearing career with ranks E–S — the first dungeon is open.
+**Hunter rework.** Hunter is the dungeon-clearing career now, with ranks E through S. The first dungeon is open.
 
-**Woodcutter** now pays on all nine log types, including pale oak.
+**Woodcutter** pays on all nine log types, pale oak included.
 
-### 2026-06-10 — Job Pay +25%, Build Contracts, Bank Incoming
+**The Central Bank went onto the server, locked.** Flexible savings, 7-day bonds, and the stock layer, the Prosperity Index, were all installed, and none of them were open at the time. The trading desk sits at [economy.prosperitysmp.com/stocks.html](https://economy.prosperitysmp.com/stocks.html), and the [wiki's Banking page](https://wiki.prosperitysmp.com/Banking) covers how it works.
 
-**All six jobs got a 25% base pay raise.** You said wages were too low — the polls were loud and clear — and the economy's guardrails (income tracking, sinks, the reconciliation engine) are now strong enough to support it. Every per-action wage is up 25%; level bonuses, prestige bonuses, and event multipliers stack on top as before.
+<InfoCallout type="info" title="Corrected 2026-08-05">
+  This entry originally said the Central Bank was open and that savings, bonds, and stocks were all live. On 2026-08-05 that was not yet true: the bank was on the server in a locked state.
 
-**Government build contracts are live.** Builders hired for public projects get flight and region-limited WorldEdit inside their build site — no creative mode, no material smuggling, just fast building on city land. Want to build for the city? Ask in Discord.
+  **Update 2026-08-06 — the bank is open.** `/savings`, `/bond`, and `/stocks` are live and working.
+</InfoCallout>
 
-**The Central Bank is installed and opening soon.** Flexible savings (withdraw any time) and 7-day bonds, with weekly interest. It's on the server in a locked state while final testing wraps up.
+### 2026-06-10 — Job pay +25%, build contracts, bank incoming
 
-**`/gamble` is disabled.** The old gambling crate is offline while gambling gets a proper rework. It may return as part of a larger casino update.
+**All six jobs got a 25% base pay raise.** Wages were too low and the polls said so. The economy's guardrails — income tracking, sinks, and the reconciliation engine — were finally strong enough to carry it. Every per-action wage went up 25%. Level bonuses, prestige bonuses, and event multipliers stack on top as before.
 
-Also: the [wiki](https://wiki.prosperitysmp.com) got a full refresh — accurate pay tables for every job, a Banking page, and a Government build contracts page.
+**Government build contracts are live.** Builders hired for public projects get flight and region-limited WorldEdit inside their build site. No creative mode, no material smuggling. If you want to build for the city, say so in Discord.
 
-### 2026-05-22 → 2026-06-09 — Launch and the First Three Weeks
+**The Central Bank was installed, ready to open.** Flexible savings (withdraw any time) and 7-day bonds, with weekly interest. It went onto the server in a locked state while final testing wrapped up.
+
+**`/gamble` is disabled.** The old gambling crate went offline while gambling got a proper rework. It may return as part of a larger casino update.
+
+Also: the [wiki](https://wiki.prosperitysmp.com) got a full refresh, with accurate pay tables for every job, a Banking page, and a Government build contracts page.
+
+### 2026-05-22 → 2026-06-09 — Launch, and the first three weeks
 
 Season 0 launched on 2026-05-22. Highlights since:
 
-- **Crates v2** — 27 crates across job tiers, prestige tiers, and a welcome crate. Granted at every 5th job level.
-- **The simulated market** — an automated buyer keeps low-traffic player shops liquid. Sell through ChestShops even when no players are buying.
-- **Auction house** — `/ah` server-wide fixed-price listings ($10 + 1% listing fee, 3% sale cut). *(Note 2026-08-05: listing works and the listing fee is charged as described. The buy path is still being fixed — no auction sale has completed yet, so the 3% sale cut has never actually been taken.)*
-- **`/market <item>`** — live median prices from real player trades.
-- **Dungeons** — instanced boss challenges for the Hunter path, solo or party.
-- **The law system** — in-game crimes (assault, theft, fraud) now draw real fines through `/fine`, with criminal records. PvP is consequence-free in the resource world, arenas, and duels; it's an offense in civil areas.
-- **Master tool passives** — tree-feller (Woodcutter), AOE harvest + replant (Farmer), mob-head drops (Hunter).
-- **Weekend events** — periodic 1.5× payout windows, announced in Discord.
-- **Economy dashboard** — [economy.prosperitysmp.com](https://economy.prosperitysmp.com) shows live market data and item values.
+- **Crates v2** — 27 crates across job tiers, prestige tiers, and a welcome crate, granted at every 5th job level.
+- **The simulated market.** An automated buyer keeps low-traffic player shops liquid, so your ChestShops sell even when no players are buying.
+- **Auction house.** `/ah` server-wide fixed-price listings ($10 + 1% listing fee, 3% sale cut). *(Note 2026-08-05: listing works and the listing fee is charged as described. The buy path is still being fixed — no auction sale has completed yet, so the 3% sale cut has never actually been taken.)*
+- `/market <item>` returns live median prices from real player trades.
+- Instanced boss dungeons for the Hunter path, solo or party.
+- **The law system.** In-game crimes (assault, theft, fraud) now draw real fines through `/fine`, with criminal records. PvP is consequence-free in the resource world, arenas, and duels; it's an offence in civil areas.
+- Master tool passives: tree-feller (Woodcutter), AOE harvest and replant (Farmer), mob-head drops (Hunter).
+- Periodic 1.5× payout windows on weekends, announced in Discord.
+- The [economy dashboard](https://economy.prosperitysmp.com) shows live market data and item values.
 
-## Pre-Launch
+## Pre-launch
 
-### 2026-05-18 — Economy v2 Rebalance + Prestige System + Job Stipends
+### 2026-05-18 — Economy v2 rebalance, prestige system, job stipends
 
 Major economy overhaul ahead of launch. Player-facing highlights:
 
-**Anchor price rebalance.** Old prices implied diamond ≈ $100. With drills landing on the server, that math broke. v2 anchors are now:
+**Anchor price rebalance.** Old prices implied diamond ≈ $100. With drills landing on the server, that arithmetic broke. v2 anchors are now:
 - Diamond: $20 admin floor (was $35–50 in v1)
 - Iron ingot: $0.25 admin floor (was $0.63)
 - Gold ingot: $0.20
@@ -65,44 +71,48 @@ Major economy overhaul ahead of launch. Player-facing highlights:
 - Netherite ingot: $1,000
 
 <InfoCallout type="info" title="Corrected 2026-08-05">
-  This entry previously listed iron at $0.40, gold at $1.00 and emerald at $10, and said the gold-below-iron inversion had been fixed. The live admin-shop values are $0.25, $0.20 and $5 — and gold does still sell below iron. The prices above now match the server.
+  This entry previously listed iron at $0.40, gold at $1.00, and emerald at $10, and said the gold-below-iron inversion had been fixed. The live admin-shop values are $0.25, $0.20, and $5 — and gold does still sell below iron. The prices above now match the server.
 </InfoCallout>
 
-All admin-shop sell prices updated to match. The server still **never sells** diamonds, emeralds, netherite, ancient debris, or enchanted items — those stay player-market only.
+All admin-shop sell prices were updated to match. The server still **never sells** diamonds, emeralds, netherite, ancient debris, or enchanted items. Those stay player-market only.
 
-**Prestige system locked in.** When you hit L50 in a job, you can choose to Prestige — level resets to 0, you gain permanent +5%/+10%/+15%/+20%/+25% income bonuses across tiers P1-P5, and you earn a unique Master Item per tier (Master Drill, Master Harvester, etc.). Master Items are Soulbound (don't drop on death) but tradeable; they retain the original owner's name forever as engraved provenance. Each job can be prestiged independently.
+**Prestige system locked in.** Hit L50 in a job and you can choose to Prestige: your level resets to 1, and you keep a permanent income bonus across tiers P1–P5 of +5%/+10%/+15%/+20%/+25%. Each tier also hands you a unique Master Item, such as a Master Drill or a Master Harvester. Master Items are Soulbound, so they don't drop on death, but they're still tradeable and they carry the original owner's name as engraved provenance. Each job prestiges independently.
 
-**Job stipends added.** Random bonus drops while doing your career's work — 5% chance of gunpowder per block mined as Miner, 7% bone meal per crop harvested as Farmer, 10% arrows per monster kill as Hunter, etc. Helps supply chains (gunpowder for TNT/fireworks/beacons, bone meal for farms) and boosts new-player income by 10-15%.
+**Job stipends added.** Random bonus drops while you work your career: 5% chance of gunpowder per block mined as Miner, 7% bone meal per crop harvested as Farmer, 10% arrows per monster kill as Hunter, and so on down the list. It feeds the supply chains (gunpowder for TNT, fireworks, and beacons; bone meal for farms) and lifts new-player income by 10–15%.
 
-**Drill + Tractor migration plan.** The Vehicles plugin is being replaced pre-launch with a custom in-house system. Same 3 tiers (T1/T2/T3), same 3x3 AOE mining and farming, but the new tools are pickaxes and hoes rather than rideable vehicles. Reasons: Bedrock compatibility (Geyser players couldn't see the vehicle models) and performance (the Vehicles plugin had documented TPS overhead). Tools are repairable via anvil + matching ingot. Tier prices: T1 $3,000 / T2 $12,000 / T3 $19,500 for drills; $3,000 / $7,500 / $15,000 for harvesters. *(Corrected 2026-08-05 — this entry was written as a forward-looking migration plan and quoted pre-implementation prices of $1,500/$4,000/$8,000 and $1,000/$2,500/$5,000. The figures above are what the server actually charges.)*
+**Drill and tractor migration plan.** The Vehicles plugin is being replaced pre-launch with a custom in-house system. Same 3 tiers (T1/T2/T3), same 3×3 AOE mining and farming, but the new tools are pickaxes and hoes rather than rideable vehicles. Two reasons: Geyser players couldn't see the vehicle models, and the Vehicles plugin had documented TPS overhead. Tools repair on an anvil with a matching ingot. Tier prices: T1 $3,000 / T2 $12,000 / T3 $19,500 for drills; $3,000 / $7,500 / $15,000 for harvesters. *(Corrected 2026-08-05 — this entry was written as a forward-looking migration plan and quoted pre-implementation prices of $1,500/$4,000/$8,000 and $1,000/$2,500/$5,000. The figures above are what the server actually charges.)*
 
-**Contract Board rewards re-audited.** All 12 automated `/deliver` contracts had their payouts recalibrated to v2 anchors. Stone supply dropped from $80→$50, iron from $250→$200, diamond from $400→$200. See [Quests & Contracts](/contracts) for the full updated board.
+**Contract board rewards re-audited.** All 12 automated `/deliver` contracts had their payouts recalibrated to v2 anchors. Stone supply dropped from $80→$50, iron from $250→$200, diamond from $400→$200. See [Contracts](/contracts) for the full updated board.
 
-**Boosted XP & payout weekends.** Periodic events where Jobs Reborn wages and/or XP are boosted. Announced in Discord. Roughly one of each per month, alternating weekends. *(Rate corrected 2026-08-05: the boost is **1.5×**, not 2×. The original 2× was reduced on 2026-07-20 because it over-inflated active liquidity. See the [Economy Guide](/economy).)*
+**Boosted XP and payout weekends.** Periodic events where Jobs Reborn wages and/or XP are boosted. Announced in Discord. Roughly one of each per month, alternating weekends. *(Rate corrected 2026-08-05: the boost is **1.5×**, not 2×. The original 2× was reduced on 2026-07-20 because it over-inflated active liquidity. See the [Economy Guide](/economy).)*
 
-**Income expectations updated.** New-player hand-mining income now targets $300–$400/hr (was implied $125–$175 in v1). L50+T3 drill targets $1,200–$1,400/hr. L50 P5 (maxed prestige) targets $1,800–$2,000/hr. See [Economy Guide](/economy) for the full table.
-
----
-
-### 2026-05-14 — Plot Plugin Swap: AreaShop → AdvancedRegionMarket
-
-The plot purchase/rent system was migrated from AreaShop 2.6.0 (last released 2019) to **AdvancedRegionMarket (ARM)**, an actively-maintained alternative. AreaShop's age was causing a compatibility bug on Paper 1.21.8 that was interfering with ChestShop sign placement. ARM uses modern Paper event handlers and integrates the same way (WorldGuard region-backed signs, automatic membership transfer on purchase).
-
-No player-visible change — same buy/rent flow, same per-plot ownership model. Sign tags are slightly different (`[buy]` / `[rent]` instead of `[asbuy]` / `[asrent]`).
+**Income expectations updated.** New-player hand-mining income now targets $300–$400/hr, against an implied $125–$175 in v1. L50 with a T3 drill targets $1,200–$1,400/hr. At L50 with prestige maxed to P5, the target is $1,800–$2,000/hr. The full table is on the [Economy Guide](/economy).
 
 ---
 
-### 2026-05-13 — Drill and Tractor World Rules Updated
+### 2026-05-14 — Plot plugin swap: AreaShop → AdvancedRegionMarket
+
+The plot purchase/rent system was migrated from AreaShop 2.6.0 (last released 2019) to **AdvancedRegionMarket (ARM)**, an actively maintained alternative. AreaShop's age was causing a compatibility bug on Paper 1.21.8 that interfered with ChestShop sign placement. ARM uses modern Paper event handlers and integrates the same way, with WorldGuard region-backed signs and automatic membership transfer on purchase.
+
+Nothing changes for players: same buy/rent flow, same per-plot ownership model. The sign tags differ slightly (`[buy]` / `[rent]` instead of `[asbuy]` / `[asrent]`).
+
+---
+
+### 2026-05-13 — Drill and tractor world rules updated
 
 **Drills** are now permitted in the **resource world, nether, and end**. Still not allowed in the main world.
 
-**Tractors** are now permitted in **all worlds**. In the main world, they only work on land you own (your bought or rented plots) because the city's protection rules block block-break elsewhere. Outside the main world, they work freely.
+**Tractors** are now permitted in **all worlds**. In the main world they only work on land you own (bought or rented plots), because the city's protection rules block block-break everywhere else. Outside the main world they work freely.
 
-This replaces the previous "tractors only on agricultural plots" rule — agricultural plots still exist as a designated district, but tractor use is no longer restricted to them.
+This replaces the previous "tractors only on agricultural plots" rule. Agricultural plots still exist as a designated district, but tractor use is no longer restricted to them.
+
+<InfoCallout type="info" title="Corrected 2026-08-07">
+  The drill rule above is an accurate record of 2026-05-13 and has since changed. Drills now also work anywhere in the main world where you have build permission (land you own or rent), on top of the resource world, nether, and end. [Getting Started](/getting-started) and the [FAQ](/faq) carry the current rule.
+</InfoCallout>
 
 ---
 
-### 2026-05-13 — Referral Rates Raised, 30-Day Launch Bonus Added
+### 2026-05-13 — Referral rates raised, 30-day launch bonus added
 
 > **Retracted 2026-08-05 — this never shipped.** The referral programme was
 > announced but never built: there is no `/invitedby`, no automation, and no
@@ -110,30 +120,31 @@ This replaces the previous "tractors only on agricultural plots" rule — agricu
 > record of what was announced, not as a live offer. The matching copy has been
 > removed from the onboarding guide and from the in-game tip rotation.
 
-~~Inviter standard reward raised from $300 to **$1,000**. Invitee bonus raised from $150 to **$500**. Milestone bonuses scaled up accordingly.~~
+~~Inviter standard reward raised from $300 to **$1,000**. Invitee bonus raised from $150 to **$500**. Milestone bonuses scaled up accordingly.~~ **These rates never shipped and were never paid.**
 
-~~For the first 30 days post-launch (May 22 – June 21), the inviter side is **doubled** — $2,000 per friend you bring during launch month. Get your friends in early.~~
+~~For the first 30 days post-launch (May 22 – June 21), the inviter side is **doubled** — $2,000 per friend you bring during launch month. Get your friends in early.~~ **The $2,000 launch-month bonus never shipped either. Nobody received it.**
 
 ---
 
-### 2026-05-12 — Server Renamed to ProsperitySMP
+### 2026-05-12 — Server renamed to ProsperitySMP
 
 The server has been renamed from **New Prosperity** to **ProsperitySMP**. Cleaner name, easier to brand, fits Minecraft community naming conventions. All future references will use the new name. (Historical changelog entries have also been updated for consistency.)
 
 ---
 
-### 2026-05-12 — Builder Career Pitch + Government Commissions
+### 2026-05-12 — Builder career pitch, government commissions
 
-**Builder job now pitched directly to skilled builders.** Three pages updated:
-- **Skill Trees page**: Builder section now leads with "If you love building in Minecraft, this is your job" plus a new "Why Builder Pays Off" section breaking down the four commission tiers (Small → District → Large → Government).
-- **Getting Started page**: Builder row in the jobs table now mentions government commissions and negotiated pay.
-- **Contracts page**: new InfoCallout under Construction Contracts explaining the government commission path; added a "Government Commission" row to the Contract Tiers table ($10,000+ negotiated).
+**The Builder job is now pitched directly to skilled builders.** Three pages were updated:
 
-The biggest builds — dungeon zones in the mountains, civic landmarks, major districts — are invited directly by the owner based on portfolio work on smaller contracts. No formal application.
+- **Skill Trees page.** The Builder section now leads with "If you love building in Minecraft, this is your job", plus a new "Why Builder Pays Off" section breaking down the four commission tiers (Small → District → Large → Government).
+- **Getting Started page.** The Builder row in the jobs table now mentions government commissions and negotiated pay.
+- **Contracts page** — a new InfoCallout under Construction Contracts explains the government commission path, and a "Government Commission" row was added to the Contract Tiers table ($10,000+ negotiated).
+
+The biggest builds work differently: dungeon zones in the mountains, civic landmarks, and major districts go to builders the owner invites directly, on the strength of portfolio work from smaller contracts. There's no formal application.
 
 ---
 
-### 2026-05-12 — Launch Date Announced: May 22, 2026
+### 2026-05-12 — Launch date announced: May 22, 2026
 
 **ProsperitySMP opens on May 22, 2026.** Hero banner and homepage now display the launch date. Final 10 days of pre-launch work: WorldGuard regions, plot setup, end-to-end testing.
 
@@ -142,13 +153,15 @@ The biggest builds — dungeon zones in the mountains, civic landmarks, major di
 ### 2026-05-12 — EvenMoreFish, RoseStacker, Fisher skill expansion
 
 **Fishing**
-- **Added**: EvenMoreFish plugin — custom fish with rarity tiers (Common / Rare / Epic / Legendary), biome-specific catches, and direct Vault payouts
-- **Custom fish are caught at the spawn pond and the frog pond, both in the main world.** Fishing anywhere else — including the resource world — returns normal vanilla fish. *(Corrected 2026-08-05: this entry originally said custom fish were resource-world only, which is backwards. The resource world has no fishing regions defined at all.)*
-- **Database** enabled for fish stats and `/emf top` leaderboards
-- **Competitions** disabled at launch — will be enabled once player count justifies them
-- **Jobs Reborn** Fisher wages still paid on every catch (EMF and Jobs both fire on the same event)
+
+- **EvenMoreFish is in.** Custom fish with rarity tiers (Common / Rare / Epic / Legendary), biome-specific catches, and direct Vault payouts.
+- Custom fish are caught at the spawn pond and the frog pond, both in the main world. Fishing anywhere else, including the resource world, returns normal vanilla fish. *(Corrected 2026-08-05: this entry originally said custom fish were resource-world only, which is backwards. The resource world has no fishing regions defined at all.)*
+- **The database is on** for fish stats and `/emf top` leaderboards.
+- **Competitions** — disabled at launch, to be enabled once player count justifies them.
+- Jobs Reborn keeps paying: Fisher (now called Fisherman) wages are still paid on every catch, since EMF and Jobs both fire on the same event.
 
 **Fisher Skill Tree expanded with EMF integration**
+
 - **L5 Steady Cast** — +5% Fisher Jobs wage on every catch (new)
 - **L35 Dockhand** — +10% Fisher Jobs wage on every catch (stacks with Steady Cast) (new)
 - **L40 Deepwater Gear** — 15% chance to upgrade a Common catch to Rare in ocean biomes (new)
@@ -157,76 +170,80 @@ The biggest builds — dungeon zones in the mountains, civic landmarks, major di
 - L10/L25/L30 (Fish Packer / Bait Saver / Cooler Box) remain placeholders for future systems
 
 **Performance**
-- **Added**: RoseStacker — dropped items now merge automatically to reduce entity load. Configured items-only (no mob or block stacking). Jobs Reborn payouts unaffected.
+
+- **RoseStacker is in.** Dropped items now merge automatically to reduce entity load. Configured items-only, with no mob or block stacking. Jobs Reborn payouts are unaffected.
 
 **Other**
-- Saddle removed from the admin shop's material buyback list. Players can still trade saddles via player ChestShops.
+
+- Saddles were removed from the admin shop's material buyback list. Players can still trade them through player ChestShops.
 
 ---
 
-### 2026-05-08 — Skill Trees Live, Vehicles, World System & Site Cleanup
+### 2026-05-08 — Skill trees live, vehicles, world system, site cleanup
 
 **Skill Trees**
-- **Live**: Skill tree system is fully implemented — open with `/skills`. 70 nodes across 7 categories (10 per job + 10 Global).
-- **Added**: Active skill perks — Headlamp I/II, Portable Smelting, Ore Sorter (Miner); Green Thumb, Crop Packer (Farmer); Steady Hand, Block Recovery, Restoration Expert, Builder Cane (Builder); Replanter, Tree Feller, Axe Care (Woodcutter); Tracker's Eye, Field Dressing, Trail Rations, Arrow Recovery, Beast Lore (Hunter); Sea Legs, Rod Care (Fisher); Sure Footing (Global)
-- **Added**: Ore Sorter — named blast furnace. Right-click holding ingots or gems to bulk-compress all into storage blocks.
-- **Added**: Crop Packer — named smoker. Same mechanic for crops and farm goods.
-- **Added**: Builder Cane — named end rod held in offhand grants +2 block reach.
+
+- **The skill tree system is fully implemented.** Open it with `/skills`. 70 nodes across 7 categories, 10 per job plus 10 Global.
+- Active skill perks: Headlamp I/II, Portable Smelting, Ore Sorter (Miner); Green Thumb, Crop Packer (Farmer); Steady Hand, Block Recovery, Restoration Expert, Builder Cane (Builder); Replanter, Tree Feller, Axe Care (Woodcutter); Tracker's Eye, Field Dressing, Trail Rations, Arrow Recovery, Beast Lore (Hunter); Sea Legs, Rod Care (Fisher); Sure Footing (Global).
+- **Ore Sorter** is a named blast furnace: right-click holding ingots or gems to bulk-compress them all into storage blocks. **Crop Packer** is a named smoker running the same mechanic for crops and farm goods.
+- The **Builder Cane**, a named end rod, gives +2 block reach when held in the offhand.
 
 **Vehicles & Drills**
-- **Added**: Mining drills now available in-game — D1 ($1,200), D2 ($2,500), D3 ($5,000) via `/drillShop`. No license required.
-- **Added**: Farming tractors — Yellow ($800), Red ($1,800), Green ($3,200) via `/tractorShop`. No license required.
-- **Added**: Drill Readiness skill nodes (Miner tree) — unlock purchase eligibility for each drill tier.
-- **Rule**: Drills only permitted in the resource world. Tractors only on approved agricultural plots.
+
+- **Mining drills are available in-game.** D1 ($1,200), D2 ($2,500), D3 ($5,000) via `/drillShop`. No licence required.
+- Farming tractors: Yellow ($800), Red ($1,800), Green ($3,200) via `/tractorShop`, also with no licence required.
+- **Drill Readiness skill nodes** (Miner tree) unlock purchase eligibility for each drill tier.
+- **Drill and tractor world rules** — drills only permitted in the resource world, tractors only on approved agricultural plots.
 
 **World System**
-- **Added**: Resource world and resource Nether — separate worlds for mining and bulk extraction
-- **Finalized**: World borders — Main world 4,000 radius, Resource world 2,500 radius, Nether resource 1,250 radius
-- **Added**: Main world is government-owned and WorldGuard-protected. Players buy or rent plots through AreaShop signs. Build rights are scoped to your plot only.
-- **Added**: The End is locked at launch. Opens Week 2+ via server event.
-- **Added**: Resource world and nether resource world. *(Corrected 2026-08-05: this entry originally promised resets "roughly every 6 weeks" and "every 8 weeks". No reset schedule was ever implemented and neither world has reset. Any future reset cadence will be announced before it starts, not backdated.)*
+
+- A resource world and a resource nether, both separate worlds for mining and bulk extraction.
+- **World borders settled.** Main world 4,000 radius, resource world 2,500 radius, nether resource 1,250 radius.
+- The main world is government-owned and WorldGuard-protected. Players buy or rent plots through AreaShop signs, and build rights are scoped to your plot only.
+- **The End is locked at launch.** It opens week 2 or later, via a server event.
+- Resource world and nether resource world. *(Corrected 2026-08-05: this entry originally promised resets "roughly every 6 weeks" and "every 8 weeks". No reset schedule was ever implemented and neither world has reset. Any future reset cadence will be announced before it starts, not backdated.)*
 
 **Website**
-- **Updated**: Skill Trees page — all 6 jobs now show actual live skill nodes instead of placeholder license chains
-- **Updated**: Getting Started page — fixed job slot count (3 free), added server features table, removed outdated license callout
-- **Updated**: Economy page — removed Jobs vs Licenses section (licenses not in Season 0), updated progression model
-- **Updated**: Laws page — removed license fine entry, updated Extreme Offenses and penalty escalation
-- **Updated**: Contracts page — removed license requirement from Tier 2 description
+
+Five pages were brought in line with the live server: Skill Trees now shows actual live skill nodes for all 6 jobs instead of placeholder licence chains; Getting Started had the job slot count fixed (3 free), gained the server features table, and lost the outdated licence callout; Economy lost the Jobs vs Licences section (licences are not in Season 0) and got an updated progression model; Laws lost the licence fine entry and gained updated Extreme Offences and penalty escalation; and Contracts dropped the licence requirement from the Tier 2 description.
 
 ---
 
-### 2026-05-07 — Economy System, Laws, Quests & Enchants
+### 2026-05-07 — Economy system, laws, quests, enchants
 
 **Economy & Jobs**
-- **Updated**: Jobs Reborn leveling equation flattened to linear progression across all 6 jobs — early levels easier, curve consistent
-- **Updated**: Miner XP rates increased ×1.4 — mining now levels at the intended pace
-- **Updated**: Miner level-up rewards wired — titles and profession access unlock automatically at key levels (L10, L15, L20, L21, L30, L35, L40, L45, L50)
-- **Added**: Hunter kill payouts reduced ~60%, Fisher payouts reduced ~40% — both now on target with income model
+
+- **The Jobs Reborn levelling equation was flattened** to linear progression across all 6 jobs. Early levels are easier and the curve is consistent.
+- **Miner XP rates increased ×1.4,** so mining now levels at the intended pace.
+- **Miner level-up rewards are wired.** Titles and profession access unlock automatically at key levels (L10, L15, L20, L21, L30, L35, L40, L45, L50).
+- **Hunter kill payouts came down about 60% and Fisher payouts about 40%,** putting both on target with the income model.
 
 **Enchants & Items**
-- **Added**: Soulbound enchantment — admin-only, applied to event rewards, prestige gear, and special tools. Items with Soulbound are kept on death.
-- **Added**: Mending blocked server-wide — repair progression is intentional, Mending shortcuts it
+
+- **The Soulbound enchantment.** Admin-only, applied to event rewards, prestige gear, and special tools. Items with Soulbound are kept on death.
+- Mending is blocked server-wide: repair progression is intentional and Mending shortcuts it.
 
 **Content**
-- **Added**: Starter quest chain — 6 quests covering all four income sources, rewards iron tools, job kit, city stipends, and first week's rent
-- **Added**: Public contracts board — 13 launch contracts across all 6 jobs with stated payouts and deadlines
+
+- A starter quest chain of 6 quests, covering all four income sources and rewarding iron tools, a job kit, city stipends, and the first week's rent.
+- **The public contracts board** — 13 launch contracts across all 6 jobs, with stated payouts and deadlines.
 
 **Website**
-- **Added**: Laws page — full fine schedule, restitution system, jail, license suspension, appeal process
-- **Updated**: Economy page — 4-source income model, Three-Price Rule, Jobs vs Licenses breakdown
-- **Updated**: Skill Trees page — all 6 jobs with correct titles, level-by-level unlocks, and license chains
-- **Updated**: Getting Started page — correct job list, `/jobs` commands, income model overview
-- **Fixed**: Jobs previously listed as Merchant / Industrialist / Civil Service — corrected to the actual six: Miner, Farmer, Builder, Woodcutter, Hunter, Fisher
+
+- **Laws page added,** covering the full fine schedule, restitution system, jail, licence suspension, and appeal process.
+- **Economy page.** The 4-source income model, the Three-Price Rule, and the Jobs vs Licences breakdown.
+- Skill Trees page: all 6 jobs with correct titles, level-by-level unlocks, and licence chains.
+- Getting Started page — correct job list, `/jobs` commands, and an income model overview.
+- The job list was wrong. Jobs had been listed as Merchant / Industrialist / Civil Service, and are now the actual six: Miner, Farmer, Builder, Woodcutter, Hunter, Fisherman.
 
 ---
 
-### 2026-05-06 — Core Plugin Setup
+### 2026-05-06 — Core plugin setup
 
-- **Added**: Server infrastructure — Paper 1.21.8, LuckPerms, EssentialsX, Vault, CoreProtect, WorldGuard
-- **Added**: Economy plugins — ChestShop, EconomyShopGUI, Jobs Reborn (6 jobs configured)
-- **Added**: Starting balance set to $50, max active jobs set to 3
-- **Added**: WorldGuard global safety flags configured
-- **Notes**: Server is in development. World not yet built. No players.
+- **Server infrastructure and economy plugins** — Paper 1.21.8 with LuckPerms, EssentialsX, Vault, CoreProtect, and WorldGuard, plus ChestShop, EconomyShopGUI, and Jobs Reborn with 6 jobs configured.
+- **Starting balance set to $50,** and max active jobs set to 3.
+- **WorldGuard global safety flags configured.**
+- Status: in development, world not yet built, no players.
 
 ---
 

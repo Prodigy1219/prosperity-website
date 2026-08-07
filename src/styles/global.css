@@ -1,76 +1,110 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* FONTS: self-hosted via @fontsource, imported at the top of BaseLayout.astro —
+   NOT loaded from fonts.googleapis.com. Do not add a Google Fonts <link> or
+   @import here: it would reintroduce a render-blocking third-party stylesheet
+   and two extra DNS/TLS handshakes before first paint, and would ship the same
+   families twice. The families registered by @fontsource ('Cinzel', 'Inter',
+   'JetBrains Mono') are exactly the names tailwind.config.mjs and the rules
+   below reference. */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-emerald: #0f8f4f;
-  --color-emerald-dark: #064d32;
-  --color-gold: #d9a833;
-  --color-gold-light: #f2d27a;
-  --color-charcoal: #101418;
-  --color-slate: #1d252c;
-  --color-cream: #f7f1dc;
-  --color-white: #ffffff;
+  --color-surface: #17140f;
+  --color-surface-rgb: 23 20 15;
+  --color-panel: #221d16;
+  --color-control: #2c261d;
+  --color-edge: #3a3227;
+  --color-edge-control: #6b6152;
+  --color-ink: #f5efe2;
+  --color-ink-rgb: 245 239 226;
+  --color-ink-muted: #c0b6a3;
+  --color-ink-dim: #9c9384;
+  --color-action: #5f7f34;
+  --color-action-hover: #496226;
+  --color-action-ink: #9ec46a;
+  --color-accent: #c8873f;
+  --color-accent-soft: #e0a86a;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: auto; }
 
 body {
-  background-color: #101418;
-  color: #f7f1dc;
+  background-color: var(--color-surface);
+  color: var(--color-ink);
   font-family: 'Inter', system-ui, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cinzel', Georgia, serif;
+/* Cinzel is a display face only. Anything under 28px falls back to Inter. */
+h1, h2 { font-family: 'Cinzel', Georgia, serif; }
+h3, h4, h5, h6 { font-family: 'Inter', system-ui, sans-serif; }
+
+@layer components {
+  .bevel {
+    border-top: 2px solid rgb(var(--color-ink-rgb) / 0.10);
+    border-left: 2px solid rgb(var(--color-ink-rgb) / 0.10);
+    border-right: 2px solid rgba(0, 0, 0, 0.45);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.45);
+  }
+  .bevel-inset {
+    border-top: 2px solid rgba(0, 0, 0, 0.45);
+    border-left: 2px solid rgba(0, 0, 0, 0.45);
+    border-right: 2px solid rgb(var(--color-ink-rgb) / 0.10);
+    border-bottom: 2px solid rgb(var(--color-ink-rgb) / 0.10);
+  }
+  .rule-gold::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 3px;
+    background: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+  .copy-btn[data-copied] {
+    background-color: var(--color-action);
+    border-color: var(--color-action);
+    color: #ffffff;
+  }
 }
 
-.prose h1, .prose h2, .prose h3, .prose h4 {
-  font-family: 'Cinzel', Georgia, serif;
-  color: #f2d27a;
-}
-
-.prose p {
-  color: #e5ddc8;
-}
-
-.prose a {
-  color: #0f8f4f;
-  text-decoration: underline;
-}
-
-.prose ul li::marker {
-  color: #d9a833;
-}
-
-.prose ol li::marker {
-  color: #d9a833;
-}
-
+/* ——— Prose (docs pages) ——— */
+.prose h1, .prose h2 { font-family: 'Cinzel', Georgia, serif; color: var(--color-ink); }
+.prose h3, .prose h4, .prose h5, .prose h6 { font-family: 'Inter', system-ui, sans-serif; color: var(--color-accent); }
+.prose p, .prose li { color: var(--color-ink-muted); }
+.prose a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }
+.prose a:hover { color: var(--color-accent-soft); }
+.prose ul li::marker, .prose ol li::marker { color: var(--color-accent); }
 .prose code {
-  background-color: #1d252c;
-  color: #f2d27a;
-  padding: 0.1em 0.3em;
-  border-radius: 3px;
+  background-color: var(--color-panel);
+  color: var(--color-accent-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 0;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.875em;
 }
+.prose code::before, .prose code::after { content: none; }
+.prose pre { background-color: var(--color-panel); border: 1px solid var(--color-edge); border-radius: 0; }
+.prose pre code { background: none; padding: 0; }
+.prose blockquote { border-left-color: var(--color-accent); color: var(--color-ink-muted); }
+.prose thead th { color: var(--color-ink); }
+.prose td, .prose th { border-color: var(--color-edge); }
 
-.prose pre {
-  background-color: #1d252c;
-  border: 1px solid #2e3942;
+/* ——— Focus ——— */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
-.prose pre code {
-  background: none;
-  padding: 0;
+/* ——— Motion ——— */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
-
-.prose blockquote {
-  border-left-color: #d9a833;
-  color: #e5ddc8;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

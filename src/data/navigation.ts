@@ -22,5 +22,9 @@ export const footerNav: NavLink[] = [
   { label: 'Economy', href: '/economy' },
   { label: 'Laws', href: '/laws' },
   { label: 'Contracts', href: '/contracts' },
+  // /faq is linked from the homepage and from Getting Started, so it isn't
+  // orphaned. Kept out of primaryNav so the desktop header still fits at the
+  // lg breakpoint.
+  { label: 'FAQ', href: '/faq' },
   { label: 'Changelog', href: '/changelog' },
 ];

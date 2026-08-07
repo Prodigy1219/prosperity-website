@@ -3,3 +3,14 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.prosperitysmp.com/sitemap.xml
+
+# OAI-SearchBot builds ChatGPT's search index and produces citations.
+# Never add a Disallow to this group — doing so removes the site from ChatGPT answers.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /

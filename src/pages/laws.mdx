@@ -6,72 +6,70 @@ description: In-game laws, crimes, and the fine system on ProsperitySMP.
 
 import InfoCallout from '../components/InfoCallout.astro';
 
-<InfoCallout type="info" title="Laws vs Server Rules">
-  This page covers **in-game crimes** — offenses handled by the server's law system through fines, jail, and courts. Server rule violations (hacking, griefing, harassment) are handled separately by staff. See the [server rules](https://wiki.prosperitysmp.com/Server_rules) for those.
+<InfoCallout type="info" title="Laws vs server rules">
+  This page covers **in-game crimes**: offences the server's law system handles with fines, jail, and courts. Hacking, griefing, and harassment are not in-game crimes. Staff handle those separately, under the [server rules](https://wiki.prosperitysmp.com/Server_rules).
 </InfoCallout>
 
 <InfoCallout type="warning" title="Current status">
-  The law system described below is the design for Season 0's civic layer. **There are currently no player police officers — all enforcement is handled by staff.** Report crimes on Discord or to staff in-game; fines and restitution are applied by staff where the laws below call for them.
+  What follows is the design for Season 0's civic layer. **There are no player police officers yet. All enforcement runs through staff.** Report crimes on Discord or to staff in-game, and staff apply the fines and restitution the laws below call for.
 </InfoCallout>
 
-## How the Law System Works
+## How does the law system work?
 
-ProsperitySMP has an in-game law system separate from staff enforcement. In-game crimes are economic and social violations that occur within the game world — theft, fraud, assault, trespassing.
+Theft from a chest is a fine; hacking the server is a ban. Those are two different systems, and only one of them is on this page.
 
-- **Staff** handle real rule violations: hacking, cheating, harassment, griefing.
-- **The law system** handles in-game crimes: theft, fraud, trespassing, assault, market violations.
-
-Punishments for in-game crimes include **fines, restitution, and jail time** — not bans. A ban is reserved for real rule violations, not in-game crimes.
+- **In-game crimes** are the law system's business: theft, fraud, trespassing, assault, market violations. It punishes with fines, restitution, and jail time. That is what this page documents.
+- **Real rule violations** are staff's business: hacking, cheating, harassment, and griefing. Bans belong to that side rather than this one.
 
 <InfoCallout type="warning" title="Where the law applies">
   Property crimes — theft and property damage — only apply on **protected city land** (owned or rented plots in the main world). The **resource world**, nether, and end are unprotected: taking or breaking anything there is not a crime, the same way PvP there carries no penalty. If it isn't on a city plot, it isn't protected.
 </InfoCallout>
 
-## Combat and PvP
+## Where PvP is legal
 
 Where you fight decides whether it's legal.
 
-**Combat zones — PvP is allowed, no penalty:**
-- The **resource world** — open combat outside spawn.
+**Combat zones. PvP is allowed and carries no penalty:**
+- The **resource world**, anywhere outside spawn.
 - Designated **arena** regions.
-- **Declared duels** — when both players consent to fight.
+- **Declared duels**, where both players have consented to fight.
 
-**Civil areas — PvP is a crime.** Spawn, the city and its streets, plots, markets, banks, and public infrastructure are no-PvP zones. Attacking another player there without their consent is an offense:
+**Civil areas. PvP is a crime.** Spawn, the city and its streets, plots, markets, banks, and public infrastructure are all no-PvP zones. Attacking another player in one without their consent is an offence:
 
-- **Self-defense is never punished.** If you didn't start the fight, you aren't charged — the aggressor is.
-- **Unprovoked assault** (PvP without a kill) — **$750**.
-- **Murder / unlawful killing** — killing a player without consent, a duel, or self-defense — **$2,000 to the city plus restitution paid to the victim** (the value of lost items/XP, or a cash equivalent).
-- **Aggravated / gang attack** — when several attackers act together against one victim, each is charged individually and the base fine is increased **×1.5 per attacker** (or a flat **+$1,000 each**).
-- **Repeat offenses escalate** — repeat assault $3,000–$5,000; repeat murder $4,000–$6,000, then jail.
+- **Self-defence is never punished.** If you didn't start the fight, you aren't charged — the aggressor is.
+- **Unprovoked assault** (PvP without a kill): **$750**.
+- **Murder / unlawful killing**, meaning a kill without consent, a duel, or self-defence: **$2,000 to the city plus restitution paid to the victim** (the value of lost items and XP, or a cash equivalent).
+- **Aggravated / gang attack**, where several attackers act together against one victim: each is charged individually and the base fine rises **×1.5 per attacker**, or a flat **+$1,000 each**.
+- **Repeat offences escalate.** Repeat assault runs $3,000–$5,000; repeat murder $4,000–$6,000, then jail.
 
-**Combat logging** — disconnecting to escape an active fight. In PvP-enabled areas (the resource world, arenas, declared duels), logging out mid-combat to avoid being killed and dropping your items is **prohibited**. Genuine disconnects (crashes, lag, connection drops) aren't violations — this targets *deliberate or repeated* logouts timed to escape a losing fight, and staff judge intent. A confirmed combat-logger pays **restitution** for what the other player would have recovered, plus — for clear or repeat cases — a **fine** and a criminal-record entry.
+**Combat logging** is disconnecting to get out of an active fight. In PvP-enabled areas (the resource world, arenas, declared duels), logging out mid-fight to avoid dying and dropping your items is prohibited. Crashes, lag spikes, and dropped connections are not violations. What this targets is *deliberate or repeated* logouts timed to escape a losing fight, and staff judge intent. A confirmed combat-logger pays **restitution** for what the other player would have recovered. Clear or repeat cases add a **fine** and a criminal-record entry on top.
 
-## Fine Schedule
+## Fine schedule
 
-Fines are issued by staff acting as law enforcement, or through the court system when disputes are brought forward.
+Staff issue fines directly as law enforcement. Fines also come out of the court system when a dispute is brought forward.
 
-### Minor Offenses
+### Minor offences
 
-| Offense | Fine | Notes |
+| Offence | Fine | Notes |
 |---|---|---|
 | Minor trespassing | $100 | Entering a protected area without permission |
 | Public nuisance | $150 | Disruptive builds or signs in public areas |
-| Verbal misconduct (in-game) | $250 | First offense; escalates on repeat |
+| Verbal misconduct (in-game) | $250 | First offence; escalates on repeat |
 | Littering / abandoned structures | $100–$250 | Structures left in public areas after warning |
 
-### Medium Offenses
+### Medium offences
 
-| Offense | Fine | Notes |
+| Offence | Fine | Notes |
 |---|---|---|
 | Theft (low value, under $500) | Restitution + $500 | Victim receives restitution |
 | Unprovoked assault | $750 | PvP initiated without consent outside combat zones |
 | Property damage (minor) | Restitution + $500 | Victim receives restitution |
-| Repeated trespassing | $500 | After first offense warning |
+| Repeated trespassing | $500 | After first offence warning |
 | Combat logging | Restitution + staff-discretion fine | Logging out to escape an active PvP fight; staff judge intent |
 
-### Serious Offenses
+### Serious offences
 
-| Offense | Fine | Notes |
+| Offence | Fine | Notes |
 |---|---|---|
 | Theft (high value, over $500) | Restitution + $2,000–$5,000 | Victim receives restitution; may include plot eviction |
 | Fraud or scamming | Restitution × 2 | All proceeds returned; double fine |
@@ -82,57 +80,56 @@ Fines are issued by staff acting as law enforcement, or through the court system
 | Repeat murder | $4,000–$6,000 + jail | Escalates per incident |
 | Market manipulation | $5,000–$10,000 | Coordinated price fixing or artificial inflation |
 
-### Extreme Offenses
+### Extreme offences
 
-| Offense | Punishment | Notes |
+| Offence | Punishment | Notes |
 |---|---|---|
-| Running an illegal operation | $5,000–$10,000 + plot eviction | Illegal shops, unauthorized industrial operations |
+| Running an illegal operation | $5,000–$10,000 + plot eviction | Illegal shops, unauthorised industrial operations |
 | Bribery of officials | $10,000 + rank suspension | Zero tolerance |
-| Repeat serious offenses | Jail + escalating fine | Escalating enforcement per incident |
+| Repeat serious offences | Jail + escalating fine | Escalating enforcement per incident |
 
-<InfoCallout type="warning" title="Fine Scaling">
-  Fines are designed to be meaningful at all player stages. A $500 fine matters more to a new player than a late-game player. Repeat offenders face escalating fines and additional penalties beyond the base fine.
+<InfoCallout type="warning" title="Fine scaling">
+  A $500 fine costs a first-week player far more than it costs an established one. That's why repeat offenders face escalating amounts and extra penalties on top of the base fine, rather than a flat rate that stops biting.
 </InfoCallout>
 
 ## Restitution
 
-When a crime has a victim — theft, fraud, property damage — the offender pays **restitution directly to the victim** equal to the value of what was taken or damaged, in addition to any fine paid to the city.
+Theft, fraud, and property damage all leave a victim. In those cases the offender pays **restitution directly to the victim** equal to the value of what was taken or damaged, and any fine paid to the city sits on top of that.
 
-Restitution is determined by:
-- Item market value at time of offense
-- Admin shop equivalent value if market price is unclear
-- Staff discretion for property damage assessed via CoreProtect
+Restitution is worked out from:
+- Item market value at the time of the offence
+- Admin shop equivalent value, where the market price is unclear
+- Staff assessment via CoreProtect, for property damage
 
 ## Jail
 
-Jail is reserved for serious or repeat offenders. Jailed players:
+Jail is for serious and repeat offenders, and it's a region you can't walk out of.
 
-- Cannot leave the jail area
-- Continue to accrue time — jail duration is set at sentencing
-- May pay a bail amount to be released early (set by staff)
+- Duration is set at sentencing, and time accrues from there
+- Bail may be offered, at an amount staff set
 
-## Appealing a Fine
+## How do I appeal a fine?
 
-If you believe a fine was issued in error:
+If you think a fine was issued in error:
 
-1. Do not evade or ignore it — unpaid fines accrue
+1. Don't evade or ignore it. Unpaid fines accrue while you argue.
 2. Contact staff on the [Discord](https://discord.gg/gmXqBx7sfV)
-3. Provide evidence if you have it (screenshots, coordinates, timestamps)
+3. Bring evidence if you have it: screenshots, coordinates, timestamps
 4. Staff decisions on appeals are final
 
-## Escalating Penalties
+## Escalating penalties
 
-For serious or repeat offenses, staff may apply penalties beyond a standard fine:
+For serious or repeat offences, staff may reach past a standard fine:
 
-- **Plot eviction** — removal from a rented or purchased plot for violations committed on that land
-- **Job restriction** — temporary suspension from job wage earning for economic crimes
-- **Rank demotion** — loss of civic rank or title for corruption or abuse of position
-- **Permanent ban** — reserved for real rule violations (hacking, griefing), not in-game crimes
+- **Plot eviction.** Removal from a rented or purchased plot, for violations committed on that land.
+- **Job restriction.** Temporary suspension from job wage earning, for economic crimes.
+- **Rank demotion** — loss of a civic rank or title, for corruption or abuse of position.
+- **Permanent ban.** Reserved for real rule violations such as hacking and griefing. Nothing on this page reaches one.
 
-## Reporting a Crime
+## How do I report a crime?
 
 To report an in-game crime:
 - Contact staff with evidence
-- Provide the player name, what happened, when, and where
+- Give the player name, what happened, when, and where
 - CoreProtect logs are used to verify property damage and theft claims
-- Staff will not act on claims without evidence
+- Staff won't act on a claim without evidence

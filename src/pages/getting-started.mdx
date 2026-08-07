@@ -6,34 +6,40 @@ description: Your guide to the first 30 minutes on ProsperitySMP.
 
 import InfoCallout from '../components/InfoCallout.astro';
 
-Welcome to ProsperitySMP. Your first goal is simple: learn the town, earn your first money, and choose a direction.
+You spawn with $50, a wooden pickaxe, a wooden axe, and 8 bread. Nothing else. Everything below is how you turn it into a wage.
 
-<InfoCallout type="success" title="🟢 Season 0 is LIVE">
-  Connect now on Java (`play.prosperitysmp.com`) or Bedrock (`15.204.249.228:19132`). Cross-platform, same world.
+<InfoCallout type="success" title="Season 0 is live">
+  ProsperitySMP runs Paper 1.21.8 with no whitelist. Connect on Java (`play.prosperitysmp.com`) or Bedrock (`15.204.249.228` port `19132`) and you land in the same city either way.
 </InfoCallout>
 
-## How to Connect
+## How do I join ProsperitySMP on Java or Bedrock?
+
+Java players connect to `play.prosperitysmp.com`; Bedrock players connect to `15.204.249.228` on port `19132`.
 
 - **Java (1.21.8):** `play.prosperitysmp.com`
 - **Bedrock (mobile / Win10 / Switch / Xbox):** `15.204.249.228` on port `19132`
 
-**Cross-platform play is supported** via Geyser + Floodgate — Java (1.21.8) and Bedrock (mobile / Win10 / Switch / Xbox) players share the same world, economy, and chat.
+Crossplay runs on Geyser and Floodgate. Java 1.21.8 players and Bedrock players on mobile, Win10, Switch, or Xbox all land in the same world, spend the same money, and read the same chat.
 
-<InfoCallout type="info" title="Bedrock players — heads up">
-  A few interfaces work differently on Bedrock. Use `/jobs join Miner` instead of `/jobs browse`, and shop with `/buy` / `/sell` text commands instead of the `/shop` GUI. See the [full Bedrock compatibility notes](#bedrock-specific-notes) below.
+<InfoCallout type="info" title="Bedrock players, heads up">
+  A few interfaces work differently on Bedrock. Use `/jobs join Miner` instead of `/jobs browse`, and shop with the `/buy` and `/sell` text commands instead of the `/shop` GUI. The [full Bedrock compatibility notes](#bedrock-notes-what-works-differently) are further down this page.
 </InfoCallout>
 
-## First 30 Minutes
+## Your first 30 minutes, in order
 
-1. **Read the rules.** Read the [full rules](https://wiki.prosperitysmp.com/Server_rules) before doing anything else.
-2. **Pick a job.** Run `/jobs browse` to see all available jobs, then `/jobs join <jobname>` to join one. You start with 3 free job slots.
+1. **Read the rules.** Start with the [full rules](https://wiki.prosperitysmp.com/Server_rules). Fines on this server come out of your balance, so this one pays for itself.
+2. **Pick a job.** Run `/jobs browse` to see all available jobs, then `/jobs join <jobname>` to join one. You start with 3 free job slots. On Bedrock, `/jobs join Miner` skips the GUI.
 3. **Get your starter kit.** You spawn with a wooden pickaxe, wooden axe, and 8 bread. Use them.
-4. **Go earn money.** Mine, chop, farm, fish, or hunt in the resource world — whatever matches your job. Your first iron pickaxe costs around $80–$120 and takes 10–20 minutes to earn.
-5. **Visit the market.** Get a feel for prices, supply gaps, and what other players are selling.
-6. **Check the public contract board at spawn.** Contracts pay well and give you goals beyond raw grinding.
-7. **Rent starter housing or save for a plot.** You need a base. Starter housing is available near spawn.
+4. **Go earn money.** `/rtp` drops you at a random spot in the resource world. Mine, chop, farm, fish, or hunt out there, whatever matches your job. Your first iron pickaxe costs around $80–$120 and takes 10–20 minutes to earn.
+5. **Visit the market.** `/warp spawn` puts you back in the city — plain `/spawn` does nothing. Walk the chest shops and note what's expensive and what nobody is stocking.
+6. **Check the contract board.** It stands at spawn, and `/contracts` lists the same board from anywhere. `/deliver <id>` hands the goods over and the treasury pays on the spot. Contracts beat the admin shop, and they tell you what the city actually wants dug up.
+7. **Rent starter housing or save for a plot.** Starter housing sits near spawn, and rent comes out weekly.
 
-## Good First Goals
+<InfoCallout type="warning" title="You drop everything when you die out there">
+  Keep-inventory is off in the resource world, the nether, and the end. It stays on in the main world, so dying in the city doesn't cost you your inventory. Die with a full inventory out in those three and it hits the floor for whoever walks past next. They're unprotected as well, so anything you build or leave in them can be broken or taken by anyone. Carry what you can afford to lose. Keep the good gear on a city plot.
+</InfoCallout>
+
+## What to aim for first
 
 - Earn your first **$1,000**
 - Rent starter housing
@@ -41,11 +47,13 @@ Welcome to ProsperitySMP. Your first goal is simple: learn the town, earn your f
 - Upgrade from wooden to iron tools
 - Decide which job to level to 50
 
-Also live once you're settled: `/daily` login rewards, `/rewards` playtime chests, the [Central Bank](https://wiki.prosperitysmp.com/Banking) (savings, bonds, stocks), the [Auction house](https://wiki.prosperitysmp.com/Auction_house), the [Casino](https://wiki.prosperitysmp.com/Casino), and [dungeons](https://wiki.prosperitysmp.com/Dungeons).
+Once you're settled, there's more running: `/daily` login rewards, `/rewards` playtime chests, the [Auction house](https://wiki.prosperitysmp.com/Auction_house), the [Casino](https://wiki.prosperitysmp.com/Casino), and [dungeons](https://wiki.prosperitysmp.com/Dungeons).
 
-## Jobs — How They Work
+The [Central Bank](https://wiki.prosperitysmp.com/Banking) is open too. Flexible savings (`/savings`), 7-day bonds (`/bond`), and the Prosperity Index (`/stocks`) are all live.
 
-Jobs are how you earn wages and build a profession identity. You join them via `/jobs join` and leave via `/jobs leave`.
+## How do jobs work?
+
+A job pays you a wage for doing the thing it's named after. You join with `/jobs join` and leave with `/jobs leave`, and your highest title follows you into chat.
 
 | Stat | Value |
 |---|---|
@@ -53,69 +61,72 @@ Jobs are how you earn wages and build a profession identity. You join them via `
 | Max level per job | 50 |
 | Time to max one job | ~50 hours |
 | Income bonus | +1% per level above level 1, max +49% at level 50 |
-| Prestige | Each job has its own P1-P5 progression — prestige all 6 jobs independently |
+| Prestige | Each job has its own P1–P5 progression; prestige all 6 jobs independently |
 
-## The 6 Jobs
+## The six jobs
 
-| Job | How You Earn | Key Late-Game |
+Miner, Farmer, Builder, Woodcutter, Hunter, Fisherman. You get three slots.
+
+| Job | How you earn | Key late-game |
 |---|---|---|
 | **Miner** | Break ores and stone underground | Efficiency VII pickaxe, Fortune IV/V, mining drills |
 | **Farmer** | Harvest mature crops manually | Farming harvesters, ranching, large farm contracts |
-| **Builder** | Place building materials and complete build contracts | Government commissions for major civic builds and dungeon zones — negotiated pay for the best builders |
+| **Builder** | Place building materials and complete build contracts | Government commissions for major civic builds and dungeon zones, at negotiated pay for the best builders |
 | **Woodcutter** | Fell trees manually | Treated lumber, forestry contracts, bulk supply deals |
 | **Hunter** | Kill hostile mobs | Bounty contracts, elite mob hunts, rare drop market |
 | **Fisherman** | Fish manually with a rod | Rare catch contracts, ocean expedition commissions |
 
-You can hold up to 3 jobs at once. Specializing in one gives you better titles, contracts, and tools for that job. Holding multiple jobs gives you more income sources and business flexibility. Both are valid.
+Three slots means three jobs at once. Specialising deepens one job's titles, contracts, and tools; spreading across three gives you more places income can come from, none of them deep. There's a longer comparison on [Skill Trees & Jobs](/skill-trees#specialise-or-spread-out).
 
-## How Income Works
+## Where your money actually comes from
 
-Your hourly income comes from four places — not just your job wage:
+Working a job pays you twice: once as a wage when you swing the tool, and again when you sell what you gathered. Every source that pays into your balance:
 
 | Source | Description |
 |---|---|
 | **Job wage** | Direct cash paid by Jobs Reborn when you take an action |
 | **Item sales to admin shop** | Sell your drops at the admin shop price floor |
 | **Player market** | Sell to other players for more than the admin floor |
+| **Job stipends** | Small random bonus drops while doing your career's work |
 | **Contracts** | Bonus payouts from completing public or private contracts |
 
-At level 1, expect roughly **$375–$500/hr** across all sources for active career work. At level 50 with upgraded tools, **$1,500+/hr** is realistic. See the [wiki's Economy page](https://wiki.prosperitysmp.com/Economy) for current figures.
+At level 1, expect roughly **$375–$500/hr** across all sources for active career work. At level 50 with upgraded tools, **$1,500+/hr** is realistic. Current figures live on the [wiki's Economy page](https://wiki.prosperitysmp.com/Economy).
 
-## Important Rules to Know
+## Rules that will cost you if you miss them
 
 - **No AFK farms.** If a farm keeps producing when you walk away from your keyboard, it is banned. One activation from you equals one batch of output. See the [automation policy](https://wiki.prosperitysmp.com/Automation_policy).
-- **No griefing.** Other players' land and builds *in the city* are protected by WorldGuard. The resource world is unprotected — anything you build there can be broken or taken by anyone, so keep valuables on a city plot.
-- **No exploits or duplication.** Report them. Using them results in a ban.
-- **In-game crimes draw fines and restitution** under the [law system](/laws) — currently applied by staff, separately from rule enforcement.
+- **No griefing.** Land and builds inside the city are protected by WorldGuard. Breaking into someone's plot or wrecking their build is a rule violation, and on protected land it's an in-game crime on top of that.
+- **No exploits or duplication.** Report them. Using them gets you banned.
+- **In-game crimes draw fines and restitution** under the [law system](/laws), applied by staff and handled separately from rule enforcement.
 
 Read the [full rules](https://wiki.prosperitysmp.com/Server_rules) and [laws](/laws) before your first session.
 
-## What This Server Uses
+## What's running on the server
 
-No mods or client-side installs required. Everything runs server-side. Here's what's powering the gameplay:
+No mods, no client-side installs. It all runs server-side.
 
-| Feature | What It Does |
+| Feature | What it does |
 |---|---|
 | **Job System** (Jobs Reborn) | Earn wages for mining, farming, building, and more. Level up to 50 per job. |
-| **Skill Tree** (custom) | Earn passive perks as your job levels up — extra drops, better tools, expanded reach, durability protection. Open with `/skills`. |
-| **Player Shops** (ChestShop) | Any player can set up a chest shop with a sign. The player market is the real economy. |
+| **Skill Tree** (custom) | Earn passive perks as your job levels up: extra drops, better tools, expanded reach, durability protection. Open with `/skills`. |
+| **Player Shops** (ChestShop) | Any player can set up a chest shop with a sign. That is where most trade happens. |
 | **Land Protection** (WorldGuard + ARM) | Your plot is fully protected. Buy or rent land through signs at each plot. |
-| **Drills & Harvesters** | Buy mining drills and farming harvesters with in-game money (`/buydrill`, `/buyharvester`). Drills work in the resource world and on land you own; harvesters work anywhere you can build. |
+| **Drills & Harvesters** | Buy mining drills and farming harvesters with in-game money (`/buydrill`, `/buyharvester`). Drills work in the resource world, the nether, and the end, plus any main-world land you own or rent. Harvesters follow the same rule. |
 | **Custom Fishing** (EvenMoreFish) | Catch rare fish with sell prices at the **spawn pond** or the **frog pond**, both in the main world. Skill tree upgrades boost rarity rolls. |
 | **Multi-World Travel** (Multiverse + BetterRTP) | Separate main world, resource world, nether, and end. `/rtp` drops you safely in the resource world. |
 | **Job Titles in Chat & Tab** (LuckPerms + TAB) | Your highest-tier job title shows in chat, tab list, and nametag. Use `/title` to pin a specific job's title. |
 | **In-World Holograms** (DecentHolograms) | Floating text labels for shops, plots, contract boards, and points of interest around the city. |
-| **Smart Item Stacking** (RoseStacker) | Dropped items merge on the ground to reduce lag. Mob and block stacking are intentionally disabled — only item drops stack. |
-| **Live Web Map** (BlueMap) | Browse the world online at the map URL — find your way around without launching the game. |
-| **No Mending** | Mending is not obtainable in normal play — the only source is the master tool from a Prestige crate. Tool care is a real cost. |
-| **Grief Logging & Rollback** | Every block placed, broken, and chest accessed is logged. Staff can roll back grief to any point. Reporting an incident usually takes a few minutes to resolve. |
+| **Smart Item Stacking** (RoseStacker) | Dropped items merge on the ground to reduce lag. Mob and block stacking are intentionally disabled, so only item drops stack. |
+| **Live Web Map** (BlueMap) | Browse the world in a browser without launching the game. The link is posted in Discord. |
+| **No Mending** | Mending is not obtainable in normal play. The only source is the master tool from a Prestige crate, so tool care stays a real cost. |
+| **Grief Logging & Rollback** | Every block placed or broken, and every chest opened, is logged. Staff can roll back grief to any point. There's no fixed turnaround on reports. |
 
-## Bedrock-Specific Notes
+## Bedrock notes: what works differently
 
-ProsperitySMP fully supports Bedrock via Geyser — connect to `15.204.249.228` port `19132`. Most features work identically; a few GUI-heavy menus render differently, and text commands (`/buy`, `/sell`) cover the admin shop. Voice chat is Java-only. Full details, workarounds, and console setup: the wiki's [Bedrock setup](https://wiki.prosperitysmp.com/Bedrock_setup) page.
+Bedrock connects through Geyser at `15.204.249.228` on port `19132`. Most things behave identically. A few GUI-heavy menus render differently, the `/buy` and `/sell` text commands cover the admin shop, and voice chat is Java-only. Workarounds and console setup: the wiki's [Bedrock setup](https://wiki.prosperitysmp.com/Bedrock_setup) page.
 
-**Cross-platform account linking:** if you have both a Java and Bedrock account, link them at https://link.geysermc.org — **before accumulating progress on the server**, so your balance, jobs, and plots stay on one profile.
+**Cross-platform account linking:** if you have both a Java and a Bedrock account, link them at [link.geysermc.org](https://link.geysermc.org) **before you build up any progress on the server**, so your balance, jobs, and plots stay on one profile. Linking late leaves you maintaining two.
 
 ---
 
-Connect, claim your starter kit, find a job — see you in town.
+That covers the first hour. After that: the [Economy Guide](/economy) is where the money actually is, [Skill Trees & Jobs](/skill-trees) covers levelling and prestige, and the [FAQ](/faq) answers most of what's left.
