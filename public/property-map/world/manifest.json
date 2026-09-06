@@ -1,0 +1,41 @@
+{
+  "capturedAt": "2026-09-06T14:19:03.077Z",
+  "tileSize": 500,
+  "lod": 1,
+  "mapId": "world",
+  "source": "Public BlueMap color + height tiles; no live player feed",
+  "records": [
+    {
+      "x": 0,
+      "z": -1,
+      "url": "https://map.prosperitysmp.com/maps/world/tiles/1/x0/z-1.png",
+      "file": "x0-z-1.png",
+      "sha256": "558608518d9fd9ad140c46022cee9239915f0079c10b71830027c00cd1d79195",
+      "bytes": 220500
+    },
+    {
+      "x": 0,
+      "z": 0,
+      "url": "https://map.prosperitysmp.com/maps/world/tiles/1/x0/z0.png",
+      "file": "x0-z0.png",
+      "sha256": "3731d2301a98a4e84ce8243ed38ce2ec0e988a05d2cca8b13cefc61a990dd8cc",
+      "bytes": 52246
+    },
+    {
+      "x": 1,
+      "z": -1,
+      "url": "https://map.prosperitysmp.com/maps/world/tiles/1/x1/z-1.png",
+      "file": "x1-z-1.png",
+      "sha256": "e5eabf46c1524f446c9e1594f3ba033cad8b972af1157ab3f10a0625fe0f8c61",
+      "bytes": 152532
+    },
+    {
+      "x": 1,
+      "z": 0,
+      "url": "https://map.prosperitysmp.com/maps/world/tiles/1/x1/z0.png",
+      "file": "x1-z0.png",
+      "sha256": "42c52162529edfc8d9b30d75016baa3922191ba6d7ca58974ee4056e0f1baffd",
+      "bytes": 47503
+    }
+  ]
+}
