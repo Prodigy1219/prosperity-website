@@ -6,8 +6,10 @@ const out=process.env.PROPERTY_QA_DIR;if(!out)throw Error('Set PROPERTY_QA_DIR')
 (async()=>{
  const b=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});const results=[];
  try{
+  const context=await b.newContext();
+  await context.route('**/property-runtime/current.json',r=>r.fulfill({status:200,contentType:'application/json',body:'{}'}));
   for(const [name,width,height]of [['desktop',1440,1000],['mobile',390,844]]){
-   const p=await b.newPage({viewport:{width,height}}),errors=[];
+   const p=await context.newPage(),errors=[];await p.setViewportSize({width,height});
    p.on('pageerror',e=>errors.push(e.message));p.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
    await p.goto(base+'/properties');await p.waitForSelector('.pd-card');
    for(const id of ['c006','r001','apt_01','market_stall_01']){
@@ -22,7 +24,7 @@ const out=process.env.PROPERTY_QA_DIR;if(!out)throw Error('Set PROPERTY_QA_DIR')
    assert.deepEqual(errors,[]);await p.close();
   }
   // Corrupt bytes cannot become a render. Existing truthful material data survives.
-  const p=await b.newPage();await p.route('**/property-meshes/*.mesh',r=>r.fulfill({status:200,body:'corrupt'}));
+  const p=await context.newPage();await p.route('**/property-meshes/*.mesh',r=>r.fulfill({status:200,body:'corrupt'}));
   await p.goto(base+'/properties');await p.waitForSelector('.pd-card');await p.locator('#pd-query').fill('c001');
   await p.locator('[data-open="world:c001"]').first().click();
   await p.waitForFunction(()=>document.querySelector('#pd-preview-label').textContent.includes('Detailed preview unavailable'));

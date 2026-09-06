@@ -1,0 +1,271 @@
+{
+  "version": 1,
+  "worthAsOf": "2026-09-06T18:00:00Z",
+  "properties": {
+    "world:apt_01": {
+      "knownSubtotalCents": 14688,
+      "totalCents": 14688,
+      "unknownCells": 0
+    },
+    "world:apt_02": {
+      "knownSubtotalCents": 14179,
+      "totalCents": 14179,
+      "unknownCells": 0
+    },
+    "world:apt_03": {
+      "knownSubtotalCents": 17502,
+      "totalCents": 17502,
+      "unknownCells": 0
+    },
+    "world:apt_04": {
+      "knownSubtotalCents": 13012,
+      "totalCents": 13012,
+      "unknownCells": 0
+    },
+    "world:apt_05": {
+      "knownSubtotalCents": 19689,
+      "totalCents": 19689,
+      "unknownCells": 0
+    },
+    "world:apt_06": {
+      "knownSubtotalCents": 44708,
+      "totalCents": null,
+      "unknownCells": 1
+    },
+    "world:apt_pent_01": {
+      "knownSubtotalCents": 26392,
+      "totalCents": 26392,
+      "unknownCells": 0
+    },
+    "world:apt_pent_02": {
+      "knownSubtotalCents": 19909,
+      "totalCents": 19909,
+      "unknownCells": 0
+    },
+    "world:apt_pent_03": {
+      "knownSubtotalCents": 40988,
+      "totalCents": 40988,
+      "unknownCells": 0
+    },
+    "world:apt_room_01": {
+      "knownSubtotalCents": 17895,
+      "totalCents": 17895,
+      "unknownCells": 0
+    },
+    "world:apt_room_02": {
+      "knownSubtotalCents": 37256,
+      "totalCents": 37256,
+      "unknownCells": 0
+    },
+    "world:apt_room_03": {
+      "knownSubtotalCents": 39459,
+      "totalCents": 39459,
+      "unknownCells": 0
+    },
+    "world:apt_room_04": {
+      "knownSubtotalCents": 21661,
+      "totalCents": 21661,
+      "unknownCells": 0
+    },
+    "world:apt_room_05": {
+      "knownSubtotalCents": 12694,
+      "totalCents": 12694,
+      "unknownCells": 0
+    },
+    "world:apt_room_06": {
+      "knownSubtotalCents": 30038,
+      "totalCents": 30038,
+      "unknownCells": 0
+    },
+    "world:apt_room_07": {
+      "knownSubtotalCents": 22211,
+      "totalCents": 22211,
+      "unknownCells": 0
+    },
+    "world:apt_room_08": {
+      "knownSubtotalCents": 24622,
+      "totalCents": 24622,
+      "unknownCells": 0
+    },
+    "world:apt_room_09": {
+      "knownSubtotalCents": 32153,
+      "totalCents": 32153,
+      "unknownCells": 0
+    },
+    "world:apt_room_10": {
+      "knownSubtotalCents": 20331,
+      "totalCents": 20331,
+      "unknownCells": 0
+    },
+    "world:c001": {
+      "knownSubtotalCents": 2154498,
+      "totalCents": 2154498,
+      "unknownCells": 0
+    },
+    "world:c002": {
+      "knownSubtotalCents": 768477,
+      "totalCents": 768477,
+      "unknownCells": 0
+    },
+    "world:c003": {
+      "knownSubtotalCents": 1060654,
+      "totalCents": 1060654,
+      "unknownCells": 0
+    },
+    "world:c004": {
+      "knownSubtotalCents": 945812,
+      "totalCents": 945812,
+      "unknownCells": 0
+    },
+    "world:c005": {
+      "knownSubtotalCents": 1062656,
+      "totalCents": 1062656,
+      "unknownCells": 0
+    },
+    "world:c006": {
+      "knownSubtotalCents": 2095369,
+      "totalCents": 2095369,
+      "unknownCells": 0
+    },
+    "world:c006-sub1": {
+      "knownSubtotalCents": 4000,
+      "totalCents": 4000,
+      "unknownCells": 0
+    },
+    "world:c006-sub2": {
+      "knownSubtotalCents": 2800,
+      "totalCents": 2800,
+      "unknownCells": 0
+    },
+    "world:c006-sub3": {
+      "knownSubtotalCents": 5550,
+      "totalCents": 5550,
+      "unknownCells": 0
+    },
+    "world:c006-sub4": {
+      "knownSubtotalCents": 13896,
+      "totalCents": 13896,
+      "unknownCells": 0
+    },
+    "world:c007": {
+      "knownSubtotalCents": 1355284,
+      "totalCents": 1355284,
+      "unknownCells": 0
+    },
+    "world:market_stall_01": {
+      "knownSubtotalCents": 800,
+      "totalCents": 800,
+      "unknownCells": 0
+    },
+    "world:market_stall_02": {
+      "knownSubtotalCents": 800,
+      "totalCents": 800,
+      "unknownCells": 0
+    },
+    "world:market_stall_03": {
+      "knownSubtotalCents": 800,
+      "totalCents": 800,
+      "unknownCells": 0
+    },
+    "world:market_stall_04": {
+      "knownSubtotalCents": 800,
+      "totalCents": 800,
+      "unknownCells": 0
+    },
+    "world:market_stall_05": {
+      "knownSubtotalCents": 800,
+      "totalCents": 800,
+      "unknownCells": 0
+    },
+    "world:market_stall_06": {
+      "knownSubtotalCents": 800,
+      "totalCents": 800,
+      "unknownCells": 0
+    },
+    "world:market_stall_07": {
+      "knownSubtotalCents": 3408,
+      "totalCents": 3408,
+      "unknownCells": 0
+    },
+    "world:market_stall_08": {
+      "knownSubtotalCents": 6098,
+      "totalCents": 6098,
+      "unknownCells": 0
+    },
+    "world:market_stall_09": {
+      "knownSubtotalCents": 800,
+      "totalCents": 800,
+      "unknownCells": 0
+    },
+    "world:market_stall_10": {
+      "knownSubtotalCents": 800,
+      "totalCents": 800,
+      "unknownCells": 0
+    },
+    "world:r001": {
+      "knownSubtotalCents": 2071413,
+      "totalCents": 2071413,
+      "unknownCells": 0
+    },
+    "world:r002": {
+      "knownSubtotalCents": 797522,
+      "totalCents": 797522,
+      "unknownCells": 0
+    },
+    "world:r003": {
+      "knownSubtotalCents": 624959,
+      "totalCents": 624959,
+      "unknownCells": 0
+    },
+    "world:r004": {
+      "knownSubtotalCents": 125667,
+      "totalCents": 125667,
+      "unknownCells": 0
+    },
+    "world:r005": {
+      "knownSubtotalCents": 146607,
+      "totalCents": 146607,
+      "unknownCells": 0
+    },
+    "world:r006": {
+      "knownSubtotalCents": 121816,
+      "totalCents": 121816,
+      "unknownCells": 0
+    },
+    "world:r007": {
+      "knownSubtotalCents": 1277746,
+      "totalCents": 1277746,
+      "unknownCells": 0
+    },
+    "world:r008": {
+      "knownSubtotalCents": 1028527,
+      "totalCents": 1028527,
+      "unknownCells": 0
+    },
+    "world:r009": {
+      "knownSubtotalCents": 1841009,
+      "totalCents": 1841009,
+      "unknownCells": 0
+    },
+    "world:spawn_shop_01": {
+      "knownSubtotalCents": 3006,
+      "totalCents": 3006,
+      "unknownCells": 0
+    },
+    "world:spawn_shop_02": {
+      "knownSubtotalCents": 3078,
+      "totalCents": 3078,
+      "unknownCells": 0
+    },
+    "world:spawn_shop_03": {
+      "knownSubtotalCents": 5535,
+      "totalCents": 5535,
+      "unknownCells": 0
+    },
+    "world:spawn_shop_04": {
+      "knownSubtotalCents": 8811,
+      "totalCents": 8811,
+      "unknownCells": 0
+    }
+  }
+}

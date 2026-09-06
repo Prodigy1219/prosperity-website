@@ -1,6 +1,6 @@
 export const MESH_ROOT='/property-meshes/';
 export function meshPath(url,extension) {
-  return typeof url==='string'&&new RegExp(`^/property-meshes/[a-f0-9]{64}\\.${extension}$`).test(url);
+  return typeof url==='string'&&new RegExp(`^/(?:property-meshes|property-runtime/assets)/[a-f0-9]{64}\\.${extension}$`).test(url);
 }
 export function validateMesh(raw,propertyId) {
   if(raw?.version!==1||raw.propertyId!==propertyId||!meshPath(raw.buffer,'mesh')||
@@ -33,7 +33,7 @@ export async function fetchMeshAsset(url,extension,max,signal) {
   const r=await fetch(url,{credentials:'omit',signal,redirect:'error'});if(!r.ok)throw Error('Detailed mesh unavailable');
   const bytes=await boundedBytes(r.body,max);
   const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),v=>v.toString(16).padStart(2,'0')).join('');
-  if(!url.startsWith(MESH_ROOT+digest+'.'))throw Error('Mesh integrity failure');return bytes;
+  if(!url.slice(url.lastIndexOf('/')+1).startsWith(digest+'.'))throw Error('Mesh integrity failure');return bytes;
 }
 export function meshVertices(bytes,meta) {
   if(bytes.byteLength!==meta.vertexCount*32)throw Error('Mesh byte count');
