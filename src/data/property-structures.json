@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "properties": {
+    "world:apt_01": {
+      "structureHash": "3477d95be4565ed998aed5fdf229fc8166025fd55d8106febfe4b750e4d3fa9a",
+      "previewUrl": "/property-previews/58d230ebe5a70f6d60ff54eca1bc5a9afe7726a2786c91298a7c8b10028a0470.json"
+    },
+    "world:apt_02": {
+      "structureHash": "1fcea1a408975c58f4f7886b0a1c1d75ebf0b14e88c1e107015a974379524f59",
+      "previewUrl": "/property-previews/82e2f51836bfc8feb34bd36083bc3acefbdaccf5f404a91bfa1cb180194fb723.json"
+    },
+    "world:apt_03": {
+      "structureHash": "cd2c5879091b883d0e91575d9684a14f18da510e267ac5f3e741d50877ebbb8a",
+      "previewUrl": "/property-previews/72877dbaaa7739eec2b86a84afbea11bd9cd291d228fe836dce1abf734191bf9.json"
+    },
+    "world:apt_04": {
+      "structureHash": "efd272fc16a799b08af393acd35d73103f5c13af70a3fbdf40585c2eb8f21eea",
+      "previewUrl": "/property-previews/977edfd9b552a3abd8e5d9d202d7efbcbce86ec877f7c7cbcc1384144c2db361.json"
+    },
+    "world:apt_05": {
+      "structureHash": "682e63ec93a8cefbd0e8ab39422f253f172f1bb59e79c12d30412a8f179396c7",
+      "previewUrl": "/property-previews/d3010a88e723c282fd2ea839c513bddc4b95ae9d71fbc0b8ccd45a3614370775.json"
+    },
+    "world:apt_06": {
+      "structureHash": "8dbd5e5bb5d0ae810534574eb94747c4a57113b5dace4bddba04b46e3c4fb77d",
+      "previewUrl": "/property-previews/44605a60d054a26cfb875b7b93b7c0f7bf87ea763954ecc6016637e9928fb54a.json"
+    },
+    "world:apt_pent_01": {
+      "structureHash": "b32f5c9a7f7ab588ede60b18b7d67d11601d3883ef76968607dc1c2e95ac7d82",
+      "previewUrl": "/property-previews/f6985399c64e09d4325263ca827bd2f029f9eb2e5dc428f7207a142de4eaa880.json"
+    },
+    "world:apt_pent_02": {
+      "structureHash": "b1201a1cd85e83de74836692aa631f0fe03878c4fc5eccd9776041a389c776e7",
+      "previewUrl": "/property-previews/64d6559594cfb2ceae4aff4c79c73808063cb4b6c534621cb6ed889c3ac09f93.json"
+    },
+    "world:apt_pent_03": {
+      "structureHash": "26108093b82695468e1e8a8ddfa9e912514db279e78d81ffb53702e352a88106",
+      "previewUrl": "/property-previews/427f9f92ce12f3ac1d88a125f57bba167d1a8120f19a20c8519d94ad914571d5.json"
+    },
+    "world:apt_room_01": {
+      "structureHash": "e52d449b992cb6afb1839344c9fbe35079636236628e41eaaf7e61fc9ed6bb9a",
+      "previewUrl": "/property-previews/4b0995203938d9cbfce046a1d423c268c3b09338f8baeb3ab0711a855241a44f.json"
+    },
+    "world:apt_room_02": {
+      "structureHash": "7f62d0654e257f0665bd1af380c1bb0bca044ee7fbf20e82e2bc721d1efcf2da",
+      "previewUrl": "/property-previews/da2fa4bd036f2237fead49f43462395145f4e37d61059ab590f29f09b3acb06a.json"
+    },
+    "world:apt_room_03": {
+      "structureHash": "b5826eadf2a9eef1702de72a387038cc090c38dace450ab5ff2eae26a40410f5",
+      "previewUrl": "/property-previews/32d76236354e4b452296385324707778d3e1ba4b1a2ed760b0c2346a32be879e.json"
+    },
+    "world:apt_room_04": {
+      "structureHash": "fb4eb980936857b6a8525fa557e3b93970ddcf437e4bd2c2096c95ef89fac109",
+      "previewUrl": "/property-previews/8a97d234defb480cfd13a54cb3537a4fd4648f6dcfa3e6e28734deb8ac246293.json"
+    },
+    "world:apt_room_05": {
+      "structureHash": "a333912b04a69e7a794c1b5c660a234d00bdd6b6798c017b1b4f9da352dbebc9",
+      "previewUrl": "/property-previews/5802a503202187ea29485892f157505e226fb580c0a2adecd1cc874565f9879f.json"
+    },
+    "world:apt_room_06": {
+      "structureHash": "4fabc01269002cb577e122f84f2a8610474c18032f4c8cd0fc8f5e512abfdd85",
+      "previewUrl": "/property-previews/d96a678e548819a5a73fdf8b77d4a45657fe435fb830f65c2decf91fd6347c2c.json"
+    },
+    "world:apt_room_07": {
+      "structureHash": "3bb768362aa4715091d3937d716ed5d6c500462e218bfc6bd6d94fa7db95d796",
+      "previewUrl": "/property-previews/bd339064c23e0f090ca1e5d3d99d2e97910bbd0692668c17f0ba245e433500e9.json"
+    },
+    "world:apt_room_08": {
+      "structureHash": "379eeb98959b076d4b3760339d6a4e31105a47257df15b49b8fbf3f88dff1074",
+      "previewUrl": "/property-previews/14b0ee69d6826995ee140560c30fcea4b3e40a38a3fcb35acc3d217098250d80.json"
+    },
+    "world:apt_room_09": {
+      "structureHash": "1e56d8f660d45d95acd5dc789cc33abd971793e2087c92b396cbcf93b7638f9e",
+      "previewUrl": "/property-previews/2f96cfc4f3fb6716d02e17dacc5aee703c704dce63f12c3030e0d1945896c34c.json"
+    },
+    "world:apt_room_10": {
+      "structureHash": "9712bbe429b2772bda54bc784a0031ada6ce62b4e8def9d3575e3d22b1241e11",
+      "previewUrl": "/property-previews/23c00f2164a232b441ac87cc30a56eaf427754f7f7ccbf136e90db5ee6e2d89b.json"
+    },
+    "world:c001": {
+      "structureHash": "d6ef113f5d969f5629be28877dc3dc1d2b3558a684f21d3e0c0a165d65fb7d1e",
+      "previewUrl": "/property-previews/13f07ce7b717181d129721fff6750333cb7e7a02e4d4ccf791cd2936981cf47b.json"
+    },
+    "world:c002": {
+      "structureHash": "816c68f5f22b1cc9c60f26cc1480c4b9f96e94b38c1b80d9cec12b66eac973d3",
+      "previewUrl": "/property-previews/b97bd88b91499aae19453abb865bb47ff6f5824604d12f2e49cb17746008a890.json"
+    },
+    "world:c003": {
+      "structureHash": "e8a8f5564e99cdfdca659f5cc374aabe3a4af8d57db3348e65299e7b9d23db9b",
+      "previewUrl": "/property-previews/21d25fe8611a61a2dfee0642e7c7bb00c3887af3859a4578890f6aa3fb659a82.json"
+    },
+    "world:c004": {
+      "structureHash": "babcb2e644d6a6db135aa8bdfc555c7518f4a1a9ba8896198e7a3893a7c952b6",
+      "previewUrl": "/property-previews/9041d76a99a9ca36875f716f814d5b16416e816d609cb77ed67e8af5b25a5edf.json"
+    },
+    "world:c005": {
+      "structureHash": "9102e7c678465c11933dfa48b7d5594de43565fb41fc3387b72e0134306ee462",
+      "previewUrl": "/property-previews/9e142499b81d41d51de15f4b16bd353cf363bd3b5ccbb3dfd974f6457753c3fe.json"
+    },
+    "world:c006": {
+      "structureHash": "45300cd3a13f540af3b0a4a99b839c9453c4f6138d71ab6c73a44a5d46d4d80c",
+      "previewUrl": "/property-previews/f82786a9825620eb7a17c756f6f8f9bfd4f6b1f4d25fdbac3163019f7f953623.json"
+    },
+    "world:c006-sub1": {
+      "structureHash": "927cfb0a49aacd097a48b1ab54c6be81e42bc8c53c7a3edaac1cc017f090009c",
+      "previewUrl": "/property-previews/73ad285badff0e73a7ba027b792ff94c15a8f74c078800bcd04e2bda334db2d2.json"
+    },
+    "world:c006-sub2": {
+      "structureHash": "7bacd2cacea72319858a59781210c86b47cc22ca991442c89a633024f070dc6d",
+      "previewUrl": "/property-previews/aabd26d0d86465cb1c78703d0bb58ef6d2e9b8ad8fc64949d52d0080a19102cc.json"
+    },
+    "world:c006-sub3": {
+      "structureHash": "05211efb31ac371cd0122c46b278eb9d5eb89d679bcb82e982bf83c3b5060dbd",
+      "previewUrl": "/property-previews/03462343b9e03ab66b8c861370ec32c06d3ede7c6c1435e6d4d6b08d17906c68.json"
+    },
+    "world:c006-sub4": {
+      "structureHash": "27bff7c0555dc3a6b8fd43d23a78090a47b9b9693c0e244565c5d531f4ac78a7",
+      "previewUrl": "/property-previews/539e0d23eb420cc1d66edf59aebeab85a7de56f6e5572fadc25a29f0d8e92776.json"
+    },
+    "world:c007": {
+      "structureHash": "5645e3bf25afb411f3b1fb22b14fd08121878af60089c49f6eef4bd4f7391269",
+      "previewUrl": "/property-previews/ca5e6aaf5fdfab69f7af7de379d71011d36e435d8a0c7d6d61f0b649e8b76cb0.json"
+    },
+    "world:market_stall_01": {
+      "structureHash": "ab0ed150696be43bb5e66594da920939ab0ad51ffc8c7cf509c73bd748e616e0",
+      "previewUrl": "/property-previews/a44481d571e8238d9d0085b40a80dbef8d2987065427c88a8265ded08125df7f.json"
+    },
+    "world:market_stall_02": {
+      "structureHash": "5cb5f9ef55e3798c5c94158193dbadbbf686b9b815e3ca07eceda6078f20c2cb",
+      "previewUrl": "/property-previews/2cc65f4441f4fcb6a3fc5ddde7d1306023537563cebdab8e9554f359babf8bf6.json"
+    },
+    "world:market_stall_03": {
+      "structureHash": "2c8faba34231c81f7c8b84ac0102cc5009cf0f7452b16ab022a016168f7d3fb6",
+      "previewUrl": "/property-previews/c4dd4fb7b02b35c84f8b1fe4415a7615a6398828d8b88f954d48531130d369ea.json"
+    },
+    "world:market_stall_04": {
+      "structureHash": "a7eb58d9f4713bed35efed66b35c418794389a30a95f66558eae21b52dd932c1",
+      "previewUrl": "/property-previews/aacf13fd3cbc10eba18b047d843baa24c5c0d9334e7212b1301a2b63074f215d.json"
+    },
+    "world:market_stall_05": {
+      "structureHash": "183ba7578b66e75442ad4b435c054a50697d3067ef9b120dc53d69e58dc6cd53",
+      "previewUrl": "/property-previews/9b193d8e7b4ab1406f42ab346bd1d37c45f20a287647a83c04cf5e7c57cada5a.json"
+    },
+    "world:market_stall_06": {
+      "structureHash": "74e0f138e34c544c7b5cc0e84a2af968a191dab2dce7664ba7193f69c0f689ae",
+      "previewUrl": "/property-previews/5a15124dcff39001e9f707e79994a9f28e84e7b65479c149060d0caada702b49.json"
+    },
+    "world:market_stall_07": {
+      "structureHash": "6d0ef79bb61340a227970f9284d26f05bf04de0c7b17b30fe2a93df76b673f92",
+      "previewUrl": "/property-previews/57016cd3e87aed2339f6babb34241cee157c152959d8c01f2944f175dbe83fe2.json"
+    },
+    "world:market_stall_08": {
+      "structureHash": "34e8125b36c3aae19e94e215a212e3304ffdcc25b7af9b22fcba17077bc869d6",
+      "previewUrl": "/property-previews/1d72c427792381048b853628a824f10c928c42caf6a8beaae54b36596c9b8d4b.json"
+    },
+    "world:market_stall_09": {
+      "structureHash": "de2dcc7963363e64e2531dc476af82f69d48de95f986335a7c2b3d9d98849e67",
+      "previewUrl": "/property-previews/f5bb8992f843d9dbb1cfa241bfe099869f9fdc927975b32ee0d043791e922101.json"
+    },
+    "world:market_stall_10": {
+      "structureHash": "c6b4120310805fb8168e3fc10176abc34b2b176326b357cd44db1362eea8ea5b",
+      "previewUrl": "/property-previews/7564baa53de286fe358e09648249a09ed6e19b976fa519336eebd1b739cff664.json"
+    },
+    "world:r001": {
+      "structureHash": "32d27eb11b20ca86bc9a9c6fada616766280d0aa3dbcc9819e35250a3afa7b52",
+      "previewUrl": "/property-previews/12cd31e8cf20fb93f3570b99b63a8792daf6845c962b03403788327b5c0b00fd.json"
+    },
+    "world:r002": {
+      "structureHash": "54c45d5937d5e74e6ddaa2ae53bc19aefad1d7aae8870952613040c2053f2fea",
+      "previewUrl": "/property-previews/918b2635014432f5b03d71d124dcce622bf96808aaa5f54434dfecc415fa9500.json"
+    },
+    "world:r003": {
+      "structureHash": "631d8d1ba96086067929042985bd95d4ba86840c9bb4438b46b7ef887ee2a96d",
+      "previewUrl": "/property-previews/8f1fb9883b8041108f3c6bfd5705863c159aa101361f2d43b2944b28cc176388.json"
+    },
+    "world:r004": {
+      "structureHash": "12906813c056183e25870d79a44ef3d952b7ab9b77a2ba973ee28ce9822bb500",
+      "previewUrl": "/property-previews/42b60011394961ba67831bab921d26d530bdcaa410c5fff54c1abbe9200c98f7.json"
+    },
+    "world:r005": {
+      "structureHash": "e43aa11413915da038e31f6a4fab506e6b5a0a493a620d6216434036341032f5",
+      "previewUrl": "/property-previews/7cea11be831c14b28c668c769e9de392f485f857c18d9942419215f63006a605.json"
+    },
+    "world:r006": {
+      "structureHash": "8995d6bffa16845feaa5b610b7f5b17001e81b0d4f9ebbac33149e49a7ea30bf",
+      "previewUrl": "/property-previews/ea8ccc042d14f67c69fbe4c112e886e05be799a130fea0073b4800e74d88abd3.json"
+    },
+    "world:r007": {
+      "structureHash": "f5605f2dcf1cdabef7e4724144563779dd705b6015da15fab0eba814e3282c8e",
+      "previewUrl": "/property-previews/4c1cf088cdaea80a0612b752a7a2062ecd82c64635ba72d4a79a0a6cc2234f4e.json"
+    },
+    "world:r008": {
+      "structureHash": "8a7cefa058d5280f3cd6036b8db49173ef3b71c4c2244a0e575fae0388524f15",
+      "previewUrl": "/property-previews/1da6f5cdc67e9cbefdf7804373736d628ba89f26b0bd794dd38cab8d024c362f.json"
+    },
+    "world:r009": {
+      "structureHash": "f505a05064e84e97ed87fc107d6b0b2b7468e3ad21ba60fbbd63c39862aa40ed",
+      "previewUrl": "/property-previews/c5b8e60c214bfa5e610fd73a4ff49882cbdf4a8c5ecec2927ba673edbf2186f7.json"
+    },
+    "world:spawn_shop_01": {
+      "structureHash": "345112358d20caaf4619b3ce4daf898d4ad142e6dbdfed2b6de69240bfa58cde",
+      "previewUrl": "/property-previews/016ed0fbb495bc352c608e684ad9e395cef25ab834479e2c9427af5455923645.json"
+    },
+    "world:spawn_shop_02": {
+      "structureHash": "07ed734eb0e82bd41b2d39527f098ea29876c800260046d69921ec75f53135b8",
+      "previewUrl": "/property-previews/f3d5df919d57db202c8ae3e7355e8619f3c43b9129dc2831e7ccd41397e06df6.json"
+    },
+    "world:spawn_shop_03": {
+      "structureHash": "64842ad7f69125733d96156c877253418e1a2cde29c5f96c668641d7f0029484",
+      "previewUrl": "/property-previews/171ee4eda69942a2c4b25cd9c7127eab3b5f0deb23eb7840a7bb1f5fd875b4d5.json"
+    },
+    "world:spawn_shop_04": {
+      "structureHash": "ac40060819d6d204a7bf2ca4726122287ec79aa89df28d40e73aaadb0e036fc0",
+      "previewUrl": "/property-previews/caa66bc3d62b35835d98777d462652367e6e2b51158f7efa3e7f0217bf06d892.json"
+    }
+  }
+}

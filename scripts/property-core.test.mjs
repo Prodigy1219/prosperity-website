@@ -18,6 +18,36 @@ test('money and time reject malformed, negative, nonfinite, excess precision', (
 test('no source config, member, tenant, UUID or internal capture metadata leaks', () => { const s = JSON.stringify(cat); for (const k of ['unique-ids', 'SOURCES', 'rentalFlags', 'landlordNames', 'AutoPrice', 'memberIds'])
     assert(!s.includes(`"${k}"`)); assert.equal(holdings(cat.properties).length, 7); assert.equal(holdings(cat.properties).reduce((s, p) => s + p.owned.length, 0), 13); assert.equal(holdings(cat.properties).reduce((s, p) => s + p.leased.length, 0), 0); });
 test('fresh capture does not refresh stale disk observation', () => { assert.equal(cat.observedAt, input.snapshotAsOf); assert.notEqual(cat.observedAt, input.capturedAt); assert(Date.parse(cat.expiresAt) < Date.parse(input.capturedAt)); });
+
+test('real normalized saved-read time survives projection without renewing source dates or listing state', () => {
+    assert.equal(cat.savedReadAt, input.capturedAt);
+    assert.equal(validateCatalog(cat).savedReadAt, input.capturedAt);
+    assert.equal(cat.observedAt, input.snapshotAsOf);
+    assert.equal(cat.expiresAt, new Date(Date.parse(input.snapshotAsOf) + 15 * 60000).toISOString());
+    const newer = structuredClone(input); newer.capturedAt = new Date(Date.parse(input.capturedAt) + 3600000).toISOString();
+    const next = normalizeInput(newer);
+    assert.equal(next.savedReadAt, newer.capturedAt);
+    assert.equal(next.observedAt, cat.observedAt); assert.equal(next.expiresAt, cat.expiresAt);
+    assert.deepEqual(next.properties, cat.properties, 'a reread is not an in-memory availability update');
+});
+
+test('optional savedReadAt rejects malformed or pre-source evidence rather than silently dropping it', () => {
+    for (const savedReadAt of [null, undefined, '', '2026-02-30T00:00:00Z', '2026-09-06T24:00:00Z',
+        '2026-09-06', '2026-09-06T20:00:00', new Date(Date.parse(cat.observedAt) - 1).toISOString()]) {
+        assert.throws(() => validateCatalog({...cat, savedReadAt}), /saved-read/);
+        assert.throws(() => normalizeInput({...input, capturedAt: savedReadAt}), /saved-read/);
+    }
+    const legacy = structuredClone(input); delete legacy.capturedAt;
+    assert.equal(Object.hasOwn(normalizeInput(legacy), 'savedReadAt'), false);
+    const legacyCatalog = structuredClone(cat); delete legacyCatalog.savedReadAt;
+    assert.equal(Object.hasOwn(validateCatalog(legacyCatalog), 'savedReadAt'), false);
+});
+
+test('saved-read/source ordering uses timezone instants, not lexical ordering', () => {
+    const x = {...cat, observedAt: '2026-09-06T20:00:00Z', expiresAt: '2026-09-06T20:15:00Z'};
+    assert.equal(validateCatalog({...x, savedReadAt: '2026-09-06T16:00:00-04:00'}).savedReadAt, '2026-09-06T16:00:00-04:00');
+    assert.throws(() => validateCatalog({...x, savedReadAt: '2026-09-06T20:59:59+01:00'}), /saved-read/);
+});
 test('rental expiry is unknown, not automatically vacant', () => { assert.equal(effectiveStatus({ ...by('apt_01'), leaseEndsAt: '2020-01-01T00:00:00Z' }, Date.now()), 'unknown'); });
 test('filter rent weekly budget/search/world and deterministic mixed sort', () => { assert(filterProperties(cat.properties, { tenure: 'rent', maxCost: 25000 }).every(p => weeklyCents(p) <= 25000)); assert.equal(filterProperties(cat.properties, { world: 'resource_world' }).length, 0); assert.equal(filterProperties(cat.properties, { query: 'C001' })[0].region, 'c001'); assert.deepEqual(filterProperties([...cat.properties].reverse()).map(p => p.id), filterProperties(cat.properties).map(p => p.id)); });
 test('validator rejects duplicate identity, external preview, zero price', () => { for (const mutate of [x => x.properties.push(x.properties[0]), x => x.properties[0].preview = { url: 'https://evil.example/a', capturedAt: cat.observedAt }, x => x.properties[0].priceCents = 0]) {

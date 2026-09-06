@@ -1,7 +1,7 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [{"source":"/property-runtime/:path*","destination":"https://economy.prosperitysmp.com/property-runtime/:path*"}],
+  "rewrites": [{"source":"/property-runtime/:path*","destination":"https://snapshots.prosperitysmp.com/property-runtime/:path*"}],
   "headers": [
     {
       "source":"/property-runtime/current.json",

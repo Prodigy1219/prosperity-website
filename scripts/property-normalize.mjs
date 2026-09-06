@@ -76,7 +76,10 @@ export function normalizeInput(input) {
             notes.push('No recorded purchase in the supplied history. Assessment is not a sale price.');
         return { id: `${worldId}:${region}`, region, world: row.world, worldId, tenure: rent ? 'rent' : 'buy', status, kind: row.kindLabel || row.kind, tags: [row.parentRegionId ? 'player-sublet' : row.kind], priceCents, priceBasis: basis, periodSeconds, leaseEndsAt: null, owner, geometry: { points, minY, maxY }, mapId: 'world', history, preview: null, notes };
     });
-    return validateCatalog({ schemaVersion: 1, observedAt, expiresAt: new Date(Date.parse(observedAt) + 15 * 60000).toISOString(), properties });
+    // capturedAt is the upstream stability-verified saved-read start, not a live
+    // memory observation. Keep the original source-mtime availability clock intact.
+    return validateCatalog({ schemaVersion: 1, observedAt, expiresAt: new Date(Date.parse(observedAt) + 15 * 60000).toISOString(),
+        ...(Object.hasOwn(input, 'capturedAt') ? {savedReadAt: input.capturedAt} : {}), properties });
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
     const [input, output] = process.argv.slice(2);
