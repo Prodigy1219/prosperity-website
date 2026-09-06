@@ -31,7 +31,7 @@ export function validateCatalog(raw) {
         if (!Array.isArray(p.history) || p.history.length > 250 || p.history.some(h => !plain(h.id, 180) || !['purchase', 'rent', 'extend', 'sellback'].includes(h.type) || !Number.isFinite(Date.parse(h.at)) || !cents(h.amountCents) || !plain(h.source, 180)))
             throw Error('Unverifiable history');
         // No uploads, arbitrary hosts, NBT, inventories or raw schematic URLs.
-        if (p.preview !== null && (!p.preview || !/^\/property-previews\/[a-f0-9]{64}\.json$/.test(p.preview.url) || !Number.isFinite(Date.parse(p.preview.capturedAt))))
+        if (p.preview !== null && (!p.preview || !/^\/(?:property-previews|property-runtime\/assets)\/[a-f0-9]{64}\.json$/.test(p.preview.url) || !Number.isFinite(Date.parse(p.preview.capturedAt))))
             throw Error('Invalid preview artifact');
         const mapId = ['world', 'resource_world'].includes(p.mapId) ? p.mapId : null;
         return { id: p.id, region: p.region, world: p.world, worldId: p.worldId, tenure: p.tenure, status: p.status, kind: p.kind, tags: [...p.tags], priceCents: p.priceCents, priceBasis: p.priceBasis, periodSeconds: p.tenure === 'rent' ? p.periodSeconds : null, leaseEndsAt: p.leaseEndsAt, owner: p.owner ? { id: p.owner.id, name: p.owner.name } : null, geometry: { points: p.geometry.points.map(v => [...v]), minY: p.geometry.minY, maxY: p.geometry.maxY }, mapId, history: p.history.map(h => ({ id: h.id, type: h.type, at: h.at, amountCents: h.amountCents, source: h.source })), preview: p.preview ? { url: p.preview.url, capturedAt: p.preview.capturedAt } : null, notes: Array.isArray(p.notes) ? p.notes.filter(n => plain(n, 240)).slice(0, 6) : [] };
