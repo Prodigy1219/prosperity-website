@@ -4,6 +4,8 @@ import { createPropertyScene } from './property-scene.js';
 import {loadRuntimeSnapshot} from '../lib/property-runtime.mjs';
 import {analyzeProperty} from '../lib/property-appraisal.mjs';
 import {appraiseProperty} from '../lib/property-valuation.mjs';
+import {propertyDossier, appraisalScenarios} from '../lib/property-dossier.mjs';
+import {renderDossier, renderScenarios, renderCaptureAnalysis} from './property-dossier-view';
 import appraisalContext from '../data/property-appraisal-context.json';
 import valuationPolicy from '../data/property-valuation-policy.json';
 import qualityRegistry from '../data/property-quality-reviews.json';
@@ -28,7 +30,14 @@ function propertyAppraisal(p: Property, snapshot: ReturnType<typeof validateCata
 function valuationBreakdown(estimate: any) {
     if(!estimate?.baseEstimate)return '';
     const labels: Record<string,string>={spawn:'Spawn proximity',limitedSupply:'Limited comparable supply',quality:'Design review'};
-    return `<section class="pd-appraisal-value" aria-label="Advisory value breakdown"><h3>How this estimate adds up</h3><dl class="pd-value-breakdown"><dt>Server assessment / asking basis</dt><dd>${money(estimate.assessmentCents)}</dd><dt>Known material worth</dt><dd>${money(estimate.materialCents)}</dd>${Object.entries(estimate.components).map(([key,raw])=>{const c=raw as any;return `<dt>${labels[key]}<small>${esc(c.reason)}</small></dt><dd>${c.status==='withheld'?'Not applied':`+${money(c.appliedCents)}`}</dd>`;}).join('')}<dt>Advisory estimate</dt><dd><strong>${money(estimate.totalCents)}</strong></dd></dl><p class="pd-note" data-valuation-freshness>Valuation evidence: ${estimate.evidenceAsOf?esc(time(estimate.evidenceAsOf)):'unverified'}. Premiums expire after two hours without a refresh. ${esc(estimate.availabilityNotice)}</p><p class="pd-note">${esc(estimate.policy.version)}. Owner-selected weights, not sale-calibrated premiums. Bonuses use the assessment only and total at most 20% of it. Assessment is not verified land-only and may overlap build value; materials include terrain. Actual asking price, taxes and server net worth are unchanged.${estimate.baseEstimate.partial?' Unpriced materials are excluded from this known subtotal.':''}</p></section>`;
+    const componentRows=Object.entries(estimate.components).map(([key,raw])=>{
+        const c=raw as any;
+        const rate=Number.isFinite(c.basisPoints)?`${(c.basisPoints/100).toFixed(3)}% of ${money(estimate.assessmentCents)} before cap`:'Evidence unavailable';
+        const distance=key==='spawn'&&Number.isFinite(c.evidence?.distanceBlocks)?`${c.evidence.distanceBlocks.toFixed(1)} blocks from spawn. `:'';
+        const appliedRate=estimate.assessmentCents>0?`${(c.appliedCents/estimate.assessmentCents*100).toFixed(3)}% applied`:'';
+        return `<dt>${labels[key]}<small data-valuation-rate="${key}">${esc(distance+rate)}.</small><small>${esc(c.reason)}</small></dt><dd>${c.status==='withheld'?'Not applied':`+${money(c.appliedCents)} <small>${appliedRate}</small>`}</dd>`;
+    }).join('');
+    return `<section class="pd-appraisal-value" aria-label="Advisory value breakdown"><h3>How this estimate adds up</h3><dl class="pd-value-breakdown"><dt>Server assessment / asking basis</dt><dd>${money(estimate.assessmentCents)}</dd><dt>Known material worth</dt><dd>${money(estimate.materialCents)}</dd>${componentRows}<dt>Advisory estimate</dt><dd><strong>${money(estimate.totalCents)}</strong></dd></dl><p class="pd-note" data-valuation-freshness>Valuation evidence: ${estimate.evidenceAsOf?esc(time(estimate.evidenceAsOf)):'unverified'}. Premiums expire after two hours without a refresh. ${esc(estimate.availabilityNotice)}</p><p class="pd-note">${esc(estimate.policy.version)}. Owner-selected weights, not sale-calibrated premiums. Bonuses use the assessment only and total at most 20% of it. Assessment is not verified land-only and may overlap build value; materials include terrain. Actual asking price, taxes and server net worth are unchanged.${estimate.baseEstimate.partial?' Unpriced materials are excluded from this known subtotal.':''}</p></section>`;
 }
 function appraisalEvidence(p: Property, snapshotCatalog: ReturnType<typeof validateCatalog>) {
     const heading = '<h3 id="pd-appraisal-heading">Location &amp; appraisal evidence</h3>';
@@ -203,6 +212,8 @@ export async function startPropertyDesk() {
         // Pin all asynchronous detail calculations to the generation opened.
         const openedCatalog=catalog;
         el('pd-detail-body').querySelector('.pd-detail-layout')!.insertAdjacentHTML('afterend', appraisalEvidence(p, openedCatalog));
+        try { el('pd-detail-body').querySelector('.pd-appraisal')!.insertAdjacentHTML('beforebegin',renderDossier((propertyDossier as any)(p,openedCatalog,{context:appraisalContext,now:Date.now()}))); }
+        catch { /* Existing evidence and configured price remain available. */ }
         icons(); try {
         detailScene = createPropertyScene(el('pd-property-scene'), [p], {runtime});
         if (p.preview) {
@@ -211,12 +222,15 @@ export async function startPropertyDesk() {
                 if(result?.kind === 'blocks') {
                     el('pd-preview-label').textContent = result.meshError ? 'Detailed preview unavailable. Material capture remains available below.' : `Textured build / BlueMap surfaces retrieved ${time(result.meshAt!)}. ${p.geometry.maxY-p.geometry.minY<16?'Region slice, not the whole building. ':''}Hidden interiors and some decorations may be absent. Material tally uses the separate full block capture from ${time(result.capturedAt!)}.`;
                     const v=result.valuation!,rows=v.rows as {material:string;cells:number;valueMicros:number;unknownCells:number;warnings:string[]}[];
+                    el('pd-detail-body').querySelector('.pd-dossier')?.insertAdjacentHTML('afterend',renderCaptureAnalysis(result.captureAnalysis));
                     const estimate=propertyAppraisal(p,openedCatalog,v,result.structureHash);
                     if(estimate.totalCents!==null){
                         const info=el('pd-detail-body').querySelector('.pd-detail-info')!;
                         info.querySelector('.pd-price')!.textContent=money(estimate.totalCents)+(estimate.baseEstimate.partial?' + unpriced materials':'');
                         info.querySelector('.pd-subprice')!.textContent='Website advisory estimate / not the purchase price';
                         info.insertAdjacentHTML('beforeend',valuationBreakdown(estimate));
+                        const review=(qualityRegistry.reviews as any[]).filter(r=>r.propertyId===p.id&&r.structureHash===result.structureHash);
+                        info.insertAdjacentHTML('beforeend',renderScenarios((appraisalScenarios as any)(p,openedCatalog,v,{context:appraisalContext,policy:valuationPolicy,review:review.length===1?review[0]:undefined,structureHash:result.structureHash,now:Date.now()})));
                         if(/^r\d+$/.test(p.region))info.insertAdjacentHTML('beforeend','<p class="pd-note">Terrain review pending: unwanted underground ores have been reported on residential plots. Their captured materials may overstate this provisional estimate. It is not yet eligible for the new net-worth calculation.</p>');
                         const premium=el('pd-detail-body').querySelector('[data-evidence="premium"] dd');
                         if(premium)premium.innerHTML=`<strong>${money(estimate.appliedBonusCents)} in applied adjustments</strong><small>Spawn, supply and reviewed design only. ${esc(estimate.reason)}</small>`;
