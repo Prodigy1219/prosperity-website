@@ -1,8 +1,11 @@
 # Property Detail V2: Verification
 
-2026-09-06. Branch `codex/property-valuation-detail-v2`, isolated worktree
-`S:/prosperity-property-release-20260906`. Implemented and tested locally;
-NOT merged or published. Public website remains main `10f6bc40`.
+2026-09-06. Owner-approved release, PR5, branch
+`codex/property-valuation-detail-v2`, isolated worktree
+`S:/prosperity-property-release-20260906`. Previous production `10f6bc40` is the
+website rollback base. This record describes pre-publication checks; the final
+public URL, commit and runtime verification are recorded in the server repo at
+`docs/research/realty-20260906/DETAIL-V2-PUBLIC-RESULT.md`.
 
 ## Included
 
@@ -67,10 +70,10 @@ The local detail matrix uses real but dated bundled inputs, so expired bonuses
 are correctly absent. The separately verified current public generation still
 has fresh policy evidence. Do not compare the two amounts as a calculation bug.
 
-## Exporter Deployment Gate
+## Exporter Deployment
 
-The public hourly exporter still uses the OLD tile selection. Updating only the
-website fallback does not fix a subsequently fetched runtime mesh. The separate
+Updating only the website fallback does not fix a subsequently fetched runtime
+mesh. The separate
 reviewed delivery is `deploy/property-mesh-offset-20260906/` in the server repo.
 It changes two source files and their two pin/provenance files, guards all19
 installed hashes, and retains an exact old-code backup. No Minecraft restart.
@@ -78,14 +81,29 @@ installed hashes, and retains an exact old-code backup. No Minecraft restart.
 Final manifest SHA-256:
 `2dce364db2a65536aecf5144bd0900d9145cfa34d5d8acaaea4a72fd37a20040`.
 Agent:13/13 real Linux isolated transaction cases and60 syntax checks passed;
-parent reviewed the transaction source. Agent results do not prove a live apply.
-Owner confirmation requested before live apply and bounded capture. Not run yet.
+parent reviewed the transaction source and final isolated report. Owner then
+explicitly approved release. Parent revalidated the live baseline, ran the
+read-only dry-run and applied the exact manifest successfully. Retained backup:
+`/opt/prosperity-property-export.mesh-offset-backup-d_1p5l5u`.
 
-After approval: recheck board ownership and idle exporter, stage exact manifest,
-dry-run, apply, run one capture, wait for success, then verify the public manifest
-and actual c001 buffer west extent. Publish the reviewed website tree and run
-the same desktop/mobile tests against the public site. Do not declare release
-complete from an isolated test or successful code-copy alone.
+The first capture stopped safely at block reading17:10:54CDT; the world region
+file mtime was17:10:53, consistent with the source-change guard. Child stderr was
+not retained by the existing runner, so the exact exception is unknown. No
+validation was weakened. Confirmed terminal state before one bounded retry.
+Retry completed17:17:00CDT in275seconds,53properties/432assets, peak547487744bytes;
+published manifest hash31db0d6a1a2a4fb8761bb311b445b2737df862c738fca8260e3cacb807fdb332.
+
+`scripts/property-live-mesh-check.mjs` independently reads public geometry and
+texture bytes, hashes them and checks c001's west extent/winding/area. It failed
+against the old public generation at minX418, as intended. Final release requires
+that byte check plus desktop/mobile public browser verification, not merely a
+successful exporter exit. See the definitive live result record above.
+
+Parent public byte check passed on generation22:16:27.350UTC:53properties,
+379unique mesh-metadata/buffer/texture hashes; c001103082triangles,
+minX416/maxX434, outward west-wall area352. Its metadata is
+`9a9a41928868d4653219e1cbf3904a46d6b99d5715e944b79443bef1cdb398d2.json`;
+buffer`c3ba5d7f94455df5e5861d73634b6c0f854b43ea6fc34f07001cd012208b251c.mesh`.
 
 ## Rollback
 

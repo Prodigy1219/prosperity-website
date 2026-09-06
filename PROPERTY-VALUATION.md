@@ -59,7 +59,7 @@ No roads, corner-plot, foot-traffic or comparable-sale monetary adjustments are
 implemented without reliable evidence. Future work must version coefficients
 and historical series, not backfill new estimates as past sales.
 
-## Detailed Dossier (Staged Follow-Up)
+## Detailed Dossier
 
 `property-dossier.mjs` adds distance-only proximity scores and same-type ranks,
 area-normalized configured assessment benchmarks, geometric dimensions and
