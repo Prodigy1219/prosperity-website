@@ -1,0 +1,490 @@
+{
+  "source": "saved-world snapshot; not live memory",
+  "colorsSource": "BlueMap public texture averages; missing colors neutral",
+  "capturedAt": "2026-09-06T18:18:07.144944+00:00",
+  "sourceHashes": {
+    "r.0.-1.mca": "67245ef2422961d02f8ec2eb367aa2ad2ac7c9bf4c921606dbf185c4444506f2",
+    "r.1.-1.mca": "9ead288888716790ee2d2ff1c6a1f9df78db5c8c35b6b14f7584f238214761bf",
+    "r.1.0.mca": "1fea58ced51855fe7465d4a5c39469bf8e71be706441c04c449b04528c920d33"
+  },
+  "imported": [
+    {
+      "id": "world:apt_01",
+      "cells": 300,
+      "materials": 32,
+      "knownSubtotalCents": 14688,
+      "unknownCells": 0,
+      "bytes": 6882,
+      "hash": "58d230ebe5a70f6d60ff54eca1bc5a9afe7726a2786c91298a7c8b10028a0470"
+    },
+    {
+      "id": "world:apt_02",
+      "cells": 318,
+      "materials": 28,
+      "knownSubtotalCents": 14179,
+      "unknownCells": 0,
+      "bytes": 6577,
+      "hash": "82e2f51836bfc8feb34bd36083bc3acefbdaccf5f404a91bfa1cb180194fb723"
+    },
+    {
+      "id": "world:apt_03",
+      "cells": 397,
+      "materials": 28,
+      "knownSubtotalCents": 17502,
+      "unknownCells": 0,
+      "bytes": 7517,
+      "hash": "72877dbaaa7739eec2b86a84afbea11bd9cd291d228fe836dce1abf734191bf9"
+    },
+    {
+      "id": "world:apt_04",
+      "cells": 303,
+      "materials": 25,
+      "knownSubtotalCents": 13012,
+      "unknownCells": 0,
+      "bytes": 5960,
+      "hash": "977edfd9b552a3abd8e5d9d202d7efbcbce86ec877f7c7cbcc1384144c2db361"
+    },
+    {
+      "id": "world:apt_05",
+      "cells": 323,
+      "materials": 31,
+      "knownSubtotalCents": 19689,
+      "unknownCells": 0,
+      "bytes": 6766,
+      "hash": "d3010a88e723c282fd2ea839c513bddc4b95ae9d71fbc0b8ccd45a3614370775"
+    },
+    {
+      "id": "world:apt_06",
+      "cells": 527,
+      "materials": 47,
+      "knownSubtotalCents": 44708,
+      "unknownCells": 1,
+      "bytes": 10821,
+      "hash": "44605a60d054a26cfb875b7b93b7c0f7bf87ea763954ecc6016637e9928fb54a"
+    },
+    {
+      "id": "world:apt_pent_01",
+      "cells": 312,
+      "materials": 32,
+      "knownSubtotalCents": 26392,
+      "unknownCells": 0,
+      "bytes": 7445,
+      "hash": "f6985399c64e09d4325263ca827bd2f029f9eb2e5dc428f7207a142de4eaa880"
+    },
+    {
+      "id": "world:apt_pent_02",
+      "cells": 328,
+      "materials": 18,
+      "knownSubtotalCents": 19909,
+      "unknownCells": 0,
+      "bytes": 6135,
+      "hash": "64d6559594cfb2ceae4aff4c79c73808063cb4b6c534621cb6ed889c3ac09f93"
+    },
+    {
+      "id": "world:apt_pent_03",
+      "cells": 305,
+      "materials": 32,
+      "knownSubtotalCents": 40988,
+      "unknownCells": 0,
+      "bytes": 7716,
+      "hash": "427f9f92ce12f3ac1d88a125f57bba167d1a8120f19a20c8519d94ad914571d5"
+    },
+    {
+      "id": "world:apt_room_01",
+      "cells": 207,
+      "materials": 24,
+      "knownSubtotalCents": 17895,
+      "unknownCells": 0,
+      "bytes": 5101,
+      "hash": "4b0995203938d9cbfce046a1d423c268c3b09338f8baeb3ab0711a855241a44f"
+    },
+    {
+      "id": "world:apt_room_02",
+      "cells": 336,
+      "materials": 42,
+      "knownSubtotalCents": 37256,
+      "unknownCells": 0,
+      "bytes": 9027,
+      "hash": "da2fa4bd036f2237fead49f43462395145f4e37d61059ab590f29f09b3acb06a"
+    },
+    {
+      "id": "world:apt_room_03",
+      "cells": 335,
+      "materials": 46,
+      "knownSubtotalCents": 39459,
+      "unknownCells": 0,
+      "bytes": 9593,
+      "hash": "32d76236354e4b452296385324707778d3e1ba4b1a2ed760b0c2346a32be879e"
+    },
+    {
+      "id": "world:apt_room_04",
+      "cells": 275,
+      "materials": 31,
+      "knownSubtotalCents": 21661,
+      "unknownCells": 0,
+      "bytes": 6717,
+      "hash": "8a97d234defb480cfd13a54cb3537a4fd4648f6dcfa3e6e28734deb8ac246293"
+    },
+    {
+      "id": "world:apt_room_05",
+      "cells": 157,
+      "materials": 28,
+      "knownSubtotalCents": 12694,
+      "unknownCells": 0,
+      "bytes": 5148,
+      "hash": "5802a503202187ea29485892f157505e226fb580c0a2adecd1cc874565f9879f"
+    },
+    {
+      "id": "world:apt_room_06",
+      "cells": 464,
+      "materials": 39,
+      "knownSubtotalCents": 30038,
+      "unknownCells": 0,
+      "bytes": 9673,
+      "hash": "d96a678e548819a5a73fdf8b77d4a45657fe435fb830f65c2decf91fd6347c2c"
+    },
+    {
+      "id": "world:apt_room_07",
+      "cells": 298,
+      "materials": 41,
+      "knownSubtotalCents": 22211,
+      "unknownCells": 0,
+      "bytes": 8164,
+      "hash": "bd339064c23e0f090ca1e5d3d99d2e97910bbd0692668c17f0ba245e433500e9"
+    },
+    {
+      "id": "world:apt_room_08",
+      "cells": 403,
+      "materials": 32,
+      "knownSubtotalCents": 24622,
+      "unknownCells": 0,
+      "bytes": 8172,
+      "hash": "14b0ee69d6826995ee140560c30fcea4b3e40a38a3fcb35acc3d217098250d80"
+    },
+    {
+      "id": "world:apt_room_09",
+      "cells": 547,
+      "materials": 34,
+      "knownSubtotalCents": 32153,
+      "unknownCells": 0,
+      "bytes": 9942,
+      "hash": "2f96cfc4f3fb6716d02e17dacc5aee703c704dce63f12c3030e0d1945896c34c"
+    },
+    {
+      "id": "world:apt_room_10",
+      "cells": 255,
+      "materials": 33,
+      "knownSubtotalCents": 20331,
+      "unknownCells": 0,
+      "bytes": 6617,
+      "hash": "23c00f2164a232b441ac87cc30a56eaf427754f7f7ccbf136e90db5ee6e2d89b"
+    },
+    {
+      "id": "world:c001",
+      "cells": 57231,
+      "materials": 162,
+      "knownSubtotalCents": 2154498,
+      "unknownCells": 0,
+      "bytes": 730843,
+      "hash": "13f07ce7b717181d129721fff6750333cb7e7a02e4d4ccf791cd2936981cf47b"
+    },
+    {
+      "id": "world:c002",
+      "cells": 37137,
+      "materials": 6,
+      "knownSubtotalCents": 768477,
+      "unknownCells": 0,
+      "bytes": 444280,
+      "hash": "b97bd88b91499aae19453abb865bb47ff6f5824604d12f2e49cb17746008a890"
+    },
+    {
+      "id": "world:c003",
+      "cells": 51408,
+      "materials": 4,
+      "knownSubtotalCents": 1060654,
+      "unknownCells": 0,
+      "bytes": 625559,
+      "hash": "21d25fe8611a61a2dfee0642e7c7bb00c3887af3859a4578890f6aa3fb659a82"
+    },
+    {
+      "id": "world:c004",
+      "cells": 45696,
+      "materials": 4,
+      "knownSubtotalCents": 945812,
+      "unknownCells": 0,
+      "bytes": 552931,
+      "hash": "9041d76a99a9ca36875f716f814d5b16416e816d609cb77ed67e8af5b25a5edf"
+    },
+    {
+      "id": "world:c005",
+      "cells": 51408,
+      "materials": 4,
+      "knownSubtotalCents": 1062656,
+      "unknownCells": 0,
+      "bytes": 625559,
+      "hash": "9e142499b81d41d51de15f4b16bd353cf363bd3b5ccbb3dfd974f6457753c3fe"
+    },
+    {
+      "id": "world:c006",
+      "cells": 88413,
+      "materials": 291,
+      "knownSubtotalCents": 2095369,
+      "unknownCells": 0,
+      "bytes": 1147131,
+      "hash": "f82786a9825620eb7a17c756f6f8f9bfd4f6b1f4d25fdbac3163019f7f953623"
+    },
+    {
+      "id": "world:c006-sub1",
+      "cells": 100,
+      "materials": 1,
+      "knownSubtotalCents": 4000,
+      "unknownCells": 0,
+      "bytes": 1291,
+      "hash": "73ad285badff0e73a7ba027b792ff94c15a8f74c078800bcd04e2bda334db2d2"
+    },
+    {
+      "id": "world:c006-sub2",
+      "cells": 70,
+      "materials": 1,
+      "knownSubtotalCents": 2800,
+      "unknownCells": 0,
+      "bytes": 990,
+      "hash": "aabd26d0d86465cb1c78703d0bb58ef6d2e9b8ad8fc64949d52d0080a19102cc"
+    },
+    {
+      "id": "world:c006-sub3",
+      "cells": 255,
+      "materials": 3,
+      "knownSubtotalCents": 5550,
+      "unknownCells": 0,
+      "bytes": 3147,
+      "hash": "03462343b9e03ab66b8c861370ec32c06d3ede7c6c1435e6d4d6b08d17906c68"
+    },
+    {
+      "id": "world:c006-sub4",
+      "cells": 255,
+      "materials": 6,
+      "knownSubtotalCents": 13896,
+      "unknownCells": 0,
+      "bytes": 3515,
+      "hash": "539e0d23eb420cc1d66edf59aebeab85a7de56f6e5572fadc25a29f0d8e92776"
+    },
+    {
+      "id": "world:c007",
+      "cells": 65205,
+      "materials": 5,
+      "knownSubtotalCents": 1355284,
+      "unknownCells": 0,
+      "bytes": 800874,
+      "hash": "ca5e6aaf5fdfab69f7af7de379d71011d36e435d8a0c7d6d61f0b649e8b76cb0"
+    },
+    {
+      "id": "world:market_stall_01",
+      "cells": 20,
+      "materials": 1,
+      "knownSubtotalCents": 800,
+      "unknownCells": 0,
+      "bytes": 495,
+      "hash": "a44481d571e8238d9d0085b40a80dbef8d2987065427c88a8265ded08125df7f"
+    },
+    {
+      "id": "world:market_stall_02",
+      "cells": 20,
+      "materials": 1,
+      "knownSubtotalCents": 800,
+      "unknownCells": 0,
+      "bytes": 495,
+      "hash": "2cc65f4441f4fcb6a3fc5ddde7d1306023537563cebdab8e9554f359babf8bf6"
+    },
+    {
+      "id": "world:market_stall_03",
+      "cells": 20,
+      "materials": 1,
+      "knownSubtotalCents": 800,
+      "unknownCells": 0,
+      "bytes": 495,
+      "hash": "c4dd4fb7b02b35c84f8b1fe4415a7615a6398828d8b88f954d48531130d369ea"
+    },
+    {
+      "id": "world:market_stall_04",
+      "cells": 20,
+      "materials": 1,
+      "knownSubtotalCents": 800,
+      "unknownCells": 0,
+      "bytes": 495,
+      "hash": "aacf13fd3cbc10eba18b047d843baa24c5c0d9334e7212b1301a2b63074f215d"
+    },
+    {
+      "id": "world:market_stall_05",
+      "cells": 20,
+      "materials": 1,
+      "knownSubtotalCents": 800,
+      "unknownCells": 0,
+      "bytes": 495,
+      "hash": "9b193d8e7b4ab1406f42ab346bd1d37c45f20a287647a83c04cf5e7c57cada5a"
+    },
+    {
+      "id": "world:market_stall_06",
+      "cells": 20,
+      "materials": 1,
+      "knownSubtotalCents": 800,
+      "unknownCells": 0,
+      "bytes": 495,
+      "hash": "5a15124dcff39001e9f707e79994a9f28e84e7b65479c149060d0caada702b49"
+    },
+    {
+      "id": "world:market_stall_07",
+      "cells": 67,
+      "materials": 5,
+      "knownSubtotalCents": 3408,
+      "unknownCells": 0,
+      "bytes": 1357,
+      "hash": "57016cd3e87aed2339f6babb34241cee157c152959d8c01f2944f175dbe83fe2"
+    },
+    {
+      "id": "world:market_stall_08",
+      "cells": 74,
+      "materials": 10,
+      "knownSubtotalCents": 6098,
+      "unknownCells": 0,
+      "bytes": 2022,
+      "hash": "1d72c427792381048b853628a824f10c928c42caf6a8beaae54b36596c9b8d4b"
+    },
+    {
+      "id": "world:market_stall_09",
+      "cells": 20,
+      "materials": 1,
+      "knownSubtotalCents": 800,
+      "unknownCells": 0,
+      "bytes": 495,
+      "hash": "f5bb8992f843d9dbb1cfa241bfe099869f9fdc927975b32ee0d043791e922101"
+    },
+    {
+      "id": "world:market_stall_10",
+      "cells": 20,
+      "materials": 1,
+      "knownSubtotalCents": 800,
+      "unknownCells": 0,
+      "bytes": 494,
+      "hash": "7564baa53de286fe358e09648249a09ed6e19b976fa519336eebd1b739cff664"
+    },
+    {
+      "id": "world:r001",
+      "cells": 50926,
+      "materials": 403,
+      "knownSubtotalCents": 2071413,
+      "unknownCells": 0,
+      "bytes": 706728,
+      "hash": "12cd31e8cf20fb93f3570b99b63a8792daf6845c962b03403788327b5c0b00fd"
+    },
+    {
+      "id": "world:r002",
+      "cells": 29120,
+      "materials": 131,
+      "knownSubtotalCents": 797522,
+      "unknownCells": 0,
+      "bytes": 381189,
+      "hash": "918b2635014432f5b03d71d124dcce622bf96808aaa5f54434dfecc415fa9500"
+    },
+    {
+      "id": "world:r003",
+      "cells": 29318,
+      "materials": 27,
+      "knownSubtotalCents": 624959,
+      "unknownCells": 0,
+      "bytes": 351666,
+      "hash": "8f1fb9883b8041108f3c6bfd5705863c159aa101361f2d43b2944b28cc176388"
+    },
+    {
+      "id": "world:r004",
+      "cells": 9243,
+      "materials": 5,
+      "knownSubtotalCents": 125667,
+      "unknownCells": 0,
+      "bytes": 106947,
+      "hash": "42b60011394961ba67831bab921d26d530bdcaa410c5fff54c1abbe9200c98f7"
+    },
+    {
+      "id": "world:r005",
+      "cells": 8723,
+      "materials": 3,
+      "knownSubtotalCents": 146607,
+      "unknownCells": 0,
+      "bytes": 100778,
+      "hash": "7cea11be831c14b28c668c769e9de392f485f857c18d9942419215f63006a605"
+    },
+    {
+      "id": "world:r006",
+      "cells": 7348,
+      "materials": 3,
+      "knownSubtotalCents": 121816,
+      "unknownCells": 0,
+      "bytes": 86519,
+      "hash": "ea8ccc042d14f67c69fbe4c112e886e05be799a130fea0073b4800e74d88abd3"
+    },
+    {
+      "id": "world:r007",
+      "cells": 39208,
+      "materials": 110,
+      "knownSubtotalCents": 1277746,
+      "unknownCells": 0,
+      "bytes": 489385,
+      "hash": "4c1cf088cdaea80a0612b752a7a2062ecd82c64635ba72d4a79a0a6cc2234f4e"
+    },
+    {
+      "id": "world:r008",
+      "cells": 42285,
+      "materials": 25,
+      "knownSubtotalCents": 1028527,
+      "unknownCells": 0,
+      "bytes": 510101,
+      "hash": "1da6f5cdc67e9cbefdf7804373736d628ba89f26b0bd794dd38cab8d024c362f"
+    },
+    {
+      "id": "world:r009",
+      "cells": 86932,
+      "materials": 25,
+      "knownSubtotalCents": 1841009,
+      "unknownCells": 0,
+      "bytes": 1085027,
+      "hash": "c5b8e60c214bfa5e610fd73a4ff49882cbdf4a8c5ecec2927ba673edbf2186f7"
+    },
+    {
+      "id": "world:spawn_shop_01",
+      "cells": 166,
+      "materials": 3,
+      "knownSubtotalCents": 3006,
+      "unknownCells": 0,
+      "bytes": 2245,
+      "hash": "016ed0fbb495bc352c608e684ad9e395cef25ab834479e2c9427af5455923645"
+    },
+    {
+      "id": "world:spawn_shop_02",
+      "cells": 170,
+      "materials": 3,
+      "knownSubtotalCents": 3078,
+      "unknownCells": 0,
+      "bytes": 2285,
+      "hash": "f3d5df919d57db202c8ae3e7355e8619f3c43b9129dc2831e7ccd41397e06df6"
+    },
+    {
+      "id": "world:spawn_shop_03",
+      "cells": 307,
+      "materials": 3,
+      "knownSubtotalCents": 5535,
+      "unknownCells": 0,
+      "bytes": 3906,
+      "hash": "171ee4eda69942a2c4b25cd9c7127eab3b5f0deb23eb7840a7bb1f5fd875b4d5"
+    },
+    {
+      "id": "world:spawn_shop_04",
+      "cells": 488,
+      "materials": 4,
+      "knownSubtotalCents": 8811,
+      "unknownCells": 0,
+      "bytes": 5980,
+      "hash": "caa66bc3d62b35835d98777d462652367e6e2b51158f7efa3e7f0217bf06d892"
+    }
+  ],
+  "withheld": []
+}
