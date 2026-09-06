@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {gzipSync} from 'node:zlib';
-import {decodePrbm,clipToColumns,tilePath,parcelColumns} from './property-mesh-core.mjs';
+import {decodePrbm,clipToColumns,tilePath,hiresTileRange,parcelColumns} from './property-mesh-core.mjs';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 if(process.env.PROPERTY_LOCAL_MAP && process.env.PROPERTY_LOCAL_MAP!=='1')throw Error('Invalid local map option');
 const source=process.env.PROPERTY_LOCAL_MAP==='1'?'http://127.0.0.1:8100/maps/world/':'https://map.prosperitysmp.com/maps/world/';
@@ -67,8 +67,9 @@ for(const p of catalog.properties) {
   const capture=captures.get(p.id);
   const [ox,oy,oz]=capture.origin,[sx,sy,sz]=capture.size;
   const mask=columnMasks.get(p.id), batches=new Map(),omitted=new Map();
-  // Hires tile origin is x*32+2, while source tile cells cover x*32..x*32+31.
-  for(let tx=Math.floor(ox/32);tx<=Math.floor((ox+sx-1)/32);tx++)for(let tz=Math.floor(oz/32);tz<=Math.floor((oz+sz-1)/32);tz++) {
+  // Source selection must invert the same +2 translation used by the vertices.
+  const [minTx,maxTx]=hiresTileRange(ox,sx),[minTz,maxTz]=hiresTileRange(oz,sz);
+  for(let tx=minTx;tx<=maxTx;tx++)for(let tz=minTz;tz<=maxTz;tz++) {
     const key=`${tx},${tz}`;
     if(!tiles.has(key)){
       seenTiles.add(key);if(seenTiles.size>128)throw Error('Tile budget');
