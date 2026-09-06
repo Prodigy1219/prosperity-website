@@ -7,5 +7,5 @@ export interface Property {
   history:{id:string;type:'purchase'|'rent'|'extend'|'sellback';at:string;amountCents:number|null;source:string}[];
   preview:{url:string;capturedAt:string}|null;notes:string[];
 }
-export interface PropertyCatalog {schemaVersion:1;observedAt:string;expiresAt:string;properties:Property[];source:string}
+export interface PropertyCatalog {schemaVersion:1;observedAt:string;expiresAt:string;savedReadAt?:string;properties:Property[];source:string}
 export interface PropertyFilters {query?:string;world?:string;tenure?:string;status?:string;tag?:string;saved?:string[]|null;maxCost?:number|null;sort?:string}

@@ -1,8 +1,13 @@
 import { createIcons, Search, Map as MapIcon, LayoutGrid, Bookmark, Users, History, ArrowUpRight, ArrowRight, X, Columns3, ChevronLeft, ChevronRight, Copy, ExternalLink } from 'lucide';
 import { validateCatalog, filterProperties, money, weeklyCents, priceLabel, effectiveStatus, area, mapUrl, holdings, STATUS } from '../lib/property-core.mjs';
 import { createPropertyScene } from './property-scene.js';
-import {combinedPropertyEstimate} from '../lib/property-build.mjs';
 import {loadRuntimeSnapshot} from '../lib/property-runtime.mjs';
+import {analyzeProperty} from '../lib/property-appraisal.mjs';
+import {appraiseProperty} from '../lib/property-valuation.mjs';
+import appraisalContext from '../data/property-appraisal-context.json';
+import valuationPolicy from '../data/property-valuation-policy.json';
+import qualityRegistry from '../data/property-quality-reviews.json';
+import bundledStructures from '../data/property-structures.json';
 import mapCapture from '../data/property-map-manifest.json';
 import bundledMaterialValues from '../data/property-material-values.json';
 const esc = (v: unknown) => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!));
@@ -11,7 +16,50 @@ const icons = () => createIcons({ icons: { Search, Map: MapIcon, LayoutGrid, Boo
 const time = (s: string) => /^\d{4}-\d{2}-\d{2}$/.test(s) ? `${s} (date only)` : new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(s));
 const PAGE = 18, SAVE_KEY = 'prosperity.property-shortlist.v1';
 type Property = ReturnType<typeof validateCatalog>['properties'][number];
+// The JS helper's empty-array defaults infer never[]; registries are checked inside it.
+const analyzePublicEvidence = analyzeProperty as unknown as (p: Property, catalog: ReturnType<typeof validateCatalog>,
+    options: typeof appraisalContext & {now: number}) => ReturnType<typeof analyzeProperty>;
 const el = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
+function propertyAppraisal(p: Property, snapshot: ReturnType<typeof validateCatalog>, value: any, structure?: string) {
+    const reviews=(qualityRegistry.reviews as any[]).filter(r=>r.propertyId===p.id&&r.structureHash===structure);
+    return (appraiseProperty as any)(p,snapshot,value,{context:appraisalContext,policy:valuationPolicy,
+        review:reviews.length===1?reviews[0]:undefined,structureHash:structure,now:Date.now()});
+}
+function valuationBreakdown(estimate: any) {
+    if(!estimate?.baseEstimate)return '';
+    const labels: Record<string,string>={spawn:'Spawn proximity',limitedSupply:'Limited comparable supply',quality:'Design review'};
+    return `<section class="pd-appraisal-value" aria-label="Advisory value breakdown"><h3>How this estimate adds up</h3><dl class="pd-value-breakdown"><dt>Server assessment / asking basis</dt><dd>${money(estimate.assessmentCents)}</dd><dt>Known material worth</dt><dd>${money(estimate.materialCents)}</dd>${Object.entries(estimate.components).map(([key,raw])=>{const c=raw as any;return `<dt>${labels[key]}<small>${esc(c.reason)}</small></dt><dd>${c.status==='withheld'?'Not applied':`+${money(c.appliedCents)}`}</dd>`;}).join('')}<dt>Advisory estimate</dt><dd><strong>${money(estimate.totalCents)}</strong></dd></dl><p class="pd-note" data-valuation-freshness>Valuation evidence: ${estimate.evidenceAsOf?esc(time(estimate.evidenceAsOf)):'unverified'}. Premiums expire after two hours without a refresh. ${esc(estimate.availabilityNotice)}</p><p class="pd-note">${esc(estimate.policy.version)}. Owner-selected weights, not sale-calibrated premiums. Bonuses use the assessment only and total at most 20% of it. Assessment is not verified land-only and may overlap build value; materials include terrain. Actual asking price, taxes and server net worth are unchanged.${estimate.baseEstimate.partial?' Unpriced materials are excluded from this known subtotal.':''}</p></section>`;
+}
+function appraisalEvidence(p: Property, snapshotCatalog: ReturnType<typeof validateCatalog>) {
+    const heading = '<h3 id="pd-appraisal-heading">Location &amp; appraisal evidence</h3>';
+    try {
+        const facts = analyzePublicEvidence(p, snapshotCatalog, {...appraisalContext, now: Date.now()});
+        const row = (key: string, label: string, value: string, note: string) => `<div class="pd-evidence-row" data-evidence="${esc(key)}"><dt>${esc(label)}</dt><dd><strong>${esc(value)}</strong><small>${esc(note)}</small></dd></div>`;
+        const spawnKnown = facts.spawn.status === 'observed' && 'distanceBlocks' in facts.spawn && 'observedAt' in facts.spawn;
+        const spawnValue = spawnKnown ? `${new Intl.NumberFormat('en-US', {maximumFractionDigits: 1}).format(facts.spawn.distanceBlocks)} blocks / observed ${time(facts.spawn.observedAt)}` : 'Unknown';
+        const spawnNote = spawnKnown && 'source' in facts.spawn && 'observedAt' in facts.spawn
+            ? `2D straight-line to the nearest parcel boundary; zero when inside. Not a walking route or a current-spawn guarantee. Source: ${facts.spawn.source}.`
+            : facts.spawn.reason;
+        const supply = facts.supply;
+        const supplyValue = supply.status === 'unknown' ? 'Unknown: listing timestamp is unverified' : `${supply.total} registered / ${supply.available} available / ${supply.unknown} unknown`;
+        const supplyNote = `${supply.kind} / ${supply.tenure === 'buy' ? 'freehold' : 'rental'} / ${p.world}. Same world, type and tenure; includes this property. Listing saved ${time(supply.observedAt)}.${supply.status === 'stale' ? ' Stale snapshot; check availability in game.' : ''} Supply counts do not measure buyer demand.`;
+        const quality = facts.quality;
+        const qualityNote = quality.status === 'reviewed' && 'summary' in quality ? `${quality.summary} ${quality.reason}` : quality.reason;
+        const backfills = facts.comps.records.filter((r: {exclusionReason: string; source: string}) => r.exclusionReason === 'date-only-record' && /backfill/i.test(r.source)).length;
+        const rows = [
+            row('spawn', 'Spawn distance (saved observation)', spawnValue, spawnNote),
+            row('supply', 'Same-type supply', supplyValue, supplyNote),
+            row('road', 'Road / frontage', 'Unknown', facts.road.reason),
+            row('quality', 'Build-quality review', quality.status === 'reviewed' ? 'Snapshot-bound review' : 'Unknown', qualityNote),
+            row('traffic', 'Foot traffic', 'Not measured in this appraisal', facts.traffic.reason),
+            row('comps', 'Comparable sales', `Insufficient: ${facts.comps.eligibleCount} eligible sales`, `${facts.comps.recordedPurchaseCount} recorded purchases in this world; ${backfills} date-only backfills are not accepted as comparable sales. Asking prices and assessments are not sales.`),
+            row('premium', 'Additional monetary adjustment', p.tenure==='rent'?'Not applicable to rent':'Checking capture', p.tenure==='rent'?'Period rent is not a capital valuation.':'A verified capture is required before applying advisory premiums. Roads, traffic and comparable sales are not priced.')
+        ].join('');
+        return `<section class="pd-appraisal" aria-labelledby="pd-appraisal-heading" data-state="evidence">${heading}<dl class="pd-evidence-list">${rows}</dl></section>`;
+    } catch {
+        return `<section class="pd-appraisal" aria-labelledby="pd-appraisal-heading" data-state="unavailable">${heading}<p class="pd-note">Evidence unavailable for this snapshot. No additional monetary adjustment; the displayed price and material calculation are unchanged.</p></section>`;
+    }
+}
 export async function startPropertyDesk() {
     const content = el('pd-content'), detail = el<HTMLDialogElement>('pd-detail'), comparison = el<HTMLDialogElement>('pd-comparison');
     let catalog: ReturnType<typeof validateCatalog>, view = 'browse', page = 1, tenure = '', selectedOwner = '', mapScene: ReturnType<typeof createPropertyScene> | null = null, detailScene: ReturnType<typeof createPropertyScene> | null = null;
@@ -40,10 +88,14 @@ export async function startPropertyDesk() {
             const id=card.querySelector<HTMLElement>('[data-open]')?.dataset.open;
             const p=catalog.properties.find(p=>p.id===id),v=id&&values[id];
             if(!p||!v)continue;
-            const estimate=combinedPropertyEstimate(p,v);if(!estimate)continue;
-            card.querySelector('.pd-price')!.textContent=money(estimate.cents)+(estimate.partial?' + unpriced':'' );
+            const index=(bundledStructures.properties as Record<string,{structureHash:string;previewUrl:string}>)[p.id];
+            const hash=v.structureHash||(index?.previewUrl===p.preview?.url?index.structureHash:undefined);
+            let estimate;try{estimate=propertyAppraisal(p,catalog,v,hash);}catch{continue;}
+            if(estimate.totalCents===null)continue;
+            card.querySelector('.pd-price')!.textContent=money(estimate.totalCents)+(estimate.baseEstimate.partial?' + unpriced':'' );
             const available=effectiveStatus(p)==='available';
-            card.querySelector('.pd-subprice')!.textContent=`Estimated value: assessment + materials. ${available?'Actual asking price':'Server assessment'}: ${money(p.priceCents)}${available?'':' (not a sale offer)'}.`;
+            card.querySelector('.pd-subprice')!.textContent=`Advisory estimate including ${money(estimate.appliedBonusCents)} in policy adjustments. ${available?'Actual asking price':'Server assessment'}: ${money(p.priceCents)}${available?'':' (not a sale offer)'}.`;
+            if(/^r\d+$/.test(p.region))card.querySelector('.pd-subprice')!.textContent+=' Provisional: underground terrain cleanup pending.';
         }
     }
     function syncUrl() { const q = new URLSearchParams(); if (view !== 'browse')
@@ -147,7 +199,11 @@ export async function startPropertyDesk() {
         icons();
     }
     function openDetail(p: Property) { previewAbort?.abort(); detailScene?.dispose(); detailScene = null; previewAbort = new AbortController(); el('pd-detail-title').textContent = p.region; const status = effectiveStatus(p), url = mapUrl(p); el('pd-detail-body').innerHTML = `<div class="pd-detail-layout"><div><div id="pd-property-scene" class="pd-scene"></div><p id="pd-preview-label" class="pd-scene-label">Region footprint only. No verified building capture is published.</p></div><div class="pd-detail-info"><span class="pd-badge" data-status="${status}">${STATUS[status]}</span><p class="pd-price">${esc(priceLabel(p))}</p><p class="pd-subprice">${p.tenure === 'rent' && weeklyCents(p) !== null ? `~${money(Math.round(weeklyCents(p)!))} / week equivalent` : 'Asking/assessed price, never a recorded sale'}</p><dl><dt>Type</dt><dd>${esc(p.kind)}</dd><dt>World</dt><dd>${esc(p.world)}</dd><dt>Footprint</dt><dd>${area(p).toLocaleString()} blocks&sup2;</dd><dt>Region height</dt><dd>Y ${p.geometry.minY} to ${p.geometry.maxY}</dd><dt>${p.tenure === 'rent' ? 'Tenant' : 'Owner'}</dt><dd>${p.owner ? `<button data-owner="${esc(p.owner.id)}" class="pd-text-button">${esc(p.owner.name)}</button>` : 'Not published'}</dd><dt>Price basis</dt><dd>${esc(p.priceBasis)}</dd>${p.leaseEndsAt ? `<dt>Lease end (snapshot)</dt><dd>${esc(time(p.leaseEndsAt))}</dd>` : ''}</dl>${url ? `<a class="pd-button pd-primary" href="${esc(url)}" target="_blank" rel="noopener noreferrer">View actual world in BlueMap ${icon('external-link')}</a>` : ''}<button class="pd-button" data-gps="${esc(p.region)}">Copy /gps ${esc(p.region)} ${icon('copy')}</button><p class="pd-note">GPS availability depends on the in-game rollout and your current world. This is a direction command, not a purchase.</p>${p.notes.map(n => `<p class="pd-note">${esc(n)}</p>`).join('')}</div></div><section class="pd-history"><h3>Recorded history</h3>${activities([p])}</section>`; if (!detail.open)
-        detail.showModal(); icons(); try {
+        detail.showModal();
+        // Pin all asynchronous detail calculations to the generation opened.
+        const openedCatalog=catalog;
+        el('pd-detail-body').querySelector('.pd-detail-layout')!.insertAdjacentHTML('afterend', appraisalEvidence(p, openedCatalog));
+        icons(); try {
         detailScene = createPropertyScene(el('pd-property-scene'), [p], {runtime});
         if (p.preview) {
             const current = detailScene, currentAbort = previewAbort;
@@ -155,12 +211,21 @@ export async function startPropertyDesk() {
                 if(result?.kind === 'blocks') {
                     el('pd-preview-label').textContent = result.meshError ? 'Detailed preview unavailable. Material capture remains available below.' : `Textured build / BlueMap surfaces retrieved ${time(result.meshAt!)}. ${p.geometry.maxY-p.geometry.minY<16?'Region slice, not the whole building. ':''}Hidden interiors and some decorations may be absent. Material tally uses the separate full block capture from ${time(result.capturedAt!)}.`;
                     const v=result.valuation!,rows=v.rows as {material:string;cells:number;valueMicros:number;unknownCells:number;warnings:string[]}[];
-                    const estimate=combinedPropertyEstimate(p,v);
-                    if(estimate){
+                    const estimate=propertyAppraisal(p,openedCatalog,v,result.structureHash);
+                    if(estimate.totalCents!==null){
                         const info=el('pd-detail-body').querySelector('.pd-detail-info')!;
-                        info.querySelector('.pd-price')!.textContent=money(estimate.cents)+(estimate.partial?' + unpriced materials':'');
-                        info.querySelector('.pd-subprice')!.textContent='Estimated property value / assessment + materials';
-                        info.querySelector('.pd-subprice')!.insertAdjacentHTML('afterend',`<dl class="pd-value-breakdown"><dt>${effectiveStatus(p)==='available'?'Actual asking price':'Server assessment'}</dt><dd>${money(estimate.assessmentCents)}</dd><dt>Known material worth</dt><dd>${money(estimate.materialCents)}</dd></dl><p class="pd-note">Indicative combined estimate, not the purchase price or server net worth. The assessment is not verified land-only and may overlap build value; material worth includes terrain. Labor and scarcity are not priced.</p>`);
+                        info.querySelector('.pd-price')!.textContent=money(estimate.totalCents)+(estimate.baseEstimate.partial?' + unpriced materials':'');
+                        info.querySelector('.pd-subprice')!.textContent='Website advisory estimate / not the purchase price';
+                        info.insertAdjacentHTML('beforeend',valuationBreakdown(estimate));
+                        if(/^r\d+$/.test(p.region))info.insertAdjacentHTML('beforeend','<p class="pd-note">Terrain review pending: unwanted underground ores have been reported on residential plots. Their captured materials may overstate this provisional estimate. It is not yet eligible for the new net-worth calculation.</p>');
+                        const premium=el('pd-detail-body').querySelector('[data-evidence="premium"] dd');
+                        if(premium)premium.innerHTML=`<strong>${money(estimate.appliedBonusCents)} in applied adjustments</strong><small>Spawn, supply and reviewed design only. ${esc(estimate.reason)}</small>`;
+                        const quality=estimate.components.quality;
+                        if(quality.evidenceStatus==='eligible') {
+                            const q=quality.evidence;
+                            const target=el('pd-detail-body').querySelector('[data-evidence="quality"] dd');
+                            if(target)target.innerHTML=`<strong>${q.scoreTotal} / ${q.scoreMaximum} &middot; ${q.kind==='ai-assisted'?'AI-assisted':'Human'} design review</strong><small>${esc(q.summary)} Reviewed ${esc(time(q.reviewedAt))}; ${esc(q.rubricVersion)}. Structural changes invalidate this review.</small><a href="${esc(q.evidence[0].url)}" target="_blank" rel="noopener noreferrer">View reviewed capture ${icon('external-link')}</a>`;
+                        }
                     }
                     if (!result.meshError) {
                     el('pd-property-scene').insertAdjacentHTML('afterend',`<div class="pd-height-controls"><label>View from Y<input id="pd-view-min-y" type="number" min="${result.minY}" max="${result.maxY}" value="${result.minY}"/></label><label>To Y<input id="pd-view-max-y" type="number" min="${result.minY}" max="${result.maxY}" value="${result.maxY}"/></label><button id="pd-height-apply" class="pd-button">Apply view</button><button id="pd-height-reset" class="pd-button">Full height</button></div>`);
