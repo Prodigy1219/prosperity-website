@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { propertyDeskEnabled as enabled } from '../lib/property-release';
+import '../styles/property-desk.css';
+// Owner-selected public home: /properties on the existing main site.
+// Fresh data and release verification remain required; noindex stays until that review.
+---
+<BaseLayout title="Property Desk" description="Compare plots, apartments and shopfronts on ProsperitySMP." noindex={true}>
+  {enabled ? <div id="property-desk" class="property-desk">
+    <div class="pd-heading"><div><p class="pd-eyebrow">PROSPERITYSMP / REAL ESTATE</p><h1>Property Desk</h1><p>A place to live. A place to trade. Your next piece of Prosperity.</p></div><a class="pd-button" href="https://wiki.prosperitysmp.com/Real_estate" target="_blank" rel="noopener noreferrer">Buying &amp; renting <i data-lucide="arrow-up-right"></i></a></div>
+    <div class="pd-status" role="status" id="pd-freshness">Loading property records...</div>
+    <nav class="pd-tabs" aria-label="Property views">
+      <button data-view="browse" aria-current="page"><i data-lucide="layout-grid"></i> Explore</button>
+      <button data-view="map"><i data-lucide="map"></i> Region map</button>
+      <button data-view="saved"><i data-lucide="bookmark"></i> Shortlist <span id="pd-saved-count">0</span></button>
+      <button data-view="owners"><i data-lucide="users"></i> Property holders</button>
+      <button data-view="history"><i data-lucide="history"></i> Recorded activity</button>
+    </nav>
+    <section class="pd-controls" aria-label="Property filters">
+      <label class="pd-search"><i data-lucide="search"></i><span class="pd-sr">Search property, owner or tag</span><input id="pd-query" type="search" maxlength="80" placeholder="Property, owner or tag" /></label>
+      <div class="pd-segment" aria-label="Tenure"><button data-tenure="" aria-pressed="true">All</button><button data-tenure="buy" aria-pressed="false">Buy</button><button data-tenure="rent" aria-pressed="false">Rent</button></div>
+      <label>Availability<select id="pd-status-filter"><option value="">Any status</option><option value="available">Available</option><option value="owned">Owned</option><option value="leased">Leased</option><option value="unknown">Check in game</option></select></label>
+      <label>World<select id="pd-world"><option value="">All worlds</option></select></label>
+      <label>Tag<select id="pd-tag"><option value="">All tags</option></select></label>
+      <label id="pd-budget-label">Max price / weekly rent<input id="pd-budget" type="number" min="0" step="1" placeholder="No limit" /></label>
+    </section>
+    <div class="pd-results-head"><p id="pd-result-count" aria-live="polite"></p><label>Sort <select id="pd-sort"><option value="price">Lowest cost</option><option value="price-desc">Highest cost</option><option value="area">Largest footprint</option><option value="name">Property ID</option></select></label><button id="pd-reset" class="pd-text-button">Reset filters</button></div>
+    <div id="pd-content" aria-busy="true"></div>
+    <div id="pd-pagination" class="pd-pagination"></div>
+    <aside id="pd-compare-bar" class="pd-compare-bar" hidden><span id="pd-compare-count"></span><button id="pd-compare-open" class="pd-button pd-primary">Compare properties <i data-lucide="columns-3"></i></button><button id="pd-compare-clear" class="pd-icon" title="Clear comparison" aria-label="Clear comparison"><i data-lucide="x"></i></button></aside>
+    <p class="pd-footnote">In-game dollars. Purchases and rentals complete in Minecraft, not in your browser. Availability is a snapshot, not a reservation.</p>
+    <dialog id="pd-detail" aria-labelledby="pd-detail-title"><div class="pd-dialog-top"><h2 id="pd-detail-title"></h2><button id="pd-detail-close" class="pd-icon" title="Close property" aria-label="Close property"><i data-lucide="x"></i></button></div><div id="pd-detail-body"></div></dialog>
+    <dialog id="pd-comparison" aria-labelledby="pd-comparison-title"><div class="pd-dialog-top"><h2 id="pd-comparison-title">Your property comparison</h2><button id="pd-comparison-close" class="pd-icon" title="Close comparison" aria-label="Close comparison"><i data-lucide="x"></i></button></div><div id="pd-comparison-body"></div></dialog>
+    <div id="pd-toast" role="status" class="pd-toast" hidden></div>
+    <noscript><p>JavaScript is needed for the property browser. <a href="https://wiki.prosperitysmp.com/Real_estate">Property commands and rental information</a> are also available on the wiki.</p></noscript>
+  </div> : <section class="property-desk pd-heading"><div><h1>Property Desk</h1><p>This explorer is not open yet. Property purchases and rentals are still available in game.</p><a href="https://wiki.prosperitysmp.com/Real_estate">Property information</a></div></section>}
+</BaseLayout>
+<script>
+  import { startPropertyDesk } from '../scripts/property-desk';
+  if (document.getElementById('property-desk')) startPropertyDesk();
+</script>
