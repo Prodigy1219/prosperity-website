@@ -5,8 +5,8 @@ import { validateBlockCapture, tallyBlocks, estimateBlockWorth } from '../lib/pr
 import {loadDetailMesh} from './property-detail-mesh.js';
 import worthSnapshot from '../data/property-worth.json';
 const COLORS = { available: 0x348961, owned: 0x8b909b, leased: 0x3b82ac, unknown: 0xc19a50 };
-/** @param {HTMLElement} host @param {import('../lib/property-types').Property[]} properties @param {{onSelect?:(p:import('../lib/property-types').Property)=>void,map?:boolean}} options */
-export function createPropertyScene(host, properties, { onSelect, map = false } = {}) {
+/** @param {HTMLElement} host @param {import('../lib/property-types').Property[]} properties @param {{onSelect?:(p:import('../lib/property-types').Property)=>void,map?:boolean,runtime?:any}} options */
+export function createPropertyScene(host, properties, { onSelect, map = false, runtime } = {}) {
     // Compute bounds before allocating WebGL resources; no argument-spread ceiling.
     let minX = Infinity, maxX = -Infinity, minZ = Infinity, maxZ = -Infinity;
     for (const p of properties)
@@ -172,12 +172,12 @@ export function createPropertyScene(host, properties, { onSelect, map = false } 
             const capture = validateBlockCapture(raw);
             const result = {kind:'blocks',count:capture.blocks.length,materials:tallyBlocks(capture),
                 capturedAt:capture.capturedAt,source:capture.source,minY:capture.origin[1],maxY:capture.origin[1]+capture.size[1]-1,
-                valuation:estimateBlockWorth(capture,worthSnapshot),meshAt:null,meshError:false};
+                valuation:estimateBlockWorth(capture,runtime?.worth||worthSnapshot),meshAt:null,meshError:false};
             if (disposed || signal.aborted)
                 return;
             activeCapture=capture;
             let loaded;
-            try { loaded=await loadDetailMesh(property,signal); }
+            try { loaded=await loadDetailMesh(property,signal,runtime?.meshes); }
             catch { result.meshError=true;return result; }
             if(disposed||signal.aborted){loaded.dispose();return;}
             if(loaded.meta.origin.some((n,i)=>n!==capture.origin[i])||loaded.meta.size.some((n,i)=>n!==capture.size[i])){loaded.dispose();result.meshError=true;return result;}

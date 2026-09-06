@@ -2,7 +2,9 @@ import { createIcons, Search, Map as MapIcon, LayoutGrid, Bookmark, Users, Histo
 import { validateCatalog, filterProperties, money, weeklyCents, priceLabel, effectiveStatus, area, mapUrl, holdings, STATUS } from '../lib/property-core.mjs';
 import { createPropertyScene } from './property-scene.js';
 import {combinedPropertyEstimate} from '../lib/property-build.mjs';
+import {loadRuntimeSnapshot} from '../lib/property-runtime.mjs';
 import mapCapture from '../data/property-map-manifest.json';
+import bundledMaterialValues from '../data/property-material-values.json';
 const esc = (v: unknown) => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!));
 const icon = (name: string) => `<i data-lucide="${name}"></i>`;
 const icons = () => createIcons({ icons: { Search, Map: MapIcon, LayoutGrid, Bookmark, Users, History, ArrowUpRight, ArrowRight, X, Columns3, ChevronLeft, ChevronRight, Copy, ExternalLink } });
@@ -14,6 +16,8 @@ export async function startPropertyDesk() {
     const content = el('pd-content'), detail = el<HTMLDialogElement>('pd-detail'), comparison = el<HTMLDialogElement>('pd-comparison');
     let catalog: ReturnType<typeof validateCatalog>, view = 'browse', page = 1, tenure = '', selectedOwner = '', mapScene: ReturnType<typeof createPropertyScene> | null = null, detailScene: ReturnType<typeof createPropertyScene> | null = null;
     let previewAbort: AbortController | null = null, toastTimer: ReturnType<typeof setTimeout>, queryTimer: ReturnType<typeof setTimeout>;
+    let runtime: Awaited<ReturnType<typeof loadRuntimeSnapshot>> | undefined, polling = false, refreshFailed = false;
+    const pageAbort = new AbortController();
     let saved: string[] = [];
     try {
         const raw = JSON.parse(localStorage.getItem(SAVE_KEY) || '[]');
@@ -30,6 +34,18 @@ export async function startPropertyDesk() {
         toast('Shortlist kept for this tab only; browser storage is unavailable.');
     } }
     function updateCompare() { el('pd-compare-bar').hidden = compare.size === 0; el('pd-compare-count').textContent = `${compare.size} of 3 properties`; }
+    function renderCardEstimates() {
+        const values: Record<string, any> = runtime?.materialValues || bundledMaterialValues.properties;
+        for (const card of content.querySelectorAll<HTMLElement>('.pd-card')) {
+            const id=card.querySelector<HTMLElement>('[data-open]')?.dataset.open;
+            const p=catalog.properties.find(p=>p.id===id),v=id&&values[id];
+            if(!p||!v)continue;
+            const estimate=combinedPropertyEstimate(p,v);if(!estimate)continue;
+            card.querySelector('.pd-price')!.textContent=money(estimate.cents)+(estimate.partial?' + unpriced':'' );
+            const available=effectiveStatus(p)==='available';
+            card.querySelector('.pd-subprice')!.textContent=`Estimated value: assessment + materials. ${available?'Actual asking price':'Server assessment'}: ${money(p.priceCents)}${available?'':' (not a sale offer)'}.`;
+        }
+    }
     function syncUrl() { const q = new URLSearchParams(); if (view !== 'browse')
         q.set('view', view); if (tenure)
         q.set('tenure', tenure); if (selectedOwner)
@@ -51,7 +67,38 @@ export async function startPropertyDesk() {
     function activities(ps: Property[]) { const events = ps.flatMap(p => p.history.map(h => ({ p, h }))).sort((a, b) => Date.parse(b.h.at) - Date.parse(a.h.at)); if (!events.length)
         return '<div class="pd-empty"><h2>No verified history in this snapshot</h2><p>Current prices and ownership are not past transactions.</p></div>'; return events.map(({ p, h }) => `<div class="pd-history-row"><div><button data-open="${esc(p.id)}" class="pd-text-button">${esc(p.region)}</button> ${esc(h.type)}<small>${esc(time(h.at))} / ${esc(h.source)}</small></div><strong>${money(h.amountCents)}</strong></div>`).join(''); }
     function freshness() { if (!catalog)
-        return; const stale = Date.now() > Date.parse(catalog.expiresAt); const box = el('pd-freshness'); box.dataset.stale = String(stale); box.textContent = `${stale ? 'Snapshot is stale. Verify prices and availability in game.' : 'Snapshot, not a live reservation.'} Observed ${time(catalog.observedAt)}.`; }
+        return; const overdue = runtime && Date.now() - Date.parse(runtime.publishedAt) > 7200000;
+        const stale = Date.now() > Date.parse(catalog.expiresAt) || !!overdue || refreshFailed;
+        const box = el('pd-freshness'); box.dataset.stale = String(stale);
+        box.textContent = `${stale ? 'Verify prices and availability in game.' : 'Snapshot, not a live reservation.'} Listing source saved ${time(catalog.observedAt)}. ${runtime ? `Automatic snapshot published ${time(runtime.publishedAt)}.${overdue ? ' Refresh overdue.' : ''}` : 'Showing the bundled snapshot; automatic refresh is unavailable.'}${refreshFailed ? ' Latest refresh failed; last verified data retained.' : ''}`;
+    }
+    function updateFilters() {
+        for (const [id, values, label] of [
+            ['pd-world', [...new Map(catalog.properties.map(p => [p.worldId, p.world])).entries()], 'All worlds'],
+            ['pd-tag', [...new Set(catalog.properties.flatMap(p => p.tags))].sort().map(t => [t, t]), 'All tags']
+        ] as [string, string[][], string][]) {
+            const select = el<HTMLSelectElement>(id), old = select.value;
+            select.innerHTML = `<option value="">${label}</option>` + values.map(([value, text]) => `<option value="${esc(value)}">${esc(text)}</option>`).join('');
+            if (values.some(([value]) => value === old)) select.value = old;
+        }
+    }
+    async function pollSnapshot() {
+        if (polling || document.hidden || pageAbort.signal.aborted) return;
+        polling = true;
+        try {
+            const next = await loadRuntimeSnapshot(pageAbort.signal);
+            if (pageAbort.signal.aborted) return;
+            refreshFailed = false;
+            if (!runtime || Date.parse(next.publishedAt) > Date.parse(runtime.publishedAt)) {
+                // Keep the open detail pinned to its original bundle; only new views use the new generation.
+                runtime = next; catalog = next.catalog;
+                for (const id of compare) if (!catalog.properties.some(p => p.id === id)) compare.delete(id);
+                updateFilters(); render();
+            }
+            freshness();
+        } catch { if (!pageAbort.signal.aborted) { refreshFailed = true; freshness(); } }
+        finally { polling = false; }
+    }
     function render() {
         if (!catalog)
             return;
@@ -96,11 +143,12 @@ export async function startPropertyDesk() {
         }
         updateSaved();
         updateCompare();
+        renderCardEstimates();
         icons();
     }
     function openDetail(p: Property) { previewAbort?.abort(); detailScene?.dispose(); detailScene = null; previewAbort = new AbortController(); el('pd-detail-title').textContent = p.region; const status = effectiveStatus(p), url = mapUrl(p); el('pd-detail-body').innerHTML = `<div class="pd-detail-layout"><div><div id="pd-property-scene" class="pd-scene"></div><p id="pd-preview-label" class="pd-scene-label">Region footprint only. No verified building capture is published.</p></div><div class="pd-detail-info"><span class="pd-badge" data-status="${status}">${STATUS[status]}</span><p class="pd-price">${esc(priceLabel(p))}</p><p class="pd-subprice">${p.tenure === 'rent' && weeklyCents(p) !== null ? `~${money(Math.round(weeklyCents(p)!))} / week equivalent` : 'Asking/assessed price, never a recorded sale'}</p><dl><dt>Type</dt><dd>${esc(p.kind)}</dd><dt>World</dt><dd>${esc(p.world)}</dd><dt>Footprint</dt><dd>${area(p).toLocaleString()} blocks&sup2;</dd><dt>Region height</dt><dd>Y ${p.geometry.minY} to ${p.geometry.maxY}</dd><dt>${p.tenure === 'rent' ? 'Tenant' : 'Owner'}</dt><dd>${p.owner ? `<button data-owner="${esc(p.owner.id)}" class="pd-text-button">${esc(p.owner.name)}</button>` : 'Not published'}</dd><dt>Price basis</dt><dd>${esc(p.priceBasis)}</dd>${p.leaseEndsAt ? `<dt>Lease end (snapshot)</dt><dd>${esc(time(p.leaseEndsAt))}</dd>` : ''}</dl>${url ? `<a class="pd-button pd-primary" href="${esc(url)}" target="_blank" rel="noopener noreferrer">View actual world in BlueMap ${icon('external-link')}</a>` : ''}<button class="pd-button" data-gps="${esc(p.region)}">Copy /gps ${esc(p.region)} ${icon('copy')}</button><p class="pd-note">GPS availability depends on the in-game rollout and your current world. This is a direction command, not a purchase.</p>${p.notes.map(n => `<p class="pd-note">${esc(n)}</p>`).join('')}</div></div><section class="pd-history"><h3>Recorded history</h3>${activities([p])}</section>`; if (!detail.open)
         detail.showModal(); icons(); try {
-        detailScene = createPropertyScene(el('pd-property-scene'), [p]);
+        detailScene = createPropertyScene(el('pd-property-scene'), [p], {runtime});
         if (p.preview) {
             const current = detailScene, currentAbort = previewAbort;
             current.preview(p, currentAbort.signal).then(result => { if (detailScene !== current || currentAbort.signal.aborted) return;
@@ -193,6 +241,9 @@ export async function startPropertyDesk() {
     icons();
     updateSaved();
     try {
+        try { runtime = await loadRuntimeSnapshot(pageAbort.signal); } catch { /* The bundled release remains a validated fallback. */ }
+        if (runtime) catalog = runtime.catalog;
+        else {
         const response = await fetch('/property-data/catalog.json', { signal: AbortSignal.timeout(10000), cache: 'no-store', credentials: 'omit' });
         if (!response.ok)
             throw Error('Feed unavailable');
@@ -200,6 +251,7 @@ export async function startPropertyDesk() {
         for(;;){const {value,done}=await reader.read();if(done)break;total+=value.length;if(total>5000000){await reader.cancel();throw Error('Feed too large');}chunks.push(value);}
         const bytes=new Uint8Array(total);let offset=0;for(const c of chunks){bytes.set(c,offset);offset+=c.length;}
         catalog = validateCatalog(JSON.parse(new TextDecoder().decode(bytes)));
+        }
         const q = new URLSearchParams(location.search);
         view = ['browse', 'saved', 'map', 'owners', 'history'].includes(q.get('view') || '') ? q.get('view')! : 'browse';
         tenure = ['buy', 'rent'].includes(q.get('tenure') || '') ? q.get('tenure')! : '';
@@ -207,9 +259,7 @@ export async function startPropertyDesk() {
         for (const [key, id] of [['q', 'pd-query'], ['status', 'pd-status-filter'], ['max', 'pd-budget'], ['sort', 'pd-sort']])
             if (q.has(key))
                 el<HTMLInputElement>(id).value = q.get(key)!;
-        const worlds = [...new Map(catalog.properties.map(p => [p.worldId, p.world])).entries()];
-        el('pd-world').insertAdjacentHTML('beforeend', worlds.map(([id, name]) => `<option value="${esc(id)}">${esc(name)}</option>`).join(''));
-        el('pd-tag').insertAdjacentHTML('beforeend', [...new Set(catalog.properties.flatMap(p => p.tags))].sort().map(t => `<option value="${esc(t)}">${esc(t)}</option>`).join(''));
+        updateFilters();
         if (q.has('world'))
             el<HTMLSelectElement>('pd-world').value = q.get('world')!;
         if (q.has('tag'))
@@ -224,5 +274,7 @@ export async function startPropertyDesk() {
         content.innerHTML = '<div class="pd-empty"><h2>The property desk is waiting on a verified snapshot</h2><p>Property signs and /arm info in game remain the source of truth.</p></div>';
     }
     const refresh = setInterval(freshness, 60000);
-    window.addEventListener('pagehide', () => { clearInterval(refresh); clearTimeout(toastTimer); clearTimeout(queryTimer); mapScene?.dispose(); detailScene?.dispose(); previewAbort?.abort(); }, { once: true });
+    const poll = setInterval(pollSnapshot, 300000);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) void pollSnapshot(); }, {signal:pageAbort.signal});
+    window.addEventListener('pagehide', () => { pageAbort.abort(); clearInterval(poll); clearInterval(refresh); clearTimeout(toastTimer); clearTimeout(queryTimer); mapScene?.dispose(); detailScene?.dispose(); previewAbort?.abort(); }, { once: true });
 }
