@@ -14,17 +14,17 @@ const isActive = (href: string) =>
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="flex items-center justify-between h-16">
 
-      <a href="/" aria-label="ProsperitySMP — home" class="flex items-center gap-3">
+      <a href="/" aria-label="ProsperitySMP — home" class="flex shrink-0 items-center gap-3">
         <img src="/logo.png" alt="" width="256" height="256" class="h-8 w-auto" />
         <span class="font-heading text-accent font-bold text-h3 hidden sm:block">ProsperitySMP</span>
       </a>
 
-      <nav aria-label="Main" class="hidden lg:flex items-center gap-1">
+      <nav aria-label="Main" class="hidden xl:flex items-center gap-1">
         {primaryNav.map((link) => (
           <a
             href={link.href}
             aria-current={isActive(link.href) ? 'page' : undefined}
-            class={`px-3 py-2 rounded-none text-small font-medium transition-colors ${
+            class={`px-2 py-2 whitespace-nowrap rounded-none text-small font-medium transition-colors ${
               isActive(link.href)
                 ? 'text-accent bg-control'
                 : 'text-ink-muted hover:text-ink hover:bg-control'
@@ -41,7 +41,7 @@ const isActive = (href: string) =>
         aria-label="Toggle menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
-        class="lg:hidden p-2 rounded-none text-ink-muted hover:text-ink hover:bg-control transition-colors"
+        class="xl:hidden p-2 rounded-none text-ink-muted hover:text-ink hover:bg-control transition-colors"
       >
         <svg data-icon-open class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -52,7 +52,7 @@ const isActive = (href: string) =>
       </button>
     </div>
 
-    <nav id="mobile-menu" aria-label="Mobile" class="hidden lg:hidden pb-3 border-t border-edge mt-1">
+    <nav id="mobile-menu" aria-label="Mobile" class="hidden xl:hidden pb-3 border-t border-edge mt-1">
       <div class="pt-2 flex flex-col gap-1">
         {primaryNav.map((link) => (
           <a
@@ -96,7 +96,7 @@ const isActive = (href: string) =>
       (btn as HTMLElement | null)?.focus();
     }
   });
-  window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => {
+  window.matchMedia('(min-width: 1280px)').addEventListener('change', (e) => {
     if (e.matches) setOpen(false);
   });
 </script>
