@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "spawns": [
+    {
+      "worldId": "world",
+      "position": [518, 74, -151],
+      "verified": true,
+      "public": true,
+      "observedAt": "2026-09-06T20:16:47.714607+00:00",
+      "sourceHash": "9836fb529f583db32f596b8fc00671d0e41c05ee5c29c4e70582a0efe86f4503",
+      "version": "spawn-20260906",
+      "source": "Saved world Data.spawn; corroborated by Multiverse configuration"
+    }
+  ],
+  "roads": null,
+  "qualityReviews": [],
+  "traffic": null,
+  "policy": {
+    "authorized": false,
+    "version": "facts-only-v1"
+  }
+}

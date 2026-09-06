@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "reviews": [
+    {
+      "propertyId": "world:c001",
+      "structureHash": "d6ef113f5d969f5629be28877dc3dc1d2b3558a684f21d3e0c0a165d65fb7d1e",
+      "rubricVersion": "design-v1",
+      "reviewedAt": "2026-09-06T20:55:21Z",
+      "reviewer": "Codex visual review",
+      "kind": "ai-assisted",
+      "status": "approved",
+      "scores": {
+        "composition": 3,
+        "detailing": 3,
+        "completion": 3,
+        "streetscape": 2
+      },
+      "evidence": [
+        {
+          "url": "/property-review-evidence/1be1fabac736679147b2e7d266b1a259530d12778c0792c64b9353378c1fca59.png",
+          "sha256": "1be1fabac736679147b2e7d266b1a259530d12778c0792c64b9353378c1fca59"
+        },
+        {
+          "url": "/property-review-evidence/e2d6bd323f2d96cbcc3096fbecb6f196539ed65077e25c57bbd24dd5596a1f92.png",
+          "sha256": "e2d6bd323f2d96cbcc3096fbecb6f196539ed65077e25c57bbd24dd5596a1f92"
+        }
+      ],
+      "summary": "The slender tower has a consistent dark structural frame, repeated glazed floors and warm accent panels. Both views show a coherent exterior from the planted base to the roof parapet. Perimeter planting gives the small footprint a finished edge, although the entrance and pedestrian approach are not clearly resolved in these views. Subjective exterior assessment only; interiors, access and market demand are not established."
+    },
+    {
+      "propertyId": "world:c006",
+      "structureHash": "45300cd3a13f540af3b0a4a99b839c9453c4f6138d71ab6c73a44a5d46d4d80c",
+      "rubricVersion": "design-v1",
+      "reviewedAt": "2026-09-06T20:55:21Z",
+      "reviewer": "Codex visual review",
+      "kind": "ai-assisted",
+      "status": "approved",
+      "scores": {
+        "composition": 3,
+        "detailing": 3,
+        "completion": 3,
+        "streetscape": 2
+      },
+      "evidence": [
+        {
+          "url": "/property-review-evidence/432a3d0526ce6537de55b87ebb83067bf457f059793050fa834babdb0a56f6ad.png",
+          "sha256": "432a3d0526ce6537de55b87ebb83067bf457f059793050fa834babdb0a56f6ad"
+        },
+        {
+          "url": "/property-review-evidence/d30761e9d2bf55c7abaac40bf3b62e5dd0fc9c9707c719c9a2e43dc702594e2e.png",
+          "sha256": "d30761e9d2bf55c7abaac40bf3b62e5dd0fc9c9707c719c9a2e43dc702594e2e"
+        }
+      ],
+      "summary": "Brick piers, pale horizontal bands and recessed turquoise glazing form a consistent facade, with a clearly defined base and roof. Both views show coordinated roof details and repeated elevation treatment. The ground-level canopy gives the entrance definition, while the remaining visible parcel edge is mostly plain grass with a row of chests. Subjective exterior assessment only; no inference about interior finish or commercial performance."
+    },
+    {
+      "propertyId": "world:r001",
+      "structureHash": "32d27eb11b20ca86bc9a9c6fada616766280d0aa3dbcc9819e35250a3afa7b52",
+      "rubricVersion": "design-v1",
+      "reviewedAt": "2026-09-06T20:55:21Z",
+      "reviewer": "Codex visual review",
+      "kind": "ai-assisted",
+      "status": "approved",
+      "scores": {
+        "composition": 3,
+        "detailing": 3,
+        "completion": 3,
+        "streetscape": 4
+      },
+      "evidence": [
+        {
+          "url": "/property-review-evidence/ed9709b0072c4db9799ce7547fbd312a5d45218b6ac3bbc1b974f776595fd003.png",
+          "sha256": "ed9709b0072c4db9799ce7547fbd312a5d45218b6ac3bbc1b974f776595fd003"
+        },
+        {
+          "url": "/property-review-evidence/0ec5b630ddbcbc42300c3b48fccf5c73d8752326957334f0f138c9f3e88934a3.png",
+          "sha256": "0ec5b630ddbcbc42300c3b48fccf5c73d8752326957334f0f138c9f3e88934a3"
+        }
+      ],
+      "summary": "The pale-walled house and layered red roofs are coordinated with smaller roofed elements across the parcel. Both views show a considered site composition: a continuous planted boundary, paths, trees, pool surround and cultivated rows fit the irregular footprint. The strongest evidence is the integration of the building with its visible grounds. Subjective exterior assessment only; the streetscape score does not assert road frontage, traffic or a measured sale premium."
+    },
+    {
+      "propertyId": "world:r002",
+      "structureHash": "54c45d5937d5e74e6ddaa2ae53bc19aefad1d7aae8870952613040c2053f2fea",
+      "rubricVersion": "design-v1",
+      "reviewedAt": "2026-09-06T20:55:21Z",
+      "reviewer": "Codex visual review",
+      "kind": "ai-assisted",
+      "status": "approved",
+      "scores": {
+        "composition": 3,
+        "detailing": 3,
+        "completion": 3,
+        "streetscape": 1
+      },
+      "evidence": [
+        {
+          "url": "/property-review-evidence/93ad034a531c2d3aa513c721ab77bb1cadd619fd04de81c720aebe679d99f811.png",
+          "sha256": "93ad034a531c2d3aa513c721ab77bb1cadd619fd04de81c720aebe679d99f811"
+        },
+        {
+          "url": "/property-review-evidence/7c57a12a329e1d2c8138e23ef995fe8cb4879de4c553a0002dd24aab0c519276.png",
+          "sha256": "7c57a12a329e1d2c8138e23ef995fe8cb4879de4c553a0002dd24aab0c519276"
+        }
+      ],
+      "summary": "Twin towers, stepped red roofs and repeated dark buttresses create a strong, coherent silhouette. Both views show consistent wall articulation and tower detailing, with a resolved visible exterior. The surrounding ground is largely unlandscaped grass; these captures do not show a developed entry path or coordinated parcel boundary. The low streetscape score concerns that visible site treatment, not the architectural style or an assumed lack of access."
+    },
+    {
+      "propertyId": "world:r007",
+      "structureHash": "f5605f2dcf1cdabef7e4724144563779dd705b6015da15fab0eba814e3282c8e",
+      "rubricVersion": "design-v1",
+      "reviewedAt": "2026-09-06T20:55:21Z",
+      "reviewer": "Codex visual review",
+      "kind": "ai-assisted",
+      "status": "approved",
+      "scores": {
+        "composition": 2,
+        "detailing": 2,
+        "completion": 3,
+        "streetscape": 2
+      },
+      "evidence": [
+        {
+          "url": "/property-review-evidence/7b10846f4bcc78336d2d589f6e01805f05e45a33ca1620859024963bf24c0d0a.png",
+          "sha256": "7b10846f4bcc78336d2d589f6e01805f05e45a33ca1620859024963bf24c0d0a"
+        },
+        {
+          "url": "/property-review-evidence/6361594a18fc24f27b330f8435ea3b32b83cd0ff72923614b4846cbed72bc644.png",
+          "sha256": "6361594a18fc24f27b330f8435ea3b32b83cd0ff72923614b4846cbed72bc644"
+        }
+      ],
+      "summary": "A simple timber house has consistent log supports, repeated windows and a layered roof with contrasting edge trim. The opposite view shows the entrance steps; the other shows a small rectangular pool with a paved surround. The exterior reads as complete and coherent, while the broader grass parcel has limited visible landscape treatment. Subjective exterior assessment only, with no judgment of interiors, block cost or resale demand."
+    }
+  ]
+}
