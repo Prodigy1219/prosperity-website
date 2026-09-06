@@ -1,0 +1,12 @@
+{
+  "version": "prosperity-advisory-v1",
+  "enabled": true,
+  "scope": "website-only",
+  "spawnMaxBps": 1000,
+  "spawnRadiusBlocks": 2000,
+  "supplyMaxBps": 500,
+  "qualityMaxBps": 1500,
+  "combinedMaxBps": 2000,
+  "basis": "server-assessment",
+  "note": "Owner-approved 2026-09-06 advisory policy, not sale-calibrated market premiums. Does not change in-game prices, taxes or balances."
+}

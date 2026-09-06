@@ -16,6 +16,10 @@ export function validateRuntimeSnapshot(raw) {
     if(!Number.isSafeInteger(v?.knownSubtotalCents)||v.knownSubtotalCents<0||!Number.isSafeInteger(v.unknownCells)||v.unknownCells<0||
        (v.totalCents!==null&&v.totalCents!==v.knownSubtotalCents)||(v.unknownCells>0)!==(v.totalCents===null))throw Error('Invalid material subtotal');
     materialValues[p.id]={knownSubtotalCents:v.knownSubtotalCents,totalCents:v.totalCents,unknownCells:v.unknownCells};
+    if(v.structureHash !== undefined) {
+      if(typeof v.structureHash !== 'string'||!/^[a-f0-9]{64}$/.test(v.structureHash))throw Error('Invalid structure fingerprint');
+      materialValues[p.id].structureHash=v.structureHash;
+    }
   }
   const w=raw.worth;
   if(w?.schemaVersion!==1||w.policy!=='paid-paste-state-BOM-at-worth-v1'||!/^[a-f0-9]{64}$/.test(w.rulesHash)||

@@ -5,12 +5,22 @@ export const money = cents => Number.isSafeInteger(cents) && cents >= 0
 const plain = (x, max = 120) => typeof x === 'string' && x.length > 0 && x.length <= max && !/[\u0000-\u001f\u007f]/.test(x);
 const finite = x => typeof x === 'number' && Number.isFinite(x) && Math.abs(x) <= 30000000;
 const cents = x => x === null || (Number.isSafeInteger(x) && x > 0 && x <= 1000000000000);
+const savedReadInstant = value => {
+    if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}T(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d+)?(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d)$/.test(value)) return NaN;
+    const day = value.slice(0, 10), parsedDay = Date.parse(day);
+    return Number.isFinite(parsedDay) && new Date(parsedDay).toISOString().slice(0, 10) === day ? Date.parse(value) : NaN;
+};
 /** @returns {import('./property-types').PropertyCatalog} */
 export function validateCatalog(raw) {
     if (!raw || raw.schemaVersion !== 1 || !Array.isArray(raw.properties) || raw.properties.length > 5000)
         throw Error('Unsupported property feed');
     if (!Number.isFinite(Date.parse(raw.observedAt)) || !Number.isFinite(Date.parse(raw.expiresAt)) || Date.parse(raw.expiresAt) <= Date.parse(raw.observedAt))
         throw Error('Missing snapshot timestamps');
+    // Stable saved-file read time is separate from source mtime and availability.
+    // The consumer's explicit clock checks future/expired reads; never replace dates.
+    const hasSavedRead = Object.hasOwn(raw, 'savedReadAt');
+    if (hasSavedRead && (!Number.isFinite(savedReadInstant(raw.savedReadAt)) || savedReadInstant(raw.savedReadAt) < Date.parse(raw.observedAt)))
+        throw Error('Invalid saved-read timestamp');
     const seen = new Set();
     const properties = raw.properties.map(p => {
         if (!p || !plain(p.id, 180) || !plain(p.region, 80) || !/^[a-z0-9_\-]+$/.test(p.region) || !plain(p.world, 80) || !plain(p.worldId, 80) || p.id !== `${p.worldId}:${p.region}` || seen.has(p.id))
@@ -36,7 +46,8 @@ export function validateCatalog(raw) {
         const mapId = ['world', 'resource_world'].includes(p.mapId) ? p.mapId : null;
         return { id: p.id, region: p.region, world: p.world, worldId: p.worldId, tenure: p.tenure, status: p.status, kind: p.kind, tags: [...p.tags], priceCents: p.priceCents, priceBasis: p.priceBasis, periodSeconds: p.tenure === 'rent' ? p.periodSeconds : null, leaseEndsAt: p.leaseEndsAt, owner: p.owner ? { id: p.owner.id, name: p.owner.name } : null, geometry: { points: p.geometry.points.map(v => [...v]), minY: p.geometry.minY, maxY: p.geometry.maxY }, mapId, history: p.history.map(h => ({ id: h.id, type: h.type, at: h.at, amountCents: h.amountCents, source: h.source })), preview: p.preview ? { url: p.preview.url, capturedAt: p.preview.capturedAt } : null, notes: Array.isArray(p.notes) ? p.notes.filter(n => plain(n, 240)).slice(0, 6) : [] };
     });
-    return { schemaVersion: 1, observedAt: raw.observedAt, expiresAt: raw.expiresAt, properties, source: 'ARM + WorldGuard snapshot' };
+    return { schemaVersion: 1, observedAt: raw.observedAt, expiresAt: raw.expiresAt,
+        ...(hasSavedRead ? {savedReadAt: raw.savedReadAt} : {}), properties, source: 'ARM + WorldGuard snapshot' };
 }
 /** @param {import('./property-types').Property} p */
 export function effectiveStatus(p, now = Date.now()) {

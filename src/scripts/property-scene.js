@@ -3,6 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { effectiveStatus } from '../lib/property-core.mjs';
 import { validateBlockCapture, tallyBlocks, estimateBlockWorth } from '../lib/property-build.mjs';
 import {loadDetailMesh} from './property-detail-mesh.js';
+import {structureHash} from '../lib/property-structure.mjs';
 import worthSnapshot from '../data/property-worth.json';
 const COLORS = { available: 0x348961, owned: 0x8b909b, leased: 0x3b82ac, unknown: 0xc19a50 };
 /** @param {HTMLElement} host @param {import('../lib/property-types').Property[]} properties @param {{onSelect?:(p:import('../lib/property-types').Property)=>void,map?:boolean,runtime?:any}} options */
@@ -170,7 +171,7 @@ export function createPropertyScene(host, properties, { onSelect, map = false, r
             if (raw.propertyId !== property.id)
                 throw Error('Wrong property preview');
             const capture = validateBlockCapture(raw);
-            const result = {kind:'blocks',count:capture.blocks.length,materials:tallyBlocks(capture),
+            const result = {kind:'blocks',structureHash:await structureHash(capture,property),count:capture.blocks.length,materials:tallyBlocks(capture),
                 capturedAt:capture.capturedAt,source:capture.source,minY:capture.origin[1],maxY:capture.origin[1]+capture.size[1]-1,
                 valuation:estimateBlockWorth(capture,runtime?.worth||worthSnapshot),meshAt:null,meshError:false};
             if (disposed || signal.aborted)
