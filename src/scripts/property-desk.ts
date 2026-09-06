@@ -1,6 +1,7 @@
 import { createIcons, Search, Map as MapIcon, LayoutGrid, Bookmark, Users, History, ArrowUpRight, ArrowRight, X, Columns3, ChevronLeft, ChevronRight, Copy, ExternalLink } from 'lucide';
 import { validateCatalog, filterProperties, money, weeklyCents, priceLabel, effectiveStatus, area, mapUrl, holdings, STATUS } from '../lib/property-core.mjs';
 import { createPropertyScene } from './property-scene.js';
+import {combinedPropertyEstimate} from '../lib/property-build.mjs';
 import mapCapture from '../data/property-map-manifest.json';
 const esc = (v: unknown) => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!));
 const icon = (name: string) => `<i data-lucide="${name}"></i>`;
@@ -104,8 +105,15 @@ export async function startPropertyDesk() {
             const current = detailScene, currentAbort = previewAbort;
             current.preview(p, currentAbort.signal).then(result => { if (detailScene !== current || currentAbort.signal.aborted) return;
                 if(result?.kind === 'blocks') {
-                    el('pd-preview-label').textContent = `Full block-volume capture / ${time(result.capturedAt!)} / ${result.source}. Block shapes simplified; no entities or container contents.`;
+                    el('pd-preview-label').textContent = result.meshError ? 'Detailed preview unavailable. Material capture remains available below.' : `Textured build / BlueMap surfaces retrieved ${time(result.meshAt!)}. ${p.geometry.maxY-p.geometry.minY<16?'Region slice, not the whole building. ':''}Hidden interiors and some decorations may be absent. Material tally uses the separate full block capture from ${time(result.capturedAt!)}.`;
                     const v=result.valuation!,rows=v.rows as {material:string;cells:number;valueMicros:number;unknownCells:number;warnings:string[]}[];
+                    const estimate=combinedPropertyEstimate(p,v);
+                    if(estimate){
+                        const info=el('pd-detail-body').querySelector('.pd-detail-info')!;
+                        info.querySelector('.pd-price')!.textContent=money(estimate.cents)+(estimate.partial?' + unpriced materials':'');
+                        info.querySelector('.pd-subprice')!.textContent='Estimated property value / assessment + materials';
+                        info.querySelector('.pd-subprice')!.insertAdjacentHTML('afterend',`<dl class="pd-value-breakdown"><dt>${effectiveStatus(p)==='available'?'Actual asking price':'Server assessment'}</dt><dd>${money(estimate.assessmentCents)}</dd><dt>Known material worth</dt><dd>${money(estimate.materialCents)}</dd></dl><p class="pd-note">Indicative combined estimate, not the purchase price or server net worth. The assessment is not verified land-only and may overlap build value; material worth includes terrain. Labor and scarcity are not priced.</p>`);
+                    }
                     el('pd-property-scene').insertAdjacentHTML('afterend',`<div class="pd-height-controls"><label>View from Y<input id="pd-view-min-y" type="number" min="${result.minY}" max="${result.maxY}" value="${result.minY}"/></label><label>To Y<input id="pd-view-max-y" type="number" min="${result.minY}" max="${result.maxY}" value="${result.maxY}"/></label><button id="pd-height-apply" class="pd-button">Apply view</button><button id="pd-height-reset" class="pd-button">Full height</button></div>`);
                     const applyHeight=()=>{
                         const min=Number(el<HTMLInputElement>('pd-view-min-y').value),max=Number(el<HTMLInputElement>('pd-view-max-y').value);
@@ -114,7 +122,7 @@ export async function startPropertyDesk() {
                     el('pd-height-apply').onclick=applyHeight;
                     el('pd-height-reset').onclick=()=>{el<HTMLInputElement>('pd-view-min-y').value=String(result.minY);el<HTMLInputElement>('pd-view-max-y').value=String(result.maxY);applyHeight();};
                     el('pd-property-scene').parentElement!.insertAdjacentHTML('beforeend', `<section class="pd-materials"><h3>Estimated material worth</h3><p class="pd-price">${money(v.knownSubtotalCents)}${v.totalCents===null?' <small>known subtotal</small>':''}</p><p>${result.count!.toLocaleString()} occupied block cells &middot; ${rows.length} materials &middot; ${v.unknownCells.toLocaleString()} unpriced cells</p><p class="pd-note">Whole captured volume, including terrain. Existing server BOM rules at item worth; not a sale, salvage or paste quote. Land, scarcity and workmanship are excluded. Worth export: ${esc(time(v.observedAt))}.</p><details><summary>Block and value breakdown</summary><div class="pd-material-scroll"><table><thead><tr><th>Block type</th><th>Cells</th><th>Known worth</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.material.replace('minecraft:','').replaceAll('_',' '))}${r.warnings.map(w=>`<small>${esc(w)}</small>`).join('')}</td><td>${r.cells.toLocaleString()}</td><td>${r.unknownCells===r.cells?'Unpriced':money(Math.round(r.valueMicros/10000))}${r.unknownCells>0&&r.unknownCells<r.cells?' + unknown':''}</td></tr>`).join('')}</tbody></table></div></details></section>`);
-                } else el('pd-preview-label').textContent = `BlueMap surface preview / approximate / fetched ${time(p.preview!.capturedAt)}. Top surface only, no interiors.`;
+                }
             }).catch(() => { if (!currentAbort.signal.aborted)
                 el('pd-preview-label').textContent = 'Building capture unavailable. Region footprint shown instead.'; });
         }

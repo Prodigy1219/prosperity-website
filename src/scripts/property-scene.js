@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { effectiveStatus, validatePreview } from '../lib/property-core.mjs';
-import { validateBlockCapture, tallyBlocks, exposedBlocks, estimateBlockWorth } from '../lib/property-build.mjs';
+import { effectiveStatus } from '../lib/property-core.mjs';
+import { validateBlockCapture, tallyBlocks, estimateBlockWorth } from '../lib/property-build.mjs';
+import {loadDetailMesh} from './property-detail-mesh.js';
 import worthSnapshot from '../data/property-worth.json';
 const COLORS = { available: 0x348961, owned: 0x8b909b, leased: 0x3b82ac, unknown: 0xc19a50 };
 /** @param {HTMLElement} host @param {import('../lib/property-types').Property[]} properties @param {{onSelect?:(p:import('../lib/property-types').Property)=>void,map?:boolean}} options */
@@ -19,9 +20,10 @@ export function createPropertyScene(host, properties, { onSelect, map = false } 
         throw Error('No geometry');
     const midX = (minX + maxX) / 2, midZ = (minZ + maxZ) / 2;
     let disposed = false, frame = 0;
-    let activeCapture = null;
+    let activeCapture = null, detailed = null;
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
     const cleanup=[];
+    cleanup.push(()=>detailed?.dispose());
     try {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setClearColor(0xe3ece7);
@@ -73,8 +75,8 @@ export function createPropertyScene(host, properties, { onSelect, map = false } 
         group.add(outline);
     }
     let grid;
-    function fit() {
-        const b = new THREE.Box3().setFromObject(group), size = b.getSize(new THREE.Vector3()), target = b.getCenter(new THREE.Vector3());
+    function fit(bounds) {
+        const b = bounds || new THREE.Box3().setFromObject(group), size = b.getSize(new THREE.Vector3()), target = b.getCenter(new THREE.Vector3());
         const span = Math.max(size.x, size.y, size.z, 8);
         if (grid) {
             scene.remove(grid);
@@ -83,15 +85,25 @@ export function createPropertyScene(host, properties, { onSelect, map = false } 
         }
         if(!map){
             grid = new THREE.GridHelper(span * 1.5, 16, 0xafc4b8, 0xccd9d0);
-            grid.position.set(target.x, -.15, target.z);
+            grid.position.set(target.x, b.min.y-.15, target.z);
             scene.add(grid);
         }
         controls.target.copy(target);
         camera.near = .1;
         camera.far = Math.max(span * 30, 1000);
-        const d = span / (2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))) * 1.25 * Math.max(1,1/camera.aspect);
         const direction=map?new THREE.Vector3(.1,1,.15):new THREE.Vector3(.8,.75,.9);
-        camera.position.copy(target).add(direction.normalize().multiplyScalar(d));
+        direction.normalize();
+        // Fit all eight corners in camera space; max-axis estimates crop the near
+        // corners of wide/tall buildings in landscape viewports.
+        const right=new THREE.Vector3().crossVectors(new THREE.Vector3(0,1,0),direction).normalize();
+        const up=new THREE.Vector3().crossVectors(direction,right).normalize();
+        const tanV=Math.tan(THREE.MathUtils.degToRad(camera.fov/2)),tanH=tanV*camera.aspect;
+        let d=8;
+        for(const x of [b.min.x,b.max.x])for(const y of [b.min.y,b.max.y])for(const z of [b.min.z,b.max.z]){
+            const v=new THREE.Vector3(x,y,z).sub(target),depth=v.dot(direction);
+            d=Math.max(d,depth+Math.abs(v.dot(right))/tanH,depth+Math.abs(v.dot(up))/tanV);
+        }
+        camera.position.copy(target).add(direction.multiplyScalar(d*1.12));
         controls.maxDistance = span * 10;
         controls.minDistance = span * .2;
         camera.updateProjectionMatrix();
@@ -100,21 +112,6 @@ export function createPropertyScene(host, properties, { onSelect, map = false } 
     }
     function draw() { if (disposed)
         return; renderer.render(scene, camera); }
-    function showCapture(capture, minY = capture.origin[1], maxY = capture.origin[1] + capture.size[1] - 1) {
-        const subset = {...capture, blocks:capture.blocks.filter(b=>b[1]+capture.origin[1]>=minY && b[1]+capture.origin[1]<=maxY)};
-        const blocks=exposedBlocks(subset);
-        if(!blocks.length)return false;
-        group.traverse(o=>{o.geometry?.dispose();if(o.material)Array.isArray(o.material)?o.material.forEach(m=>m.dispose()):o.material.dispose();});
-        group.clear();
-        const geometry=new THREE.BoxGeometry(1,1,1),material=new THREE.MeshStandardMaterial({roughness:1});
-        const mesh=new THREE.InstancedMesh(geometry,material,blocks.length),matrix=new THREE.Matrix4();
-        for(let i=0;i<blocks.length;i++){
-            const b=blocks[i];matrix.makeTranslation(b[0]+.5,b[1]-(minY-capture.origin[1])+.5,b[2]+.5);
-            mesh.setMatrixAt(i,matrix);mesh.setColorAt(i,new THREE.Color(capture.palette[b[3]].color));
-        }
-        mesh.instanceMatrix.needsUpdate=true;if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;
-        mesh.computeBoundingBox();mesh.computeBoundingSphere();group.add(mesh);fit();return true;
-    }
     function resize() { if (disposed)
         return; const { width, height } = host.getBoundingClientRect(); renderer.setSize(Math.max(width, 1), Math.max(height, 1)); camera.aspect = Math.max(width, 1) / Math.max(height, 1); camera.updateProjectionMatrix(); draw(); }
     const observer = new ResizeObserver(resize);
@@ -135,7 +132,9 @@ export function createPropertyScene(host, properties, { onSelect, map = false } 
         heightRange(minY,maxY){
             if(!activeCapture||disposed||!Number.isInteger(minY)||!Number.isInteger(maxY)||minY>maxY||
                 minY<activeCapture.origin[1]||maxY>=activeCapture.origin[1]+activeCapture.size[1])return false;
-            return showCapture(activeCapture,minY,maxY);
+            if(!detailed)return false;
+            const bounds=detailed.range(minY,maxY);if(!bounds)return false;
+            fit(bounds);return true;
         },
         async preview(property, signal) {
             const res = await fetch(property.preview.url, { signal:AbortSignal.any([signal,AbortSignal.timeout(12000)]), credentials: 'omit' });
@@ -170,36 +169,28 @@ export function createPropertyScene(host, properties, { onSelect, map = false } 
             const raw = JSON.parse(new TextDecoder().decode(bytes));
             if (raw.propertyId !== property.id)
                 throw Error('Wrong property preview');
-            const capture = raw.format === 'plot-blocks' ? validateBlockCapture(raw) : null;
-            const blocks = capture ? [] : validatePreview(raw);
-            const result = capture ? {kind:'blocks',count:capture.blocks.length,materials:tallyBlocks(capture),
+            const capture = validateBlockCapture(raw);
+            const result = {kind:'blocks',count:capture.blocks.length,materials:tallyBlocks(capture),
                 capturedAt:capture.capturedAt,source:capture.source,minY:capture.origin[1],maxY:capture.origin[1]+capture.size[1]-1,
-                valuation:estimateBlockWorth(capture,worthSnapshot)} : {kind:'surface'};
+                valuation:estimateBlockWorth(capture,worthSnapshot),meshAt:null,meshError:false};
             if (disposed || signal.aborted)
                 return;
-            if(capture){
-                activeCapture=capture;showCapture(capture);
-                renderer.domElement.setAttribute('aria-label','Full captured block volume, orbit and zoom');
-                return result;
-            }
-            if (!blocks.length) return result;
+            activeCapture=capture;
+            let loaded;
+            try { loaded=await loadDetailMesh(property,signal); }
+            catch { result.meshError=true;return result; }
+            if(disposed||signal.aborted){loaded.dispose();return;}
+            if(loaded.meta.origin.some((n,i)=>n!==capture.origin[i])||loaded.meta.size.some((n,i)=>n!==capture.size[i])){loaded.dispose();result.meshError=true;return result;}
+            detailed=loaded;result.meshAt=loaded.meta.observedAt;
             group.traverse(o => { o.geometry?.dispose(); if (o.material)
                 Array.isArray(o.material) ? o.material.forEach(m => m.dispose()) : o.material.dispose(); });
             group.clear();
-            const geometry = new THREE.BoxGeometry(1, 1, 1), material = new THREE.MeshStandardMaterial({ roughness: 1 });
-            const mesh = new THREE.InstancedMesh(geometry, material, blocks.length), matrix = new THREE.Matrix4();
-            // Serialized integers are block-cell corners, not cube centers.
-            blocks.forEach((b, i) => { matrix.makeTranslation(b[0]+.5, b[1]+.5, b[2]+.5); mesh.setMatrixAt(i, matrix); mesh.setColorAt(i, new THREE.Color(b[3])); });
-            mesh.instanceMatrix.needsUpdate = true;
-            if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
-            mesh.computeBoundingBox();
-            mesh.computeBoundingSphere();
-            group.add(mesh);
+            group.add(detailed.mesh);
             fit();
-            renderer.domElement.setAttribute('aria-label', capture ? 'Captured property blocks at every height, orbit and zoom' : 'Captured property surface, orbit and zoom');
+            renderer.domElement.setAttribute('aria-label','Textured property build, actual block geometry, orbit and zoom');
             return result;
         },
-        dispose() { disposed = true; cancelAnimationFrame(frame); observer.disconnect(); controls.dispose(); textures.forEach(t => t.dispose()); scene.traverse(o => { o.geometry?.dispose(); if (o.material)
+        dispose() { disposed = true; detailed?.dispose(); cancelAnimationFrame(frame); observer.disconnect(); controls.dispose(); textures.forEach(t => t.dispose()); scene.traverse(o => { o.geometry?.dispose(); if (o.material)
             Array.isArray(o.material) ? o.material.forEach(m => m.dispose()) : o.material.dispose(); }); renderer.dispose(); renderer.domElement.remove(); }
     };
     } catch(error) {
