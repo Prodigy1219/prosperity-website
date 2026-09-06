@@ -1,13 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {validateBlockCapture, tallyBlocks, valueMaterials, exposedBlocks, estimateBlockWorth} from '../src/lib/property-build.mjs';
+import {validateBlockCapture, tallyBlocks, valueMaterials, exposedBlocks, estimateBlockWorth, combinedPropertyEstimate} from '../src/lib/property-build.mjs';
 import {parseBlockRules,projectWorth} from './property-worth-capture.mjs';
 // Synthetic geometry and pricing boundary tests; not evidence of native capture.
 const base = () => ({schemaVersion:1, format:'plot-blocks', propertyId:'world:c001',
     capturedAt:'2026-09-06T12:00:00Z', source:'saved-world', origin:[10,60,20], size:[3,3,3],
     palette:[{material:'minecraft:stone',state:{},color:'#777777'}],blocks:[[0,0,0,0],[0,1,0,0],[0,2,0,0]]});
 const prices = () => ({observedAt:'2026-09-06T12:00:00Z',sourceHash:'a'.repeat(64),unitMicros:{'minecraft:stone':31250}});
+
+test('combined estimate adds assessment and known materials exactly once, without mutating either',()=>{
+  const property={tenure:'buy',priceCents:1209600},v={knownSubtotalCents:2154498,totalCents:2154498};
+  const before=JSON.stringify([property,v]);
+  assert.deepEqual(combinedPropertyEstimate(property,v),{cents:3364098,assessmentCents:1209600,materialCents:2154498,partial:false});
+  assert.equal(JSON.stringify([property,v]),before);
+  assert.equal(combinedPropertyEstimate(property,{...v,totalCents:null}).partial,true);
+  assert.equal(combinedPropertyEstimate({...property,tenure:'rent'},v),null,'rent is not capital');
+  assert.equal(combinedPropertyEstimate({...property,priceCents:null},v),null);
+  assert.equal(combinedPropertyEstimate({...property,priceCents:Number.MAX_SAFE_INTEGER},v),null);
+});
 test('full vertical cells survive, not just highest column sample',()=>{
     const c=validateBlockCapture(base()); assert.equal(c.blocks.length,3);
     assert.deepEqual(tallyBlocks(c),[{material:'minecraft:stone',cells:3}]);

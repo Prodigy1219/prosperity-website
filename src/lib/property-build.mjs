@@ -149,3 +149,12 @@ export function estimateBlockWorth(capture, snapshot) {
         knownSubtotalCents:Math.round(knownMicros/10000),totalCents:unknownCells?null:Math.round(knownMicros/10000),
         unknownCells,pricedCells,skippedCells};
 }
+// Display-only estimate. Never mix recurring rent with capital/material value or
+// replace the authoritative ARM price used by purchases, filters or accounting.
+export function combinedPropertyEstimate(property, valuation) {
+  if(property.tenure!=='buy'||!Number.isSafeInteger(property.priceCents)||property.priceCents<0||
+    !Number.isSafeInteger(valuation.knownSubtotalCents)||valuation.knownSubtotalCents<0)return null;
+  const cents=property.priceCents+valuation.knownSubtotalCents;
+  if(!Number.isSafeInteger(cents))return null;
+  return {cents,assessmentCents:property.priceCents,materialCents:valuation.knownSubtotalCents,partial:valuation.totalCents===null};
+}
