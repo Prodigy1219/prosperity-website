@@ -1,6 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),os=require('node:os');
 const {createHash}=require('node:crypto'),{pathToFileURL}=require('node:url');
 const {chromium}=require('C:/Users/Kings/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {PNG}=require('C:/Users/Kings/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/pngjs');
 const root=path.resolve(__dirname,'..'),base=process.env.PROPERTY_BASE_URL||'https://www.prosperitysmp.com';
 const read=name=>JSON.parse(fs.readFileSync(path.join(root,'src/data',name),'utf8'));
 const digest=b=>createHash('sha256').update(b).digest('hex');
@@ -34,8 +35,11 @@ const money=s=>Math.round(Number(s.replace(/[^0-9.]/g,''))*100);
   if(review)assert.match(await page.locator('[data-evidence="quality"]').innerText(),/AI-assisted design review/);
   assert.match(await page.locator('[data-valuation-freshness]').innerText(),/two hours/);
   const canvas=page.locator('#pd-property-scene canvas');await page.waitForTimeout(300);
-  const pixels=await canvas.evaluate(c=>{const copy=document.createElement('canvas');copy.width=c.width;copy.height=c.height;const ctx=copy.getContext('2d');ctx.drawImage(c,0,0);const a=ctx.getImageData(0,0,c.width,c.height).data,colors=new Set();for(let i=0;i<a.length;i+=64)colors.add(`${a[i]},${a[i+1]},${a[i+2]}`);return colors.size;});
-  assert.ok(pixels>80,'textured scene nonblank');const before=digest(await canvas.screenshot()),box=await canvas.boundingBox();
+  // WebGL's drawing buffer may be discarded; inspect the composited screenshot.
+  const scene=await canvas.screenshot(),png=PNG.sync.read(scene),colors=new Set();
+  for(let i=0;i<png.data.length;i+=64)colors.add(`${png.data[i]},${png.data[i+1]},${png.data[i+2]}`);
+  const pixels=colors.size;
+  assert.ok(pixels>80,'textured scene nonblank');const before=digest(scene),box=await canvas.boundingBox();
   await page.mouse.move(box.x+box.width*.65,box.y+box.height*.5);await page.mouse.down();await page.mouse.move(box.x+box.width*.35,box.y+box.height*.5,{steps:12});await page.mouse.up();await page.waitForTimeout(300);
   assert.notEqual(digest(await canvas.screenshot()),before,'orbit changes rendered scene');
   await page.locator('#pd-detail').screenshot({path:path.join(out,label+'-scene.png')});

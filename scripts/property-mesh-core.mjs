@@ -83,6 +83,14 @@ export function tilePath(x,z) {
   return `x${part(x)}/z${part(z)}.prbm`;
 }
 
+// BlueMap's validated 32-block hires grid starts at +2 on both X and Z.
+// Invert that translation for source selection, not only vertex placement.
+export function hiresTileRange(min,size) {
+  const last=min+(size-1);
+  if(!Number.isSafeInteger(min)||!Number.isSafeInteger(size)||size<1||!Number.isSafeInteger(min-2)||!Number.isSafeInteger(last))throw Error('Invalid hires block interval');
+  return [Math.floor((min-2)/32),Math.floor((last-2)/32)];
+}
+
 export function parcelColumns(property,capture,masks,sourceProperty) {
   const g=sourceProperty?.geometry;
   if(sourceProperty?.propertyRef!==property.id||!g||!['cuboid','poly2d'].includes(g.type))throw Error('Missing authoritative region shape');
