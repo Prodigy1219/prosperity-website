@@ -14,9 +14,9 @@ void main(){if(height<fromY||height>toY)discard;
 vec4 c=texture2D(blockTexture,vec2(texUv.x,(texUv.y+frame)/frames));
 if(c.a<=0.01)discard;gl_FragColor=vec4(c.rgb*tint,c.a);}`;
 
-export async function loadDetailMesh(property,signal) {
+export async function loadDetailMesh(property,signal,meshUrls=manifest.properties) {
   const scope=AbortSignal.any([signal,AbortSignal.timeout(30000)]);
-  const meta=validateMesh(JSON.parse(new TextDecoder().decode(await fetchMeshAsset(manifest.properties[property.id],'json',250000,scope))),property.id);
+  const meta=validateMesh(JSON.parse(new TextDecoder().decode(await fetchMeshAsset(meshUrls[property.id],'json',250000,scope))),property.id);
   const compressed=await fetchMeshAsset(meta.buffer,'mesh',6000000,scope);
   const bytes=await boundedBytes(new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip')),meta.vertexCount*32);
   const vertices=meshVertices(bytes,meta),resources=[],materials=[];

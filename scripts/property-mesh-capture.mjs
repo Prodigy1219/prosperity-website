@@ -5,7 +5,8 @@ import {createHash} from 'node:crypto';
 import {gzipSync} from 'node:zlib';
 import {decodePrbm,clipToColumns,tilePath,parcelColumns} from './property-mesh-core.mjs';
 const sha=b=>createHash('sha256').update(b).digest('hex');
-const source='https://map.prosperitysmp.com/maps/world/';
+if(process.env.PROPERTY_LOCAL_MAP && process.env.PROPERTY_LOCAL_MAP!=='1')throw Error('Invalid local map option');
+const source=process.env.PROPERTY_LOCAL_MAP==='1'?'http://127.0.0.1:8100/maps/world/':'https://map.prosperitysmp.com/maps/world/';
 const cache=process.env.PROPERTY_MESH_CACHE;
 const maskFile=process.env.PROPERTY_NATIVE_MASKS;
 const sourceFile=process.env.PROPERTY_INPUT_FIXTURE;
@@ -41,7 +42,7 @@ async function acquire(rel,limit) {
 const settings=JSON.parse(await acquire('settings.json',50000));
 if(JSON.stringify(settings.hires)!==JSON.stringify({tileSize:[32,32],scale:[1,1],translate:[2,2]}))throw Error('Map transform drift');
 const textureBytes=await acquire('textures.json',6000000), textures=JSON.parse(textureBytes);
-const tiles=new Map(),manifest={version:1,source:'BlueMap 5.23 rendered surfaces',properties:{}};
+const tiles=new Map(),seenTiles=new Set(),manifest={version:1,source:'BlueMap 5.23 rendered surfaces',properties:{}};
 const texturesOut=new Map();
 async function texture(id) {
   if(texturesOut.has(id))return texturesOut.get(id);
@@ -69,7 +70,11 @@ for(const p of catalog.properties) {
   // Hires tile origin is x*32+2, while source tile cells cover x*32..x*32+31.
   for(let tx=Math.floor(ox/32);tx<=Math.floor((ox+sx-1)/32);tx++)for(let tz=Math.floor(oz/32);tz<=Math.floor((oz+sz-1)/32);tz++) {
     const key=`${tx},${tz}`;
-    if(!tiles.has(key)){if(tiles.size>=128)throw Error('Tile budget');tiles.set(key,decodePrbm(await acquire('tiles/0/'+tilePath(tx,tz),32000000)));}
+    if(!tiles.has(key)){
+      seenTiles.add(key);if(seenTiles.size>128)throw Error('Tile budget');
+      if(tiles.size>=8)tiles.delete(tiles.keys().next().value);
+      tiles.set(key,decodePrbm(await acquire('tiles/0/'+tilePath(tx,tz),32000000)));
+    }
     const tile=tiles.get(key),a=tile.attrs;
     for(const group of tile.groups) {
       const tex=await texture(group.material);let batch=batches.get(group.material);
@@ -117,5 +122,5 @@ for(const name of await fs.readdir(outputRoot)){
   if(path.dirname(target)!==outputRoot||!/^[a-f0-9]{64}\.(json|bin|bin\.gz|mesh|png)$/.test(name))throw Error('Unexpected generated artifact');
   if(!used.has(name))await fs.unlink(target);
 }
-await fs.writeFile(path.join(cache,'PROVENANCE.json'),JSON.stringify({capturedAt:new Date().toISOString(),records,sourceSha256:sha(await fs.readFile(sourceFile)),maskSha256:sha(await fs.readFile(maskFile)),tiles:tiles.size,textures:texturesOut.size},null,2));
-console.log(`Complete: ${Object.keys(manifest.properties).length} properties / ${tiles.size} tiles / ${texturesOut.size} textures`);
+await fs.writeFile(path.join(cache,'PROVENANCE.json'),JSON.stringify({capturedAt:new Date().toISOString(),records,sourceSha256:sha(await fs.readFile(sourceFile)),maskSha256:sha(await fs.readFile(maskFile)),tiles:seenTiles.size,textures:texturesOut.size},null,2));
+console.log(`Complete: ${Object.keys(manifest.properties).length} properties / ${seenTiles.size} tiles / ${texturesOut.size} textures`);
