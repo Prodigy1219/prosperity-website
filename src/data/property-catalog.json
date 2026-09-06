@@ -1,0 +1,7252 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-06T15:05:53.268495+00:00",
+  "expiresAt": "2026-09-06T15:20:53.268Z",
+  "properties": [
+    {
+      "id": "world:apt_01",
+      "region": "apt_01",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "leased",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 20000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            492,
+            -212
+          ],
+          [
+            493,
+            -211
+          ],
+          [
+            493,
+            -202
+          ],
+          [
+            492,
+            -201
+          ],
+          [
+            491,
+            -200
+          ],
+          [
+            490,
+            -198
+          ],
+          [
+            480,
+            -208
+          ],
+          [
+            481,
+            -209
+          ],
+          [
+            482,
+            -210
+          ],
+          [
+            484,
+            -211
+          ],
+          [
+            486,
+            -212
+          ],
+          [
+            487,
+            -213
+          ],
+          [
+            489,
+            -213
+          ],
+          [
+            490,
+            -212
+          ],
+          [
+            492,
+            -212
+          ]
+        ],
+        "minY": 78,
+        "maxY": 82
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/58d230ebe5a70f6d60ff54eca1bc5a9afe7726a2786c91298a7c8b10028a0470.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_02",
+      "region": "apt_02",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 20000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            499,
+            -204
+          ],
+          [
+            499,
+            -217
+          ],
+          [
+            494,
+            -217
+          ],
+          [
+            494,
+            -222
+          ],
+          [
+            504,
+            -222
+          ],
+          [
+            504,
+            -204
+          ],
+          [
+            499,
+            -204
+          ]
+        ],
+        "minY": 78,
+        "maxY": 82
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/82e2f51836bfc8feb34bd36083bc3acefbdaccf5f404a91bfa1cb180194fb723.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_03",
+      "region": "apt_03",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 20000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            487,
+            -222
+          ],
+          [
+            487,
+            -215
+          ],
+          [
+            486,
+            -214
+          ],
+          [
+            485,
+            -213
+          ],
+          [
+            483,
+            -212
+          ],
+          [
+            482,
+            -212
+          ],
+          [
+            481,
+            -211
+          ],
+          [
+            480,
+            -210
+          ],
+          [
+            479,
+            -209
+          ],
+          [
+            466,
+            -222
+          ],
+          [
+            487,
+            -222
+          ]
+        ],
+        "minY": 78,
+        "maxY": 82
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/72877dbaaa7739eec2b86a84afbea11bd9cd291d228fe836dce1abf734191bf9.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_04",
+      "region": "apt_04",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 20000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            493,
+            -212
+          ],
+          [
+            493,
+            -202
+          ],
+          [
+            492,
+            -201
+          ],
+          [
+            491,
+            -200
+          ],
+          [
+            490,
+            -198
+          ],
+          [
+            480,
+            -208
+          ],
+          [
+            482,
+            -210
+          ],
+          [
+            484,
+            -211
+          ],
+          [
+            486,
+            -212
+          ],
+          [
+            487,
+            -213
+          ],
+          [
+            489,
+            -213
+          ],
+          [
+            490,
+            -212
+          ],
+          [
+            493,
+            -212
+          ]
+        ],
+        "minY": 83,
+        "maxY": 87
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/977edfd9b552a3abd8e5d9d202d7efbcbce86ec877f7c7cbcc1384144c2db361.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_05",
+      "region": "apt_05",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 20000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            499,
+            -204
+          ],
+          [
+            499,
+            -217
+          ],
+          [
+            494,
+            -217
+          ],
+          [
+            494,
+            -222
+          ],
+          [
+            504,
+            -222
+          ],
+          [
+            504,
+            -204
+          ],
+          [
+            499,
+            -204
+          ]
+        ],
+        "minY": 83,
+        "maxY": 87
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/d3010a88e723c282fd2ea839c513bddc4b95ae9d71fbc0b8ccd45a3614370775.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_06",
+      "region": "apt_06",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "leased",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 20000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            487,
+            -222
+          ],
+          [
+            487,
+            -215
+          ],
+          [
+            486,
+            -214
+          ],
+          [
+            485,
+            -213
+          ],
+          [
+            483,
+            -212
+          ],
+          [
+            482,
+            -212
+          ],
+          [
+            481,
+            -211
+          ],
+          [
+            480,
+            -210
+          ],
+          [
+            479,
+            -209
+          ],
+          [
+            466,
+            -222
+          ],
+          [
+            487,
+            -222
+          ]
+        ],
+        "minY": 83,
+        "maxY": 87
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/44605a60d054a26cfb875b7b93b7c0f7bf87ea763954ecc6016637e9928fb54a.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_pent_01",
+      "region": "apt_pent_01",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 35000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            458,
+            -174
+          ],
+          [
+            459,
+            -173
+          ],
+          [
+            460,
+            -173
+          ],
+          [
+            460,
+            -166
+          ],
+          [
+            457,
+            -166
+          ],
+          [
+            456,
+            -167
+          ],
+          [
+            455,
+            -166
+          ],
+          [
+            452,
+            -166
+          ],
+          [
+            451,
+            -167
+          ],
+          [
+            450,
+            -167
+          ],
+          [
+            449,
+            -168
+          ],
+          [
+            449,
+            -169
+          ],
+          [
+            448,
+            -170
+          ],
+          [
+            448,
+            -173
+          ],
+          [
+            449,
+            -174
+          ],
+          [
+            448,
+            -175
+          ],
+          [
+            448,
+            -178
+          ],
+          [
+            456,
+            -178
+          ],
+          [
+            456,
+            -175
+          ],
+          [
+            457,
+            -175
+          ]
+        ],
+        "minY": 122,
+        "maxY": 130
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/f6985399c64e09d4325263ca827bd2f029f9eb2e5dc428f7207a142de4eaa880.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_pent_02",
+      "region": "apt_pent_02",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 35000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            457,
+            -183
+          ],
+          [
+            456,
+            -182
+          ],
+          [
+            456,
+            -180
+          ],
+          [
+            448,
+            -180
+          ],
+          [
+            448,
+            -183
+          ],
+          [
+            449,
+            -184
+          ],
+          [
+            448,
+            -185
+          ],
+          [
+            448,
+            -188
+          ],
+          [
+            449,
+            -189
+          ],
+          [
+            448,
+            -190
+          ],
+          [
+            448,
+            -193
+          ],
+          [
+            449,
+            -194
+          ],
+          [
+            448,
+            -195
+          ],
+          [
+            448,
+            -198
+          ],
+          [
+            449,
+            -198
+          ],
+          [
+            459,
+            -188
+          ],
+          [
+            459,
+            -185
+          ],
+          [
+            458,
+            -184
+          ]
+        ],
+        "minY": 122,
+        "maxY": 130
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/64d6559594cfb2ceae4aff4c79c73808063cb4b6c534621cb6ed889c3ac09f93.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_pent_03",
+      "region": "apt_pent_03",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 35000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            467,
+            -175
+          ],
+          [
+            468,
+            -176
+          ],
+          [
+            471,
+            -176
+          ],
+          [
+            477,
+            -169
+          ],
+          [
+            476,
+            -168
+          ],
+          [
+            476,
+            -167
+          ],
+          [
+            475,
+            -166
+          ],
+          [
+            472,
+            -166
+          ],
+          [
+            471,
+            -167
+          ],
+          [
+            470,
+            -166
+          ],
+          [
+            467,
+            -166
+          ],
+          [
+            466,
+            -167
+          ],
+          [
+            465,
+            -166
+          ],
+          [
+            462,
+            -166
+          ],
+          [
+            462,
+            -173
+          ],
+          [
+            466,
+            -173
+          ],
+          [
+            466,
+            -174
+          ]
+        ],
+        "minY": 122,
+        "maxY": 130
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/427f9f92ce12f3ac1d88a125f57bba167d1a8120f19a20c8519d94ad914571d5.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_room_01",
+      "region": "apt_room_01",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 25000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            452,
+            -180
+          ],
+          [
+            448,
+            -180
+          ],
+          [
+            448,
+            -183
+          ],
+          [
+            449,
+            -184
+          ],
+          [
+            449,
+            -189
+          ],
+          [
+            448,
+            -190
+          ],
+          [
+            448,
+            -193
+          ],
+          [
+            449,
+            -194
+          ],
+          [
+            448,
+            -195
+          ],
+          [
+            448,
+            -198
+          ],
+          [
+            449,
+            -198
+          ],
+          [
+            450,
+            -197
+          ],
+          [
+            451,
+            -196
+          ],
+          [
+            452,
+            -195
+          ],
+          [
+            453,
+            -194
+          ],
+          [
+            454,
+            -193
+          ],
+          [
+            455,
+            -192
+          ],
+          [
+            456,
+            -191
+          ],
+          [
+            457,
+            -190
+          ],
+          [
+            458,
+            -189
+          ],
+          [
+            459,
+            -188
+          ],
+          [
+            460,
+            -187
+          ],
+          [
+            461,
+            -186
+          ],
+          [
+            462,
+            -185
+          ],
+          [
+            461,
+            -184
+          ],
+          [
+            458,
+            -184
+          ],
+          [
+            457,
+            -183
+          ],
+          [
+            456,
+            -184
+          ],
+          [
+            454,
+            -184
+          ],
+          [
+            453,
+            -183
+          ],
+          [
+            452,
+            -182
+          ],
+          [
+            452,
+            -180
+          ]
+        ],
+        "minY": 91,
+        "maxY": 96
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/4b0995203938d9cbfce046a1d423c268c3b09338f8baeb3ab0711a855241a44f.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_room_02",
+      "region": "apt_room_02",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 25000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            465,
+            -174
+          ],
+          [
+            464,
+            -175
+          ],
+          [
+            464,
+            -176
+          ],
+          [
+            465,
+            -177
+          ],
+          [
+            465,
+            -179
+          ],
+          [
+            464,
+            -179
+          ],
+          [
+            463,
+            -180
+          ],
+          [
+            462,
+            -181
+          ],
+          [
+            462,
+            -183
+          ],
+          [
+            464,
+            -183
+          ],
+          [
+            465,
+            -182
+          ],
+          [
+            472,
+            -175
+          ],
+          [
+            475,
+            -172
+          ],
+          [
+            475,
+            -170
+          ],
+          [
+            476,
+            -170
+          ],
+          [
+            477,
+            -169
+          ],
+          [
+            476,
+            -167
+          ],
+          [
+            475,
+            -166
+          ],
+          [
+            472,
+            -166
+          ],
+          [
+            471,
+            -167
+          ],
+          [
+            470,
+            -166
+          ],
+          [
+            467,
+            -166
+          ],
+          [
+            467,
+            -169
+          ],
+          [
+            466,
+            -169
+          ],
+          [
+            465,
+            -170
+          ],
+          [
+            466,
+            -172
+          ],
+          [
+            470,
+            -172
+          ],
+          [
+            470,
+            -174
+          ],
+          [
+            469,
+            -174
+          ],
+          [
+            465,
+            -174
+          ]
+        ],
+        "minY": 91,
+        "maxY": 96
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/da2fa4bd036f2237fead49f43462395145f4e37d61059ab590f29f09b3acb06a.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_room_03",
+      "region": "apt_room_03",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 25000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            456,
+            -172
+          ],
+          [
+            457,
+            -172
+          ],
+          [
+            458,
+            -171
+          ],
+          [
+            459,
+            -171
+          ],
+          [
+            460,
+            -172
+          ],
+          [
+            461,
+            -172
+          ],
+          [
+            462,
+            -171
+          ],
+          [
+            463,
+            -171
+          ],
+          [
+            463,
+            -169
+          ],
+          [
+            464,
+            -169
+          ],
+          [
+            465,
+            -168
+          ],
+          [
+            465,
+            -166
+          ],
+          [
+            462,
+            -166
+          ],
+          [
+            461,
+            -167
+          ],
+          [
+            460,
+            -166
+          ],
+          [
+            457,
+            -166
+          ],
+          [
+            456,
+            -167
+          ],
+          [
+            455,
+            -166
+          ],
+          [
+            452,
+            -166
+          ],
+          [
+            451,
+            -167
+          ],
+          [
+            450,
+            -166
+          ],
+          [
+            450,
+            -165
+          ],
+          [
+            449,
+            -165
+          ],
+          [
+            448,
+            -166
+          ],
+          [
+            447,
+            -167
+          ],
+          [
+            447,
+            -168
+          ],
+          [
+            448,
+            -168
+          ],
+          [
+            449,
+            -169
+          ],
+          [
+            448,
+            -170
+          ],
+          [
+            448,
+            -173
+          ],
+          [
+            449,
+            -174
+          ],
+          [
+            448,
+            -175
+          ],
+          [
+            448,
+            -178
+          ],
+          [
+            452,
+            -178
+          ],
+          [
+            453,
+            -177
+          ],
+          [
+            454,
+            -176
+          ],
+          [
+            454,
+            -169
+          ],
+          [
+            455,
+            -168
+          ],
+          [
+            456,
+            -169
+          ],
+          [
+            456,
+            -172
+          ]
+        ],
+        "minY": 91,
+        "maxY": 96
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/32d76236354e4b452296385324707778d3e1ba4b1a2ed760b0c2346a32be879e.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_room_04",
+      "region": "apt_room_04",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 25000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            457,
+            -183
+          ],
+          [
+            456,
+            -184
+          ],
+          [
+            455,
+            -184
+          ],
+          [
+            454,
+            -184
+          ],
+          [
+            454,
+            -181
+          ],
+          [
+            453,
+            -180
+          ],
+          [
+            448,
+            -180
+          ],
+          [
+            448,
+            -183
+          ],
+          [
+            449,
+            -184
+          ],
+          [
+            448,
+            -185
+          ],
+          [
+            448,
+            -188
+          ],
+          [
+            449,
+            -189
+          ],
+          [
+            448,
+            -190
+          ],
+          [
+            448,
+            -193
+          ],
+          [
+            449,
+            -194
+          ],
+          [
+            448,
+            -195
+          ],
+          [
+            448,
+            -198
+          ],
+          [
+            449,
+            -198
+          ],
+          [
+            450,
+            -197
+          ],
+          [
+            451,
+            -196
+          ],
+          [
+            452,
+            -195
+          ],
+          [
+            453,
+            -194
+          ],
+          [
+            454,
+            -193
+          ],
+          [
+            455,
+            -192
+          ],
+          [
+            456,
+            -191
+          ],
+          [
+            457,
+            -190
+          ],
+          [
+            458,
+            -189
+          ],
+          [
+            458,
+            -187
+          ],
+          [
+            457,
+            -186
+          ],
+          [
+            457,
+            -183
+          ]
+        ],
+        "minY": 97,
+        "maxY": 101
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/8a97d234defb480cfd13a54cb3537a4fd4648f6dcfa3e6e28734deb8ac246293.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_room_05",
+      "region": "apt_room_05",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 25000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            463,
+            -176
+          ],
+          [
+            463,
+            -177
+          ],
+          [
+            464,
+            -178
+          ],
+          [
+            464,
+            -180
+          ],
+          [
+            463,
+            -180
+          ],
+          [
+            462,
+            -181
+          ],
+          [
+            461,
+            -181
+          ],
+          [
+            461,
+            -183
+          ],
+          [
+            460,
+            -183
+          ],
+          [
+            459,
+            -184
+          ],
+          [
+            459,
+            -186
+          ],
+          [
+            460,
+            -187
+          ],
+          [
+            470,
+            -177
+          ],
+          [
+            467,
+            -177
+          ],
+          [
+            467,
+            -176
+          ],
+          [
+            463,
+            -176
+          ]
+        ],
+        "minY": 97,
+        "maxY": 102
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/5802a503202187ea29485892f157505e226fb580c0a2adecd1cc874565f9879f.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_room_06",
+      "region": "apt_room_06",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 25000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            459,
+            -173
+          ],
+          [
+            460,
+            -173
+          ],
+          [
+            461,
+            -172
+          ],
+          [
+            463,
+            -172
+          ],
+          [
+            463,
+            -173
+          ],
+          [
+            464,
+            -174
+          ],
+          [
+            468,
+            -174
+          ],
+          [
+            468,
+            -175
+          ],
+          [
+            472,
+            -175
+          ],
+          [
+            475,
+            -172
+          ],
+          [
+            475,
+            -171
+          ],
+          [
+            475,
+            -170
+          ],
+          [
+            476,
+            -170
+          ],
+          [
+            477,
+            -169
+          ],
+          [
+            476,
+            -168
+          ],
+          [
+            476,
+            -167
+          ],
+          [
+            475,
+            -166
+          ],
+          [
+            472,
+            -166
+          ],
+          [
+            471,
+            -167
+          ],
+          [
+            470,
+            -166
+          ],
+          [
+            467,
+            -166
+          ],
+          [
+            466,
+            -167
+          ],
+          [
+            465,
+            -166
+          ],
+          [
+            462,
+            -166
+          ],
+          [
+            461,
+            -167
+          ],
+          [
+            460,
+            -166
+          ],
+          [
+            457,
+            -166
+          ],
+          [
+            457,
+            -169
+          ],
+          [
+            458,
+            -170
+          ],
+          [
+            458,
+            -172
+          ],
+          [
+            459,
+            -173
+          ]
+        ],
+        "minY": 97,
+        "maxY": 102
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/d96a678e548819a5a73fdf8b77d4a45657fe435fb830f65c2decf91fd6347c2c.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_room_07",
+      "region": "apt_room_07",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 25000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            454,
+            -178
+          ],
+          [
+            453,
+            -177
+          ],
+          [
+            453,
+            -175
+          ],
+          [
+            454,
+            -175
+          ],
+          [
+            455,
+            -174
+          ],
+          [
+            456,
+            -173
+          ],
+          [
+            456,
+            -170
+          ],
+          [
+            455,
+            -169
+          ],
+          [
+            455,
+            -166
+          ],
+          [
+            452,
+            -166
+          ],
+          [
+            451,
+            -167
+          ],
+          [
+            450,
+            -166
+          ],
+          [
+            448,
+            -168
+          ],
+          [
+            449,
+            -169
+          ],
+          [
+            448,
+            -170
+          ],
+          [
+            448,
+            -173
+          ],
+          [
+            449,
+            -174
+          ],
+          [
+            448,
+            -175
+          ],
+          [
+            448,
+            -178
+          ],
+          [
+            454,
+            -178
+          ]
+        ],
+        "minY": 97,
+        "maxY": 102
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/bd339064c23e0f090ca1e5d3d99d2e97910bbd0692668c17f0ba245e433500e9.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_room_08",
+      "region": "apt_room_08",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 25000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            452,
+            -181
+          ],
+          [
+            451,
+            -180
+          ],
+          [
+            448,
+            -180
+          ],
+          [
+            448,
+            -183
+          ],
+          [
+            449,
+            -184
+          ],
+          [
+            448,
+            -185
+          ],
+          [
+            448,
+            -188
+          ],
+          [
+            449,
+            -189
+          ],
+          [
+            448,
+            -190
+          ],
+          [
+            448,
+            -193
+          ],
+          [
+            449,
+            -194
+          ],
+          [
+            448,
+            -195
+          ],
+          [
+            448,
+            -198
+          ],
+          [
+            449,
+            -198
+          ],
+          [
+            450,
+            -197
+          ],
+          [
+            451,
+            -196
+          ],
+          [
+            452,
+            -195
+          ],
+          [
+            453,
+            -194
+          ],
+          [
+            462,
+            -185
+          ],
+          [
+            462,
+            -184
+          ],
+          [
+            459,
+            -183
+          ],
+          [
+            461,
+            -183
+          ],
+          [
+            458,
+            -184
+          ],
+          [
+            457,
+            -185
+          ],
+          [
+            456,
+            -186
+          ],
+          [
+            454,
+            -186
+          ],
+          [
+            454,
+            -185
+          ],
+          [
+            453,
+            -184
+          ],
+          [
+            452,
+            -183
+          ],
+          [
+            451,
+            -182
+          ],
+          [
+            452,
+            -181
+          ]
+        ],
+        "minY": 102,
+        "maxY": 107
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/14b0ee69d6826995ee140560c30fcea4b3e40a38a3fcb35acc3d217098250d80.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_room_09",
+      "region": "apt_room_09",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 25000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            460,
+            -179
+          ],
+          [
+            461,
+            -180
+          ],
+          [
+            461,
+            -181
+          ],
+          [
+            462,
+            -182
+          ],
+          [
+            463,
+            -182
+          ],
+          [
+            463,
+            -183
+          ],
+          [
+            464,
+            -183
+          ],
+          [
+            465,
+            -182
+          ],
+          [
+            475,
+            -172
+          ],
+          [
+            475,
+            -171
+          ],
+          [
+            476,
+            -170
+          ],
+          [
+            477,
+            -169
+          ],
+          [
+            476,
+            -168
+          ],
+          [
+            476,
+            -167
+          ],
+          [
+            475,
+            -166
+          ],
+          [
+            472,
+            -166
+          ],
+          [
+            471,
+            -167
+          ],
+          [
+            470,
+            -166
+          ],
+          [
+            467,
+            -166
+          ],
+          [
+            466,
+            -167
+          ],
+          [
+            465,
+            -166
+          ],
+          [
+            462,
+            -166
+          ],
+          [
+            462,
+            -178
+          ],
+          [
+            461,
+            -178
+          ],
+          [
+            460,
+            -179
+          ]
+        ],
+        "minY": 102,
+        "maxY": 107
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/2f96cfc4f3fb6716d02e17dacc5aee703c704dce63f12c3030e0d1945896c34c.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:apt_room_10",
+      "region": "apt_room_10",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Apartment",
+      "tags": [
+        "apartment"
+      ],
+      "priceCents": 25000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            457,
+            -176
+          ],
+          [
+            458,
+            -175
+          ],
+          [
+            459,
+            -175
+          ],
+          [
+            460,
+            -176
+          ],
+          [
+            460,
+            -166
+          ],
+          [
+            457,
+            -166
+          ],
+          [
+            456,
+            -167
+          ],
+          [
+            455,
+            -166
+          ],
+          [
+            452,
+            -166
+          ],
+          [
+            451,
+            -167
+          ],
+          [
+            449,
+            -169
+          ],
+          [
+            448,
+            -170
+          ],
+          [
+            448,
+            -173
+          ],
+          [
+            449,
+            -174
+          ],
+          [
+            448,
+            -175
+          ],
+          [
+            448,
+            -178
+          ],
+          [
+            453,
+            -178
+          ],
+          [
+            456,
+            -175
+          ],
+          [
+            457,
+            -176
+          ]
+        ],
+        "minY": 102,
+        "maxY": 106
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/23c00f2164a232b441ac87cc30a56eaf427754f7f7ccbf136e90db5ee6e2d89b.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:c001",
+      "region": "c001",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Commercial Plot",
+      "tags": [
+        "commercial"
+      ],
+      "priceCents": 1209600,
+      "priceBasis": "per_m2",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:vxmac",
+        "name": "vxMac"
+      },
+      "geometry": {
+        "points": [
+          [
+            416,
+            -138
+          ],
+          [
+            434,
+            -138
+          ],
+          [
+            434,
+            -117
+          ],
+          [
+            416,
+            -117
+          ]
+        ],
+        "minY": -64,
+        "maxY": 131
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/13f07ce7b717181d129721fff6750333cb7e7a02e4d4ccf791cd2936981cf47b.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "No recorded purchase in the supplied history. Assessment is not a sale price."
+      ]
+    },
+    {
+      "id": "world:c002",
+      "region": "c002",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Commercial Plot",
+      "tags": [
+        "commercial"
+      ],
+      "priceCents": 873600,
+      "priceBasis": "per_m2",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:.doodle8204785",
+        "name": ".Doodle8204785"
+      },
+      "geometry": {
+        "points": [
+          [
+            398,
+            -138
+          ],
+          [
+            411,
+            -138
+          ],
+          [
+            411,
+            -117
+          ],
+          [
+            398,
+            -117
+          ]
+        ],
+        "minY": -64,
+        "maxY": 131
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/b97bd88b91499aae19453abb865bb47ff6f5824604d12f2e49cb17746008a890.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "No recorded purchase in the supplied history. Assessment is not a sale price."
+      ]
+    },
+    {
+      "id": "world:c003",
+      "region": "c003",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Commercial Plot",
+      "tags": [
+        "commercial"
+      ],
+      "priceCents": 1209600,
+      "priceBasis": "per_m2",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:.doodle8204785",
+        "name": ".Doodle8204785"
+      },
+      "geometry": {
+        "points": [
+          [
+            380,
+            -138
+          ],
+          [
+            398,
+            -138
+          ],
+          [
+            398,
+            -117
+          ],
+          [
+            380,
+            -117
+          ]
+        ],
+        "minY": -64,
+        "maxY": 131
+      },
+      "mapId": "world",
+      "history": [
+        {
+          "id": "backfill:world:c003:2026-08-04:0",
+          "type": "purchase",
+          "at": "2026-08-04",
+          "amountCents": 1142400,
+          "source": "Console wallet-delta backfill; date only, incomplete"
+        }
+      ],
+      "preview": {
+        "url": "/property-previews/21d25fe8611a61a2dfee0642e7c7bb00c3887af3859a4578890f6aa3fb659a82.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:c004",
+      "region": "c004",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Commercial Plot",
+      "tags": [
+        "commercial"
+      ],
+      "priceCents": 1075200,
+      "priceBasis": "per_m2",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:crispycheddar1",
+        "name": "CrispyCheddar1"
+      },
+      "geometry": {
+        "points": [
+          [
+            363,
+            -138
+          ],
+          [
+            379,
+            -138
+          ],
+          [
+            379,
+            -117
+          ],
+          [
+            363,
+            -117
+          ]
+        ],
+        "minY": -64,
+        "maxY": 131
+      },
+      "mapId": "world",
+      "history": [
+        {
+          "id": "backfill:world:c004:2026-08-12:0",
+          "type": "purchase",
+          "at": "2026-08-12",
+          "amountCents": 1075200,
+          "source": "Console wallet-delta backfill; date only, incomplete"
+        }
+      ],
+      "preview": {
+        "url": "/property-previews/9041d76a99a9ca36875f716f814d5b16416e816d609cb77ed67e8af5b25a5edf.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:c005",
+      "region": "c005",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Commercial Plot",
+      "tags": [
+        "commercial"
+      ],
+      "priceCents": 1209600,
+      "priceBasis": "per_m2",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:.gooberman108086",
+        "name": ".GooberMan108086"
+      },
+      "geometry": {
+        "points": [
+          [
+            416,
+            -112
+          ],
+          [
+            434,
+            -112
+          ],
+          [
+            434,
+            -91
+          ],
+          [
+            416,
+            -91
+          ]
+        ],
+        "minY": -64,
+        "maxY": 131
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/9e142499b81d41d51de15f4b16bd353cf363bd3b5ccbb3dfd974f6457753c3fe.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "No recorded purchase in the supplied history. Assessment is not a sale price."
+      ]
+    },
+    {
+      "id": "world:c006",
+      "region": "c006",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Commercial Plot",
+      "tags": [
+        "commercial"
+      ],
+      "priceCents": 1948800,
+      "priceBasis": "per_m2",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:skrcoollou",
+        "name": "SKRCoolLou"
+      },
+      "geometry": {
+        "points": [
+          [
+            386,
+            -112
+          ],
+          [
+            415,
+            -112
+          ],
+          [
+            415,
+            -91
+          ],
+          [
+            386,
+            -91
+          ]
+        ],
+        "minY": -64,
+        "maxY": 131
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/f82786a9825620eb7a17c756f6f8f9bfd4f6b1f4d25fdbac3163019f7f953623.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "No recorded purchase in the supplied history. Assessment is not a sale price."
+      ]
+    },
+    {
+      "id": "world:c006-sub1",
+      "region": "c006-sub1",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "unknown",
+      "kind": "Rental Unit",
+      "tags": [
+        "player-sublet"
+      ],
+      "priceCents": 49900,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            402,
+            -106
+          ],
+          [
+            412,
+            -106
+          ],
+          [
+            412,
+            -96
+          ],
+          [
+            402,
+            -96
+          ]
+        ],
+        "minY": 78,
+        "maxY": 78
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/73ad285badff0e73a7ba027b792ff94c15a8f74c078800bcd04e2bda334db2d2.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "Player sublet: configured price is not proof the landlord is currently letting this unit."
+      ]
+    },
+    {
+      "id": "world:c006-sub2",
+      "region": "c006-sub2",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "unknown",
+      "kind": "Rental Unit",
+      "tags": [
+        "player-sublet"
+      ],
+      "priceCents": 44900,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            395,
+            -107
+          ],
+          [
+            402,
+            -107
+          ],
+          [
+            402,
+            -97
+          ],
+          [
+            395,
+            -97
+          ]
+        ],
+        "minY": 78,
+        "maxY": 78
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/aabd26d0d86465cb1c78703d0bb58ef6d2e9b8ad8fc64949d52d0080a19102cc.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "Player sublet: configured price is not proof the landlord is currently letting this unit."
+      ]
+    },
+    {
+      "id": "world:c006-sub3",
+      "region": "c006-sub3",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "unknown",
+      "kind": "Rental Unit",
+      "tags": [
+        "player-sublet"
+      ],
+      "priceCents": 149900,
+      "priceBasis": "static",
+      "periodSeconds": 432000,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            395,
+            -111
+          ],
+          [
+            412,
+            -111
+          ],
+          [
+            412,
+            -96
+          ],
+          [
+            395,
+            -96
+          ]
+        ],
+        "minY": 83,
+        "maxY": 83
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/03462343b9e03ab66b8c861370ec32c06d3ede7c6c1435e6d4d6b08d17906c68.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "Player sublet: configured price is not proof the landlord is currently letting this unit."
+      ]
+    },
+    {
+      "id": "world:c006-sub4",
+      "region": "c006-sub4",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "unknown",
+      "kind": "Rental Unit",
+      "tags": [
+        "player-sublet"
+      ],
+      "priceCents": 149900,
+      "priceBasis": "static",
+      "periodSeconds": 432000,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            395,
+            -111
+          ],
+          [
+            412,
+            -111
+          ],
+          [
+            412,
+            -96
+          ],
+          [
+            395,
+            -96
+          ]
+        ],
+        "minY": 92,
+        "maxY": 92
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/539e0d23eb420cc1d66edf59aebeab85a7de56f6e5572fadc25a29f0d8e92776.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "Player sublet: configured price is not proof the landlord is currently letting this unit."
+      ]
+    },
+    {
+      "id": "world:c007",
+      "region": "c007",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Commercial Plot",
+      "tags": [
+        "commercial"
+      ],
+      "priceCents": 1545600,
+      "priceBasis": "per_m2",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:skrcoollou",
+        "name": "SKRCoolLou"
+      },
+      "geometry": {
+        "points": [
+          [
+            363,
+            -112
+          ],
+          [
+            386,
+            -112
+          ],
+          [
+            386,
+            -91
+          ],
+          [
+            363,
+            -91
+          ]
+        ],
+        "minY": -64,
+        "maxY": 131
+      },
+      "mapId": "world",
+      "history": [
+        {
+          "id": "backfill:world:c007:2026-08-03:0",
+          "type": "purchase",
+          "at": "2026-08-03",
+          "amountCents": 1478400,
+          "source": "Console wallet-delta backfill; date only, incomplete"
+        }
+      ],
+      "preview": {
+        "url": "/property-previews/ca5e6aaf5fdfab69f7af7de379d71011d36e435d8a0c7d6d61f0b649e8b76cb0.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:market_stall_01",
+      "region": "market_stall_01",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Market Stall",
+      "tags": [
+        "market_stall"
+      ],
+      "priceCents": 50000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            473,
+            -140
+          ],
+          [
+            478,
+            -140
+          ],
+          [
+            478,
+            -133
+          ],
+          [
+            473,
+            -133
+          ]
+        ],
+        "minY": 72,
+        "maxY": 74
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/a44481d571e8238d9d0085b40a80dbef8d2987065427c88a8265ded08125df7f.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:market_stall_02",
+      "region": "market_stall_02",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Market Stall",
+      "tags": [
+        "market_stall"
+      ],
+      "priceCents": 50000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            456,
+            -141
+          ],
+          [
+            461,
+            -141
+          ],
+          [
+            461,
+            -133
+          ],
+          [
+            456,
+            -133
+          ]
+        ],
+        "minY": 72,
+        "maxY": 74
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/2cc65f4441f4fcb6a3fc5ddde7d1306023537563cebdab8e9554f359babf8bf6.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:market_stall_03",
+      "region": "market_stall_03",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Market Stall",
+      "tags": [
+        "market_stall"
+      ],
+      "priceCents": 50000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            461,
+            -131
+          ],
+          [
+            466,
+            -131
+          ],
+          [
+            466,
+            -123
+          ],
+          [
+            461,
+            -123
+          ]
+        ],
+        "minY": 72,
+        "maxY": 74
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/c4dd4fb7b02b35c84f8b1fe4415a7615a6398828d8b88f954d48531130d369ea.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:market_stall_04",
+      "region": "market_stall_04",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Market Stall",
+      "tags": [
+        "market_stall"
+      ],
+      "priceCents": 50000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            470,
+            -121
+          ],
+          [
+            478,
+            -121
+          ],
+          [
+            478,
+            -116
+          ],
+          [
+            470,
+            -116
+          ]
+        ],
+        "minY": 72,
+        "maxY": 74
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/aacf13fd3cbc10eba18b047d843baa24c5c0d9334e7212b1301a2b63074f215d.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:market_stall_05",
+      "region": "market_stall_05",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Market Stall",
+      "tags": [
+        "market_stall"
+      ],
+      "priceCents": 50000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            481,
+            -130
+          ],
+          [
+            486,
+            -130
+          ],
+          [
+            486,
+            -122
+          ],
+          [
+            481,
+            -122
+          ]
+        ],
+        "minY": 72,
+        "maxY": 74
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/9b193d8e7b4ab1406f42ab346bd1d37c45f20a287647a83c04cf5e7c57cada5a.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:market_stall_06",
+      "region": "market_stall_06",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Market Stall",
+      "tags": [
+        "market_stall"
+      ],
+      "priceCents": 50000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            481,
+            -114
+          ],
+          [
+            486,
+            -114
+          ],
+          [
+            486,
+            -106
+          ],
+          [
+            481,
+            -106
+          ]
+        ],
+        "minY": 72,
+        "maxY": 74
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/5a15124dcff39001e9f707e79994a9f28e84e7b65479c149060d0caada702b49.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:market_stall_07",
+      "region": "market_stall_07",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "leased",
+      "kind": "Market Stall",
+      "tags": [
+        "market_stall"
+      ],
+      "priceCents": 50000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            490,
+            -119
+          ],
+          [
+            498,
+            -119
+          ],
+          [
+            498,
+            -114
+          ],
+          [
+            490,
+            -114
+          ]
+        ],
+        "minY": 72,
+        "maxY": 74
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/57016cd3e87aed2339f6babb34241cee157c152959d8c01f2944f175dbe83fe2.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:market_stall_08",
+      "region": "market_stall_08",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "leased",
+      "kind": "Market Stall",
+      "tags": [
+        "market_stall"
+      ],
+      "priceCents": 50000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            498,
+            -108
+          ],
+          [
+            506,
+            -108
+          ],
+          [
+            506,
+            -103
+          ],
+          [
+            498,
+            -103
+          ]
+        ],
+        "minY": 72,
+        "maxY": 74
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/1d72c427792381048b853628a824f10c928c42caf6a8beaae54b36596c9b8d4b.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:market_stall_09",
+      "region": "market_stall_09",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Market Stall",
+      "tags": [
+        "market_stall"
+      ],
+      "priceCents": 50000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            485,
+            -102
+          ],
+          [
+            493,
+            -102
+          ],
+          [
+            493,
+            -97
+          ],
+          [
+            485,
+            -97
+          ]
+        ],
+        "minY": 72,
+        "maxY": 74
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/f5bb8992f843d9dbb1cfa241bfe099869f9fdc927975b32ee0d043791e922101.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:market_stall_10",
+      "region": "market_stall_10",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Market Stall",
+      "tags": [
+        "market_stall"
+      ],
+      "priceCents": 50000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            501,
+            -97
+          ],
+          [
+            506,
+            -97
+          ],
+          [
+            506,
+            -89
+          ],
+          [
+            501,
+            -89
+          ]
+        ],
+        "minY": 72,
+        "maxY": 74
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/7564baa53de286fe358e09648249a09ed6e19b976fa519336eebd1b739cff664.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:r001",
+      "region": "r001",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Residential Plot",
+      "tags": [
+        "residential"
+      ],
+      "priceCents": 3000000,
+      "priceBasis": "static",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:skrcoollou",
+        "name": "SKRCoolLou"
+      },
+      "geometry": {
+        "points": [
+          [
+            665,
+            -49
+          ],
+          [
+            666,
+            -50
+          ],
+          [
+            667,
+            -51
+          ],
+          [
+            668,
+            -52
+          ],
+          [
+            668,
+            -53
+          ],
+          [
+            669,
+            -54
+          ],
+          [
+            670,
+            -55
+          ],
+          [
+            670,
+            -56
+          ],
+          [
+            671,
+            -57
+          ],
+          [
+            671,
+            -58
+          ],
+          [
+            672,
+            -59
+          ],
+          [
+            673,
+            -60
+          ],
+          [
+            674,
+            -61
+          ],
+          [
+            674,
+            -62
+          ],
+          [
+            675,
+            -63
+          ],
+          [
+            676,
+            -64
+          ],
+          [
+            677,
+            -64
+          ],
+          [
+            678,
+            -65
+          ],
+          [
+            678,
+            -66
+          ],
+          [
+            679,
+            -67
+          ],
+          [
+            679,
+            -68
+          ],
+          [
+            680,
+            -69
+          ],
+          [
+            681,
+            -70
+          ],
+          [
+            681,
+            -72
+          ],
+          [
+            682,
+            -73
+          ],
+          [
+            682,
+            -74
+          ],
+          [
+            683,
+            -75
+          ],
+          [
+            683,
+            -76
+          ],
+          [
+            684,
+            -77
+          ],
+          [
+            684,
+            -78
+          ],
+          [
+            685,
+            -79
+          ],
+          [
+            685,
+            -82
+          ],
+          [
+            686,
+            -83
+          ],
+          [
+            686,
+            -85
+          ],
+          [
+            687,
+            -86
+          ],
+          [
+            687,
+            -87
+          ],
+          [
+            688,
+            -88
+          ],
+          [
+            688,
+            -91
+          ],
+          [
+            689,
+            -92
+          ],
+          [
+            689,
+            -95
+          ],
+          [
+            690,
+            -96
+          ],
+          [
+            690,
+            -121
+          ],
+          [
+            689,
+            -122
+          ],
+          [
+            689,
+            -124
+          ],
+          [
+            688,
+            -125
+          ],
+          [
+            687,
+            -126
+          ],
+          [
+            683,
+            -126
+          ],
+          [
+            682,
+            -125
+          ],
+          [
+            680,
+            -125
+          ],
+          [
+            679,
+            -124
+          ],
+          [
+            678,
+            -124
+          ],
+          [
+            677,
+            -123
+          ],
+          [
+            676,
+            -122
+          ],
+          [
+            675,
+            -122
+          ],
+          [
+            674,
+            -121
+          ],
+          [
+            673,
+            -120
+          ],
+          [
+            672,
+            -119
+          ],
+          [
+            671,
+            -119
+          ],
+          [
+            671,
+            -118
+          ],
+          [
+            670,
+            -117
+          ],
+          [
+            669,
+            -116
+          ],
+          [
+            668,
+            -115
+          ],
+          [
+            666,
+            -113
+          ],
+          [
+            666,
+            -112
+          ],
+          [
+            665,
+            -111
+          ],
+          [
+            660,
+            -106
+          ],
+          [
+            659,
+            -106
+          ],
+          [
+            658,
+            -105
+          ],
+          [
+            657,
+            -104
+          ],
+          [
+            656,
+            -104
+          ],
+          [
+            655,
+            -103
+          ],
+          [
+            654,
+            -103
+          ],
+          [
+            650,
+            -99
+          ],
+          [
+            649,
+            -99
+          ],
+          [
+            648,
+            -98
+          ],
+          [
+            647,
+            -97
+          ],
+          [
+            646,
+            -97
+          ],
+          [
+            645,
+            -96
+          ],
+          [
+            635,
+            -86
+          ],
+          [
+            634,
+            -86
+          ],
+          [
+            634,
+            -85
+          ],
+          [
+            633,
+            -84
+          ],
+          [
+            633,
+            -83
+          ],
+          [
+            632,
+            -82
+          ],
+          [
+            632,
+            -81
+          ],
+          [
+            631,
+            -80
+          ],
+          [
+            631,
+            -79
+          ],
+          [
+            630,
+            -78
+          ],
+          [
+            630,
+            -77
+          ],
+          [
+            629,
+            -76
+          ],
+          [
+            629,
+            -75
+          ],
+          [
+            628,
+            -74
+          ],
+          [
+            627,
+            -73
+          ],
+          [
+            627,
+            -72
+          ],
+          [
+            626,
+            -71
+          ],
+          [
+            626,
+            -70
+          ],
+          [
+            625,
+            -69
+          ],
+          [
+            625,
+            -68
+          ],
+          [
+            624,
+            -67
+          ],
+          [
+            624,
+            -66
+          ],
+          [
+            623,
+            -65
+          ],
+          [
+            623,
+            -63
+          ],
+          [
+            622,
+            -62
+          ],
+          [
+            622,
+            -60
+          ],
+          [
+            621,
+            -59
+          ],
+          [
+            621,
+            -58
+          ],
+          [
+            620,
+            -57
+          ],
+          [
+            620,
+            -56
+          ],
+          [
+            619,
+            -55
+          ],
+          [
+            619,
+            -54
+          ],
+          [
+            618,
+            -53
+          ],
+          [
+            618,
+            -51
+          ],
+          [
+            617,
+            -50
+          ],
+          [
+            617,
+            -49
+          ],
+          [
+            616,
+            -48
+          ],
+          [
+            616,
+            -45
+          ],
+          [
+            617,
+            -44
+          ],
+          [
+            619,
+            -42
+          ],
+          [
+            620,
+            -42
+          ],
+          [
+            621,
+            -41
+          ],
+          [
+            622,
+            -40
+          ],
+          [
+            623,
+            -40
+          ],
+          [
+            624,
+            -39
+          ],
+          [
+            625,
+            -39
+          ],
+          [
+            626,
+            -38
+          ],
+          [
+            627,
+            -38
+          ],
+          [
+            628,
+            -37
+          ],
+          [
+            629,
+            -36
+          ],
+          [
+            630,
+            -36
+          ],
+          [
+            631,
+            -35
+          ],
+          [
+            632,
+            -35
+          ],
+          [
+            633,
+            -34
+          ],
+          [
+            634,
+            -34
+          ],
+          [
+            635,
+            -33
+          ],
+          [
+            643,
+            -33
+          ],
+          [
+            644,
+            -34
+          ],
+          [
+            646,
+            -34
+          ],
+          [
+            647,
+            -35
+          ],
+          [
+            649,
+            -35
+          ],
+          [
+            650,
+            -36
+          ],
+          [
+            651,
+            -36
+          ],
+          [
+            658,
+            -43
+          ],
+          [
+            659,
+            -43
+          ],
+          [
+            660,
+            -44
+          ],
+          [
+            661,
+            -44
+          ],
+          [
+            662,
+            -45
+          ],
+          [
+            663,
+            -46
+          ],
+          [
+            664,
+            -47
+          ],
+          [
+            664,
+            -48
+          ],
+          [
+            665,
+            -49
+          ]
+        ],
+        "minY": 71,
+        "maxY": 121
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/12cd31e8cf20fb93f3570b99b63a8792daf6845c962b03403788327b5c0b00fd.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "No recorded purchase in the supplied history. Assessment is not a sale price."
+      ]
+    },
+    {
+      "id": "world:r002",
+      "region": "r002",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Residential Plot",
+      "tags": [
+        "residential"
+      ],
+      "priceCents": 1500000,
+      "priceBasis": "static",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:.doodle8204785",
+        "name": ".Doodle8204785"
+      },
+      "geometry": {
+        "points": [
+          [
+            598,
+            25
+          ],
+          [
+            599,
+            24
+          ],
+          [
+            600,
+            23
+          ],
+          [
+            600,
+            22
+          ],
+          [
+            601,
+            21
+          ],
+          [
+            601,
+            20
+          ],
+          [
+            602,
+            19
+          ],
+          [
+            602,
+            17
+          ],
+          [
+            603,
+            16
+          ],
+          [
+            603,
+            10
+          ],
+          [
+            602,
+            9
+          ],
+          [
+            602,
+            4
+          ],
+          [
+            601,
+            3
+          ],
+          [
+            601,
+            1
+          ],
+          [
+            600,
+            0
+          ],
+          [
+            600,
+            -2
+          ],
+          [
+            599,
+            -3
+          ],
+          [
+            599,
+            -5
+          ],
+          [
+            598,
+            -6
+          ],
+          [
+            598,
+            -13
+          ],
+          [
+            599,
+            -14
+          ],
+          [
+            599,
+            -18
+          ],
+          [
+            600,
+            -19
+          ],
+          [
+            600,
+            -20
+          ],
+          [
+            601,
+            -21
+          ],
+          [
+            601,
+            -22
+          ],
+          [
+            602,
+            -23
+          ],
+          [
+            603,
+            -24
+          ],
+          [
+            603,
+            -25
+          ],
+          [
+            604,
+            -26
+          ],
+          [
+            604,
+            -32
+          ],
+          [
+            603,
+            -33
+          ],
+          [
+            603,
+            -34
+          ],
+          [
+            597,
+            -34
+          ],
+          [
+            596,
+            -33
+          ],
+          [
+            592,
+            -29
+          ],
+          [
+            591,
+            -29
+          ],
+          [
+            590,
+            -28
+          ],
+          [
+            588,
+            -28
+          ],
+          [
+            587,
+            -27
+          ],
+          [
+            586,
+            -27
+          ],
+          [
+            584,
+            -25
+          ],
+          [
+            583,
+            -25
+          ],
+          [
+            582,
+            -24
+          ],
+          [
+            580,
+            -24
+          ],
+          [
+            579,
+            -23
+          ],
+          [
+            578,
+            -23
+          ],
+          [
+            577,
+            -22
+          ],
+          [
+            576,
+            -22
+          ],
+          [
+            575,
+            -21
+          ],
+          [
+            574,
+            -21
+          ],
+          [
+            573,
+            -20
+          ],
+          [
+            572,
+            -20
+          ],
+          [
+            571,
+            -19
+          ],
+          [
+            570,
+            -19
+          ],
+          [
+            569,
+            -18
+          ],
+          [
+            562,
+            -11
+          ],
+          [
+            562,
+            -8
+          ],
+          [
+            561,
+            -7
+          ],
+          [
+            561,
+            0
+          ],
+          [
+            560,
+            1
+          ],
+          [
+            560,
+            7
+          ],
+          [
+            559,
+            8
+          ],
+          [
+            559,
+            14
+          ],
+          [
+            560,
+            15
+          ],
+          [
+            560,
+            19
+          ],
+          [
+            561,
+            20
+          ],
+          [
+            561,
+            23
+          ],
+          [
+            562,
+            24
+          ],
+          [
+            563,
+            25
+          ],
+          [
+            563,
+            26
+          ],
+          [
+            568,
+            31
+          ],
+          [
+            575,
+            31
+          ],
+          [
+            576,
+            30
+          ],
+          [
+            577,
+            30
+          ],
+          [
+            578,
+            29
+          ],
+          [
+            580,
+            29
+          ],
+          [
+            581,
+            28
+          ],
+          [
+            582,
+            28
+          ],
+          [
+            583,
+            27
+          ],
+          [
+            584,
+            26
+          ],
+          [
+            596,
+            26
+          ],
+          [
+            597,
+            25
+          ],
+          [
+            598,
+            25
+          ]
+        ],
+        "minY": 72,
+        "maxY": 122
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/918b2635014432f5b03d71d124dcce622bf96808aaa5f54434dfecc415fa9500.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "No recorded purchase in the supplied history. Assessment is not a sale price."
+      ]
+    },
+    {
+      "id": "world:r003",
+      "region": "r003",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Residential Plot",
+      "tags": [
+        "residential"
+      ],
+      "priceCents": 1500000,
+      "priceBasis": "static",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:crispycheddar1",
+        "name": "CrispyCheddar1"
+      },
+      "geometry": {
+        "points": [
+          [
+            599,
+            54
+          ],
+          [
+            595,
+            54
+          ],
+          [
+            594,
+            53
+          ],
+          [
+            590,
+            53
+          ],
+          [
+            589,
+            52
+          ],
+          [
+            586,
+            52
+          ],
+          [
+            585,
+            51
+          ],
+          [
+            582,
+            51
+          ],
+          [
+            581,
+            50
+          ],
+          [
+            580,
+            50
+          ],
+          [
+            579,
+            49
+          ],
+          [
+            578,
+            49
+          ],
+          [
+            577,
+            48
+          ],
+          [
+            576,
+            48
+          ],
+          [
+            575,
+            47
+          ],
+          [
+            574,
+            46
+          ],
+          [
+            572,
+            46
+          ],
+          [
+            571,
+            45
+          ],
+          [
+            565,
+            45
+          ],
+          [
+            564,
+            46
+          ],
+          [
+            563,
+            46
+          ],
+          [
+            562,
+            47
+          ],
+          [
+            561,
+            47
+          ],
+          [
+            557,
+            51
+          ],
+          [
+            557,
+            52
+          ],
+          [
+            556,
+            53
+          ],
+          [
+            556,
+            54
+          ],
+          [
+            555,
+            55
+          ],
+          [
+            555,
+            56
+          ],
+          [
+            554,
+            57
+          ],
+          [
+            554,
+            59
+          ],
+          [
+            553,
+            60
+          ],
+          [
+            553,
+            61
+          ],
+          [
+            552,
+            62
+          ],
+          [
+            552,
+            64
+          ],
+          [
+            551,
+            65
+          ],
+          [
+            551,
+            78
+          ],
+          [
+            552,
+            79
+          ],
+          [
+            552,
+            81
+          ],
+          [
+            553,
+            82
+          ],
+          [
+            553,
+            83
+          ],
+          [
+            554,
+            84
+          ],
+          [
+            554,
+            85
+          ],
+          [
+            555,
+            86
+          ],
+          [
+            556,
+            87
+          ],
+          [
+            556,
+            88
+          ],
+          [
+            560,
+            92
+          ],
+          [
+            560,
+            93
+          ],
+          [
+            565,
+            98
+          ],
+          [
+            566,
+            98
+          ],
+          [
+            567,
+            99
+          ],
+          [
+            570,
+            99
+          ],
+          [
+            571,
+            100
+          ],
+          [
+            574,
+            100
+          ],
+          [
+            575,
+            101
+          ],
+          [
+            576,
+            101
+          ],
+          [
+            577,
+            102
+          ],
+          [
+            578,
+            102
+          ],
+          [
+            579,
+            103
+          ],
+          [
+            580,
+            104
+          ],
+          [
+            581,
+            104
+          ],
+          [
+            582,
+            105
+          ],
+          [
+            583,
+            105
+          ],
+          [
+            584,
+            106
+          ],
+          [
+            585,
+            107
+          ],
+          [
+            586,
+            107
+          ],
+          [
+            587,
+            108
+          ],
+          [
+            589,
+            110
+          ],
+          [
+            590,
+            110
+          ],
+          [
+            593,
+            113
+          ],
+          [
+            596,
+            113
+          ],
+          [
+            597,
+            114
+          ],
+          [
+            601,
+            114
+          ],
+          [
+            602,
+            113
+          ],
+          [
+            602,
+            112
+          ],
+          [
+            603,
+            111
+          ],
+          [
+            603,
+            102
+          ],
+          [
+            602,
+            101
+          ],
+          [
+            602,
+            90
+          ],
+          [
+            601,
+            89
+          ],
+          [
+            601,
+            85
+          ],
+          [
+            600,
+            84
+          ],
+          [
+            600,
+            76
+          ],
+          [
+            601,
+            75
+          ],
+          [
+            601,
+            71
+          ],
+          [
+            602,
+            70
+          ],
+          [
+            602,
+            59
+          ],
+          [
+            601,
+            58
+          ],
+          [
+            601,
+            57
+          ],
+          [
+            600,
+            56
+          ],
+          [
+            599,
+            55
+          ],
+          [
+            599,
+            54
+          ]
+        ],
+        "minY": 72,
+        "maxY": 122
+      },
+      "mapId": "world",
+      "history": [
+        {
+          "id": "backfill:world:r003:2026-08-12:0",
+          "type": "purchase",
+          "at": "2026-08-12",
+          "amountCents": 1500000,
+          "source": "Console wallet-delta backfill; date only, incomplete"
+        }
+      ],
+      "preview": {
+        "url": "/property-previews/8f1fb9883b8041108f3c6bfd5705863c159aa101361f2d43b2944b28cc176388.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:r004",
+      "region": "r004",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Residential Plot",
+      "tags": [
+        "residential"
+      ],
+      "priceCents": 1500000,
+      "priceBasis": "static",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:.shadedemon0522",
+        "name": ".ShadeDemon0522"
+      },
+      "geometry": {
+        "points": [
+          [
+            756,
+            -84
+          ],
+          [
+            756,
+            -78
+          ],
+          [
+            755,
+            -77
+          ],
+          [
+            755,
+            -72
+          ],
+          [
+            754,
+            -71
+          ],
+          [
+            754,
+            -70
+          ],
+          [
+            753,
+            -69
+          ],
+          [
+            753,
+            -67
+          ],
+          [
+            752,
+            -66
+          ],
+          [
+            752,
+            -55
+          ],
+          [
+            753,
+            -54
+          ],
+          [
+            753,
+            -52
+          ],
+          [
+            754,
+            -51
+          ],
+          [
+            760,
+            -51
+          ],
+          [
+            761,
+            -52
+          ],
+          [
+            763,
+            -52
+          ],
+          [
+            764,
+            -53
+          ],
+          [
+            765,
+            -53
+          ],
+          [
+            766,
+            -54
+          ],
+          [
+            767,
+            -54
+          ],
+          [
+            768,
+            -55
+          ],
+          [
+            769,
+            -55
+          ],
+          [
+            770,
+            -56
+          ],
+          [
+            771,
+            -56
+          ],
+          [
+            772,
+            -57
+          ],
+          [
+            775,
+            -57
+          ],
+          [
+            776,
+            -58
+          ],
+          [
+            777,
+            -59
+          ],
+          [
+            778,
+            -60
+          ],
+          [
+            778,
+            -76
+          ],
+          [
+            777,
+            -77
+          ],
+          [
+            777,
+            -84
+          ],
+          [
+            776,
+            -85
+          ],
+          [
+            776,
+            -86
+          ],
+          [
+            775,
+            -87
+          ],
+          [
+            774,
+            -87
+          ],
+          [
+            773,
+            -88
+          ],
+          [
+            761,
+            -88
+          ],
+          [
+            760,
+            -87
+          ],
+          [
+            759,
+            -87
+          ],
+          [
+            758,
+            -86
+          ],
+          [
+            757,
+            -85
+          ],
+          [
+            756,
+            -84
+          ]
+        ],
+        "minY": 86,
+        "maxY": 136
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/42b60011394961ba67831bab921d26d530bdcaa410c5fff54c1abbe9200c98f7.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "No recorded purchase in the supplied history. Assessment is not a sale price."
+      ]
+    },
+    {
+      "id": "world:r005",
+      "region": "r005",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "available",
+      "kind": "Residential Plot",
+      "tags": [
+        "residential"
+      ],
+      "priceCents": 3000000,
+      "priceBasis": "static",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            724,
+            3
+          ],
+          [
+            723,
+            2
+          ],
+          [
+            723,
+            1
+          ],
+          [
+            722,
+            0
+          ],
+          [
+            722,
+            -1
+          ],
+          [
+            721,
+            -2
+          ],
+          [
+            721,
+            -3
+          ],
+          [
+            720,
+            -4
+          ],
+          [
+            720,
+            -5
+          ],
+          [
+            719,
+            -6
+          ],
+          [
+            710,
+            -6
+          ],
+          [
+            709,
+            -5
+          ],
+          [
+            707,
+            -5
+          ],
+          [
+            706,
+            -4
+          ],
+          [
+            705,
+            -3
+          ],
+          [
+            704,
+            -3
+          ],
+          [
+            703,
+            -2
+          ],
+          [
+            702,
+            -1
+          ],
+          [
+            701,
+            0
+          ],
+          [
+            701,
+            1
+          ],
+          [
+            700,
+            2
+          ],
+          [
+            700,
+            3
+          ],
+          [
+            699,
+            4
+          ],
+          [
+            699,
+            6
+          ],
+          [
+            698,
+            7
+          ],
+          [
+            698,
+            10
+          ],
+          [
+            697,
+            11
+          ],
+          [
+            697,
+            16
+          ],
+          [
+            696,
+            17
+          ],
+          [
+            696,
+            26
+          ],
+          [
+            697,
+            27
+          ],
+          [
+            698,
+            28
+          ],
+          [
+            698,
+            29
+          ],
+          [
+            699,
+            30
+          ],
+          [
+            700,
+            30
+          ],
+          [
+            701,
+            31
+          ],
+          [
+            703,
+            31
+          ],
+          [
+            704,
+            30
+          ],
+          [
+            705,
+            29
+          ],
+          [
+            706,
+            28
+          ],
+          [
+            708,
+            28
+          ],
+          [
+            709,
+            27
+          ],
+          [
+            710,
+            26
+          ],
+          [
+            711,
+            25
+          ],
+          [
+            712,
+            24
+          ],
+          [
+            713,
+            24
+          ],
+          [
+            714,
+            23
+          ],
+          [
+            715,
+            22
+          ],
+          [
+            716,
+            22
+          ],
+          [
+            717,
+            21
+          ],
+          [
+            718,
+            21
+          ],
+          [
+            719,
+            20
+          ],
+          [
+            719,
+            19
+          ],
+          [
+            720,
+            18
+          ],
+          [
+            721,
+            17
+          ],
+          [
+            722,
+            16
+          ],
+          [
+            723,
+            15
+          ],
+          [
+            723,
+            14
+          ],
+          [
+            724,
+            13
+          ],
+          [
+            724,
+            3
+          ]
+        ],
+        "minY": 101,
+        "maxY": 151
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/7cea11be831c14b28c668c769e9de392f485f857c18d9942419215f63006a605.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:r006",
+      "region": "r006",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "available",
+      "kind": "Residential Plot",
+      "tags": [
+        "residential"
+      ],
+      "priceCents": 3000000,
+      "priceBasis": "static",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            739,
+            4
+          ],
+          [
+            739,
+            13
+          ],
+          [
+            740,
+            14
+          ],
+          [
+            751,
+            14
+          ],
+          [
+            752,
+            13
+          ],
+          [
+            753,
+            13
+          ],
+          [
+            754,
+            12
+          ],
+          [
+            755,
+            12
+          ],
+          [
+            756,
+            11
+          ],
+          [
+            757,
+            11
+          ],
+          [
+            758,
+            10
+          ],
+          [
+            760,
+            10
+          ],
+          [
+            761,
+            9
+          ],
+          [
+            762,
+            8
+          ],
+          [
+            762,
+            7
+          ],
+          [
+            763,
+            6
+          ],
+          [
+            763,
+            4
+          ],
+          [
+            764,
+            3
+          ],
+          [
+            764,
+            2
+          ],
+          [
+            765,
+            1
+          ],
+          [
+            766,
+            0
+          ],
+          [
+            766,
+            -3
+          ],
+          [
+            767,
+            -4
+          ],
+          [
+            767,
+            -10
+          ],
+          [
+            766,
+            -11
+          ],
+          [
+            766,
+            -13
+          ],
+          [
+            765,
+            -14
+          ],
+          [
+            765,
+            -16
+          ],
+          [
+            764,
+            -17
+          ],
+          [
+            764,
+            -19
+          ],
+          [
+            763,
+            -20
+          ],
+          [
+            762,
+            -21
+          ],
+          [
+            761,
+            -22
+          ],
+          [
+            760,
+            -23
+          ],
+          [
+            759,
+            -23
+          ],
+          [
+            758,
+            -22
+          ],
+          [
+            758,
+            -21
+          ],
+          [
+            757,
+            -20
+          ],
+          [
+            757,
+            -19
+          ],
+          [
+            756,
+            -18
+          ],
+          [
+            756,
+            -17
+          ],
+          [
+            755,
+            -16
+          ],
+          [
+            755,
+            -15
+          ],
+          [
+            754,
+            -14
+          ],
+          [
+            753,
+            -13
+          ],
+          [
+            752,
+            -12
+          ],
+          [
+            751,
+            -11
+          ],
+          [
+            750,
+            -10
+          ],
+          [
+            749,
+            -9
+          ],
+          [
+            748,
+            -8
+          ],
+          [
+            747,
+            -7
+          ],
+          [
+            746,
+            -7
+          ],
+          [
+            746,
+            -6
+          ],
+          [
+            745,
+            -5
+          ],
+          [
+            745,
+            -4
+          ],
+          [
+            744,
+            -3
+          ],
+          [
+            744,
+            -2
+          ],
+          [
+            743,
+            -1
+          ],
+          [
+            743,
+            0
+          ],
+          [
+            742,
+            1
+          ],
+          [
+            741,
+            2
+          ],
+          [
+            740,
+            3
+          ],
+          [
+            739,
+            4
+          ]
+        ],
+        "minY": 101,
+        "maxY": 151
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/ea8ccc042d14f67c69fbe4c112e886e05be799a130fea0073b4800e74d88abd3.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:r007",
+      "region": "r007",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Residential Plot",
+      "tags": [
+        "residential"
+      ],
+      "priceCents": 1500000,
+      "priceBasis": "static",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:.ttv_ccsly",
+        "name": ".TTV_CCSLY"
+      },
+      "geometry": {
+        "points": [
+          [
+            788,
+            -41
+          ],
+          [
+            787,
+            -40
+          ],
+          [
+            787,
+            -39
+          ],
+          [
+            786,
+            -38
+          ],
+          [
+            786,
+            -37
+          ],
+          [
+            785,
+            -36
+          ],
+          [
+            785,
+            -34
+          ],
+          [
+            784,
+            -33
+          ],
+          [
+            784,
+            -23
+          ],
+          [
+            785,
+            -22
+          ],
+          [
+            785,
+            -1
+          ],
+          [
+            784,
+            0
+          ],
+          [
+            784,
+            4
+          ],
+          [
+            783,
+            5
+          ],
+          [
+            783,
+            6
+          ],
+          [
+            782,
+            7
+          ],
+          [
+            782,
+            9
+          ],
+          [
+            781,
+            10
+          ],
+          [
+            781,
+            15
+          ],
+          [
+            782,
+            16
+          ],
+          [
+            786,
+            16
+          ],
+          [
+            787,
+            17
+          ],
+          [
+            802,
+            17
+          ],
+          [
+            803,
+            16
+          ],
+          [
+            805,
+            16
+          ],
+          [
+            806,
+            15
+          ],
+          [
+            808,
+            15
+          ],
+          [
+            809,
+            14
+          ],
+          [
+            810,
+            14
+          ],
+          [
+            811,
+            13
+          ],
+          [
+            814,
+            13
+          ],
+          [
+            815,
+            12
+          ],
+          [
+            816,
+            12
+          ],
+          [
+            817,
+            11
+          ],
+          [
+            823,
+            11
+          ],
+          [
+            824,
+            10
+          ],
+          [
+            826,
+            10
+          ],
+          [
+            827,
+            9
+          ],
+          [
+            829,
+            9
+          ],
+          [
+            830,
+            8
+          ],
+          [
+            831,
+            7
+          ],
+          [
+            832,
+            7
+          ],
+          [
+            836,
+            3
+          ],
+          [
+            836,
+            1
+          ],
+          [
+            837,
+            0
+          ],
+          [
+            838,
+            -1
+          ],
+          [
+            839,
+            -1
+          ],
+          [
+            839,
+            -2
+          ],
+          [
+            840,
+            -3
+          ],
+          [
+            840,
+            -4
+          ],
+          [
+            841,
+            -5
+          ],
+          [
+            841,
+            -6
+          ],
+          [
+            842,
+            -7
+          ],
+          [
+            842,
+            -9
+          ],
+          [
+            843,
+            -10
+          ],
+          [
+            843,
+            -14
+          ],
+          [
+            844,
+            -15
+          ],
+          [
+            844,
+            -22
+          ],
+          [
+            845,
+            -23
+          ],
+          [
+            845,
+            -28
+          ],
+          [
+            846,
+            -29
+          ],
+          [
+            846,
+            -30
+          ],
+          [
+            847,
+            -31
+          ],
+          [
+            847,
+            -33
+          ],
+          [
+            848,
+            -34
+          ],
+          [
+            848,
+            -42
+          ],
+          [
+            847,
+            -42
+          ],
+          [
+            846,
+            -43
+          ],
+          [
+            844,
+            -43
+          ],
+          [
+            843,
+            -42
+          ],
+          [
+            842,
+            -42
+          ],
+          [
+            841,
+            -41
+          ],
+          [
+            840,
+            -41
+          ],
+          [
+            839,
+            -40
+          ],
+          [
+            838,
+            -39
+          ],
+          [
+            836,
+            -39
+          ],
+          [
+            835,
+            -38
+          ],
+          [
+            803,
+            -38
+          ],
+          [
+            802,
+            -39
+          ],
+          [
+            801,
+            -39
+          ],
+          [
+            800,
+            -40
+          ],
+          [
+            798,
+            -40
+          ],
+          [
+            797,
+            -41
+          ],
+          [
+            796,
+            -41
+          ],
+          [
+            795,
+            -42
+          ],
+          [
+            790,
+            -42
+          ],
+          [
+            789,
+            -41
+          ],
+          [
+            788,
+            -41
+          ]
+        ],
+        "minY": 87,
+        "maxY": 137
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/4c1cf088cdaea80a0612b752a7a2062ecd82c64635ba72d4a79a0a6cc2234f4e.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "No recorded purchase in the supplied history. Assessment is not a sale price."
+      ]
+    },
+    {
+      "id": "world:r008",
+      "region": "r008",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "available",
+      "kind": "Residential Plot",
+      "tags": [
+        "residential"
+      ],
+      "priceCents": 6000000,
+      "priceBasis": "static",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            851,
+            -133
+          ],
+          [
+            838,
+            -133
+          ],
+          [
+            837,
+            -134
+          ],
+          [
+            836,
+            -134
+          ],
+          [
+            835,
+            -135
+          ],
+          [
+            834,
+            -135
+          ],
+          [
+            833,
+            -136
+          ],
+          [
+            829,
+            -140
+          ],
+          [
+            829,
+            -141
+          ],
+          [
+            828,
+            -142
+          ],
+          [
+            827,
+            -143
+          ],
+          [
+            827,
+            -145
+          ],
+          [
+            825,
+            -147
+          ],
+          [
+            819,
+            -147
+          ],
+          [
+            819,
+            -146
+          ],
+          [
+            818,
+            -145
+          ],
+          [
+            818,
+            -143
+          ],
+          [
+            817,
+            -142
+          ],
+          [
+            815,
+            -140
+          ],
+          [
+            815,
+            -139
+          ],
+          [
+            814,
+            -138
+          ],
+          [
+            814,
+            -135
+          ],
+          [
+            813,
+            -134
+          ],
+          [
+            813,
+            -133
+          ],
+          [
+            812,
+            -132
+          ],
+          [
+            809,
+            -129
+          ],
+          [
+            808,
+            -129
+          ],
+          [
+            807,
+            -128
+          ],
+          [
+            797,
+            -118
+          ],
+          [
+            797,
+            -89
+          ],
+          [
+            798,
+            -88
+          ],
+          [
+            798,
+            -87
+          ],
+          [
+            799,
+            -86
+          ],
+          [
+            800,
+            -85
+          ],
+          [
+            804,
+            -85
+          ],
+          [
+            805,
+            -84
+          ],
+          [
+            807,
+            -84
+          ],
+          [
+            808,
+            -83
+          ],
+          [
+            809,
+            -83
+          ],
+          [
+            810,
+            -82
+          ],
+          [
+            811,
+            -82
+          ],
+          [
+            812,
+            -81
+          ],
+          [
+            814,
+            -79
+          ],
+          [
+            815,
+            -79
+          ],
+          [
+            816,
+            -78
+          ],
+          [
+            817,
+            -77
+          ],
+          [
+            818,
+            -77
+          ],
+          [
+            819,
+            -76
+          ],
+          [
+            822,
+            -76
+          ],
+          [
+            823,
+            -75
+          ],
+          [
+            847,
+            -75
+          ],
+          [
+            848,
+            -76
+          ],
+          [
+            849,
+            -76
+          ],
+          [
+            850,
+            -77
+          ],
+          [
+            852,
+            -77
+          ],
+          [
+            853,
+            -78
+          ],
+          [
+            854,
+            -78
+          ],
+          [
+            855,
+            -79
+          ],
+          [
+            856,
+            -80
+          ],
+          [
+            857,
+            -80
+          ],
+          [
+            859,
+            -82
+          ],
+          [
+            859,
+            -84
+          ],
+          [
+            860,
+            -85
+          ],
+          [
+            860,
+            -87
+          ],
+          [
+            861,
+            -88
+          ],
+          [
+            861,
+            -89
+          ],
+          [
+            862,
+            -90
+          ],
+          [
+            863,
+            -91
+          ],
+          [
+            863,
+            -98
+          ],
+          [
+            864,
+            -99
+          ],
+          [
+            864,
+            -108
+          ],
+          [
+            865,
+            -109
+          ],
+          [
+            865,
+            -114
+          ],
+          [
+            866,
+            -115
+          ],
+          [
+            866,
+            -119
+          ],
+          [
+            867,
+            -120
+          ],
+          [
+            867,
+            -122
+          ],
+          [
+            868,
+            -123
+          ],
+          [
+            868,
+            -131
+          ],
+          [
+            867,
+            -132
+          ],
+          [
+            864,
+            -132
+          ],
+          [
+            863,
+            -131
+          ],
+          [
+            856,
+            -131
+          ],
+          [
+            855,
+            -132
+          ],
+          [
+            852,
+            -132
+          ],
+          [
+            851,
+            -133
+          ]
+        ],
+        "minY": 100,
+        "maxY": 150
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/1da6f5cdc67e9cbefdf7804373736d628ba89f26b0bd794dd38cab8d024c362f.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:r009",
+      "region": "r009",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "buy",
+      "status": "owned",
+      "kind": "Residential Plot",
+      "tags": [
+        "residential"
+      ],
+      "priceCents": 6000000,
+      "priceBasis": "static",
+      "periodSeconds": null,
+      "leaseEndsAt": null,
+      "owner": {
+        "id": "name:skrcoollou",
+        "name": "SKRCoolLou"
+      },
+      "geometry": {
+        "points": [
+          [
+            736,
+            160
+          ],
+          [
+            719,
+            160
+          ],
+          [
+            718,
+            159
+          ],
+          [
+            714,
+            159
+          ],
+          [
+            713,
+            158
+          ],
+          [
+            709,
+            158
+          ],
+          [
+            708,
+            157
+          ],
+          [
+            703,
+            157
+          ],
+          [
+            702,
+            156
+          ],
+          [
+            680,
+            156
+          ],
+          [
+            679,
+            157
+          ],
+          [
+            676,
+            157
+          ],
+          [
+            675,
+            158
+          ],
+          [
+            673,
+            158
+          ],
+          [
+            672,
+            159
+          ],
+          [
+            669,
+            159
+          ],
+          [
+            668,
+            160
+          ],
+          [
+            667,
+            160
+          ],
+          [
+            666,
+            161
+          ],
+          [
+            664,
+            161
+          ],
+          [
+            663,
+            162
+          ],
+          [
+            660,
+            162
+          ],
+          [
+            659,
+            163
+          ],
+          [
+            658,
+            163
+          ],
+          [
+            657,
+            164
+          ],
+          [
+            654,
+            164
+          ],
+          [
+            653,
+            165
+          ],
+          [
+            652,
+            165
+          ],
+          [
+            651,
+            166
+          ],
+          [
+            650,
+            166
+          ],
+          [
+            649,
+            167
+          ],
+          [
+            648,
+            167
+          ],
+          [
+            647,
+            168
+          ],
+          [
+            646,
+            168
+          ],
+          [
+            645,
+            169
+          ],
+          [
+            644,
+            170
+          ],
+          [
+            643,
+            170
+          ],
+          [
+            643,
+            171
+          ],
+          [
+            642,
+            172
+          ],
+          [
+            642,
+            196
+          ],
+          [
+            641,
+            197
+          ],
+          [
+            641,
+            200
+          ],
+          [
+            640,
+            201
+          ],
+          [
+            640,
+            202
+          ],
+          [
+            639,
+            203
+          ],
+          [
+            639,
+            205
+          ],
+          [
+            638,
+            206
+          ],
+          [
+            638,
+            208
+          ],
+          [
+            637,
+            209
+          ],
+          [
+            637,
+            210
+          ],
+          [
+            636,
+            211
+          ],
+          [
+            636,
+            215
+          ],
+          [
+            637,
+            216
+          ],
+          [
+            637,
+            219
+          ],
+          [
+            638,
+            220
+          ],
+          [
+            638,
+            221
+          ],
+          [
+            639,
+            222
+          ],
+          [
+            639,
+            223
+          ],
+          [
+            640,
+            224
+          ],
+          [
+            640,
+            225
+          ],
+          [
+            641,
+            226
+          ],
+          [
+            641,
+            227
+          ],
+          [
+            642,
+            227
+          ],
+          [
+            643,
+            228
+          ],
+          [
+            644,
+            229
+          ],
+          [
+            645,
+            229
+          ],
+          [
+            646,
+            230
+          ],
+          [
+            647,
+            230
+          ],
+          [
+            648,
+            231
+          ],
+          [
+            650,
+            231
+          ],
+          [
+            651,
+            232
+          ],
+          [
+            659,
+            232
+          ],
+          [
+            660,
+            233
+          ],
+          [
+            664,
+            233
+          ],
+          [
+            665,
+            234
+          ],
+          [
+            667,
+            234
+          ],
+          [
+            668,
+            235
+          ],
+          [
+            669,
+            235
+          ],
+          [
+            670,
+            236
+          ],
+          [
+            671,
+            237
+          ],
+          [
+            672,
+            237
+          ],
+          [
+            673,
+            238
+          ],
+          [
+            674,
+            238
+          ],
+          [
+            675,
+            239
+          ],
+          [
+            676,
+            239
+          ],
+          [
+            677,
+            240
+          ],
+          [
+            678,
+            241
+          ],
+          [
+            679,
+            242
+          ],
+          [
+            680,
+            242
+          ],
+          [
+            681,
+            243
+          ],
+          [
+            682,
+            243
+          ],
+          [
+            683,
+            244
+          ],
+          [
+            684,
+            245
+          ],
+          [
+            686,
+            245
+          ],
+          [
+            687,
+            246
+          ],
+          [
+            699,
+            246
+          ],
+          [
+            700,
+            245
+          ],
+          [
+            704,
+            245
+          ],
+          [
+            705,
+            244
+          ],
+          [
+            708,
+            244
+          ],
+          [
+            709,
+            243
+          ],
+          [
+            711,
+            243
+          ],
+          [
+            712,
+            242
+          ],
+          [
+            713,
+            242
+          ],
+          [
+            714,
+            241
+          ],
+          [
+            715,
+            241
+          ],
+          [
+            716,
+            240
+          ],
+          [
+            717,
+            240
+          ],
+          [
+            718,
+            239
+          ],
+          [
+            719,
+            239
+          ],
+          [
+            720,
+            238
+          ],
+          [
+            721,
+            237
+          ],
+          [
+            722,
+            236
+          ],
+          [
+            728,
+            230
+          ],
+          [
+            728,
+            229
+          ],
+          [
+            729,
+            228
+          ],
+          [
+            730,
+            227
+          ],
+          [
+            733,
+            224
+          ],
+          [
+            733,
+            223
+          ],
+          [
+            734,
+            222
+          ],
+          [
+            735,
+            221
+          ],
+          [
+            735,
+            220
+          ],
+          [
+            736,
+            219
+          ],
+          [
+            737,
+            218
+          ],
+          [
+            737,
+            217
+          ],
+          [
+            738,
+            216
+          ],
+          [
+            738,
+            215
+          ],
+          [
+            739,
+            214
+          ],
+          [
+            740,
+            213
+          ],
+          [
+            740,
+            212
+          ],
+          [
+            741,
+            211
+          ],
+          [
+            741,
+            209
+          ],
+          [
+            742,
+            208
+          ],
+          [
+            742,
+            207
+          ],
+          [
+            743,
+            206
+          ],
+          [
+            743,
+            191
+          ],
+          [
+            742,
+            190
+          ],
+          [
+            742,
+            175
+          ],
+          [
+            743,
+            174
+          ],
+          [
+            743,
+            173
+          ],
+          [
+            744,
+            172
+          ],
+          [
+            744,
+            169
+          ],
+          [
+            743,
+            168
+          ],
+          [
+            743,
+            166
+          ],
+          [
+            742,
+            165
+          ],
+          [
+            742,
+            164
+          ],
+          [
+            741,
+            163
+          ],
+          [
+            740,
+            162
+          ],
+          [
+            739,
+            161
+          ],
+          [
+            737,
+            161
+          ],
+          [
+            736,
+            160
+          ]
+        ],
+        "minY": 72,
+        "maxY": 122
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/c5b8e60c214bfa5e610fd73a4ff49882cbdf4a8c5ecec2927ba673edbf2186f7.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked.",
+        "No recorded purchase in the supplied history. Assessment is not a sale price."
+      ]
+    },
+    {
+      "id": "world:spawn_shop_01",
+      "region": "spawn_shop_01",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Spawn Shop",
+      "tags": [
+        "spawn_shop"
+      ],
+      "priceCents": 75000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            504,
+            -204
+          ],
+          [
+            496,
+            -204
+          ],
+          [
+            496,
+            -213
+          ],
+          [
+            498,
+            -213
+          ],
+          [
+            499,
+            -212
+          ],
+          [
+            500,
+            -212
+          ],
+          [
+            501,
+            -211
+          ],
+          [
+            504,
+            -211
+          ],
+          [
+            504,
+            -204
+          ]
+        ],
+        "minY": 72,
+        "maxY": 77
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/016ed0fbb495bc352c608e684ad9e395cef25ab834479e2c9427af5455923645.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:spawn_shop_02",
+      "region": "spawn_shop_02",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Spawn Shop",
+      "tags": [
+        "spawn_shop"
+      ],
+      "priceCents": 75000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            504,
+            -213
+          ],
+          [
+            501,
+            -213
+          ],
+          [
+            500,
+            -214
+          ],
+          [
+            499,
+            -214
+          ],
+          [
+            498,
+            -215
+          ],
+          [
+            496,
+            -215
+          ],
+          [
+            496,
+            -222
+          ],
+          [
+            504,
+            -222
+          ],
+          [
+            504,
+            -213
+          ]
+        ],
+        "minY": 72,
+        "maxY": 77
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/f3d5df919d57db202c8ae3e7355e8619f3c43b9129dc2831e7ccd41397e06df6.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:spawn_shop_03",
+      "region": "spawn_shop_03",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Spawn Shop",
+      "tags": [
+        "spawn_shop"
+      ],
+      "priceCents": 75000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            490,
+            -198
+          ],
+          [
+            489,
+            -199
+          ],
+          [
+            488,
+            -200
+          ],
+          [
+            487,
+            -201
+          ],
+          [
+            486,
+            -202
+          ],
+          [
+            485,
+            -203
+          ],
+          [
+            484,
+            -204
+          ],
+          [
+            483,
+            -205
+          ],
+          [
+            482,
+            -206
+          ],
+          [
+            481,
+            -207
+          ],
+          [
+            480,
+            -208
+          ],
+          [
+            479,
+            -209
+          ],
+          [
+            480,
+            -209
+          ],
+          [
+            481,
+            -210
+          ],
+          [
+            483,
+            -210
+          ],
+          [
+            484,
+            -211
+          ],
+          [
+            486,
+            -211
+          ],
+          [
+            487,
+            -212
+          ],
+          [
+            489,
+            -212
+          ],
+          [
+            490,
+            -213
+          ],
+          [
+            492,
+            -213
+          ],
+          [
+            493,
+            -214
+          ],
+          [
+            494,
+            -214
+          ],
+          [
+            494,
+            -203
+          ],
+          [
+            493,
+            -202
+          ],
+          [
+            492,
+            -201
+          ],
+          [
+            491,
+            -200
+          ],
+          [
+            490,
+            -199
+          ],
+          [
+            490,
+            -198
+          ]
+        ],
+        "minY": 72,
+        "maxY": 77
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/171ee4eda69942a2c4b25cd9c7127eab3b5f0deb23eb7840a7bb1f5fd875b4d5.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    },
+    {
+      "id": "world:spawn_shop_04",
+      "region": "spawn_shop_04",
+      "world": "world",
+      "worldId": "world",
+      "tenure": "rent",
+      "status": "available",
+      "kind": "Spawn Shop",
+      "tags": [
+        "spawn_shop"
+      ],
+      "priceCents": 75000,
+      "priceBasis": "static",
+      "periodSeconds": 604800,
+      "leaseEndsAt": null,
+      "owner": null,
+      "geometry": {
+        "points": [
+          [
+            466,
+            -222
+          ],
+          [
+            494,
+            -222
+          ],
+          [
+            494,
+            -216
+          ],
+          [
+            493,
+            -216
+          ],
+          [
+            492,
+            -215
+          ],
+          [
+            490,
+            -215
+          ],
+          [
+            489,
+            -214
+          ],
+          [
+            487,
+            -214
+          ],
+          [
+            486,
+            -213
+          ],
+          [
+            484,
+            -213
+          ],
+          [
+            483,
+            -212
+          ],
+          [
+            481,
+            -212
+          ],
+          [
+            480,
+            -211
+          ],
+          [
+            477,
+            -211
+          ],
+          [
+            476,
+            -212
+          ],
+          [
+            475,
+            -213
+          ],
+          [
+            474,
+            -214
+          ],
+          [
+            473,
+            -215
+          ],
+          [
+            472,
+            -216
+          ],
+          [
+            471,
+            -217
+          ],
+          [
+            470,
+            -218
+          ],
+          [
+            469,
+            -219
+          ],
+          [
+            468,
+            -220
+          ],
+          [
+            467,
+            -221
+          ],
+          [
+            466,
+            -222
+          ]
+        ],
+        "minY": 72,
+        "maxY": 77
+      },
+      "mapId": "world",
+      "history": [],
+      "preview": {
+        "url": "/property-previews/caa66bc3d62b35835d98777d462652367e6e2b51158f7efa3e7f0217bf06d892.json",
+        "capturedAt": "2026-09-06T18:18:07.144944+00:00"
+      },
+      "notes": [
+        "Saved ARM/WG state; game memory has not been checked."
+      ]
+    }
+  ],
+  "source": "ARM + WorldGuard snapshot"
+}

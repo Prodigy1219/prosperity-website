@@ -1,3 +1,5 @@
+import { PROPERTY_PATH, propertyDeskEnabled } from '../lib/property-release';
+
 export interface NavLink {
   label: string;
   href: string;
@@ -16,6 +18,7 @@ export const primaryNav: NavLink[] = [
 ];
 
 export const footerNav: NavLink[] = [
+  ...(propertyDeskEnabled ? [{ label: 'Properties', href: PROPERTY_PATH }] : []),
   { label: 'Getting Started', href: '/getting-started' },
   { label: 'Commands', href: '/commands' },
   { label: 'Rules', href: '/rules' },
