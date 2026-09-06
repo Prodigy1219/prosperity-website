@@ -114,6 +114,7 @@ export async function startPropertyDesk() {
                         info.querySelector('.pd-subprice')!.textContent='Estimated property value / assessment + materials';
                         info.querySelector('.pd-subprice')!.insertAdjacentHTML('afterend',`<dl class="pd-value-breakdown"><dt>${effectiveStatus(p)==='available'?'Actual asking price':'Server assessment'}</dt><dd>${money(estimate.assessmentCents)}</dd><dt>Known material worth</dt><dd>${money(estimate.materialCents)}</dd></dl><p class="pd-note">Indicative combined estimate, not the purchase price or server net worth. The assessment is not verified land-only and may overlap build value; material worth includes terrain. Labor and scarcity are not priced.</p>`);
                     }
+                    if (!result.meshError) {
                     el('pd-property-scene').insertAdjacentHTML('afterend',`<div class="pd-height-controls"><label>View from Y<input id="pd-view-min-y" type="number" min="${result.minY}" max="${result.maxY}" value="${result.minY}"/></label><label>To Y<input id="pd-view-max-y" type="number" min="${result.minY}" max="${result.maxY}" value="${result.maxY}"/></label><button id="pd-height-apply" class="pd-button">Apply view</button><button id="pd-height-reset" class="pd-button">Full height</button></div>`);
                     const applyHeight=()=>{
                         const min=Number(el<HTMLInputElement>('pd-view-min-y').value),max=Number(el<HTMLInputElement>('pd-view-max-y').value);
@@ -121,6 +122,7 @@ export async function startPropertyDesk() {
                     };
                     el('pd-height-apply').onclick=applyHeight;
                     el('pd-height-reset').onclick=()=>{el<HTMLInputElement>('pd-view-min-y').value=String(result.minY);el<HTMLInputElement>('pd-view-max-y').value=String(result.maxY);applyHeight();};
+                    }
                     el('pd-property-scene').parentElement!.insertAdjacentHTML('beforeend', `<section class="pd-materials"><h3>Estimated material worth</h3><p class="pd-price">${money(v.knownSubtotalCents)}${v.totalCents===null?' <small>known subtotal</small>':''}</p><p>${result.count!.toLocaleString()} occupied block cells &middot; ${rows.length} materials &middot; ${v.unknownCells.toLocaleString()} unpriced cells</p><p class="pd-note">Whole captured volume, including terrain. Existing server BOM rules at item worth; not a sale, salvage or paste quote. Land, scarcity and workmanship are excluded. Worth export: ${esc(time(v.observedAt))}.</p><details><summary>Block and value breakdown</summary><div class="pd-material-scroll"><table><thead><tr><th>Block type</th><th>Cells</th><th>Known worth</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.material.replace('minecraft:','').replaceAll('_',' '))}${r.warnings.map(w=>`<small>${esc(w)}</small>`).join('')}</td><td>${r.cells.toLocaleString()}</td><td>${r.unknownCells===r.cells?'Unpriced':money(Math.round(r.valueMicros/10000))}${r.unknownCells>0&&r.unknownCells<r.cells?' + unknown':''}</td></tr>`).join('')}</tbody></table></div></details></section>`);
                 }
             }).catch(() => { if (!currentAbort.signal.aborted)

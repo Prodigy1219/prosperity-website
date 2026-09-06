@@ -16,7 +16,7 @@ const out=process.env.PROPERTY_QA_DIR;if(!out)throw Error('Set PROPERTY_QA_DIR')
     await p.locator('#pd-property-scene canvas').screenshot({path:path.join(out,`${name}-${id}.png`)});
     assert.ok(await p.locator('.pd-materials').isVisible(),'independent valuation present');
     if(id==='apt_01')assert.equal(await p.locator('.pd-value-breakdown').count(),0,'rental price never summed with capital');
-    await p.locator('#pd-detail-close').click();assert.equal(await p.locator('#pd-property-scene canvas').count(),0);
+    await p.locator('#pd-detail-close').click();await p.locator('#pd-property-scene canvas').waitFor({state:'detached'});
     results.push({viewport:name,property:id,passed:true});
    }
    assert.deepEqual(errors,[]);await p.close();
@@ -27,6 +27,7 @@ const out=process.env.PROPERTY_QA_DIR;if(!out)throw Error('Set PROPERTY_QA_DIR')
   await p.locator('[data-open="world:c001"]').first().click();
   await p.waitForFunction(()=>document.querySelector('#pd-preview-label').textContent.includes('Detailed preview unavailable'));
   assert.match(await p.locator('.pd-materials').innerText(),/57,231 occupied block cells/);
+  assert.equal(await p.locator('.pd-height-controls').count(),0,'no nonfunctional controls on fallback');
   results.push({case:'corrupt mesh retains valuation',passed:true});await p.close();
   fs.writeFileSync(path.join(out,'detail-results.json'),JSON.stringify(results,null,2));console.log(JSON.stringify(results));
  }finally{await b.close();}
